@@ -82,6 +82,10 @@
 @@||bakery.pplus.paramount.tech^
 @@||saa.paramountplus.com^
 @@||imasdk.googleapis.com^
+@@||cws.conviva.com^
+@@||*.cws.conviva.com^
+@@||googlevideo.com^
+@@||*.googlevideo.com^
 
 # Disney+ Blacklist
 ||disneyadvertising.com^
