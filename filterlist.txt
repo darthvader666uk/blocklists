@@ -86,6 +86,10 @@
 @@||*.cws.conviva.com^
 @@||googlevideo.com^
 @@||*.googlevideo.com^
+@@||r1---sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r2---sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r1.sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r2.sn-tv04pcgx-h5ol.googlevideo.com^
 
 # Disney+ Blacklist
 ||disneyadvertising.com^
