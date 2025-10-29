@@ -139,6 +139,135 @@
 ||adserving.sky.co.uk^
 ||pagead.sky.com^
 ||banner.sky.com^
+
+# Netflix Ad Blocking
+||ads.netflix.com^
+||ads.netflix-studio.com^
+||analytics.netflix.com^
+||tracking.netflix.com^
+||netflix-tracking.com^
+||netflix-analytics.com^
+||loggin.netflix.com^
+||nflxext.com^
+||netflixext.com^
+||netflixdns.com^
+||cdn.adnxs.com^
+||doubleclick.netflix.com^
+||googleadservices.com^
+||pagead.netflix.com^
+
+# Disney+ Ad Blocking
+||ads.disneyplus.com^
+||analytics.disneyplus.com^
+||tracking.disneyplus.com^
+||disney-ads.com^
+||disney-analytics.com^
+||disney-tracking.com^
+||disneyadsales.com^
+||espn-ads.com^
+||espnplus-ads.com^
+||pixar-ads.com^
+||abc-ads.com^
+||pricetag.web.disney.com^
+||adsales.disney.com^
+
+# Amazon Prime Video Ad Blocking
+||ads.amazon.com^
+||analytics.amazon.com^
+||tracking.amazon.com^
+||amazon-ads.com^
+||amazon-analytics.com^
+||amazon-tracking.com^
+||amazonadvertising.com^
+||advertising.amazon.com^
+||adapis.amazon.com^
+||prime-video-ads.com^
+
+# Hulu Ad Blocking
+||ads.hulu.com^
+||analytics.hulu.com^
+||tracking.hulu.com^
+||hulu-ads.com^
+||huluanalytics.com^
+||hulu-tracking.com^
+||advertising.hulu.com^
+||adserver.hulu.com^
+||huluadsmgmt.com^
+||ads.hulustream.com^
+
+# Apple TV+ Ad Blocking
+||ads.apple.com^
+||ads.tv.apple.com^
+||analytics.tv.apple.com^
+||tracking.tv.apple.com^
+||appletv-ads.com^
+||appletvplus-ads.com^
+||adserver.apple.com^
+||apple-advertising.com^
+||advertising.apple.com^
+
+# HBO Max / Max Ad Blocking
+||ads.hbomax.com^
+||analytics.hbomax.com^
+||tracking.hbomax.com^
+||hbo-ads.com^
+||hbomax-analytics.com^
+||max-ads.com^
+||advertising.hbomax.com^
+||adserver.hbomax.com^
+||warner-ads.com^
+||warnermedia-ads.com^
+
+# Peacock Ad Blocking
+||ads.peacocktv.com^
+||analytics.peacocktv.com^
+||tracking.peacocktv.com^
+||peacock-ads.com^
+||peacockanalytics.com^
+||nbc-ads.com^
+||nbcadvertising.com^
+||adserver.peacock.com^
+||advertising.peacock.com^
+
+# YouTube TV / YouTube Premium Ad Blocking
+||ads.youtube.com^
+||analytics.youtube.com^
+||tracking.youtube.com^
+||youtube-ads.com^
+||youtubeadvertising.com^
+||youtube-analytics.com^
+||youtubeanalytics.com^
+||yt-ads.com^
+
+# Roku Channel Ad Blocking
+||ads.roku.com^
+||analytics.roku.com^
+||tracking.roku.com^
+||roku-ads.com^
+||rokuanalytics.com^
+||rokuadvertising.com^
+||adserver.roku.com^
+||roku-adserver.com^
+
+# Tubi Ad Blocking
+||ads.tubi.tv^
+||analytics.tubi.tv^
+||tracking.tubi.tv^
+||tubi-ads.com^
+||tubianalytics.com^
+||tubitrack.com^
+||adserver.tubi.com^
+||advertising.tubi.com^
+
+# Pluto TV Ad Blocking
+||ads.pluto.tv^
+||analytics.pluto.tv^
+||tracking.pluto.tv^
+||pluto-ads.com^
+||plutoanalytics.com^
+||adserver.pluto.tv^
+||advertising.pluto.tv^
+
 @@||*.currys.biz^
 @@||*.omtrdc.net^
 
