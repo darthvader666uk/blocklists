@@ -41,7 +41,6 @@
 ||googlesyndication.com^
 ||googletagservices.com^
 ||googletagmanager.com^
-||imasdk.googleapis.com^
 ||adsrvr.org^
 ||adnxs.com^
 ||pubmatic.com^
@@ -69,27 +68,27 @@
 ||wwwimage-us.pplusstatic.com^
 ||wwwimage-secure.cbsstatic.com^
 ||thumbnails.cbsig.net^
-||cws.conviva.com^
+||cws.conviva.com^$important
 ||cbsinteractive.hb.omtrdc.net^
 ||tags.tiqcdn.com^
 ||saa.cbsi.com^
 ||cbsaavideo.com^
 
 # Allow List
-# Paramount+ Whitelist
+# Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
+@@||*.googlevideo.com^$important
+@@||googlevideo.com^$important
+@@||r1---sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||r2---sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||r1.sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||r2.sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||cws.conviva.com^$important
+@@||*.cws.conviva.com^$important
+@@||imasdk.googleapis.com^$important
 @@||cbsi.live.ott.irdeto.com^
 @@||vod-gcs-cedexis.cbsaavideo.com^
 @@||bakery.pplus.paramount.tech^
 @@||saa.paramountplus.com^
-@@||imasdk.googleapis.com^
-@@||cws.conviva.com^
-@@||*.cws.conviva.com^
-@@||googlevideo.com^
-@@||*.googlevideo.com^
-@@||r1---sn-tv04pcgx-h5ol.googlevideo.com^
-@@||r2---sn-tv04pcgx-h5ol.googlevideo.com^
-@@||r1.sn-tv04pcgx-h5ol.googlevideo.com^
-@@||r2.sn-tv04pcgx-h5ol.googlevideo.com^
 
 # Disney+ Blacklist
 ||disneyadvertising.com^
