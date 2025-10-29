@@ -1,0 +1,147 @@
+[Adblock Plus]
+! Title: My Own Filter List
+!
+! ******************Filter Lists *************************
+#Denay List
+||a-spy.com^
+||aispyer.com^
+||alltracker.org^
+||spappmonitoring.com^
+||acfeedbackws.icloud.com^
+||api-adservices.apple.com^
+||feedbackws.fe.apple-dns.net^
+||feedbackws.icloud.com^
+||iadsdk.apple.com^
+||notes-analytics-events.apple.com^
+||notes-analytics-events.news.apple-dns.net^
+||stocks-analytics-events.news.apple-dns.net^
+||weather-analytics-events.apple.com^
+||weather-analytics-events.news.apple-dns.net^
+||syndication.twitter.com^
+||events.gfe.nvidia.com^
+||mask.icloud.com^
+||mask-h2.icloud.com^
+||apple-relay.cloudfare.com^
+||apple-relay.fastly-edge.com^
+||doh.dns.apple.com^
+||doh.dns.apple.com.v.aaplimg.com^
+||wl.spotify.com^
+||adeventtrackermonitoring.spotify.com^
+||startpage.com/sp/adsense/^
+||cfpro.ru^
+/(\.|^)skyadsmart\.com$/
+
+# Paramount+ Blacklist
+||enduser.adsrvr.org^
+||pubads.g.doubleclick.net^
+||securepubads.g.doubleclick.net^
+||googleads.g.doubleclick.net^
+||ad.doubleclick.net^
+||pagead2.googlesyndication.com^
+||googlesyndication.com^
+||googletagservices.com^
+||googletagmanager.com^
+||imasdk.googleapis.com^
+||adsrvr.org^
+||adnxs.com^
+||pubmatic.com^
+||openx.net^
+||spotxchange.com^
+||spotx.tv^
+||freewheel.tv^
+||freewheel.com^
+||criteo.com^
+||criteo.net^
+||rubiconproject.com^
+||rubiconproject.net^
+||adform.net^
+||servedbyadbutler.com^
+||adbutler.net^
+||adroll.com^
+||moat.com^
+||scorecardresearch.com^
+||quantserve.com^
+||atdmt.com^
+||amazon-adsystem.com^
+||demdex.net^
+||www.demdex.net^
+||bam.nr-data.net^
+||wwwimage-us.pplusstatic.com^
+||wwwimage-secure.cbsstatic.com^
+||thumbnails.cbsig.net^
+||cws.conviva.com^
+||cbsinteractive.hb.omtrdc.net^
+||tags.tiqcdn.com^
+||saa.cbsi.com^
+||cbsaavideo.com^
+
+# Allow List
+# Paramount+ Whitelist
+@@||cbsi.live.ott.irdeto.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||bakery.pplus.paramount.tech^
+@@||saa.paramountplus.com^
+@@||imasdk.googleapis.com^
+
+# Disney+ Blacklist
+||disneyadvertising.com^
+
+# Just for Currys to load
+@@||*.currys.biz^
+@@||*.omtrdc.net^
+
+# Just For WWE Supercard
+@@|bobcatwweproduction.cdgsrv.com^
+
+# Just For The Wisdom app
+@@||uksouth-0.in.applicationinsights.azure.com^
+@@||live.chartboost.com^
+@@||o-sdk.mediation.unity3d.com^
+@@||gw.mediation.unity3d.com^
+@@||beacons5.gvt3.com^
+@@||firebaselogging.googleapis.com^
+@@||static.cloudflareinsights.com^
+@@||region1.google-analytics.com^
+@@||crashlyticsreports-pa.googleapis.com^
+@@||region1.app-measurement.com^
+@@||cloudflareinsights.com^
+
+# Tracking Sites
+@@||tradetracker.net^
+@@||tatrck.com^
+@@||sovendus-network.com^
+@@||api.lab.eu.amplitude.com^
+@@||tui-uk.7cnq.net^
+@@||arsenal.com^
+@@||*.arsenal.com^
+@@||*.fit^
+@@||analytics.google.com^
+@@||*.locksmith.guide^
+@@||*.open.store^
+@@||open.store^
+@@||talkable.com^
+@@||*.email^
+@@||*.huel.com^
+@@||*.myshopify.com^
+@@||pxf.io^
+@@||ojrq.net^
+@@||awin1.com^
+@@||now.gg^
+@@||cdn.imagin.studio^
+@@||*.posthog.com^
+@@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
+@@||*.worldota.net^
+
+#Canva
+@@||cdn.metadata.io^
+
+#  Shopify
+@@||*.shopifycloud.com^
+
+#IPTV
+@@||clickwork7secure.com^
+
+#Random
+@@||*.ocado.com^
+@@||*.wales^
+@@||korfball.sport^
