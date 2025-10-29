@@ -313,6 +313,7 @@
 @@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
 @@||*.worldota.net^
 @@||www.webplayer.online^
+@@||webplayer.online^
 
 #Canva
 @@||cdn.metadata.io^
