@@ -122,7 +122,23 @@
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
-# Just for Currys to load
+# Sky Glass / Sky Streaming Ad Blocking
+||ads.sky.com^
+||ad.sky.com^
+||ads-tracking.sky.com^
+||tracking.sky.com^
+||sky-ads.sky.com^
+||analytics.sky.com^
+||skyads.net^
+||*.skyads.net^
+||skyadserver.com^
+||skyadvertising.com^
+||sky-analytics.com^
+||sky-tracking.com^
+||adserver.sky.co.uk^
+||adserving.sky.co.uk^
+||pagead.sky.com^
+||banner.sky.com^
 @@||*.currys.biz^
 @@||*.omtrdc.net^
 
