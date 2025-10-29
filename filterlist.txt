@@ -73,6 +73,35 @@
 ||tags.tiqcdn.com^
 ||saa.cbsi.com^
 ||cbsaavideo.com^
+# Additional ad networks
+||partner.googleadservices.com^
+||pagead.l.google.com^
+||ads.google.com^
+||tpc.googlesyndication.com^
+||bid.g.doubleclick.net^
+||cm.g.doubleclick.net^
+||pagead46.l.google.com^
+||mads.amazon.com^
+||device-metrics-us.amazon.com^
+||fls.doubleclick.net^
+||stats.g.doubleclick.net^
+||mediavisor.gumgum.com^
+||prebid.org^
+||browser.sentry-cdn.com^
+||js-agent.newrelic.com^
+||dpm.demdex.net^
+||usersync.bDXM.com^
+||beacon.krxd.net^
+||s.agora.io^
+||analytics.s.nocookie.ai^
+||outbrain.com^
+||rc.outbrain.com^
+||taboola.com^
+||trc.taboola.com^
+||contextual.media.net^
+||bidder.criteo.com^
+||static.criteo.net^
+||cas.criteo.com^
 
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
