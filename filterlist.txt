@@ -119,6 +119,11 @@
 @@||bakery.pplus.paramount.tech^
 @@||saa.paramountplus.com^
 
+# WebPlayer Whitelist
+@@||webplayer.online^$important
+@@||www.webplayer.online^$important
+@@||*.webplayer.online^$important
+
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
