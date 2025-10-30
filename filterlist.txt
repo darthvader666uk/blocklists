@@ -114,6 +114,16 @@
 @@||cws.conviva.com^$important
 @@||*.cws.conviva.com^$important
 @@||imasdk.googleapis.com^$important
+
+# YouTube Video CDN - CRITICAL (must not be blocked)
+@@||rr1---sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||rr2---sn-aigl6nsr.googlevideo.com^$important
+@@||rr1---sn-q4fzen7r.googlevideo.com^$important
+@@||rr2---sn-q4fzen7r.googlevideo.com^$important
+@@||rr.sn-tv04pcgx-h5ol.googlevideo.com^$important
+@@||rr.sn-aigl6nsr.googlevideo.com^$important
+@@||rr.sn-q4fzen7r.googlevideo.com^$important
+
 @@||cbsi.live.ott.irdeto.com^
 @@||vod-gcs-cedexis.cbsaavideo.com^
 @@||bakery.pplus.paramount.tech^
