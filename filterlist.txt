@@ -39,8 +39,6 @@
 ||ad.doubleclick.net^
 ||pagead2.googlesyndication.com^
 ||googlesyndication.com^
-||googletagservices.com^
-||googletagmanager.com^
 ||adsrvr.org^
 ||adnxs.com^
 ||pubmatic.com^
