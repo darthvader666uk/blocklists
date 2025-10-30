@@ -234,16 +234,6 @@
 ||adserver.peacock.com^
 ||advertising.peacock.com^
 
-# YouTube TV / YouTube Premium Ad Blocking
-||ads.youtube.com^
-||analytics.youtube.com^
-||tracking.youtube.com^
-||youtube-ads.com^
-||youtubeadvertising.com^
-||youtube-analytics.com^
-||youtubeanalytics.com^
-||yt-ads.com^
-
 # Roku Channel Ad Blocking
 ||ads.roku.com^
 ||analytics.roku.com^
