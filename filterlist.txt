@@ -236,6 +236,12 @@
 @@||external.pwrules.sky.com^
 @@||pwrules.sky.com^
 
+# Mention Me Referral Program - CRITICAL (must not be blocked)
+@@||tag.mention-me.com^
+@@||*.mention-me.com^
+@@||api.mention-me.com^
+@@||dashboard.mention-me.com^
+
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
