@@ -132,6 +132,12 @@
 @@||www.webplayer.online^$important
 @@||*.webplayer.online^$important
 
+# Netflix Critical Assets - MUST NOT BLOCK
+@@||assets.nflxext.com^$important
+@@||*.nflxext.com^$important
+@@||nflxext.com^$important
+@@||help.nflxext.com^$important
+
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
