@@ -271,6 +271,50 @@
 ||ad-tech.sky.com^
 ||pixel.sky.com^
 ||tracker.sky.com^
+# Sky Glass Extended Tracking & Analytics (Safe to Block)
+||launchdarkly.com^
+||*.launchdarkly.com^
+||mobile.launchdarkly.com^
+||clientstream.launchdarkly.com^
+# XUMO Analytics (Comcast - Sky Partner)
+||xumo.com^
+||*.xumo.com^
+||sky-xipa-beacons.xumo.com^
+||sky-xipa-app-mds.xumo.com^
+||sky-xipa-app.xumo.com^
+||stream-box-app.xumo.com^
+# XCal TV Analytics (Comcast Video Platform)
+||xcal.tv^
+||*.xcal.tv^
+||xconf.xdp.eu-1.xcal.tv^
+||xifa.exp.xvp.eu-1.xcal.tv^
+||disco.exp.xvp.eu-1.xcal.tv^
+||profile.exp.xvp.eu-1.xcal.tv^
+||saved.exp.xvp.eu-1.xcal.tv^
+||parental.exp.xvp.eu-1.xcal.tv^
+||playback.exp.xvp.eu-1.xcal.tv^
+||session.exp.xvp.eu-1.xcal.tv^
+||ess.exp.xvp.eu-1.xcal.tv^
+||prod-eu-1-linchpin.lp.xcal.tv^
+||analytics.eu-1.xcal.tv^
+||api.eu.cs.xcal.tv^
+||global-aqua.cs.xcal.tv^
+||skyuk-mds.cs.xcal.tv^
+# Sift Analytics (Comcast Fraud Detection)
+||sift.comcast.com^
+||*.sift.comcast.com^
+||collector-eu.sift.comcast.com^
+# XMIDT Telemetry (Comcast Device Management)
+||xmidt.comcast.net^
+||*.xmidt.comcast.net^
+||xmidt-eu.comcast.net^
+||*.xmidt-eu.comcast.net^
+||issuer.xmidt.comcast.net^
+||issuer.xmidt-eu.comcast.net^
+||fabric.xmidt-eu.comcast.net^
+||talaria-prod-eucentral1-*.xmidt-eu.comcast.net^
+# Connectivity Checks (Redundant - can block)
+||connectivitycheck.comcast.com^
 
 # Disney+ Ad Blocking
 ||ads.disneyplus.com^
