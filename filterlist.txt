@@ -128,6 +128,13 @@
 ||showtime-ads.showtime.com^
 ||ads.ott.irdeto.com^
 ||admonitoring.paramount.tech^
+# Coupert Ad Service (Coupon Injection/Ad Delivery)
+||coupertsh.com^
+||*.coupertsh.com^
+||sjc.coupertsh.com^
+||coupert.com^
+||api.coupert.com^
+||ads.coupert.com^
 # Additional ad networks
 ||partner.googleadservices.com^
 ||pagead.l.google.com^
