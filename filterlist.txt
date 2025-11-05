@@ -315,6 +315,101 @@
 # Connectivity Checks (Redundant - can block)
 ||connectivitycheck.comcast.com^
 
+# Meta / Facebook / Instagram / WhatsApp / Messenger Ad & Tracking Blocking
+# Facebook Core
+||facebook.com/ads^
+||facebook.com/tr^
+||facebook.com/analytics^
+||facebook.com/data^
+||graph.facebook.com/ads^
+||graph.facebook.com/analytics^
+||ads.facebook.com^
+||analytics.facebook.com^
+||tracking.facebook.com^
+||facebook-tracking.com^
+||facebook-analytics.com^
+||facebook-ads.com^
+||fbcdn.net/ads^
+||*.fbcdn.net/ads^
+||fbsbx.com^
+||*.fbsbx.com^
+# Instagram Tracking & Ads
+||instagram.com/ads^
+||instagram.com/analytics^
+||ads.instagram.com^
+||analytics.instagram.com^
+||tracking.instagram.com^
+||instagram-ads.com^
+||instagram-analytics.com^
+||instagram-tracking.com^
+||i.instagram.com/ads^
+# WhatsApp Telemetry
+||whatsapp.com/analytics^
+||whatsapp.com/telemetry^
+||whatsapp-analytics.com^
+||whatsapp-tracking.com^
+||analytics.whatsapp.com^
+||telemetry.whatsapp.com^
+||tracking.whatsapp.com^
+# Messenger Tracking
+||messenger.com/analytics^
+||messenger-analytics.com^
+||messenger-tracking.com^
+||analytics.messenger.com^
+||tracking.messenger.com^
+# Meta Platforms Shared Infrastructure
+||meta.com/analytics^
+||meta.com/tracking^
+||meta.com/ads^
+||analytics.meta.com^
+||tracking.meta.com^
+||ads.meta.com^
+||telemetry.meta.com^
+||data.meta.com^
+||pixel.facebook.com^
+||connect.facebook.com^
+# Facebook Pixel & Conversion Tracking
+||facebook.com/pixel^
+||facebook-conversion.com^
+||fbevents.com^
+||*.fbevents.com^
+||facebook-pixel.com^
+# Meta Business Suite & Ad Manager
+||business.facebook.com/analytics^
+||business.instagram.com/analytics^
+||ads.meta.com^
+||ads-manager.meta.com^
+# Audience Network & Ad Tech
+||audience-network.com^
+||*.audience-network.com^
+||fbaudiencenetwork.com^
+||*.fbaudiencenetwork.com^
+# Facebook/Meta App Telemetry (Mobile)
+||mobile-analytics.facebook.com^
+||mobile-telemetry.facebook.com^
+||mobile-tracking.facebook.com^
+||app-analytics.instagram.com^
+||app-telemetry.instagram.com^
+||sdk.facebook.com^
+||sdk.instagram.com^
+# Meta Graph API Analytics Endpoints
+||graph.instagram.com/analytics^
+||graph.instagram.com/insights^
+||graph.instagram.com/ads^
+||graph.whatsapp.com/analytics^
+# Facebook Conversions API
+||conversions-api.facebook.com^
+||graph.facebook.com/conversions^
+||graph.instagram.com/conversions^
+# Facebook/Meta Measurement & Events
+||www.facebook.com/tr^
+||www.facebook.com/events^
+||events.facebook.com^
+||measurement.facebook.com^
+# Third-party Facebook Login Tracking
+||login.facebook.com/analytics^
+||login.facebook.com/tracking^
+
 # Disney+ Ad Blocking
 ||ads.disneyplus.com^
 ||analytics.disneyplus.com^
