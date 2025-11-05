@@ -232,6 +232,10 @@
 @@||www.webplayer.online^
 @@||*.webplayer.online^
 
+# Sky Glass Critical Infrastructure - Parental Controls & Content Rules
+@@||external.pwrules.sky.com^
+@@||pwrules.sky.com^
+
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
@@ -283,9 +287,7 @@
 ||sky-xipa-app-mds.xumo.com^
 ||sky-xipa-app.xumo.com^
 ||stream-box-app.xumo.com^
-# XCal TV Analytics (Comcast Video Platform)
-||xcal.tv^
-||*.xcal.tv^
+# XCal TV Analytics (Comcast Video Platform) - Specific domains only
 ||xconf.xdp.eu-1.xcal.tv^
 ||xifa.exp.xvp.eu-1.xcal.tv^
 ||disco.exp.xvp.eu-1.xcal.tv^
@@ -297,9 +299,6 @@
 ||ess.exp.xvp.eu-1.xcal.tv^
 ||prod-eu-1-linchpin.lp.xcal.tv^
 ||analytics.eu-1.xcal.tv^
-||api.eu.cs.xcal.tv^
-||global-aqua.cs.xcal.tv^
-||skyuk-mds.cs.xcal.tv^
 # Sift Analytics (Comcast Fraud Detection)
 ||sift.comcast.com^
 ||*.sift.comcast.com^
