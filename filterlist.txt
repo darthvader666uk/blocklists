@@ -122,6 +122,8 @@
 ||api.netflix.com/ad^
 ||adsanity.netflix.com^
 ||adtech.netflix.com^
+
+# Netflix Critical Whitelist - Assets (must not be blocked)
 @@||assets.nflxext.com^
 
 # Allow List
