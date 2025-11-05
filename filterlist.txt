@@ -159,12 +159,14 @@
 ||pagead.sky.com^
 ||banner.sky.com^
 
-# Netflix Ad Blocking - Minimal (Netflix is aggressive with DRM/tracking)
-||ads.netflix.com^
-||ads.netflix-studio.com^
-||analytics.netflix.com^
-||netflix-tracking.com^
-||netflix-analytics.com^
+# Netflix Ad Blocking - Disabled (Netflix architecture conflicts with aggressive filtering)
+# Netflix requires: assets.nflxext.com, logs.netflix.com, help.nflxext.com
+# These are critical for playback and cannot be blocked without breaking the service
+# ||ads.netflix.com^
+# ||ads.netflix-studio.com^
+# ||analytics.netflix.com^
+# ||netflix-tracking.com^
+# ||netflix-analytics.com^
 
 # Disney+ Ad Blocking
 ||ads.disneyplus.com^
