@@ -235,7 +235,7 @@
 # Disney+ Blacklist
 ||disneyadvertising.com^
 
-# Sky Glass / Sky Streaming Ad Blocking
+# Sky Glass / Sky Streaming Ad Blocking - EXPANDED
 ||ads.sky.com^
 ||ad.sky.com^
 ||ads-tracking.sky.com^
@@ -252,6 +252,25 @@
 ||adserving.sky.co.uk^
 ||pagead.sky.com^
 ||banner.sky.com^
+# Sky Extended Services (Now, Go, Mobile, Sports)
+||ads.skynow.com^
+||analytics.skynow.com^
+||ads.skygo.com^
+||analytics.skygo.com^
+||ads.sky.com/tracking^
+||analytics.sky-sports.com^
+||ads.sky-sports.com^
+||tracking.sky-sports.com^
+||ads.skymobile.com^
+||analytics.skymobile.com^
+||ads.skybroadband.com^
+||tracking.skybroadband.com^
+||ads-delivery.sky.com^
+||ad-delivery.sky.com^
+||adtech.sky.com^
+||ad-tech.sky.com^
+||pixel.sky.com^
+||tracker.sky.com^
 
 # Disney+ Ad Blocking
 ||ads.disneyplus.com^
