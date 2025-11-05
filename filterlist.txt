@@ -101,6 +101,28 @@
 ||static.criteo.net^
 ||cas.criteo.com^
 
+# Netflix Ad Blocking
+||ads.netflix.com^
+||analyticsv2.netflix.com^
+||tvoice.netflix.com^
+||telemetry.netflix.com^
+||performance.netflix.com^
+||dw.netflix.com^
+||mobile-static.netflix.com^
+||appboot.netflix.com^
+||account.netflix.com/graphql^
+||shared.netflix.com^
+||shakti.netflix.com^
+||memcache.netflix.com^
+||esprezo.netflix.com^
+||rating.netflix.com^
+||dataflakes.netflix.com^
+||pushnotifications.netflix.com^
+||api.netflix.com/esngenres^
+||api.netflix.com/ad^
+||adsanity.netflix.com^
+||adtech.netflix.com^
+
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
 @@||*.googlevideo.com^
