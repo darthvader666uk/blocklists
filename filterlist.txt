@@ -122,6 +122,7 @@
 ||api.netflix.com/ad^
 ||adsanity.netflix.com^
 ||adtech.netflix.com^
+@@||assets.nflxext.com^
 
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
