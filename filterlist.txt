@@ -122,14 +122,20 @@
 ||api.netflix.com/ad^
 ||adsanity.netflix.com^
 ||adtech.netflix.com^
+||help.nflxext.com^
+||logs.netflix.com^
+||occ.a.nflxso.net^
+||nrdp.prod.ftl.netflix.com^
+||ichnaea.netflix.com^
+||gtm.netflix.com^
+||promos.netflix.com^
+||uiservice.netflix.com^
+||signup.netflix.com^
+||conveyor.netflix.com^
+||licensing.netflix.com^
 
 # Netflix Critical Whitelist - Assets (must not be blocked)
 @@||assets.nflxext.com^
-@@||nflxext.com^
-@@||*.nflxext.com^
-@@||help.nflxext.com^
-@@||logs.netflix.com^
-@@||occ.a.nflxso.net^
 
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
