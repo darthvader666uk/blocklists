@@ -2,6 +2,7 @@
 ! Title: My Own Filter List
 !
 ! ******************Filter Lists *************************
+
 #Denay List
 ||a-spy.com^
 ||aispyer.com^
@@ -130,14 +131,6 @@
 @@||webplayer.online^
 @@||www.webplayer.online^
 @@||*.webplayer.online^
-
-# Netflix Critical Assets - MUST WHITELIST
-@@||assets.nflxext.com^
-@@||nflxext.com^
-@@||*.nflxext.com^
-@@||help.nflxext.com^
-@@||logs.netflix.com^
-@@||occ.a.nflxso.net^
 
 # Disney+ Blacklist
 ||disneyadvertising.com^
