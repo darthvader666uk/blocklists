@@ -122,12 +122,14 @@
 ||api.netflix.com/ad^
 ||adsanity.netflix.com^
 ||adtech.netflix.com^
-||help.nflxext.com^
-||logs.netflix.com^
-||occ.a.nflxso.net^
 
 # Netflix Critical Whitelist - Assets (must not be blocked)
 @@||assets.nflxext.com^
+@@||nflxext.com^
+@@||*.nflxext.com^
+@@||help.nflxext.com^
+@@||logs.netflix.com^
+@@||occ.a.nflxso.net^
 
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
