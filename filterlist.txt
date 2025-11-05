@@ -104,6 +104,30 @@
 ||sonobi.com^
 ||districtm.io^
 ||districtm.net^
+# Paramount+ Ad Delivery Infrastructure - CRITICAL
+||manifest.mtvnservices.com^
+||ad-manifest.mtvnservices.com^
+||pplus-adsense.pplus.paramount.tech^
+||adsense.pplus.paramount.tech^
+||ad-sdk.pplus.paramount.tech^
+||adserver.pplus.paramount.tech^
+||adhost.pplus.paramount.tech^
+||ads.paramount.tech^
+||ad.paramount.tech^
+||adclient.paramount.tech^
+||advertising.paramount.tech^
+||adcenter.paramount.tech^
+||pplus-ads.pplus.paramount.tech^
+||addelivery.pplus.paramount.tech^
+||adtracker.pplus.paramount.tech^
+||admatrix.pplus.paramount.tech^
+||pplus-analytics.pplus.paramount.tech^
+||ad-manager.paramount.tech^
+||viacom-ads.viacom.com^
+||cbs-ads.cbs.com^
+||showtime-ads.showtime.com^
+||ads.ott.irdeto.com^
+||admonitoring.paramount.tech^
 # Additional ad networks
 ||partner.googleadservices.com^
 ||pagead.l.google.com^
