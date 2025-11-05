@@ -40,7 +40,6 @@
 ||pagead2.googlesyndication.com^
 ||googlesyndication.com^
 ||adsrvr.org^
-||adnxs.com^
 ||pubmatic.com^
 ||openx.net^
 ||spotxchange.com^
