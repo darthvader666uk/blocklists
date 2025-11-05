@@ -65,7 +65,7 @@
 ||wwwimage-us.pplusstatic.com^
 ||wwwimage-secure.cbsstatic.com^
 ||thumbnails.cbsig.net^
-||cws.conviva.com^$important
+||cws.conviva.com^
 ||cbsinteractive.hb.omtrdc.net^
 ||tags.tiqcdn.com^
 ||saa.cbsi.com^
@@ -102,24 +102,24 @@
 
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
-@@||*.googlevideo.com^$important
-@@||googlevideo.com^$important
-@@||r1---sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||r2---sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||r1.sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||r2.sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||cws.conviva.com^$important
-@@||*.cws.conviva.com^$important
-@@||imasdk.googleapis.com^$important
+@@||*.googlevideo.com^
+@@||googlevideo.com^
+@@||r1---sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r2---sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r1.sn-tv04pcgx-h5ol.googlevideo.com^
+@@||r2.sn-tv04pcgx-h5ol.googlevideo.com^
+@@||cws.conviva.com^
+@@||*.cws.conviva.com^
+@@||imasdk.googleapis.com^
 
 # YouTube Video CDN - CRITICAL (must not be blocked)
-@@||rr1---sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||rr2---sn-aigl6nsr.googlevideo.com^$important
-@@||rr1---sn-q4fzen7r.googlevideo.com^$important
-@@||rr2---sn-q4fzen7r.googlevideo.com^$important
-@@||rr.sn-tv04pcgx-h5ol.googlevideo.com^$important
-@@||rr.sn-aigl6nsr.googlevideo.com^$important
-@@||rr.sn-q4fzen7r.googlevideo.com^$important
+@@||rr1---sn-tv04pcgx-h5ol.googlevideo.com^
+@@||rr2---sn-aigl6nsr.googlevideo.com^
+@@||rr1---sn-q4fzen7r.googlevideo.com^
+@@||rr2---sn-q4fzen7r.googlevideo.com^
+@@||rr.sn-tv04pcgx-h5ol.googlevideo.com^
+@@||rr.sn-aigl6nsr.googlevideo.com^
+@@||rr.sn-q4fzen7r.googlevideo.com^
 
 @@||cbsi.live.ott.irdeto.com^
 @@||vod-gcs-cedexis.cbsaavideo.com^
@@ -127,17 +127,17 @@
 @@||saa.paramountplus.com^
 
 # WebPlayer Whitelist
-@@||webplayer.online^$important
-@@||www.webplayer.online^$important
-@@||*.webplayer.online^$important
+@@||webplayer.online^
+@@||www.webplayer.online^
+@@||*.webplayer.online^
 
 # Netflix Critical Assets - MUST WHITELIST
-@@||assets.nflxext.com^$important
-@@||nflxext.com^$important
-@@||*.nflxext.com^$important
-@@||help.nflxext.com^$important
-@@||logs.netflix.com^$important
-@@||occ.a.nflxso.net^$important
+@@||assets.nflxext.com^
+@@||nflxext.com^
+@@||*.nflxext.com^
+@@||help.nflxext.com^
+@@||logs.netflix.com^
+@@||occ.a.nflxso.net^
 
 # Disney+ Blacklist
 ||disneyadvertising.com^
