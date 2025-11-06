@@ -589,4 +589,5 @@
 @@||*.ocado.com^
 @@||*.wales^
 @@||korfball.sport^
-@@||ww.locksmith.guide^
+@@||www.locksmith.guide^
+@@||locksmith.guide^
