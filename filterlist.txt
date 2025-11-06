@@ -236,6 +236,17 @@
 @@||external.pwrules.sky.com^
 @@||pwrules.sky.com^
 
+# Sky Glass & Comcast Infrastructure - CRITICAL (Connectivity & Playback)
+@@||connectivitycheck.comcast.com^
+@@||fabric.xmidt-eu.comcast.net^
+@@||issuer.xmidt-eu.comcast.net^
+@@||prod-eu-1-linchpin.lp.xcal.tv^
+@@||playback.exp.xvp.eu-1.xcal.tv^
+@@||session.exp.xvp.eu-1.xcal.tv^
+@@||disco.exp.xvp.eu-1.xcal.tv^
+@@||collector-eu.sift.comcast.com^
+@@||clientstream.launchdarkly.com^
+
 # Mention Me Referral Program - CRITICAL (must not be blocked)
 @@||tag.mention-me.com^
 @@||*.mention-me.com^
