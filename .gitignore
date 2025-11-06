@@ -1,0 +1,13 @@
+# Auto-push scripts (local use only)
+push-to-gist.sh
+push-to-gist.bat
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
