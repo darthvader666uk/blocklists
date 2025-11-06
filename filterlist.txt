@@ -559,6 +559,11 @@
 @@||*.fit^
 @@||analytics.google.com^
 @@||*.locksmith.guide^
+@@||locksmith.guide^
+@@||pi.locksmith.plus^
+@@||*.locksmith.plus^
+@@||api.locksmith.plus^
+@@||cdn.locksmith.plus^
 @@||*.open.store^
 @@||open.store^
 @@||talkable.com^
