@@ -560,7 +560,6 @@
 @@||analytics.google.com^
 @@||*.locksmith.guide^
 @@||locksmith.guide^
-@@||pi.locksmith.plus^
 @@||*.locksmith.plus^
 @@||api.locksmith.plus^
 @@||cdn.locksmith.plus^
@@ -596,3 +595,7 @@
 @@||korfball.sport^
 @@||www.locksmith.guide^
 @@||locksmith.guide^
+
+# Blogspot - Allow all
+@@||blogspot.com^
+@@||*.blogspot.com^
