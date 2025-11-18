@@ -19,6 +19,28 @@
 ||weather-analytics-events.apple.com^
 ||weather-analytics-events.news.apple-dns.net^
 ||syndication.twitter.com^
+||static.ads-twitter.com^
+||analytics.twitter.com^
+
+# Facebook/Meta Tracking
+||connect.facebook.net^
+||www.facebook.com/tr^
+||graph.facebook.com^
+||static.xx.fbcdn.net^
+
+# TikTok Tracking
+||analytics.tiktok.com^
+||ads.tiktok.com^
+
+# Pinterest Tracking
+||ct.pinterest.com^
+||trk.pinterest.com^
+||analytics.pinterest.com^
+
+# Snapchat Tracking
+||sc-static.net^
+||tr.snapchat.com^
+
 ||events.gfe.nvidia.com^
 ||mask.icloud.com^
 ||mask-h2.icloud.com^
@@ -40,6 +62,12 @@
 ||ad.doubleclick.net^
 ||pagead2.googlesyndication.com^
 ||googlesyndication.com^
+||google-analytics.com^
+||www.google-analytics.com^
+||ssl.google-analytics.com^
+||analytics.google.com^
+||googletagmanager.com^
+||www.googletagmanager.com^
 ||adsrvr.org^
 ||pubmatic.com^
 ||openx.net^
@@ -62,6 +90,9 @@
 ||amazon-adsystem.com^
 ||demdex.net^
 ||www.demdex.net^
+||2o7.net^
+||omtrdc.net^
+||everesttech.net^
 ||bam.nr-data.net^
 ||wwwimage-us.pplusstatic.com^
 ||wwwimage-secure.cbsstatic.com^
