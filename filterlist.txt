@@ -616,3 +616,7 @@
 @@||*.hotjar.com^
 @@||bat.bing.com^
 @@||cdn.veritonic.com^
+@@||instant.page^
+@@||*.spicegems.org^
+@@||*.shoplift.ai^
+@@||monorail-edge.shopifysvc.com^
