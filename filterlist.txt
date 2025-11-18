@@ -672,8 +672,14 @@
 @@||coupert.com^
 @@||*.coupert.com^
 @@||api.coupert.com^
+@@||cdn.coupert.com^
+@@||static.coupert.com^
+@@||ws.coupert.com^
+@@||extension.coupert.com^
 @@||coupertsh.com^
 @@||*.coupertsh.com^
+@@||cdn.coupertsh.com^
+@@||static.coupertsh.com^
 
 # Just For WWE Supercard
 @@|bobcatwweproduction.cdgsrv.com^
