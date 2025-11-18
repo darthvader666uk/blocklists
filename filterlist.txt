@@ -599,3 +599,17 @@
 # Blogspot - Allow all
 @@||blogspot.com^
 @@||*.blogspot.com^
+
+# StepOne Loyalty/Referral Program - Allow critical services
+@@||static-tracking.klaviyo.com^
+@@||*.klaviyo.com^
+@@||conf.config-security.com^
+@@||config-security.com^
+@@||consentmo-geo.com^
+@@||*.consentmo-geo.com^
+@@||atr-eu.veritonicmetrics.com^
+@@||veritonicmetrics.com^
+@@||*.veritonicmetrics.com^
+@@||lantern.roeyecdn.com^
+@@||roeyecdn.com^
+@@||*.roeyecdn.com^
