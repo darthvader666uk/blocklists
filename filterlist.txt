@@ -668,6 +668,13 @@
 @@||*.currys.biz^
 @@||*.omtrdc.net^
 
+# Coupert - Discount Code Service (Whitelisted for functionality)
+@@||coupert.com^
+@@||*.coupert.com^
+@@||api.coupert.com^
+@@||coupertsh.com^
+@@||*.coupertsh.com^
+
 # Just For WWE Supercard
 @@|bobcatwweproduction.cdgsrv.com^
 
