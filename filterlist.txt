@@ -385,6 +385,10 @@
 ||pixel.sky.com^
 ||tracker.sky.com^
 # Sky Glass Extended Tracking & Analytics (Safe to Block)
+||telemetry.sky.com^
+||adsdk.sky.com^
+||metrics.sky.com^
+||beacons.sky.com^
 ||launchdarkly.com^
 ||*.launchdarkly.com^
 ||mobile.launchdarkly.com^
@@ -620,6 +624,53 @@
 ||plutoanalytics.com^
 ||adserver.pluto.tv^
 ||advertising.pluto.tv^
+
+# BBC iPlayer Tracking & Analytics
+||braze.bbc.com^
+||braze.bbc.co.uk^
+||emp-config-prod.api.bbc.co.uk/track^
+
+# ITV Hub / ITVX Ad Blocking
+||ads.itv.com^
+||analytics.itv.com^
+||tracking.itv.com^
+||secure-cdn.itv.com/ads^
+
+# Channel 4 / All 4 Ad Blocking
+||ads.channel4.com^
+||ads-video.channel4.com^
+||analytics.channel4.com^
+||tracking.channel4.com^
+
+# Discovery+ / Max Ad Blocking (Extended)
+||ads.discovery.com^
+||tracking.discovery.com^
+||analytics.discovery.com^
+||analytics.discoveryplus.com^
+||ads.discoveryplus.com^
+
+# Sling TV Ad Blocking
+||ads.sling.com^
+||analytics.sling.com^
+||tracking.sling.com^
+
+# FuboTV Ad Blocking
+||ads.fubo.tv^
+||tracking.fubo.tv^
+||analytics.fubo.tv^
+
+# Philo Ad Blocking
+||ads.philo.com^
+||analytics.philo.com^
+
+# Crackle Ad Blocking
+||ads.crackle.com^
+||analytics.crackle.com^
+
+# Vudu Ad Blocking
+||ads.vudu.com^
+||analytics.vudu.com^
+||tracking.vudu.com^
 
 @@||*.currys.biz^
 @@||*.omtrdc.net^
