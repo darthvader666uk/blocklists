@@ -311,6 +311,13 @@
 @@||vod-gcs-cedexis.cbsaavideo.com^
 @@||bakery.pplus.paramount.tech^
 @@||saa.paramountplus.com^
+ 
+! ---- Facebook site-scoped allowlist (enable FB pages to load static assets)
+@@||static.xx.fbcdn.net^$domain=facebook.com|www.facebook.com
+@@||connect.facebook.net^$domain=facebook.com|www.facebook.com
+@@||graph.facebook.com^$domain=facebook.com|www.facebook.com
+@@||connect.facebook.com^$domain=facebook.com|www.facebook.com
+@@||fbcdn.net^$domain=facebook.com|www.facebook.com
 
 # WebPlayer Whitelist
 @@||webplayer.online^
