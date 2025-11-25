@@ -26,7 +26,6 @@
 ||connect.facebook.net^
 ||www.facebook.com/tr^
 ||graph.facebook.com^
-||static.xx.fbcdn.net^
 
 # TikTok Tracking
 ||analytics.tiktok.com^
@@ -313,7 +312,6 @@
 @@||saa.paramountplus.com^
  
 ! ---- Facebook site-scoped allowlist (enable FB pages to load static assets)
-@@||static.xx.fbcdn.net^$domain=facebook.com|www.facebook.com
 @@||connect.facebook.net^$domain=facebook.com|www.facebook.com
 @@||graph.facebook.com^$domain=facebook.com|www.facebook.com
 @@||connect.facebook.com^$domain=facebook.com|www.facebook.com
