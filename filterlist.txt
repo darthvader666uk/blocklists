@@ -319,6 +319,10 @@
 @@||connect.facebook.com^$domain=facebook.com|www.facebook.com
 @@||fbcdn.net^$domain=facebook.com|www.facebook.com
 
+! ---- Temporary broader FB CDN allows (global) - revert later if desired
+@@||static.xx.fbcdn.net^
+@@||fbcdn.net^
+
 # WebPlayer Whitelist
 @@||webplayer.online^
 @@||www.webplayer.online^
