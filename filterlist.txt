@@ -285,6 +285,31 @@
 # Netflix Critical Whitelist - Assets (must not be blocked)
 @@||assets.nflxext.com^
 
+! Extra aggressive Netflix ad-block entries
+! Note: these are broader/net-new domains observed for ad-serving/analytics.
+! They may break certain ad-insertion or measurement features; test playback and
+! referral flows after enabling. If playback breaks, remove these lines and
+! check uBlock Origin Logger / AdGuard logs to adjust to the minimal set.
+||adsanity.netflix.com^
+||adtech.netflix.com^
+||adserver.netflix.com^
+||ads.services.netflix.com^
+||adsrv.netflix.com^
+||adservice.netflix.com^
+||adcache.netflix.com^
+||adtracker.netflix.com^
+||ads-api.netflix.com^
+||ads.analytics.netflix.com^
+
+! Recommendations:
+! - Enable the uBlock Origin 'Annoyances' / 'Fanboy Annoyances' lists in-browser
+!   and AdGuard's 'Annoyances' filters at DNS level for additional cosmetic
+!   and tracking mitigation.
+! - Consider adding these domains to AdGuard Home blocklists for DNS-level
+!   blocking (less permissive, but more robust across devices).
+! - Use uBlock Origin Logger and AdGuard query logs to capture which domains
+!   still serve ad resources and iterate with minimal surgical rules.
+
 # Allow List
 # Paramount+ Whitelist - CRITICAL DOMAINS (must not be blocked)
 @@||*.googlevideo.com^
