@@ -715,6 +715,9 @@
 @@||cdn.coupertsh.com^
 @@||static.coupertsh.com^
 
+# AutoTrader Giveaways
+@@||eu.spgo.io^
+
 # Just For WWE Supercard
 @@|bobcatwweproduction.cdgsrv.com^
 
