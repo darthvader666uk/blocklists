@@ -272,7 +272,6 @@
 ||adtech.netflix.com^
 ||help.nflxext.com^
 ||logs.netflix.com^
-||occ.a.nflxso.net^
 ||nrdp.prod.ftl.netflix.com^
 ||ichnaea.netflix.com^
 ||gtm.netflix.com^
