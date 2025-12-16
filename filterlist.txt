@@ -284,7 +284,6 @@
 # Netflix Critical Whitelist - Assets (must not be blocked)
 @@||assets.nflxext.com^
 @@||help.nflxext.com^
-@@||occ.a.nflxso.net^
 
 ! Extra aggressive Netflix ad-block entries
 ! Note: these are broader/net-new domains observed for ad-serving/analytics.
