@@ -202,3 +202,40 @@
 @@||session.exp.xvp.eu-1.xcal.tv^
 @@||disco.exp.xvp.eu-1.xcal.tv^
 @@||cws.conviva.com^
+
+
+! ------------------ Aggressive Meta / WhatsApp Tracking (third-party-only) ------------------
+! These rules block Meta tracking when loaded as third-party resources (safe
+! for continuing to use WhatsApp/web WhatsApp because first-party requests
+! are allowed). Keep this section enabled for stronger browser-level tracking
+! protection. For DNS-level blocking (AdGuard Home) see the suggested list
+! below — those entries are commented out because they may break functionality.
+
+||facebook.com^$third-party
+||facebook.net^$third-party
+||connect.facebook.net^$third-party
+||pixel.facebook.com^$third-party
+||fbevents.com^$third-party
+||graph.facebook.com^$third-party
+||analytics.facebook.com^$third-party
+||ads.facebook.com^$third-party
+||mobile-analytics.facebook.com^$third-party
+||mobile-telemetry.facebook.com^$third-party
+||sdk.facebook.com^$third-party
+||sdk.instagram.com^$third-party
+||graph.instagram.com^$third-party
+||graph.whatsapp.com^$third-party
+
+! ------------------ Suggested DNS-level blocks (manual review) ------------------
+! The following are broader DNS/domain-level blocks. They are commented out
+! by default because they can break features or media playback; enable only
+! if you understand the risk and have tested functionality.
+! ||fbevents.com^
+! ||facebook.net^
+! ||pixel.facebook.com^
+! ||graph.facebook.com^
+! ||connect.facebook.net^
+! ||graph.whatsapp.com^
+! ||mobile-analytics.facebook.com^
+! ||mobile-telemetry.facebook.com^
+! -----------------------------------------------------------------------------------------
