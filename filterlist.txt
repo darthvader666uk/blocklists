@@ -77,12 +77,10 @@
 @@||api.lab.eu.amplitude.com^
 @@||tui-uk.7cnq.net^
 @@||arsenal.com^
-@@||*.arsenal.com^
 @@||*.fit^
 @@||analytics.google.com^
 @@||*.locksmith.guide^
 @@||*.open.store^
-@@||open.store^
 @@||talkable.com^
 @@||*.email^
 @@||*.huel.com^
@@ -97,7 +95,6 @@
 @@||*.worldota.net^
 # Encrypted dns
 @@||yavin37.duckdns.org^$client='YouFibre'
-@@||yavin37.duckdns.org^$client='DeathStar'
 #Canva
 @@||cdn.metadata.io^
 #  Shopify
@@ -135,7 +132,6 @@
 @@||*.quantummetric.com^
 @@||*.ticketmaster.com^
 @@||*.ticketmaster.co.uk^
-@@||locksmith.guide^
 @@||*.shop^
 @@||*.help^
 @@||*.site^
@@ -143,8 +139,6 @@
 @@||*.biz^
 @@||*.midjourney.online^
 @@||www.formsubmit.co^
-@@||formsubmit.co^
-@@||*.formsubmit.co^
 @@||*.freestylelibre.co.uk^
 @@||*.ocado.com^
 @@||*.wales^
@@ -152,9 +146,6 @@
 ! ------------------ Privacy additions (moved from ublock-filters.txt) ------------------
 ! Network-level tracker blocks (common analytics, tag managers, pixels)
 ||google-analytics.com^$third-party
-||www.google-analytics.com^$third-party
-||analytics.google.com^$third-party
-||googletagmanager.com^$third-party
 ||googlesyndication.com^$third-party
 ||doubleclick.net^$third-party
 ||adservice.google.com^$third-party
@@ -205,7 +196,6 @@
   facebook.com##+js(aeld, scroll)
   facebook.com##body > div[class*="__fb-light-mode"]
   ! Remove Facebook tracking parameters
-  ||facebook.com^$removeparam=fbclid
 ! Game8
   ! 6 Dec 2024 https://game8.co
   ||assets.game8.co/store/ads/20241128_overlay_gift_02-100left.jpg$image
