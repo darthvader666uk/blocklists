@@ -1,5 +1,0 @@
-# Ignore local environment tokens
-.env
-
-# ignore local scripts state
-gist-response.json
