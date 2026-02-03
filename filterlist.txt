@@ -1,135 +1,65 @@
 [Adblock Plus]
-! Title: My Own Filter List (Cleaned - No Redundancy)
-! Description: Custom filters complementing Hagezi Multi PRO + AdGuard Home
-! Last Updated: 16 December 2025
+! Title: My Own Filter List - Google Drive
 !
-! This list contains ONLY entries not covered by:
-! - Hagezi Multi PRO (171K entries)
-! - Hagezi Threat Intelligence Feeds (560K entries)
-! - AdGuard Tracking Protection, Social Media, Fingerprinting filters
-! - All other active blocklists in AdGuard Home
-!
-! ==================== UNIQUE BLOCKING ENTRIES ====================
-
-# Regional Streaming Services (not fully in Hagezi)
-# BBC iPlayer Tracking & Analytics
-||braze.bbc.com^
-||braze.bbc.co.uk^
-||emp-config-prod.api.bbc.co.uk/track^
-
-# ITV Hub / ITVX Ad Blocking
-||ads.itv.com^
-||analytics.itv.com^
-||tracking.itv.com^
-||secure-cdn.itv.com/ads^
-
-# Channel 4 / All 4 Ad Blocking
-||ads.channel4.com^
-||ads-video.channel4.com^
-||analytics.channel4.com^
-||tracking.channel4.com^
-
-# Sky Glass & Comcast Infrastructure - CRITICAL (Connectivity & Playback)
-||connectivitycheck.comcast.com^
-||fabric.xmidt-eu.comcast.net^
-||issuer.xmidt-eu.comcast.net^
-
-# Sky Glass / Sky Streaming Ad Blocking - UNIQUE ENTRIES
-||ads.sky.com^
-||ad.sky.com^
-||ads-tracking.sky.com^
-||tracking.sky.com^
-||sky-ads.sky.com^
-||skyads.net^
-||skyadserver.com^
-||skyadvertising.com^
-||adserver.sky.co.uk^
-||adserving.sky.co.uk^
-
-# Misc Niche Services
-||cfpro.ru^
+! ******************Filter Lists *************************
+#Denay List
+||a-spy.com^
+||aispyer.com^
+||alltracker.org^
+||spappmonitoring.com^
+||acfeedbackws.icloud.com^
+||api-adservices.apple.com^
+||feedbackws.fe.apple-dns.net^
+||feedbackws.icloud.com^
+||iadsdk.apple.com^
+||notes-analytics-events.apple.com^
+||notes-analytics-events.news.apple-dns.net^
+||stocks-analytics-events.news.apple-dns.net^
+||weather-analytics-events.apple.com^
+||weather-analytics-events.news.apple-dns.net^
+||syndication.twitter.com^
+||events.gfe.nvidia.com^
+||mask.icloud.com^
+||mask-h2.icloud.com^
+||apple-relay.cloudfare.com^
+||apple-relay.fastly-edge.com^
+||doh.dns.apple.com^
+||doh.dns.apple.com.v.aaplimg.com^
+||wl.spotify.com^
+||adeventtrackermonitoring.spotify.com^
 ||startpage.com/sp/adsense/^
-
-# ==================== CRITICAL WHITELISTS ====================
-# Netflix (prevents blocking of required CDN)
-@@||assets.nflxext.com^
-@@||help.nflxext.com^
-@@||occ.a.nflxso.net^
-
-# YouTube Video CDN - CRITICAL (must not be blocked)
-@@||*.googlevideo.com^
-@@||googlevideo.com^
-@@||rr1---sn-tv04pcgx-h5ol.googlevideo.com^
-@@||rr2---sn-aigl6nsr.googlevideo.com^
-@@||rr1---sn-q4fzen7r.googlevideo.com^
-@@||rr2---sn-q4fzen7r.googlevideo.com^
-@@||rr.sn-tv04pcgx-h5ol.googlevideo.com^
-@@||rr.sn-aigl6nsr.googlevideo.com^
-@@||rr.sn-q4fzen7r.googlevideo.com^
-
-# Paramount+ Whitelist - CRITICAL DOMAINS
-@@||*.googlevideo.com^
-@@||imasdk.googleapis.com^
-@@||cbsi.live.ott.irdeto.com^
-@@||vod-gcs-cedexis.cbsaavideo.com^
-@@||bakery.pplus.paramount.tech^
+||cfpro.ru^
+# Paramount+ Blacklist
+||imasdk.googleapis.com^
+||enduser.adsrvr.org^
+||www.googletagmanager.com^
+||pagead2.googlesyndication.com^
+||www.googletagmanager.com^
+||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
+||cbsi.demdex.net^
+||vod-gcs-qwilt.cbsaavideo.com^
+||vod-gcs-google.cbsaavideo.com^
+# Disney+ Blacklist
+||*.disneyadvertising.com^
+# Allow List
+# Paramount+ Whitelist
 @@||saa.paramountplus.com^
-
-# Facebook site-scoped allowlist (enable FB pages to load static assets)
-@@||connect.facebook.net^$domain=facebook.com|www.facebook.com
-@@||graph.facebook.com^$domain=facebook.com|www.facebook.com
-@@||connect.facebook.com^$domain=facebook.com|www.facebook.com
-@@||fbcdn.net^$domain=facebook.com|www.facebook.com
-
-# Temporary broader FB CDN allows
-@@||static.xx.fbcdn.net^
-@@||fbcdn.net^
-
-# WebPlayer Whitelist
-@@||webplayer.online^
-@@||www.webplayer.online^
-@@||*.webplayer.online^
-
-# Sky Glass Critical Infrastructure - Parental Controls & Content Rules
-@@||external.pwrules.sky.com^
-@@||pwrules.sky.com^
-
-# Sky Glass & Comcast Infrastructure - CRITICAL (Connectivity & Playback)
-@@||prod-eu-1-linchpin.lp.xcal.tv^
-@@||playback.exp.xvp.eu-1.xcal.tv^
-@@||session.exp.xvp.eu-1.xcal.tv^
-@@||disco.exp.xvp.eu-1.xcal.tv^
-@@||collector-eu.sift.comcast.com^
-@@||clientstream.launchdarkly.com^
-
-# Mention Me Referral Program - CRITICAL (must not be blocked)
-@@||tag.mention-me.com^
-@@||*.mention-me.com^
-@@||api.mention-me.com^
-@@||dashboard.mention-me.com^
-
-# ==================== CUSTOM SERVICE WHITELISTS ====================
-
-# Coupert - Discount Code Service
-@@||coupert.com^
-@@||*.coupert.com^
-@@||api.coupert.com^
-@@||cdn.coupert.com^
-@@||static.coupert.com^
-@@||ws.coupert.com^
-@@||extension.coupert.com^
-@@||coupertsh.com^
-@@||*.coupertsh.com^
-@@||cdn.coupertsh.com^
-@@||static.coupertsh.com^
-
-# AutoTrader Giveaways
-@@||eu.spgo.io^
-
-# WWE Supercard
+@@||saa.cbsi.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsinteractive.hb.omtrdc.net^
+@@||cbsi.live.ott.irdeto.com^
+@@||tags.tiqcdn.com^
+@@||wwwimage-us.pplusstatic.com^
+@@||wwwimage-secure.cbsstatic.com^
+@@||thumbnails.cbsig.net^
+@@||bakery.pplus.paramount.tech^
+@@||*.cws.conviva.com^
+# Just for Currys to load
+@@||*.currys.biz^
+@@||*.omtrdc.net^
+# Just For WWE Supercard
 @@|bobcatwweproduction.cdgsrv.com^
-
-# The Wisdom App
+# Just For The Wisdom app
 @@||uksouth-0.in.applicationinsights.azure.com^
 @@||live.chartboost.com^
 @@||o-sdk.mediation.unity3d.com^
@@ -141,21 +71,18 @@
 @@||crashlyticsreports-pa.googleapis.com^
 @@||region1.app-measurement.com^
 @@||cloudflareinsights.com^
-
-# Tracking/Analytics Services (Required for specific functionality)
+# Tracking Sites
 @@||tradetracker.net^
 @@||tatrck.com^
+@@||tradetracker.net^
 @@||sovendus-network.com^
 @@||api.lab.eu.amplitude.com^
 @@||tui-uk.7cnq.net^
 @@||arsenal.com^
 @@||*.arsenal.com^
 @@||*.fit^
+@@||analytics.google.com^
 @@||*.locksmith.guide^
-@@||locksmith.guide^
-@@||*.locksmith.plus^
-@@||api.locksmith.plus^
-@@||cdn.locksmith.plus^
 @@||*.open.store^
 @@||open.store^
 @@||talkable.com^
@@ -164,74 +91,94 @@
 @@||*.myshopify.com^
 @@||pxf.io^
 @@||ojrq.net^
+@@||tradetracker.net^
 @@||awin1.com^
 @@||now.gg^
 @@||cdn.imagin.studio^
 @@||*.posthog.com^
 @@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
 @@||*.worldota.net^
-
-# Canva
+# Encrypted dns
+@@||yavin37.duckdns.org^$client='YouFibre'
+@@||yavin37.duckdns.org^$client='DeathStar'
+#Canva
 @@||cdn.metadata.io^
-
-# Shopify
+#  Shopify
 @@||*.shopifycloud.com^
-
-# IPTV
+#IPTV
 @@||clickwork7secure.com^
-
-# Misc Services
+#Join Custard
+@@||*.online^
+# Random ones added
+@@||js.media-lab.ai^
+@@||paycare.org^
+@@||accounts.blogger.com^
+@@||openvpn.net^
+@@||openvpn.com^
+@@||watchwrestling.wtf^
+@@||gg.deals^
+@@||audio-ak-spotify-com.akamaized.net^
+@@||ukpersonal.finance^
+@@||trc.cymru^
+@@||blogspot.com^
+@@||*.click^
+@@||co-buying.com^
+@@||aklamio.com^
+@@||canva.com^
+@@||sqlshades.com^
+@@||*.wedding^
+@@||mention-me.com^
+@@||userpilot.io^
+@@||php.adamharvey.name^
+@@||shopify.com^
+@@||shopifysvc.com^
+@@||*.cymru^
+@@||domesticandgeneral14251z.btttag.com^
+@@||*.optimizely.com^
+@@||*.quantummetric.com^
+@@||*.ticketmaster.com^
+@@||*.ticketmaster.co.uk^
+@@||locksmith.guide^
+@@||*.shop^
+@@||*.help^
+@@||*.site^
+@@||*.games^
+@@||*.biz^
+@@||*.midjourney.online^
+@@||www.formsubmit.co^
+@@||formsubmit.co^
+@@||*.formsubmit.co^
+@@||*.freestylelibre.co.uk^
+@@||clickwork7secure.com^
 @@||*.ocado.com^
 @@||*.wales^
-@@||korfball.sport^
 
-# Blogspot - Allow all
-@@||blogspot.com^
-@@||*.blogspot.com^
+! ------------------ Privacy additions (moved from ublock-filters.txt) ------------------
+! Network-level tracker blocks (common analytics, tag managers, pixels)
+||google-analytics.com^$third-party
+||www.google-analytics.com^$third-party
+||analytics.google.com^$third-party
+||googletagmanager.com^$third-party
+||googlesyndication.com^$third-party
+||doubleclick.net^$third-party
+||adservice.google.com^$third-party
+||facebook.net^$third-party
+||connect.facebook.net^$third-party
+||pixel.facebook.com^$third-party
+||facebook.com^$third-party
+||ads.twitter.com^$third-party
+||analytics.twitter.com^$third-party
+||ads.yahoo.com^$third-party
+||scorecardresearch.com^$third-party
+||quantserve.com^$third-party
+||segment.com^$third-party
+||cdn.segment.com^$third-party
+||mixpanel.com^$third-party
+||hotjar.com^$third-party
+||fullstory.com^$third-party
+||amplitude.com^$third-party
+||matomo.org^$third-party
+||statcounter.com^$third-party
 
-# StepOne Loyalty/Referral Program - Allow critical services
-@@||*.klaviyo.com^
-@@||*.config-security.com^
-@@||*.consentmo-geo.com^
-@@||*.veritonicmetrics.com^
-@@||*.roeyecdn.com^
-@@||*.onsleek.ai^
-@@||gdprcdn.b-cdn.net^
-@@||*.pushowl.com^
-@@||*.trustpilot.com^
-@@||*.sciencebehindecommerce.com^
-@@||*.dwin1.com^
-@@||*.hotjar.com^
-@@||bat.bing.com^
-@@||cdn.veritonic.com^
-@@||monorail-edge.shopifysvc.com^
-
-# ==================== NOTES ====================
-! This cleaned version removes all entries already covered by:
-! 
-! Hagezi Multi PRO (171,250 entries)
-! - Comprehensive ad blocking
-! - Malware protection
-! - Phishing protection
-! - Common tracking
-! 
-! Hagezi Threat Intelligence Feeds (560,217 entries)
-! - Advanced threat intelligence
-! 
-! Hagezi Native Trackers (Apple, Microsoft, Samsung, TikTok, etc.)
-! - Device manufacturer tracking
-! 
-! AdGuard Filters:
-! - Tracking Protection (78,776)
-! - Social Media (14,559)
-! - Fingerprinting (7,280)
-! - CNAME Trackers (119,638)
-! 
-! Other Lists:
-! - Fanboy's Annoyance List (24,123)
-! - Phishing Army Extended (164,314)
-! - URLHaus Hosts (847)
-! - uBlock Privacy & Badware filters
-! 
-! Result: Zero redundancy, only unique entries for regional services
-! and critical whitelists to prevent false positives.
+! Tip: these are safe as third-party-only blocks; keep them here if you want a
+! centralized, subscribable list. Use uBO logger to identify any needed exceptions.
