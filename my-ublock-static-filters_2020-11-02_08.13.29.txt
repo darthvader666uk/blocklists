@@ -1,0 +1,87 @@
+! 24/09/2019 http://givemereddit.stream
+||crewofthieves.net/wp-content/uploads/2018/04/CoT-Discord-Banner-1024x157.png$image
+||www.twitch.tv/embed/givemeredditstream/chat?darkpopout$subdocument
+
+! 07/10/2019 https://www.pogdesign.co.uk
+||www.pogdesign.co.uk/cat/imgs/NORDVPN2.png$image
+
+! 16/02/2020 http://stream-cr7.net
+||stream-cr7.net/embed/4.png$image
+||stream-cr7.net/embed/7.png$image
+
+! 02/03/2020 https://bestteachers4u.com
+bestteachers4u.com###iframe_preview
+
+! 22/03/2020 https://www.futbin.com
+www.futbin.com##.justify-content-center.row.m-2.w-100.iaplayer
+
+! 01/04/2020 https://www.digitaltrends.com
+www.digitaltrends.com##.b-sidebar__track
+
+! 03/04/2020 http://nodq.com
+nodq.com##._5kE-6aUK._9r0K-Oum
+nodq.com##.fEy1Z2XT
+
+! 17/04/2020 https://trakt.tv
+trakt.tv##.hu-ck--st-er-vi-p-square > .inner
+||trakt.tv/assets/c07ab1/bg-b44a7f134f3aa1485e0d6dc1ee223125.jpg$image
+* * 3p-script block
+* * 3p-frame block
+
+! 17/06/2020 http://liveonscore.net
+||www6.cbox.ws/box/?boxid=833433&boxtag=540bj1$subdocument
+
+! Pintrest
+google.*###search .g:has(cite:has-text(/https?:\/\/.*\.pinterest\.*/))
+google.*###search .g:has(cite:has-text(/http?:\/\/.*\.pinterest\.*/))
+google.*##.ivg-i.rg_el.rg_di.rg_bx:if(div > div > span.rg_ilmn:has-text(pinterest.))
+google.*##.g:has(a[href*=".pinterest."])
+google.*##a[href*=".pinterest."]:nth-ancestor(1)
+google.###search .g:has(a[href=".pinterest."])
+
+! Etsy
+google.*###search .g:has(cite:has-text(/https?:\/\/.*\.etsy\.com/))
+google.*###search .g:has(cite:has-text(/http?:\/\/.*\.etsy\.com/))
+google.*##.ivg-i.rg_el.rg_di.rg_bx:if(div > div > span.rg_ilmn:has-text(etsy.))
+
+! Google consent
+google.*###lb
+google.*##:root:style(overflow-y: visible !important;)
+
+! Twitch Ads
+twitch.*##+js(twitch-videoad.js)
+
+! 28/06/2020 http://liveonscore.net
+liveonscore.net##.shadow.content-box.aside
+liveonscore.net###container-64a6cbc01beab5feb536f0421bf0718314374
+
+! 29/06/2020 https://yagpdb.xyz
+||yagpdb.xyz/static/img/onions/raid_shadow_legends.png$image
+
+! 04/07/2020 http://60fps.live
+||www.youtube.com/live_chat?v=I2-MoBohZ8I&embed_domain=60fps.live$subdocument
+
+! 04/07/2020 https://ladsnbastands.com
+||www.youtube.com/live_chat?v=R_GPc3OUj3o&embed_domain=ladsnbastands.com&dark_theme=1$subdocument
+
+! 04/07/2020 http://www.blacktiesports.net
+||st.chatango.com/h5/gz/r0507201258/id.html$subdocument
+
+! 2020-08-11 https://caerphilly.observer
+caerphilly.observer###steady-adblock-overlay-container-content
+
+! 2020-08-24 https://www.pogdesign.co.uk
+||www.pogdesign.co.uk/cat/imgs/premimgjun.jpg$image
+
+! 2020-09-28 https://mazymedias.com
+mazymedias.com##.pbs__cta
+mazymedias.com###exp_a92bfba2-77c0-428e-8df4-118908ea40cd
+
+! 2020-10-04 https://techoreels.com
+||widgetbot.io/channels/759251815493140490/759257491846070303/?api=75140db1-a357-49c8-8e8a-4f9bbe6f908b$subdocument
+
+! 2020-10-31 https://xhamster.com
+||xhamsterpremium.com/p/xhamster-category?language=en&mode=0&page=1&orientation=straight&siteVersion=3&host=xhamster.com&spot_type=widgetMiddle&spot_page_type=categoryPage&sort=featured&category=Creampie$subdocument
+
+! 2020-11-01 http://givemeredditstreams.com
+||studio.youtube.com/live_chat?is_popout=1&v=FfA5xzt54iA&is&embed_domain=givemeredditstreams.com&dark_theme=1$subdocument
