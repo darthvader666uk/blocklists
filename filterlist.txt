@@ -182,3 +182,23 @@
 
 ! Tip: these are safe as third-party-only blocks; keep them here if you want a
 ! centralized, subscribable list. Use uBO logger to identify any needed exceptions.
+\n! ---- Restored critical whitelists from filterlist-og (safe, review)
+@@||*.googlevideo.com^
+@@||googlevideo.com^
+@@||assets.nflxext.com^
+@@||help.nflxext.com^
+@@||occ.a.nflxso.net^
+@@||imasdk.googleapis.com^
+@@||connect.facebook.net^$domain=facebook.com|www.facebook.com
+@@||graph.facebook.com^$domain=facebook.com|www.facebook.com
+@@||connect.facebook.com^$domain=facebook.com|www.facebook.com
+@@||fbcdn.net^$domain=facebook.com|www.facebook.com
+@@||clientstream.launchdarkly.com^
+@@||collector-eu.sift.comcast.com^
+@@||fabric.xmidt-eu.comcast.net^
+@@||issuer.xmidt-eu.comcast.net^
+@@||prod-eu-1-linchpin.lp.xcal.tv^
+@@||playback.exp.xvp.eu-1.xcal.tv^
+@@||session.exp.xvp.eu-1.xcal.tv^
+@@||disco.exp.xvp.eu-1.xcal.tv^
+@@||cws.conviva.com^
