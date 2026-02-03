@@ -23,3 +23,6 @@ ublock-filters.txt
 my-ublock-backup_*.txt
 payload.json
 X
+
+# Archived local backups
+archive/
