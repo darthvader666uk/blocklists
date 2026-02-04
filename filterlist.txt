@@ -34,7 +34,6 @@
 ||enduser.adsrvr.org^
 ||www.googletagmanager.com^
 ||pagead2.googlesyndication.com^
-||www.googletagmanager.com^
 ||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
 ||cbsi.demdex.net^
 ||vod-gcs-qwilt.cbsaavideo.com^
@@ -74,7 +73,6 @@
 # Tracking Sites
 @@||tradetracker.net^
 @@||tatrck.com^
-@@||tradetracker.net^
 @@||sovendus-network.com^
 @@||api.lab.eu.amplitude.com^
 @@||tui-uk.7cnq.net^
@@ -149,7 +147,6 @@
 @@||formsubmit.co^
 @@||*.formsubmit.co^
 @@||*.freestylelibre.co.uk^
-@@||clickwork7secure.com^
 @@||*.ocado.com^
 @@||*.wales^
 
@@ -162,10 +159,6 @@
 ||googlesyndication.com^$third-party
 ||doubleclick.net^$third-party
 ||adservice.google.com^$third-party
-||facebook.net^$third-party
-||connect.facebook.net^$third-party
-||pixel.facebook.com^$third-party
-||facebook.com^$third-party
 ||ads.twitter.com^$third-party
 ||analytics.twitter.com^$third-party
 ||ads.yahoo.com^$third-party
@@ -225,17 +218,47 @@
 ||sdk.instagram.com^$third-party
 ||graph.instagram.com^$third-party
 ||graph.whatsapp.com^$third-party
-
-! ------------------ Suggested DNS-level blocks (manual review) ------------------
-! The following are broader DNS/domain-level blocks. They are commented out
-! by default because they can break features or media playback; enable only
-! if you understand the risk and have tested functionality.
-! ||fbevents.com^
-! ||facebook.net^
-! ||pixel.facebook.com^
-! ||graph.facebook.com^
-! ||connect.facebook.net^
-! ||graph.whatsapp.com^
-! ||mobile-analytics.facebook.com^
-! ||mobile-telemetry.facebook.com^
-! -----------------------------------------------------------------------------------------
+||api.facebook.com^$third-party
+||badge.facebook.com^$third-party
+||beacon.facebook.com^$third-party
+||crash.facebook.com^$third-party
+||crashlogs.facebook.com^$third-party
+||external.facebook.com^$third-party
+||lookaside.facebook.com^$third-party
+||static.facebook.com^$third-party
+||upload.facebook.com^$third-party
+||video.facebook.com^$third-party
+||web.facebook.com^$third-party
+||work.facebook.com^$third-party
+||free.facebook.com^$third-party
+||m.facebook.com^$third-party
+||mbasic.facebook.com^$third-party
+||touch.facebook.com^$third-party
+||groups.facebook.com^$third-party
+||marketplace.facebook.com^$third-party
+||pages.facebook.com^$third-party
+||photos.facebook.com^$third-party
+||portal.facebook.com^$third-party
+||oc.facebook.com^$third-party
+||audience.facebook.com^$third-party
+||advertisers.facebook.com^$third-party
+||campaigns.facebook.com^$third-party
+||creative.facebook.com^$third-party
+||leadads.facebook.com^$third-party
+||atlas.facebook.com^$third-party
+||business.facebook.com^$third-party
+||developers.facebook.com^$third-party
+||events.facebook.com^$third-party
+||api.instagram.com^$third-party
+||i.instagram.com^$third-party
+||api.whatsapp.com^$third-party
+||web.whatsapp.com^$third-party
+||whatsapp.net^$third-party
+||static.whatsapp.net^$third-party
+||media.whatsapp.net^$third-party
+||mmg.whatsapp.net^$third-party
+||pps.whatsapp.net^$third-party
+||business.whatsapp.com^$third-party
+||messenger.com^$third-party
+||workplace.com^$third-party
+||oculus.com^$third-party
