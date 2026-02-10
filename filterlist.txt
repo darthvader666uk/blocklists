@@ -256,6 +256,7 @@
 ||events.facebook.com^$third-party
 ||api.instagram.com^$third-party
 ||i.instagram.com^$third-party
+||api.whatsapp.com^$third-party
 ||whatsapp.net^$third-party
 ||media.whatsapp.net^$third-party
 ||mmg.whatsapp.net^$third-party
