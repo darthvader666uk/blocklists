@@ -70,6 +70,8 @@
 @@||crashlyticsreports-pa.googleapis.com^
 @@||region1.app-measurement.com^
 @@||cloudflareinsights.com^
+# WhatsApp Web functionality
+@@||static.whatsapp.net^
 # Tracking Sites
 @@||tradetracker.net^
 @@||tatrck.com^
