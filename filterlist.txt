@@ -256,7 +256,6 @@
 ||api.whatsapp.com^$third-party
 ||web.whatsapp.com^$third-party
 ||whatsapp.net^$third-party
-||static.whatsapp.net^$third-party
 ||media.whatsapp.net^$third-party
 ||mmg.whatsapp.net^$third-party
 ||pps.whatsapp.net^$third-party
