@@ -72,6 +72,9 @@
 @@||cloudflareinsights.com^
 # WhatsApp Web functionality
 @@||static.whatsapp.net^
+@@||*.cdn.whatsapp.net^
+@@||graph.whatsapp.com^
+@@||web.whatsapp.com^
 # Tracking Sites
 @@||tradetracker.net^
 @@||tatrck.com^
@@ -253,8 +256,6 @@
 ||events.facebook.com^$third-party
 ||api.instagram.com^$third-party
 ||i.instagram.com^$third-party
-||api.whatsapp.com^$third-party
-||web.whatsapp.com^$third-party
 ||whatsapp.net^$third-party
 ||media.whatsapp.net^$third-party
 ||mmg.whatsapp.net^$third-party
