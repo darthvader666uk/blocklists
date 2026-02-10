@@ -265,3 +265,23 @@
 ||messenger.com^$third-party
 ||workplace.com^$third-party
 ||oculus.com^$third-party
+
+! ------------------ Meta AI Blocking ------------------
+||ai.meta.com^$script,third-party
+||llama.meta.com^$script,third-party
+||meta.ai^$script,third-party
+||*.meta.ai^$script,third-party
+# Other AI services (script-only, third-party)
+||api.openai.com^$script,third-party
+||api.anthropic.com^$script,third-party
+||gemini.google.com^$script,third-party
+||api.gemini.google.com^$script,third-party
+||copilot.microsoft.com^$script,third-party
+||api.palm.googleusercontent.com^$script,third-party
+
+! ------------------ Targeted Script Blocks ------------------
+||connect.facebook.net^$script,third-party
+||pixel.facebook.com^$script,third-party
+||graph.facebook.com^$script,third-party
+||analytics.google.com^$xmlhttprequest,third-party
+||segment.com^$xmlhttprequest,third-party
