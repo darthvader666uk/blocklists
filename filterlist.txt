@@ -112,6 +112,10 @@
 @@||clickwork7secure.com^
 #Join Custard
 @@||*.online^
+# Ensure streaming/manifest domains are allowed so webplayer playback isn't blocked
+@@||thehoppers.life^
+@@||gohyperspeed.com^
+@@||webplayer.online^
 # Random ones added
 @@||js.media-lab.ai^
 @@||paycare.org^
