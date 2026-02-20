@@ -1,18 +1,56 @@
-https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt
+Hagezi Multi PRO - Extended protection
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+
+Hagezi Threat Intelligence Feeds - Increases security significantly!
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+
+Threat Intelligence Feeds - IPs
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt
-https://filters.adtidy.org/extension/chromium/filters/15.txt
-https://phishing.army/download/phishing_army_blocklist_extended.txt
-https://urlhaus.abuse.ch/downloads/hostfile/
-https://secure.fanboy.co.nz/fanboy-annoyance.txt
+
+My Own Filter List
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt
+
+Easylist Cookie List
 https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt
+
+RL Tracking Parameter Removal
+https://filters.adtidy.org/extension/chromium/filters/17.txt
+
+uBlock Badware
+https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
+
+uBlock Privacy
+https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+
+AdGuard CNAME Trackers - AdGuard DNS filter
+https://filters.adtidy.org/extension/chromium/filters/15.txt
+
+AdGuard DNS filter
+https://filters.adtidy.org/extension/ublock/filters/2.txt
+
+Phishing Army Extended
+https://phishing.army/download/phishing_army_blocklist_extended.txt
+
+URLHaus Hosts
+https://urlhaus.abuse.ch/downloads/hostfile/
+
+AdGuard Fingerprinting
+https://filters.adtidy.org/extension/chromium/filters/11.txt
+
+Perflyst and Dandelion Sprout's Smart-TV Blocklist
+https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt
+
+Dandelion Sprout's Anti-Malware List
+https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt
+
+EasyList
+https://easylist.to/easylist/easylist.txt
+
+EasyPrivacy
+https://easylist.to/easylist/easyprivacy.txt
+
+Fanboy's Annoyance List
+https://secure.fanboy.co.nz/fanboy-annoyance.txt
+
+AdGuard Annoyances filter
+https://filters.adtidy.org/extension/ublock/filters/14.txt

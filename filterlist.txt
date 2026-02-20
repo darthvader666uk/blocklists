@@ -158,6 +158,8 @@
 @@||*.freestylelibre.co.uk^
 @@||*.ocado.com^
 @@||*.wales^
+# Pushbullet
+@@||api.pushbullet.com^
 
 ! ------------------ Privacy additions (moved from ublock-filters.txt) ------------------
 ! Network-level tracker blocks (common analytics, tag managers, pixels)
@@ -289,3 +291,51 @@
 ||graph.facebook.com^$script,third-party
 ||analytics.google.com^$xmlhttprequest,third-party
 ||segment.com^$xmlhttprequest,third-party
+
+! ------------------ Netflix candidate filters (conservative) ------------------
+! Added: 2026-02-20 — conservative third-party-only blocks and telemetry notes.
+! WARNING: Blocking netflix-owned hostnames (logs.netflix.com, any *.netflix.com subdomain
+! that serves video or manifests) may break playback, login, or other functionality.
+! Leave those rules commented unless you are prepared to troubleshoot and whitelist
+! broken hosts.
+
+! Third-party ad/tracker networks commonly seen in streaming contexts (safe, third-party-only)
+||adsrvr.org^$third-party
+||adsafeprotected.com^$third-party
+||adsrvr.com^$third-party
+
+! Community-reported Netflix telemetry / logging endpoints (HIGH RISK — commented)
+!||logs.netflix.com^
+!||metrics.netflix.com^
+!||metrics-ext.netflix.com^
+
+! If you want these as DNS/hosts entries instead (AdGuard Home / Pi-hole), I can
+! generate a hosts-style file and add its link to `adgh_urls.txt` instead.
+
+! ------------------ Streaming service candidates (from ozankiratli gist) --
+! Conservative additions pulled from Roku / Peacock / Paramount sections.
+! Comments: third-party-only entries are safest; regex/CDN patterns are
+! powerful but risky and are left commented for testing/reference.
+
+! Peacock / streaming ad endpoints (conservative)
+||mt.ssai.peacocktv.com^
+||bff-ext.clients.peacocktv.com^
+
+! Disney advertising domain (conservative)
+||disneyadvertising.com^
+
+! Roku — measurement/overreach examples (conservative)
+||roku.admeasurement.com^
+||ravm.tv^
+
+! Paramount / general streaming ad-related (conservative)
+||enduser.adsrvr.org^
+
+! Notes:
+! - `imasdk.googleapis.com` was reported as required for some platforms — do NOT
+!   block that domain unless you know you won't use web/android playback.
+! - These entries aim to minimize third-party ad calls while avoiding netflix/prime
+!   or CDN host blocking that commonly breaks playback. Review logs and whitelist
+!   any false positives you observe.
+
+
