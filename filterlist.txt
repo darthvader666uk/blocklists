@@ -39,7 +39,7 @@
 ||vod-gcs-qwilt.cbsaavideo.com^
 ||vod-gcs-google.cbsaavideo.com^
 # Disney+ Blacklist
-||*.disneyadvertising.com^
+||disneyadvertising.com^
 # Allow List
 # Paramount+ Whitelist
 @@||saa.paramountplus.com^
@@ -76,7 +76,6 @@
 @@||graph.whatsapp.com^
 @@||web.whatsapp.com^
 # Tracking Sites
-@@||tradetracker.net^
 @@||tatrck.com^
 @@||sovendus-network.com^
 @@||api.lab.eu.amplitude.com^
@@ -94,7 +93,6 @@
 @@||*.myshopify.com^
 @@||pxf.io^
 @@||ojrq.net^
-@@||tradetracker.net^
 @@||awin1.com^
 @@||now.gg^
 @@||cdn.imagin.studio^
@@ -327,15 +325,26 @@
 ! Roku — measurement/overreach examples (conservative)
 ||roku.admeasurement.com^
 ||ravm.tv^
+! Sky Glass / Smart‑TV third‑party ad & analytics candidates (conservative)
+! Added from `sky_glass_candidates.txt` — third‑party entries only; first‑party/vendor hosts remain commented in that file.
+||alphonso.tv^
+||display.ravm.tv^
+||tvinteractive.tv^
+||mcp.tvinteractive.tv^
+||control.tvinteractive.tv^
+||control2.tvinteractive.tv^
+||tvmeta-dynamic.tvinteractive.tv^
+||ads.spotx.tv^
+||tv.ads.spotx.tv^
+||tvx.adgrx.com^
+||smartclip.com^
+||smartclip.net^
+||tv-static.scdn.co^
+||ad.71i.de^
+||advertising.com^
+||2mdn.net^
+||googleads.g.doubleclick.net^
+||ads.aimitv.com^
 
 ! Paramount / general streaming ad-related (conservative)
 ||enduser.adsrvr.org^
-
-! Notes:
-! - `imasdk.googleapis.com` was reported as required for some platforms — do NOT
-!   block that domain unless you know you won't use web/android playback.
-! - These entries aim to minimize third-party ad calls while avoiding netflix/prime
-!   or CDN host blocking that commonly breaks playback. Review logs and whitelist
-!   any false positives you observe.
-
-

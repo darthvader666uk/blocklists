@@ -1,0 +1,65 @@
+# Sky Glass / Sky TV - candidate hostnames (collected 2026-02-20)
+# Sources: Perflyst PiHole SmartTV lists (SmartTV.txt / SmartTV-AGH.txt), Pi-hole community threads, DuckDuckGo/Reddit searches
+# NOTE: These are conservative candidate domains and third-party ad/analytics hosts found in SmartTV blocklists and community threads.
+# Blocking some first-party sky domains (sky.com, api.sky.com, etc.) may break functionality — prefer to capture device DNS queries for precise whitelisting/blacklisting.
+
+# Third-party ad/analytics / smart-TV-related domains (safe to consider blocking first)
+alphonso.tv
+ravm.tv
+display.ravm.tv
+tvinteractive.tv
+mcp.tvinteractive.tv
+control.tvinteractive.tv
+control2.tvinteractive.tv
+tvmeta-dynamic.tvinteractive.tv
+ads.spotx.tv
+tv.ads.spotx.tv
+tvx.adgrx.com
+smartclip.com
+smartclip.net
+tv-static.scdn.co
+ad.71i.de
+advertising.com
+2mdn.net
+googleads.g.doubleclick.net
+ads.aimitv.com
+
+# Smart-TV vendor / platform telemetry and CDN endpoints (may be required for app store, updates; whitelist cautiously)
+## RISKY: vendor/platform telemetry and CDN endpoints (commented out)
+## These may be required for app stores, firmware updates, or core TV functionality.
+## Uncomment only after device DNS capture and testing.
+# myhomescreen.tv
+# mhc-ajax-eu.myhomescreen.tv
+# mhc-xpana-eu.myhomescreen.tv
+# vindicosuite.com
+# samsungads.com
+# samsungcloudsolution.com
+# samsungcloudsolution.net
+# bravia.dl.playstation.net
+# lgtvsdp.com
+# lgsmartad.com
+# lgtvcommon.com
+
+## RISKY: Sky / Sky Glass first-party domains (commented out)
+## Blocking these can break Sky Glass functionality — whitelist cautiously.
+# sky.com
+# api.sky.com
+# glass.sky.com
+# puck.sky.com
+# apps.sky.com
+# *.sky.com
+# *.sky-uk.net
+
+## RISKY: Cloud/CDN/analytics wildcards (commented out)
+## Avoid blanket blocking; use targeted rules instead after verification.
+# *.cloudfront.net
+# *.akamaihd.net
+# *.akamaiedge.net
+# *.amazonaws.com
+
+# Next steps / notes
+# 1) Capture DNS queries from an actual Sky Glass device while performing actions (home UI, app launch, playback, updates) and compare against this list.
+# 2) Start by blocking only the third-party ad/analytics domains above; do NOT block the Sky first-party domains unless you are prepared to whitelist broken services.
+# 3) If you want, I can convert the third-party candidates into a hosts-format file (0.0.0.0 entries) and append it to `adgh_urls.txt` as a local file URL for AdGuard/Pi-hole.
+
+# End of list
