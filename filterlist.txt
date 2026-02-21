@@ -76,6 +76,8 @@
 @@||graph.whatsapp.com^
 @@||web.whatsapp.com^
 # Tracking Sites
+@@||googletagmanager.com^
+@@||www.googletagmanager.com^
 @@||tatrck.com^
 @@||sovendus-network.com^
 @@||api.lab.eu.amplitude.com^
