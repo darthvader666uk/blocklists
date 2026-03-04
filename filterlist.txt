@@ -41,6 +41,8 @@
 # Disney+ Blacklist
 ||disneyadvertising.com^
 # Allow List
+# Whitelist CloudFront script causing "Loading failed" errors
+@@||da4talg8ap14y.cloudfront.net^
 # Paramount+ Whitelist
 @@||saa.paramountplus.com^
 @@||saa.cbsi.com^
