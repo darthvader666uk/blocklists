@@ -373,10 +373,10 @@
 ||fly.amer-free.prd.media.max.com
 ||akm.amer-free.prd.media.max.com
 
-! ENABLED (test) - medium-risk cf.* hosts observed in logs (REVERTED)
-!||cf.emea-free.prd.media.max.com^
-!||cf.eu.prd.media.max.com^
-!||cf.latam-free.prd.media.max.com^
+! ENABLED (test) - medium-risk cf.* hosts observed in logs
+||cf.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||cf.latam-free.prd.media.max.com^
 
 ! ENABLED (test) - medium-risk akm.* hosts observed in logs (REVERTED)
 !||akm.emea-free.prd.media.max.com^
