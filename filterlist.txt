@@ -297,16 +297,16 @@
 ! ========== HBO MAX / MAX ⭐ (28+ rules) CRITICAL FOR SKY GLASS ==========
 ! Verified working - GitHub AdguardTeam issue #215201
 ! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
-! NOTE: akm serves video manifests (.mpd) - WHITELISTING for content delivery
-! Blocking cf, gcp variants + pure ad-tech (litix, fwmrm)
+! NOTE: akm & gcp serve video manifests (.mpd) - WHITELISTING for content delivery
+! Blocking cf variants + pure ad-tech (litix, fwmrm, braze, telegraph, etc)
 ! WHITELISTED FOR VIDEO CONTENT:
 @@||akm.eu.prd.media.max.com^
+@@||gcp.eu.prd.media.max.com^
 ! BLOCKED - ad/CDN variants:
 ||cf.emea-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
 ||akm.emea-free.prd.media.max.com^
 ||cf.eu.prd.media.max.com^
-||gcp.eu.prd.media.max.com^
 ||gcp.prd.media.max.com^
 ! Americas Region
 ||akm.amer-free.prd.media.max.com^
