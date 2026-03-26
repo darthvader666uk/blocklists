@@ -280,55 +280,20 @@
 !||metrics.netflix.com^
 !||metrics-ext.netflix.com^
 
-! ========== PARAMOUNT+ (8 rules) - ❌ SSAI WARNING ==========
-! Uses Server-Side Ad Insertion - DNS blocking CANNOT block these ads
-||imasdk.googleapis.com^
-||enduser.adsrvr.org^
-||www.googletagmanager.com^
-||pagead2.googlesyndication.com^
-||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
-||cbsi.demdex.net^
-||vod-gcs-qwilt.cbsaavideo.com^
-||vod-gcs-google.cbsaavideo.com^
-
 ! ========== DISNEY+ (1 rule) ==========
 ||disneyadvertising.com^
 
-! ========== HBO MAX / MAX ⭐ (28+ rules) CRITICAL FOR SKY GLASS ==========
-! Verified working - GitHub AdguardTeam issue #215201
-! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
-! NOTE: akm & gcp serve video manifests (.mpd) - WHITELISTING for content delivery
-! NOTE: litix.io & fwmrm.net serve SSAI infrastructure - WHITELISTING for Sky Glass playback
-! BLOCKING gcp.emea-free (ad CDN confirmed via Sky Glass testing)
-! Blocking cf variants + pure ad-tech analytics (braze, telegraph, app.link, brightline)
-! WHITELISTED FOR VIDEO/PLAYBACK CONTENT:
-! Whitelist all prd.media.max.com variants (except -free):
+! ========== HBO MAX / MAX (MINIMAL SAFE CONFIG) ==========
+! Sky Glass EMEA Region - Minimal whitelists ONLY
+! Removed all blocking rules to prevent spinning
+! Whitelist ONLY essential domains:
 @@||*.prd.media.max.com^
-@@||prd.media.max.com^
+@@||sky-glass.play.max.com^
 @@||litix.io^
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
-! Sky Glass integration:
-@@||sky-glass.play.max.com^
-! Disco API for metadata:
-@@||images.cdn.prd.api.discomax.com^
-@@||default.any-emea.prd.api.discomax.com^
-@@||default.any-any.prd.api.discomax.com^
-@@||default.beam-emea.prd.api.discomax.com^
-@@||telegraph.prd.api.discomax.com^
-! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
-! Block ALL regional -free variants across Warner Bros properties (Max, CNN, etc):
-||*-free.prd.media.max.com^
-||*-free.prd.media.cnn.com^
-! Also block non-free regional ad variants:
-||gcp.prd.media.max.com^
-||gcp.us.prd.media.max.com^
-! ANALYTICS/ENGAGEMENT (safe to block):
-||braze.com^
-||telegraph.prd.api.hbomax.com^
-||app.link/_r?sdk=*&callback=branch_callback
-||services.brightline.tv^
+@@||*.prd.api.discomax.com^
 
 ! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
 ! SSAI ad servers (verified blocking patterns)
