@@ -373,18 +373,18 @@
 ||fly.amer-free.prd.media.max.com
 ||akm.amer-free.prd.media.max.com
 
-! ENABLED (test) - medium-risk cf.* hosts observed in logs
-||cf.emea-free.prd.media.max.com^
-||cf.eu.prd.media.max.com^
-||cf.latam-free.prd.media.max.com^
+! ENABLED (test) - medium-risk cf.* hosts observed in logs (REVERTED)
+!||cf.emea-free.prd.media.max.com^
+!||cf.eu.prd.media.max.com^
+!||cf.latam-free.prd.media.max.com^
 
-! ENABLED (test) - medium-risk akm.* hosts observed in logs
-||akm.emea-free.prd.media.max.com^
-||akm.eu.prd.media.max.com^
-||fly.emea-free.prd.media.cnn.com^
-||gcp.emea-free.prd.media.max.com^
-||cf.eu.prd.media.max.com^
-||cf.emea-free.prd.media.max.com^
+! ENABLED (test) - medium-risk akm.* hosts observed in logs (REVERTED)
+!||akm.emea-free.prd.media.max.com^
+!||akm.eu.prd.media.max.com^
+!||fly.emea-free.prd.media.cnn.com^
+!||gcp.emea-free.prd.media.max.com^
+!||cf.eu.prd.media.max.com^
+!||cf.emea-free.prd.media.max.com^
 
 ! ------------------ USAGE NOTES ------------------
 ! - Start with the LOW-RISK path-scoped FreeWheel rules enabled (above). Monitor AdGuard logs.
