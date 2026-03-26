@@ -308,6 +308,11 @@
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
+! SKY GLASS INTEGRATION (critical for Sky Glass + Max connection):
+@@||sky-glass.play.max.com^
+! Max/Disco API infrastructure (required for content metadata/delivery):
+@@||prd.api.discomax.com^
+@@||*.prd.api.discomax.com^
 ! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
 ||cf.emea-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
