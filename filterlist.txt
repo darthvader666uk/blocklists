@@ -369,7 +369,7 @@
 ! /^[0-9a-z-]+\.v\.fwmrm\.net$/
 
 ! Domain candidates (commented):
-!||cf.emea-free.prd.media.max.com^
+||cf.emea-free.prd.media.max.com^
 !||cf.amer-free.prd.media.max.com^
 !||gcp.prd.media.max.com^
 !||gcp.amer-free.prd.media.max.com^
