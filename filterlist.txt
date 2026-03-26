@@ -294,7 +294,7 @@
 ! ========== DISNEY+ (1 rule) ==========
 ||disneyadvertising.com^
 
-! ========== HBO MAX / MAX ⭐ (26 rules) CRITICAL FOR SKY GLASS ==========
+! ========== HBO MAX / MAX ⭐ (28 rules) CRITICAL FOR SKY GLASS ==========
 ! Verified working - GitHub AdguardTeam issue #215201
 ! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
 ! NOTE: cf/-free variants are being used for ads in some regions - blocking now
@@ -302,6 +302,8 @@
 ||akm.emea-free.prd.media.max.com^
 ||cf.emea-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
+||akm.eu.prd.media.max.com^
+||cf.eu.prd.media.max.com^
 ||gcp.eu.prd.media.max.com^
 ||gcp.prd.media.max.com^
 ! Americas Region
