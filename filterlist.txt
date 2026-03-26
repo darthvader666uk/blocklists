@@ -211,58 +211,101 @@
 
 
 ! ==========================================
-! SECTION 3: PRIVACY & TRACKING BLOCKS (35 rules)
-! Network-level tracker blocks (3rd-party only)
+! SECTION 3: PRIVACY & TRACKING BLOCKS (60+ rules)
+! Network-level tracker blocks (AGGRESSIVE - safe for streaming)
+! These domains are NOT needed for video playback
 ! ==========================================
 
-! Google Services (8 rules)
-||google-analytics.com^$third-party
-||www.google-analytics.com^$third-party
-||analytics.google.com^$third-party
-||googletagmanager.com^$third-party
-||googlesyndication.com^$third-party
-||doubleclick.net^$third-party
-||adservice.google.com^$third-party
+! Google Services (12 rules)
+||google-analytics.com^
+||www.google-analytics.com^
+||analytics.google.com^
+||googletagmanager.com^
+||www.googletagmanager.com^
+||googlesyndication.com^
+||doubleclick.net^
+||adservice.google.com^
+||google.com^$third-party
+||googleadservices.com^
+||googlevideo.com^$third-party
+||youtube-nocookie.com^$third-party
 
-! Twitter Services (2 rules)
-||ads.twitter.com^$third-party
-||analytics.twitter.com^$third-party
+! Facebook/Meta Tracking (15 rules)
+||pixel.facebook.com^
+||fbevents.com^
+||facebook.com^$third-party
+||facebook.net^$third-party
+||instagram.com^$third-party
+||api.instagram.com^
+||sdk.instagram.com^
+||api.facebook.com^$third-party
+||connect.facebook.net^$third-party
+||analytics.facebook.com^
+||beacon.facebook.com^
+||crash.facebook.com^
+||crashlogs.facebook.com^
+||mobile-analytics.facebook.com^
+||mobile-telemetry.facebook.com^
 
-! Generic Ad Networks & Analytics (8 rules)
-||ads.yahoo.com^$third-party
-||scorecardresearch.com^$third-party
-||quantserve.com^$third-party
-||segment.com^$third-party
-||cdn.segment.com^$third-party
-||mixpanel.com^$third-party
-||hotjar.com^$third-party
-||fullstory.com^$third-party
+! Twitter/X Tracking (3 rules)
+||ads.twitter.com^
+||analytics.twitter.com^
+||t.co^$third-party
 
-! Additional Tracking (5 rules)
-||amplitude.com^$third-party
-||matomo.org^$third-party
-||statcounter.com^$third-party
+! Generic Ad Networks & Analytics (15 rules)
+||ads.yahoo.com^
+||scorecardresearch.com^
+||quantserve.com^
+||segment.com^
+||cdn.segment.com^
+||mixpanel.com^
+||hotjar.com^
+||fullstory.com^
+||amplitude.com^
+||matomo.org^
+||statcounter.com^
+||amplitude.io^
+||heap.io^
+||appsflyer.com^
+||fabric.io^
 
-! Meta AI Services (6 rules)
-||ai.meta.com^$script,third-party
-||llama.meta.com^$script,third-party
-||meta.ai^$script,third-party
-||*.meta.ai^$script,third-party
+! Microsoft/LinkedIn Tracking (5 rules)
+||clarity.ms^
+||linkedin.com^$third-party
+||linkedin.com^$third-party
+||linkedinsitag.com^
+||bing.com^$third-party
 
-! Other AI Services (6 rules)
-||api.openai.com^$script,third-party
-||api.anthropic.com^$script,third-party
-||gemini.google.com^$script,third-party
-||api.gemini.google.com^$script,third-party
-||copilot.microsoft.com^$script,third-party
-||api.palm.googleusercontent.com^$script,third-party
+! Amazon Tracking (5 rules)
+||amazon-adsystem.com^
+||amazon.com^$third-party
+||amazonadvertising.com^
+||aiv-cdn.amazon.com^
+||dmtracker.amazon.com^
 
-! Targeted Script Blocks (2 rules)
-||connect.facebook.net^$script,third-party
-||pixel.facebook.com^$script,third-party
-||graph.facebook.com^$script,third-party
-||analytics.google.com^$xmlhttprequest,third-party
-||segment.com^$xmlhttprequest,third-party
+! Apple Tracking (5 rules)
+||apple-dns.net^
+||analytics.apple.com^
+||apple.com^$third-party
+||app-analytics.apple.com^
+||api-adservices.apple.com^
+
+! Roku/SmartTV Tracking (8 rules)
+||roku.admeasurement.com^
+||tvinteractive.tv^
+||ravm.tv^
+||alphonso.tv^
+||smartclip.net^
+||ads.spotx.tv^
+||tvmeta.tvinteractive.tv^
+||mcp.tvinteractive.tv^
+
+! Alibaba/Tencent/Other (5 rules)
+||alibaba.com^$third-party
+||tencent.com^$third-party
+||baidu.com^$third-party
+||sina.com^$third-party
+||sohu.com^$third-party
 
 
 ! ==========================================
