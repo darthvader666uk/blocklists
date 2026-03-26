@@ -294,27 +294,40 @@
 ! ========== DISNEY+ (1 rule) ==========
 ||disneyadvertising.com^
 
-! ========== HBO MAX / MAX ⭐ (28 rules) CRITICAL FOR SKY GLASS ==========
+! ========== HBO MAX / MAX ⭐ (28+ rules) CRITICAL FOR SKY GLASS ==========
 ! Verified working - GitHub AdguardTeam issue #215201
 ! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
-! NOTE: Selective blocking - akm carries BOTH ads AND video content (manifests)
-! Whitelisting akm variants for video delivery, blocking only pure ad-tech (litix, fwmrm)
+! NOTE: akm serves video manifests (.mpd) - WHITELISTING for content delivery
+! Blocking cf, gcp variants + pure ad-tech (litix, fwmrm)
 ! WHITELISTED FOR VIDEO CONTENT:
-@@||akm.emea-free.prd.media.max.com^
 @@||akm.eu.prd.media.max.com^
-! Blocked - Pure ad/telemetry servers:
+! BLOCKED - ad/CDN variants:
+||cf.emea-free.prd.media.max.com^
+||gcp.emea-free.prd.media.max.com^
+||akm.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||gcp.eu.prd.media.max.com^
+||gcp.prd.media.max.com^
+! Americas Region
+||akm.amer-free.prd.media.max.com^
+||cf.amer-free.prd.media.max.com^
+||gcp.amer-free.prd.media.max.com^
+||fly.amer-free.prd.media.max.com^
+||gcp.us.prd.media.max.com^
+! LATAM Region
+||cf.latam-free.prd.media.max.com^
+||akm.latam-free.prd.media.max.com^
+||gcp.latam-free.prd.media.max.com^
+! APAC Region
+||akm.apac-free.prd.media.max.com^
+||cf.apac-free.prd.media.max.com^
+||gcp.apac.prd.media.max.com^
+! CRITICAL: Litix SSAI telemetry (this WORKS, GitHub confirmed)
 ||litix.io^
 ||*.litix.io^
+! CRITICAL: FreeWheel ad server (this WORKS, GitHub confirmed)
 ||fwmrm.net^
 ||*.fwmrm.net^
-! Americas Region
-@@||akm.amer-free.prd.media.max.com^
-||litix.io^
-||fwmrm.net^
-! LATAM Region
-@@||akm.latam-free.prd.media.max.com^
-! APAC Region
-@@||akm.apac-free.prd.media.max.com^
 
 ! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
 ! SSAI ad servers (verified blocking patterns)
