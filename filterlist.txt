@@ -362,21 +362,18 @@
 ! These are effective at removing ads but may cause buffering or startup delay on older devices.
 ! Enable one-by-one for testing; rollback quickly if playback issues appear.
 ! Regex-based nullification (AdGuard/SDNS regex supported):
-! /^([a-z0-9-]+\.)?litix\.io$/
-! /^[a-z0-9-]+\.litix\.io$/
-! /^[out0-9a-z]+\.litix\.io$/
-! /^([a-z0-9-]+\.)?fwmrm\.net$/
-! /^[0-9a-z-]+\.v\.fwmrm\.net$/
+/^([a-z0-9-]+\.)?litix\.io$/
+/^[a-z0-9-]+\.litix\.io$/
+/^[out0-9a-z]+\.litix\.io$/
+/^([a-z0-9-]+\.)?fwmrm\.net$/
+/^[0-9a-z-]+\.v\.fwmrm\.net$/
 
 ! Domain candidates (commented):
-||cf.emea-free.prd.media.max.com^
-!||cf.amer-free.prd.media.max.com^
-!||gcp.prd.media.max.com^
-!||gcp.amer-free.prd.media.max.com^
-!||akm.emea-free.prd.media.max.com^
-!||akm.amer-free.prd.media.max.com^
-!||fly.amer-free.prd.media.max.com^
-!||mss.*.prd.api.discomax.com^
+||cf.amer-free.prd.media.max.com^
+||gmss.*.prd.api.discomax.com^
+||gcp.amer-free.prd.media.max.com^
+||fly.amer-free.prd.media.max.com
+||akm.amer-free.prd.media.max.com
 
 ! ------------------ USAGE NOTES ------------------
 ! - Start with the LOW-RISK path-scoped FreeWheel rules enabled (above). Monitor AdGuard logs.
