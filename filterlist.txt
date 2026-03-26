@@ -363,6 +363,12 @@
 ||app.link/_r?sdk=*&callback=branch_callback
 ||services.brightline.tv^
 
+! PATH-SPECIFIC SSAI / Ad requests from fwmrm.net — block ad paths while keeping playback hosts intact
+||fwmrm.net/ad/*$media
+||fwmrm.net/ad/*$script
+||fwmrm.net/vast/*^
+||fwmrm.net/*/ad/*^
+
 ! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
 ! SSAI ad servers (verified blocking patterns)
 ||mt.ssai.peacocktv.com^
