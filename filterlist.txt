@@ -319,7 +319,6 @@
 ! Block ALL regional -free variants across Warner Bros properties (Max, CNN, etc):
 ||*-free.prd.media.max.com^
 ||*-free.prd.media.cnn.com^
-||*.prd.media.max.com^$domain=~akm.eu|~gcp.eu|~cf.eu|~litix.io|~fwmrm.net
 ! Also block non-free regional ad variants:
 ||gcp.prd.media.max.com^
 ||gcp.us.prd.media.max.com^
