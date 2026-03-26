@@ -1,7 +1,0 @@
-Original lines: 806
-New lines: 184
-Original rule count: 669
-New rule count: 162
-Added rules: 62
-Removed rules: 569
-Conflicts: 12
