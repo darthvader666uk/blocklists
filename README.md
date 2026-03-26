@@ -19,7 +19,12 @@
 
 ### Option 1: AdGuard Home (Recommended for Smart TVs & Network-Wide)
 
-1. **Download the raw file:**
+1. **Download the raw file (with cache-busting):**
+   ```
+   https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt?cache=$(date +%s)
+   ```
+   
+   **OR** (without timestamp, uses CDN cache):
    ```
    https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt
    ```
@@ -33,6 +38,9 @@
 3. **For Smartphones (iOS/Android):**
    - Install AdGuard app → Settings → DNS protection
    - Paste URL or use AdGuard DNS
+
+### Cache-Busting Note
+If you're testing and updates aren't appearing, use the version with `?cache=$(timestamp)` to force a fresh download and bypass CDN caching.
 
 ### Option 2: Browser Extensions
 
