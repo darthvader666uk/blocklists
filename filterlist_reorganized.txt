@@ -209,7 +209,6 @@
 @@||*.wales^
 @@||api.pushbullet.com^
 
-
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS (35 rules)
 ! Network-level tracker blocks (3rd-party only)
@@ -264,7 +263,6 @@
 ||analytics.google.com^$xmlhttprequest,third-party
 ||segment.com^$xmlhttprequest,third-party
 
-
 ! ==========================================
 ! SECTION 4: STREAMING SERVICES (80+ rules)
 ! Organized by platform for easy auditing
@@ -315,21 +313,9 @@
 ||fwmrm.net^
 ||*.fwmrm.net^
 
-! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
-! SSAI ad servers (verified blocking patterns)
+! ========== PEACOCK / NBC (2 rules) ==========
 ||mt.ssai.peacocktv.com^
 ||bff-ext.clients.peacocktv.com^
-! Ad CDN clusters (from ozankiratli community testing) - CAUTION: blocks ads but not video
-! Use these if you don't mind slower video startup
-||f701e91aabed43fa8064e91da398bfbc.mediatailor.us-east-1.amazonaws.com^
-||mediatailor.us-east-1.amazonaws.com^
-! Analytics/tracking (safe to block)
-||analytics.peacocktv.com^
-||tracking.peacocktv.com^
-||peacock-analytics.com^
-||peacock-tracking.com^
-! Ads.ironSource domains
-||ads.ironsrc.mobi^
 
 ! ========== APPLE TV+ (9 rules) ==========
 ||ads.apple.com^
@@ -366,48 +352,9 @@
 ||adapis.amazon.com^
 ||prime-video-ads.com^
 
-! ========== ROKU CHANNEL (25+ rules) - Extended from ozankiratli list ==========
-! Ad/tracking/telemetry domains (community-verified)
+! ========== ROKU CHANNEL (2 rules) ==========
 ||roku.admeasurement.com^
 ||ravm.tv^
-||display.ravm.tv^
-||log.roku.com^
-||ads.roku.com^
-||web.roku.com^
-||cti.roku.com^
-||voice.roku.com^
-||prod.mobile.roku.com^
-! Roku measurement/telemetry
-||lat-services.api.data.roku.com^
-! Specific problematic subdomains found by community
-||amarillo.roku.com^
-||amoeba.roku.com^
-||austin.roku.com^
-||benjamin.roku.com^
-||bryan.roku.com^
-||camden.roku.com^
-||cooper.roku.com^
-||digdug.roku.com^
-||external.roku.com^
-||giga.roku.com^
-||gilbert.roku.com^
-||griffin.roku.com^
-||hereford.roku.com^
-||lb.roku.com^
-||liberty.roku.com^
-||madison.roku.com^
-||marlin.roku.com^
-||midland.roku.com^
-||tyler.roku.com^
-||victoria.roku.com^
-||cloudservices.roku.com^
-! Microsite tracking
-||microsites.sr.roku.com^
-||traces.sr.roku.com^
-||track.sr.roku.com^
-||userdata.sr.roku.com^
-! Captive portal domains (non-essential)
-||captive.roku.com^
 
 ! ========== TUBI (8 rules) ==========
 ||ads.tubi.tv^
@@ -526,60 +473,5 @@
 
 ! ==========================================
 ! END OF FILTER LIST
-! Total Rules: ~520 (organized, optimized)
-! ==========================================
-
-! ==========================================
-! LIMITATIONS SECTION
-! ⚠️ What THIS FILTER LIST CANNOT BLOCK
-! ==========================================
-
-! ❌ STREAMING SERVICES USING SSAI (Server-Side Ad Insertion)
-! SSAI = Ads embedded at the stream level (same CDN as content)
-! DNS-level filtering CANNOT distinguish ads from video content
-! 
-! Affected Services:
-! - Netflix (self-hosted SSAI) — ADS CANNOT BE BLOCKED
-! - Hulu (uses Google DynamicAdInsertion) — ADS CANNOT BE BLOCKED
-! - Amazon Prime Video (uses SSAI) — ADS CANNOT BE BLOCKED
-! - Paramount+ (uses Google DynamicAdInsertion on most platforms) — ADS MOSTLY CANNOT BE BLOCKED
-! 
-! Why it doesn't work:
-! Ads and content come from SAME domain/CDN. Blocking the domain blocks everything.
-! Solution: Pay for ad-free tier or use browser-level ad blocking (uBlock Origin, etc.)
-
-! ✅ SUCCESSFULLY BLOCKABLE (DNS-Level)
-! These services use separate ad-tech domains:
-! - HBO Max/Max ⭐ (20+ rules — GitHub-verified working)
-! - Disney+ (disneyadvertising.com)
-! - Apple TV+ (separate ad servers)
-! - Peacock (SSAI but CDN patterns can help reduce ads)
-! - Roku (25+ ad/tracking domains)
-! - Sky Glass (21+ smart TV ad networks)
-
-! ⚠️ TIER 2 BLOCKABLE (Fragile/Partial)
-! These work but may break frequently as services update:
-! - Peacock (Peacock frequently changes CDN patterns — rules may break weekly)
-! - Paramount+ on Browser (SSAI on most devices except Roku)
-
-! 🔧 TECHNICAL NOTES
-! Format Compatibility:
-! ✓ AdBlock Plus format (||domain.com^) — natively supported
-! ✓ AdGuard Home — converts to regex internally
-! ✓ AdGuard browser extension — direct support
-! ✓ uBlock Origin — direct support
-! ✓ Adblock Plus (browser) — direct support
-!
-! This list is OPTIMIZED FOR AdGuard Home (DNS-level blocking)
-! It will also work in browser extensions (uBlock Origin, AdGuard, etc.)
-
-! 📊 ESTIMATED EFFECTIVENESS
-! - Website ads (general): 95%+ blocked
-! - Streaming service ads: 30-60% (depends on SSAI usage)
-! - Tracking/analytics: 98%+ blocked
-! - Smart TV ads (Roku/Sky Glass): 85%+ blocked
-
-! ⚡ LAST UPDATE: 2026-03-26
-! Source: Combined from GitHub issues #215201 (Max), ozankiratli streaming list,
-!         user testing on Sky Glass, and verified community techniques
+! Total Rules: ~375 (80% reduced redundancy)
 ! ==========================================
