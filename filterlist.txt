@@ -313,13 +313,14 @@
 ! Max/Disco API infrastructure (required for content metadata/delivery):
 @@||prd.api.discomax.com^
 @@||*.prd.api.discomax.com^
+! CRITICAL: cf.eu is hybrid (video + infrastructure) like akm.eu/gcp.eu:
+@@||cf.eu.prd.media.max.com^
 ! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
 ! Block ALL regional -free variants across Warner Bros properties (Max, CNN, etc):
 ||*-free.prd.media.max.com^
 ||*-free.prd.media.cnn.com^
-||*.prd.media.max.com^$domain=~akm.eu|~gcp.eu|~litix.io|~fwmrm.net
+||*.prd.media.max.com^$domain=~akm.eu|~gcp.eu|~cf.eu|~litix.io|~fwmrm.net
 ! Also block non-free regional ad variants:
-||cf.eu.prd.media.max.com^
 ||gcp.prd.media.max.com^
 ||gcp.us.prd.media.max.com^
 ! ANALYTICS/ENGAGEMENT (safe to block):
