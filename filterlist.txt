@@ -328,6 +328,14 @@
 ! CRITICAL: FreeWheel ad server (this WORKS, GitHub confirmed)
 ||fwmrm.net^
 ||*.fwmrm.net^
+! NEW: Braze (customer engagement platform - detected via uBlock testing)
+||braze.com^
+! NEW: Telegraph API (Max internal analytics - detected via uBlock testing)
+||telegraph.prd.api.hbomax.com^
+! NEW: Branch SDK (deep linking - detected via uBlock testing)
+||app.link/_r?sdk=*&callback=branch_callback
+! NEW: Brightline (ad measurement telemetry - detected via uBlock testing)
+||services.brightline.tv^
 
 ! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
 ! SSAI ad servers (verified blocking patterns)
