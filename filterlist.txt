@@ -370,9 +370,11 @@
 ||cf.amer-free.prd.media.max.com^
 ||gmss.*.prd.api.discomax.com^
 ||gcp.amer-free.prd.media.max.com^
-||fly.amer-free.prd.media.max.com
-||akm.amer-free.prd.media.max.com
+||fly.amer-free.prd.media.max.com^
+||akm.amer-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
+!||cf.eu.prd.media.max.com^
+!||cf.emea-free.prd.media.max.com^
 
 ! ------------------ USAGE NOTES ------------------
 ! - Start with the LOW-RISK path-scoped FreeWheel rules enabled (above). Monitor AdGuard logs.
