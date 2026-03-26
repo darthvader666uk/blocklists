@@ -314,25 +314,13 @@
 @@||prd.api.discomax.com^
 @@||*.prd.api.discomax.com^
 ! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
-||cf.emea-free.prd.media.max.com^
-||gcp.emea-free.prd.media.max.com^
-||akm.emea-free.prd.media.max.com^
+! Block ALL regional -free variants (EMEA, Americas, LATAM, APAC, Oceania):
+||*-free.prd.media.max.com^
+||*.prd.media.max.com^$domain=~akm.eu|~gcp.eu|~litix.io|~fwmrm.net
+! Also block non-free regional ad variants:
 ||cf.eu.prd.media.max.com^
 ||gcp.prd.media.max.com^
-! Americas Region
-||akm.amer-free.prd.media.max.com^
-||cf.amer-free.prd.media.max.com^
-||gcp.amer-free.prd.media.max.com^
-||fly.amer-free.prd.media.max.com^
 ||gcp.us.prd.media.max.com^
-! LATAM Region
-||cf.latam-free.prd.media.max.com^
-||akm.latam-free.prd.media.max.com^
-||gcp.latam-free.prd.media.max.com^
-! APAC Region
-||akm.apac-free.prd.media.max.com^
-||cf.apac-free.prd.media.max.com^
-||gcp.apac.prd.media.max.com^
 ! ANALYTICS/ENGAGEMENT (safe to block):
 ||braze.com^
 ||telegraph.prd.api.hbomax.com^
