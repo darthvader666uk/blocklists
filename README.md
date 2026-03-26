@@ -2,6 +2,19 @@
 
 **A comprehensive, organized DNS-level filter list specifically optimized for blocking streaming service ads (HBO Max, Disney+, Apple TV+, Peacock, etc.) and aggressive tracking.**
 
+## ✅ HBO Max EU (Sky Glass) — WORKING
+
+**Successfully blocking ads on HBO Max (EU region) with full video playback via surgical whitelisting of SSAI infrastructure.**
+
+**Configuration:**
+- ✅ Whitelist: `akm.eu.prd.media.max.com`, `gcp.eu.prd.media.max.com` (video/metadata)
+- ✅ Whitelist: `litix.io`, `fwmrm.net` (SSAI playback engine — required for streaming)
+- ❌ Block: 20+ regional CDN variants (cf-free, akm-free, gcp-free, etc.)
+- ❌ Block: Pure ad-tech (braze, telegraph, app.link, brightline.tv, google.com/ccm)
+- 🧹 Remove: Ad XML/JSON elements from manifests via uBlock scriptlets
+
+**Result:** Full 4K video playback with ads removed from stream + analytics blocked
+
 ## 📋 Quick Summary
 
 | Metric | Details |
