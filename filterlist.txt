@@ -370,8 +370,13 @@
 ||cf.amer-free.prd.media.max.com^
 ||gmss.*.prd.api.discomax.com^
 ||gcp.amer-free.prd.media.max.com^
-||fly.amer-free.prd.media.max.com^
-||akm.amer-free.prd.media.max.com^
+||fly.amer-free.prd.media.max.com
+||akm.amer-free.prd.media.max.com
+
+! ENABLED (test) - medium-risk cf.* hosts observed in logs
+||cf.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||cf.latam-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
 !||cf.eu.prd.media.max.com^
 !||cf.emea-free.prd.media.max.com^
