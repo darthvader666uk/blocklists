@@ -298,21 +298,22 @@
 ! Verified working - GitHub AdguardTeam issue #215201
 ! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
 ! NOTE: akm & gcp serve video manifests (.mpd) - WHITELISTING for content delivery
-! NOTE: litix.io & fwmrm.net serve SSAI infrastructure - WHITELISTING (required for playback)
-! Blocking cf variants + non-essential analytics (braze, telegraph, app.link, brightline)
-! WHITELISTED FOR VIDEO/PLAYBACK CONTENT:
+! BLOCKING litix.io & fwmrm.net (SSAI ads) - AdGuard Home version (no scriptlets)
+! For uBlock Origin: use scriptlets to remove ads from these domains
+! WHITELISTED FOR VIDEO CONTENT ONLY:
 @@||akm.eu.prd.media.max.com^
 @@||gcp.eu.prd.media.max.com^
-@@||litix.io^
-@@||*.litix.io^
-@@||fwmrm.net^
-@@||*.fwmrm.net^
 ! BLOCKED - ad/CDN variants:
 ||cf.emea-free.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
 ||akm.emea-free.prd.media.max.com^
 ||cf.eu.prd.media.max.com^
 ||gcp.prd.media.max.com^
+! BLOCKED - SSAI ad servers (AdGuard Home DNS version):
+||litix.io^
+||*.litix.io^
+||fwmrm.net^
+||*.fwmrm.net^
 ! Americas Region
 ||akm.amer-free.prd.media.max.com^
 ||cf.amer-free.prd.media.max.com^
