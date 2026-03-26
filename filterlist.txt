@@ -299,7 +299,8 @@
 ! EMEA Region (Europe/Middle East/Africa) - Your Sky Glass region!
 ! NOTE: akm & gcp serve video manifests (.mpd) - WHITELISTING for content delivery
 ! NOTE: litix.io & fwmrm.net serve SSAI infrastructure - WHITELISTING for Sky Glass playback
-! DIAGNOSTIC: Temporarily whitelist all CDN variants to test if regional issue
+! BLOCKING gcp.emea-free (ad CDN confirmed via Sky Glass testing)
+! Blocking cf variants + pure ad-tech analytics (braze, telegraph, app.link, brightline)
 ! WHITELISTED FOR VIDEO/PLAYBACK CONTENT:
 @@||akm.eu.prd.media.max.com^
 @@||gcp.eu.prd.media.max.com^
@@ -307,23 +308,12 @@
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
-! DIAGNOSTIC WHITELIST - all regional variants (to isolate issue):
-@@||cf.emea-free.prd.media.max.com^
-@@||gcp.emea-free.prd.media.max.com^
-@@||akm.emea-free.prd.media.max.com^
-@@||cf.eu.prd.media.max.com^
-@@||gcp.prd.media.max.com^
-@@||akm.amer-free.prd.media.max.com^
-@@||cf.amer-free.prd.media.max.com^
-@@||gcp.amer-free.prd.media.max.com^
-@@||fly.amer-free.prd.media.max.com^
-@@||gcp.us.prd.media.max.com^
-@@||cf.latam-free.prd.media.max.com^
-@@||akm.latam-free.prd.media.max.com^
-@@||gcp.latam-free.prd.media.max.com^
-@@||akm.apac-free.prd.media.max.com^
-@@||cf.apac-free.prd.media.max.com^
-@@||gcp.apac.prd.media.max.com^
+! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
+||cf.emea-free.prd.media.max.com^
+||gcp.emea-free.prd.media.max.com^
+||akm.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||gcp.prd.media.max.com^
 ! Americas Region
 ||akm.amer-free.prd.media.max.com^
 ||cf.amer-free.prd.media.max.com^
