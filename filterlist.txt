@@ -333,8 +333,6 @@
 !       from community list included as commented candidates (enable for testing at your risk).
 
 ! ------------------ WHITELISTS (keep playback & manifest hosts allowed) ------------------
-@@||*.prd.media.max.com^
-@@||prd.media.max.com^
 @@||sky-glass.play.max.com^
 @@||images.cdn.prd.api.discomax.com^
 @@||default.any-emea.prd.api.discomax.com^
