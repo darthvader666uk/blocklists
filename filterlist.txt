@@ -377,6 +377,10 @@
 ||cf.emea-free.prd.media.max.com^
 ||cf.eu.prd.media.max.com^
 ||cf.latam-free.prd.media.max.com^
+
+! ENABLED (test) - medium-risk akm.* hosts observed in logs
+||akm.emea-free.prd.media.max.com^
+||akm.eu.prd.media.max.com^
 ||gcp.emea-free.prd.media.max.com^
 !||cf.eu.prd.media.max.com^
 !||cf.emea-free.prd.media.max.com^
