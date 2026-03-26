@@ -304,17 +304,25 @@
 ! WHITELISTED FOR VIDEO/PLAYBACK CONTENT:
 @@||akm.eu.prd.media.max.com^
 @@||gcp.eu.prd.media.max.com^
+@@||cf.eu.prd.media.max.com^
 @@||litix.io^
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
-! SKY GLASS INTEGRATION (critical for Sky Glass + Max connection):
+! CRITICAL: h264.io is legitimate WB video CDN (GitHub issue #217132 - blocking breaks playback):
+@@||h264.io^
+@@||*.h264.io^
+@@||prd.media.h264.io^
+@@||*.prd.media.h264.io^
+! Warner Bros CDN infrastructure (beam/lightning/wmff):
+@@||*.warnermediacdn.com^
+@@||warnermediacdn.com^
+! Sky Glass integration and Max connection:
 @@||sky-glass.play.max.com^
-! Max/Disco API infrastructure (required for content metadata/delivery):
-@@||prd.api.discomax.com^
+@@||play.max.com^
+! Max/Disco API infrastructure (metadata + SSAI load balancing):
+@@||*.prd.api.max.com^
 @@||*.prd.api.discomax.com^
-! CRITICAL: cf.eu is hybrid (video + infrastructure) like akm.eu/gcp.eu:
-@@||cf.eu.prd.media.max.com^
 ! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
 ! Block ALL regional -free variants across Warner Bros properties (Max, CNN, etc):
 ||*-free.prd.media.max.com^
