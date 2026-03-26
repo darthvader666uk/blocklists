@@ -309,20 +309,14 @@
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
-! CRITICAL: h264.io is legitimate WB video CDN (GitHub issue #217132 - blocking breaks playback):
-@@||h264.io^
-@@||*.h264.io^
-@@||prd.media.h264.io^
-@@||*.prd.media.h264.io^
-! Warner Bros CDN infrastructure (beam/lightning/wmff):
-@@||*.warnermediacdn.com^
-@@||warnermediacdn.com^
-! Sky Glass integration and Max connection:
+! Sky Glass integration:
 @@||sky-glass.play.max.com^
-@@||play.max.com^
-! Max/Disco API infrastructure (metadata + SSAI load balancing):
-@@||*.prd.api.max.com^
-@@||*.prd.api.discomax.com^
+! Disco API for metadata (only what we see in logs):
+@@||images.cdn.prd.api.discomax.com^
+@@||default.any-emea.prd.api.discomax.com^
+@@||default.any-any.prd.api.discomax.com^
+@@||default.beam-emea.prd.api.discomax.com^
+@@||telegraph.prd.api.discomax.com^
 ! BLOCKED - ad/CDN variants (pure ad content - gcp.emea-free confirmed):
 ! Block ALL regional -free variants across Warner Bros properties (Max, CNN, etc):
 ||*-free.prd.media.max.com^
