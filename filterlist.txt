@@ -302,16 +302,16 @@
 ! BLOCKING gcp.emea-free (ad CDN confirmed via Sky Glass testing)
 ! Blocking cf variants + pure ad-tech analytics (braze, telegraph, app.link, brightline)
 ! WHITELISTED FOR VIDEO/PLAYBACK CONTENT:
-@@||akm.eu.prd.media.max.com^
-@@||gcp.eu.prd.media.max.com^
-@@||cf.eu.prd.media.max.com^
+! Whitelist all prd.media.max.com variants (except -free):
+@@||*.prd.media.max.com^
+@@||prd.media.max.com^
 @@||litix.io^
 @@||*.litix.io^
 @@||fwmrm.net^
 @@||*.fwmrm.net^
 ! Sky Glass integration:
 @@||sky-glass.play.max.com^
-! Disco API for metadata (only what we see in logs):
+! Disco API for metadata:
 @@||images.cdn.prd.api.discomax.com^
 @@||default.any-emea.prd.api.discomax.com^
 @@||default.any-any.prd.api.discomax.com^
