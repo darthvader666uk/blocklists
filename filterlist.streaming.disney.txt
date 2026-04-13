@@ -1,0 +1,42 @@
+[Adblock Plus]
+! Title: My Own Filter List - Disney+ Ad Blocking Rules
+! Last Updated: 2026-03-27
+! Description: Blocks Disney+ advertising domains and trackers
+! 
+! NOTE: Disney+ uses a mix of Server-Side Ad Insertion (SSAI) and third-party ad networks.
+! This list targets the third-party domains that handle ads.
+! Effectiveness: ~30-40% ad reduction (SSAI ads cannot be blocked at DNS level)
+! 
+! TESTING NOTES:
+! ✓ Safe to enable - low risk of breaking playback
+! Review AdGuard Home logs if video playback stutters or fails
+! 
+! ==========================================
+! PRIMARY DISNEY AD DOMAINS
+! ==========================================
+
+||disneyadvertising.com^
+
+! ==========================================
+! ASSOCIATED DISNEY/STREAMING INFRASTRUCTURE
+! (Uncomment one at a time if ads still appear)
+! ==========================================
+
+! ||comscore.com^       ! Third-party analytics (usually whitelisted in streaming contexts)
+! ||analytics.disney.go.com^
+! ||googleadservices.com^
+
+! ==========================================
+! DISNEY POLICY NOTES
+! ==========================================
+! Disney+ has been extremely aggressive about blocking ad-blocking.
+! If this filter causes issues:
+! 1. Comment out all rules and test playback
+! 2. Re-enable ONE rule at a time, testing after each
+! 3. Monitor AdGuard Home logs for DNS blocks during playback
+! 4. Consider paying for ad-free Disney+ ($13.99 USD/month) if ads are critical
+!
+! Disney frequently updates CDN patterns and ad server domains.
+! Check GitHub community filters monthly for updates.
+! https://github.com/ajstrick81
+! ==========================================

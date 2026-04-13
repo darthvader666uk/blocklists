@@ -1,0 +1,8 @@
+! ========== PLUTO TV (streaming-specific) ==========
+||ads.pluto.tv^
+||analytics.pluto.tv^
+||tracking.pluto.tv^
+||pluto-ads.com^
+||plutoanalytics.com^
+||adserver.pluto.tv^
+||advertising.pluto.tv^

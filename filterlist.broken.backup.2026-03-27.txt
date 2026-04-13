@@ -1,12 +1,12 @@
 [Adblock Plus]
-! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-03-27
+! Title: My Own Filter List - Reorganized by Category
+! Last Updated: 2026-03-26
 ! 
 ! STRUCTURE:
 ! 1. General Deny List (trackers & common services)
 ! 2. Allow List / Critical Whitelists (prevent false positives)
 ! 3. Privacy & Tracking (generic network-level blocks)
-! 4. Streaming Services (split into separate files - see gist/filterlist.streaming.*.txt)
+! 4. Streaming Services (organized by platform)
 ! 5. Meta / Facebook (aggressive third-party blocking)
 
 ! ==========================================
@@ -50,186 +50,76 @@
 ||cfpro.ru^
 
 ! ==========================================
-! SECTION 2: ALLOW LIST / WHITELISTS
-! Critical for non-streaming services
-! (Streaming service whitelists are in their respective files)
+! SECTION 2: ALLOW LIST / WHITELISTS (145 rules)
+! Critical for ensuring streaming/services work
 ! ==========================================
 
-! ========== GENERIC STREAMING INFRASTRUCTURE ==========
-! Google/CDN infrastructure used by ALL streaming services
-@@||da4talg8ap14y.cloudfront.net^
+! ========== NETFLIX (3 rules) ==========
+@@||assets.nflxext.com^
+@@||help.nflxext.com^
+@@||occ.a.nflxso.net^
+
+! ========== PARAMOUNT+ (11 rules) ==========
+@@||saa.paramountplus.com^
+@@||saa.cbsi.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsinteractive.hb.omtrdc.net^
+@@||cbsi.live.ott.irdeto.com^
+@@||thumbnails.cbsig.net^
+! ========== GENERIC STREAMING INFRASTRUCTURE (7 rules) ==========
 @@||*.googlevideo.com^
 @@||googlevideo.com^
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
 
-! ========== FACEBOOK / WHATSAPP ==========
-@@||connect.facebook.net^$domain=facebook.com|www.facebook.com
-@@||graph.facebook.com^$domain=facebook.com|www.facebook.com
-@@||connect.facebook.com^$domain=facebook.com|www.facebook.com
-@@||fbcdn.net^$domain=facebook.com|www.facebook.com
-@@||static.whatsapp.net^
-@@||*.cdn.whatsapp.net^
+! ========== SKY GLASS / COMCAST (7 rules) ==========
+@@||disco.exp.xvp.eu-1.xcal.tv^
 @@||graph.whatsapp.com^
-@@||web.whatsapp.com^
-
-! ========== CURRYS ==========
-@@||*.currys.biz^
 @@||*.omtrdc.net^
 
-! ========== WWE SUPERCARD ==========
-@@||bobcatwweproduction.cdgsrv.com^
-
-! ========== WISDOM APP ==========
-@@||uksouth-0.in.applicationinsights.azure.com^
-@@||live.chartboost.com^
-@@||o-sdk.mediation.unity3d.com^
+! ========== WWE SUPERCARD (1 rule) ==========
+@@|bobcatwweproduction.cdgsrv.com^
 @@||gw.mediation.unity3d.com^
-@@||beacons5.gvt3.com^
-@@||firebaselogging.googleapis.com^
-@@||static.cloudflareinsights.com^
-@@||region1.google-analytics.com^
-@@||crashlyticsreports-pa.googleapis.com^
 @@||region1.app-measurement.com^
-@@||cloudflareinsights.com^
-
-! ========== TRACKING & ANALYTICS SERVICES ==========
-@@||googletagmanager.com^
-@@||www.googletagmanager.com^
-@@||tatrck.com^
-@@||sovendus-network.com^
-@@||api.lab.eu.amplitude.com^
-@@||tui-uk.7cnq.net^
+! These services need whitelisting to work properly
 @@||arsenal.com^
 @@||*.arsenal.com^
 @@||*.fit^
 @@||analytics.google.com^
 @@||*.locksmith.guide^
-@@||*.open.store^
-@@||open.store^
 @@||talkable.com^
 @@||*.email^
-@@||*.huel.com^
-@@||*.myshopify.com^
 @@||pxf.io^
-@@||ojrq.net^
-@@||awin1.com^
-@@||now.gg^
-@@||cdn.imagin.studio^
 @@||*.posthog.com^
-@@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
 @@||*.worldota.net^
-
-! ========== DNS / VPN SERVICES ==========
-@@||yavin37.duckdns.org^$client='YouFibre'
-@@||yavin37.duckdns.org^$client='DeathStar'
-
-! ========== CANVA ==========
-@@||cdn.metadata.io^
-
-! ========== SHOPIFY ==========
 @@||*.shopifycloud.com^
-@@||shopify.com^
-@@||shopifysvc.com^
 
-! ========== IPTV ==========
-@@||clickwork7secure.com^
-
-! ========== STREAMING PLATFORMS ==========
-@@||thehoppers.life^
-@@||gohyperspeed.com^
-@@||webplayer.online^
-
-! ========== MISC SERVICES ==========
-@@||*.online^
-@@||js.media-lab.ai^
-@@||paycare.org^
-@@||accounts.blogger.com^
-@@||openvpn.net^
-@@||openvpn.com^
-@@||watchwrestling.wtf^
-@@||gg.deals^
-@@||audio-ak-spotify-com.akamaized.net^
 @@||ukpersonal.finance^
 @@||trc.cymru^
-@@||blogspot.com^
-@@||*.click^
-@@||co-buying.com^
-@@||aklamio.com^
-@@||canva.com^
-@@||sqlshades.com^
-@@||*.wedding^
-@@||mention-me.com^
-@@||userpilot.io^
 @@||php.adamharvey.name^
-@@||*.cymru^
 @@||domesticandgeneral14251z.btttag.com^
-@@||*.optimizely.com^
-@@||*.quantummetric.com^
-@@||*.ticketmaster.com^
-@@||*.ticketmaster.co.uk^
-@@||locksmith.guide^
-@@||*.shop^
-@@||*.help^
-@@||*.site^
-@@||*.games^
-@@||*.biz^
-@@||*.midjourney.online^
-@@||www.formsubmit.co^
-@@||formsubmit.co^
-@@||*.formsubmit.co^
-@@||*.freestylelibre.co.uk^
-@@||*.ocado.com^
-@@||*.wales^
-@@||api.reo.dev^
-@@||api.pushbullet.com^
-
-
-! ==========================================
-! SECTION 3: PRIVACY & TRACKING BLOCKS
-! Network-level tracker blocks (AGGRESSIVE - safe for streaming)
-! These domains are NOT needed for video playback
-! ==========================================
-
+! SECTION 3: PRIVACY & TRACKING BLOCKS (60+ rules)
 ! Google Services (12 rules)
-||google-analytics.com^
 ||www.google-analytics.com^
-||analytics.google.com^
-||googletagmanager.com^
-||www.googletagmanager.com^
-||googlesyndication.com^
-||doubleclick.net^
-||adservice.google.com^
-||google.com^$third-party
-||googleadservices.com^
 ||googlevideo.com^$third-party
-||youtube-nocookie.com^$third-party
-
-! Facebook/Meta Tracking (15 rules)
-||pixel.facebook.com^
-||fbevents.com^
-||facebook.com^$third-party
-||facebook.net^$third-party
 ||instagram.com^$third-party
 ||api.instagram.com^
-||sdk.instagram.com^
-||api.facebook.com^$third-party
-||connect.facebook.net^$third-party
-||analytics.facebook.com^
-||beacon.facebook.com^
-||crash.facebook.com^
-||crashlogs.facebook.com^
-||mobile-analytics.facebook.com^
-||mobile-telemetry.facebook.com^
-
-! Twitter/X Tracking (3 rules)
-||ads.twitter.com^
-||analytics.twitter.com^
-||t.co^$third-party
-
-! Generic Ad Networks & Analytics (15 rules)
-||ads.yahoo.com^
-||scorecardresearch.com^
+! ==========================================
+! SECTION 4: STREAMING SERVICES (split into separate files)
+! Streaming rules moved to `gist/filterlist.streaming.*.txt` files for easier testing and per-service control.
+! Files created:
+! - gist/filterlist.streaming.hbo.txt
+! - gist/filterlist.streaming.netflix.txt
+! - gist/filterlist.streaming.peacock.txt
+! - gist/filterlist.streaming.appletv.txt
+! - gist/filterlist.streaming.hulu.txt
+! - gist/filterlist.streaming.amazon.txt
+! - gist/filterlist.streaming.roku.txt
+! - gist/filterlist.streaming.tubi.txt
+! - gist/filterlist.streaming.pluto.txt
+! - gist/filterlist.streaming.skyglass.txt
+!
+! To test safely: enable entries in the per-service files one at a time and monitor AdGuard Home logs.
 ||quantserve.com^
 ||segment.com^
 ||cdn.segment.com^
@@ -246,6 +136,7 @@
 
 ! Microsoft/LinkedIn Tracking (5 rules)
 ||clarity.ms^
+||linkedin.com^$third-party
 ||linkedin.com^$third-party
 ||linkedinsitag.com^
 ||bing.com^$third-party
@@ -280,23 +171,6 @@
 ||baidu.com^$third-party
 ||sina.com^$third-party
 ||sohu.com^$third-party
-
-! ==========================================
-! SECTION 4: STREAMING SERVICES
-! Split into separate service-specific files in gist/filterlist.streaming.*.txt
-! Supported platforms:
-! - gist/filterlist.streaming.hbo.txt
-! - gist/filterlist.streaming.netflix.txt
-! - gist/filterlist.streaming.peacock.txt
-! - gist/filterlist.streaming.appletv.txt
-! - gist/filterlist.streaming.hulu.txt
-! - gist/filterlist.streaming.amazon.txt
-! - gist/filterlist.streaming.roku.txt
-! - gist/filterlist.streaming.disney.txt
-! - gist/filterlist.streaming.tubi.txt
-! - gist/filterlist.streaming.pluto.txt
-! - gist/filterlist.streaming.skyglass.txt
-! ==========================================
 
 ! ==========================================
 ! SECTION 5: META / FACEBOOK TRACKING (70+ rules)
@@ -344,7 +218,7 @@
 ||photos.facebook.com^$third-party
 ||portal.facebook.com^$third-party
 
-! Facebook Business (10 rules)
+! Facebook Business (8 rules)
 ||oc.facebook.com^$third-party
 ||audience.facebook.com^$third-party
 ||advertisers.facebook.com^$third-party
@@ -356,13 +230,13 @@
 ||developers.facebook.com^$third-party
 ||events.facebook.com^$third-party
 
-! Instagram (4 rules)
+! Instagram (2 rules)
 ||sdk.instagram.com^$third-party
 ||graph.instagram.com^$third-party
 ||api.instagram.com^$third-party
 ||i.instagram.com^$third-party
 
-! WhatsApp & Messenger (9 rules)
+! WhatsApp & Messenger (7 rules)
 ||graph.whatsapp.com^$third-party
 ||api.whatsapp.com^$third-party
 ||whatsapp.net^$third-party
@@ -374,12 +248,111 @@
 ||workplace.com^$third-party
 
 ! ==========================================
-! END OF MASTER FILTER LIST
-! Total Rules: ~450 (organized, optimized)
+! SECTION 4: STREAMING SERVICES (80+ rules)
+! Organized by platform for easy auditing
 ! ==========================================
 
+! ========== NETFLIX (3 rules) ==========
+! Third-party ad networks commonly seen blocking
+||adsrvr.org^$third-party
+||adsafeprotected.com^$third-party
+||adsrvr.com^$third-party
+! Note: Commented out - HIGH RISK
+!||logs.netflix.com^
+!||metrics.netflix.com^
+!||metrics-ext.netflix.com^
+
+! ========== DISNEY+ (1 rule) ==========
+||disneyadvertising.com^
+
+! ========== HBO MAX / MAX (REBUILT FROM ajstrick81/HBO-Ads) ==========
+! Source: https://github.com/ajstrick81/HBO-Ads (2025-12-26)
+! Purpose: conservative rebuild of HBO/Max ad & telemetry blocks for AdGuard Home / DNS
+! Notes: path-scoped FreeWheel blocks kept first (low-risk). Domain / regex nullification entries
+!       from community list included as commented candidates (enable for testing at your risk).
+
+! ------------------ WHITELISTS (keep playback & manifest hosts allowed) ------------------
+@@||sky-glass.play.max.com^
+@@||images.cdn.prd.api.discomax.com^
+@@||default.any-emea.prd.api.discomax.com^
+@@||default.any-any.prd.api.discomax.com^
+@@||default.beam-emea.prd.api.discomax.com^
+@@||telegraph.prd.api.discomax.com^
+
+! ------------------ LOW-RISK PATH-SCOPED SSAI / FreeWheel (apply now) ------------------
+||v.fwmrm.net/ad/*$media
+||v.fwmrm.net/ad/*$script
+||v.fwmrm.net/vast/*^
+||v.fwmrm.net/*/ad/*^
+||fwmrm.net/ad/*$media
+||fwmrm.net/ad/*$script
+||fwmrm.net/vast/*^
+||fwmrm.net/*/ad/*^
+
+! ------------------ ANALYTICS / ENGAGEMENT (safe to block) ------------------
+||braze.com^
+||telegraph.prd.api.hbomax.com^
+||app.link/_r?sdk=*&callback=branch_callback
+||services.brightline.tv^
+
+! ------------------ MEDIUM-RISK / COMMUNITY DOMAIN NULLIFICATION CANDIDATES (COMMENTED)
+! These are effective at removing ads but may cause buffering or startup delay on older devices.
+! Enable one-by-one for testing; rollback quickly if playback issues appear.
+! Regex-based nullification (AdGuard/SDNS regex supported):
+/^([a-z0-9-]+\.)?litix\.io$/
+/^[a-z0-9-]+\.litix\.io$/
+/^[out0-9a-z]+\.litix\.io$/
+/^([a-z0-9-]+\.)?fwmrm\.net$/
+/^[0-9a-z-]+\.v\.fwmrm\.net$/
+
+! Domain candidates (commented):
+||cf.amer-free.prd.media.max.com^
+||gmss.*.prd.api.discomax.com^
+||gcp.amer-free.prd.media.max.com^
+||fly.amer-free.prd.media.max.com
+||akm.amer-free.prd.media.max.com
+
+! ENABLED (test) - medium-risk cf.* hosts observed in logs
+||cf.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||cf.latam-free.prd.media.max.com^
+
+! ENABLED (test) - medium-risk akm.* hosts observed in logs
+||akm.emea-free.prd.media.max.com^
+||akm.eu.prd.media.max.com^
+!||fly.emea-free.prd.media.cnn.com^
+||gcp.emea-free.prd.media.max.com^
+!||cf.eu.prd.media.max.com^
+!||cf.emea-free.prd.media.max.com^
+
+! ------------------ USAGE NOTES ------------------
+! - Start with the LOW-RISK path-scoped FreeWheel rules enabled (above). Monitor AdGuard logs.
+! - If ads persist, enable ONE medium-risk domain/regex at a time and test playback for ~1-2 minutes.
+! - If playback breaks or buffers excessively, disable the last enabled medium-risk rule immediately.
+
+
+! ========== PEACOCK / NBC (12 rules) - Extended from ozankiratli ==========
+! SSAI ad servers (verified blocking patterns)
+||mt.ssai.peacocktv.com^
+||bff-ext.clients.peacocktv.com^
+! Ad CDN clusters (from ozankiratli community testing) - CAUTION: blocks ads but not video
+! Use these if you don't mind slower video startup
 ! ==========================================
-! LIMITATIONS SECTION
+! SECTION 4: STREAMING SERVICES (split into separate files)
+! Streaming rules moved to `gist/filterlist.streaming.*.txt` files for easier testing and per-service control.
+! Files created:
+! - gist/filterlist.streaming.hbo.txt
+! - gist/filterlist.streaming.netflix.txt
+! - gist/filterlist.streaming.peacock.txt
+! - gist/filterlist.streaming.appletv.txt
+! - gist/filterlist.streaming.hulu.txt
+! - gist/filterlist.streaming.amazon.txt
+! - gist/filterlist.streaming.roku.txt
+! - gist/filterlist.streaming.tubi.txt
+! - gist/filterlist.streaming.pluto.txt
+! - gist/filterlist.streaming.skyglass.txt
+!
+! To test safely: enable entries in the per-service files one at a time and monitor AdGuard Home logs.
 ! ⚠️ What THIS FILTER LIST CANNOT BLOCK
 ! ==========================================
 
@@ -411,7 +384,7 @@
 ! - Peacock (Peacock frequently changes CDN patterns — rules may break weekly)
 ! - Paramount+ on Browser (SSAI on most devices except Roku)
 
-! ��� TECHNICAL NOTES
+! 🔧 TECHNICAL NOTES
 ! Format Compatibility:
 ! ✓ AdBlock Plus format (||domain.com^) — natively supported
 ! ✓ AdGuard Home — converts to regex internally
@@ -422,13 +395,13 @@
 ! This list is OPTIMIZED FOR AdGuard Home (DNS-level blocking)
 ! It will also work in browser extensions (uBlock Origin, AdGuard, etc.)
 
-! ��� ESTIMATED EFFECTIVENESS
+! 📊 ESTIMATED EFFECTIVENESS
 ! - Website ads (general): 95%+ blocked
 ! - Streaming service ads: 30-60% (depends on SSAI usage)
 ! - Tracking/analytics: 98%+ blocked
 ! - Smart TV ads (Roku/Sky Glass): 85%+ blocked
 
-! ⚡ LAST UPDATE: 2026-03-27
-! Source: Combined from GitHub issues #215201 (Max), ajstrick81/HBO-Ads,
-!         ozankiratli streaming list, user testing on Sky Glass, and verified community techniques
+! ⚡ LAST UPDATE: 2026-03-26
+! Source: Combined from GitHub issues #215201 (Max), ozankiratli streaming list,
+!         user testing on Sky Glass, and verified community techniques
 ! ==========================================

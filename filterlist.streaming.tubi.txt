@@ -1,0 +1,9 @@
+! ========== TUBI (streaming-specific) ==========
+||ads.tubi.tv^
+||analytics.tubi.tv^
+||tracking.tubi.tv^
+||tubi-ads.com^
+||tubianalytics.com^
+||tubitrack.com^
+||adserver.tubi.com^
+||advertising.tubi.com^

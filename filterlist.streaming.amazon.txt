@@ -1,0 +1,11 @@
+! ========== AMAZON PRIME VIDEO (streaming-specific) ==========
+||ads.amazon.com^
+||analytics.amazon.com^
+||tracking.amazon.com^
+||amazon-ads.com^
+||amazon-analytics.com^
+||amazon-tracking.com^
+||amazonadvertising.com^
+||advertising.amazon.com^
+||adapis.amazon.com^
+||prime-video-ads.com^

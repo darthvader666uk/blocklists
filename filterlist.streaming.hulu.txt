@@ -1,0 +1,11 @@
+! ========== HULU (streaming-specific) ==========
+||ads.hulu.com^
+||analytics.hulu.com^
+||tracking.hulu.com^
+||hulu-ads.com^
+||huluanalytics.com^
+||hulu-tracking.com^
+||advertising.hulu.com^
+||adserver.hulu.com^
+||huluadsmgmt.com^
+||ads.hulustream.com^

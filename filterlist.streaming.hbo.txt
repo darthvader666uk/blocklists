@@ -1,0 +1,103 @@
+[Adblock Plus]
+! ========== HBO MAX / MAX (ADGUARD HOME SAFE) ==========
+! Source: https://github.com/ajstrick81/HBO-Ads (2025-12-26)
+! Purpose: Conservative domain-based blocks compatible with DNS-level filtering (AdGuard Home)
+! 
+! ⚠️ COMPATIBILITY NOTE: This list contains ONLY domain-based rules (||domain.com^)
+! Path-scoped rules (||domain.com/path/*$media) don't work at DNS level and have been removed.
+! Regex patterns are NOT supported by AdGuard Home DNS mode.
+
+! ==========================================
+! WHITELISTS (CRITICAL - keep playback working)
+! ==========================================
+
+@@||sky-glass.play.max.com^
+@@||images.cdn.prd.api.discomax.com^
+@@||default.any-emea.prd.api.discomax.com^
+@@||default.any-any.prd.api.discomax.com^
+@@||default.beam-emea.prd.api.discomax.com^
+@@||telegraph.prd.api.discomax.com^
+
+! ==========================================
+! LOW-RISK DOMAIN BLOCKS (Safe - START HERE)
+! These domain-only blocks are AdGuard Home compatible
+! ==========================================
+
+||fwmrm.net^
+||v.fwmrm.net^
+||braze.com^
+||telegraph.prd.api.hbomax.com^
+||services.brightline.tv^
+
+! ==========================================
+! MEDIUM-RISK DOMAIN BLOCKS (Test one-by-one)
+! These have been observed in Sky Glass logs but MAY cause buffering
+! Start with cf.* family, then akm.*, then gcp.* if ads persist
+! ==========================================
+
+! cf.* family (Content Delivery - test first)
+||cf.emea-free.prd.media.max.com^
+||cf.eu.prd.media.max.com^
+||cf.latam-free.prd.media.max.com^
+||cf.amer-free.prd.media.max.com^
+
+! akm.* family (Akamai - medium risk for buffering)
+||akm.emea-free.prd.media.max.com^
+||akm.eu.prd.media.max.com^
+||akm.amer-free.prd.media.max.com^
+
+! gcp.* family (Google Cloud - higher risk)
+||gcp.emea-free.prd.media.max.com^
+||gcp.amer-free.prd.media.max.com^
+
+! ==========================================
+! COMMENTED OUT - Browser-Only (Not AdGuard Home compatible)
+! ==========================================
+! These rules work ONLY in browser extensions (uBlock Origin, Adblock Plus)
+! They DO NOT work in AdGuard Home DNS mode - do not uncomment
+!
+! Path-scoped rules (DNS can't filter by path):
+! ||v.fwmrm.net/ad/*$media       ← BROWSER ONLY, won't work in AdGuard Home
+! ||v.fwmrm.net/ad/*$script      ← BROWSER ONLY, won't work in AdGuard Home
+! ||v.fwmrm.net/vast/*           ← BROWSER ONLY
+! ||fwmrm.net/ad/*$media         ← BROWSER ONLY
+! ||fwmrm.net/ad/*$script        ← BROWSER ONLY
+! ||app.link/_r?sdk=*            ← BROWSER ONLY (wildcard path + query params)
+!
+! Regex patterns (AdGuard Home's DNS mode doesn't support regex):
+! /^([a-z0-9-]+\.)?litix\.io$/   ← BROWSER ONLY regex
+! /^[a-z0-9-]+\.litix\.io$/      ← BROWSER ONLY regex
+! /^[out0-9a-z]+\.litix\.io$/    ← BROWSER ONLY regex
+! /^([a-z0-9-]+\.)?fwmrm\.net$/  ← BROWSER ONLY regex
+! /^[0-9a-z-]+\.v\.fwmrm\.net$/  ← BROWSER ONLY regex
+
+! ==========================================
+! TESTING INSTRUCTIONS FOR ADGUARD HOME
+! ==========================================
+!
+! 1. ENABLE: All whitelists + LOW-RISK blocks only (fwmrm.net, braze.com, etc.)
+!    • Monitor playback on Sky Glass for 5-10 minutes
+!    • Check AdGuard Home Dashboard → Query Log for blocked domains
+!
+! 2. IF NO ADS: Testing complete ✓
+!
+! 3. IF ADS PERSIST: Enable medium-risk blocks one-at-a-time in this order:
+!    a) Enable cf.* family (content delivery)
+!       - Wait 2 minutes, test playback
+!       - If buffering/stuttering → disable cf.* and stop
+!    
+!    b) Enable akm.* family (Akamai)
+!       - Wait 2 minutes, test playback
+!       - If buffering/stuttering → disable akm.* and stop
+!    
+!    c) Enable gcp.* family (Google Cloud)
+!       - Wait 2 minutes, test playback
+!       - If buffering/stuttering → disable gcp.* and stop
+!
+! 4. EXPECTED RESULTS:
+!    • HBO Max ads should be blocked (no pre-roll, mid-roll reduced)
+!    • Playback should be smooth with no stuttering
+!    • If you see "We notice you're using an ad blocker" → ads can't be blocked further
+!      (HBO is using SSAI or has updated their ad infrastructure)
+!
+! ==========================================

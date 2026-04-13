@@ -1,0 +1,40 @@
+[Adblock Plus]
+! Title: My Own Filter List - Paramount+ Ad Blocking Rules
+! Last Updated: 2026-03-27
+! Description: Blocks Paramount+ advertising domains (infrastructure whitelists + ad networks)
+! 
+! NOTE: Paramount+ uses Server-Side Ad Insertion (SSAI) on most platforms
+! This means ads are embedded in the same CDN stream as content.
+! DNS-level blocking CANNOT separate ads from video on most devices.
+! Effectiveness: ~20-30% ad reduction (only on browsers/devices NOT using SSAI)
+! 
+! TESTING: Safe to enable - low risk of breaking playback
+! 
+! ==========================================
+! PARAMOUNT+ INFRASTRUCTURE WHITELISTS
+! Allow Paramount+ CDN through global blocks
+! ==========================================
+
+@@||saa.paramountplus.com^
+@@||saa.cbsi.com^
+@@||vod-gcs-cedexis.cbsaavideo.com^
+@@||cbsinteractive.hb.omtrdc.net^
+@@||cbsi.live.ott.irdeto.com^
+@@||tags.tiqcdn.com^
+@@||wwwimage-us.pplusstatic.com^
+@@||wwwimage-secure.cbsstatic.com^
+@@||thumbnails.cbsig.net^
+@@||bakery.pplus.paramount.tech^
+@@||*.cws.conviva.com^
+
+! ==========================================
+! PARAMOUNT+ NOTES
+! ==========================================
+! Paramount+ aggressively protects their SSAI implementation.
+! Most ad-blocking attempts will be detected and you may see:
+! - "Ad blocker detected" messages
+! - Broken playback or buffering
+! - Forced to watch ads anyway
+! 
+! Consider: $13.99/month ad-free tier if ads are critical
+! ==========================================

@@ -1,0 +1,14 @@
+! ========== PEACOCK / NBC (streaming-specific) ==========
+! SSAI ad servers (verified blocking patterns)
+||mt.ssai.peacocktv.com^
+||bff-ext.clients.peacocktv.com^
+! Ad CDN clusters (community caution)
+||f701e91aabed43fa8064e91da398bfbc.mediatailor.us-east-1.amazonaws.com^
+||mediatailor.us-east-1.amazonaws.com^
+! Analytics/tracking (safe to block)
+||analytics.peacocktv.com^
+||tracking.peacocktv.com^
+||peacock-analytics.com^
+||peacock-tracking.com^
+! Ads.ironSource domains
+||ads.ironsrc.mobi^

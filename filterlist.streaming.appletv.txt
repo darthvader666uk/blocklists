@@ -1,0 +1,10 @@
+! ========== APPLE TV+ (streaming-specific) ==========
+||ads.apple.com^
+||ads.tv.apple.com^
+||analytics.tv.apple.com^
+||tracking.tv.apple.com^
+||appletv-ads.com^
+||appletvplus-ads.com^
+||adserver.apple.com^
+||apple-advertising.com^
+||advertising.apple.com^

@@ -1,0 +1,16 @@
+! ========== ROKU CHANNEL (streaming-specific) ==========
+||roku.admeasurement.com^
+||ravm.tv^
+||display.ravm.tv^
+||log.roku.com^
+||ads.roku.com^
+||web.roku.com^
+||cti.roku.com^
+||voice.roku.com^
+||prod.mobile.roku.com^
+||lat-services.api.data.roku.com^
+||microsites.sr.roku.com^
+||traces.sr.roku.com^
+||track.sr.roku.com^
+||userdata.sr.roku.com^
+||captive.roku.com^

@@ -1,0 +1,28 @@
+[Adblock Plus]
+! Title: My Own Filter List - Netflix Ad Blocking Rules
+! Last Updated: 2026-03-27
+! Description: Blocks Netflix advertising and tracking domains with critical whitelists
+! 
+! NOTE: Netflix uses Server-Side Ad Insertion (SSAI) on most platforms
+! This means ads are embedded in the same CDN stream as content.
+! DNS-level blocking CANNOT separate ads from video.
+! Effectiveness: ~5-10% ad reduction (mostly third-party ad network blocks)
+! 
+! ==========================================
+! NETFLIX INFRASTRUCTURE WHITELISTS (CRITICAL)
+! Allow Netflix CDN through global blocks
+! ==========================================
+
+@@||assets.nflxext.com^
+@@||help.nflxext.com^
+@@||occ.a.nflxso.net^
+
+! ==========================================
+! NETFLIX AD NETWORKS (Third-Party)
+! ==========================================
+
+||adsrvr.org^
+||adsafeprotected.com^
+||adsrvr.com^
+
+! Note: Netflix uses SSAI in many platforms — domain-level blocks are high-risk. Keep only third-party ad networks here.

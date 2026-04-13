@@ -1,0 +1,38 @@
+[Adblock Plus]
+! Title: My Own Filter List - Sky Glass Ad Blocking Rules
+! Last Updated: 2026-03-27
+! Description: Blocks Sky Glass / Comcast smart TV ads and tracking
+!
+! ==========================================
+! SKY GLASS / COMCAST INFRASTRUCTURE WHITELISTS
+! Allow critical CDN/streaming infrastructure through
+! ==========================================
+
+@@||collector-eu.sift.comcast.com^
+@@||fabric.xmidt-eu.comcast.net^
+@@||issuer.xmidt-eu.comcast.net^
+@@||prod-eu-1-linchpin.lp.xcal.tv^
+@@||playback.exp.xvp.eu-1.xcal.tv^
+@@||session.exp.xvp.eu-1.xcal.tv^
+@@||disco.exp.xvp.eu-1.xcal.tv^
+
+! ========== SKY GLASS / SMART TV (streaming-specific) ==========
+! Third-party ad & analytics networks used by Smart TVs
+||alphonso.tv^
+||display.ravm.tv^
+||tvinteractive.tv^
+||mcp.tvinteractive.tv^
+||control.tvinteractive.tv^
+||control2.tvinteractive.tv^
+||tvmeta-dynamic.tvinteractive.tv^
+||ads.spotx.tv^
+||tv.ads.spotx.tv^
+||tvx.adgrx.com^
+||smartclip.com^
+||smartclip.net^
+||tv-static.scdn.co^
+||ad.71i.de^
+||advertising.com^
+||2mdn.net^
+||googleads.g.doubleclick.net^
+||ads.aimitv.com^
