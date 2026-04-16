@@ -282,6 +282,40 @@
 ||sohu.com^$third-party
 
 ! ==========================================
+! KNOWN LEAKAGE / SERVICE USAGE (adgoal.net, smartredirect.de)
+! These are services reported in community threads as being embedded or
+! causing redirects from the listed sites. Keep entries here for review
+! and targeted blocking rules (use conservative third-party filters first).
+! Observed / reported on:
+! - ebay.com  (community reports of redirects to adgoal.net / smartredirect.de)
+! - (investigate further via automated crawl to gather exact request patterns)
+! Example tracker domains:
+||adgoal.net^
+||smartredirect.de^
+! Note: prefer third-party, site-scoped uBlock rules to avoid breaking core site
+! functionality. After crawl finishes we'll harvest exact request URLs and
+! query-parameter patterns and update this section with precise filters.
+
+! ==================================================
+! AdGuard Home / hosts-style entries for EBAY leakage (plain hostnames)
+! NOTE: AdGuard Home uses DNS-level blocking; these entries are global
+! and will block the hostname for all clients. Review for side effects.
+pagead2.googlesyndication.com
+stats.g.doubleclick.net
+googleads.g.doubleclick.net
+adservice.google.com
+ad.doubleclick.net
+googletagmanager.com
+
+! Criteo endpoints seen in crawl
+static.criteo.net
+dynamic.criteo.com
+gum.criteo.com
+widget.criteo.com
+sslwidget.criteo.com
+
+
+! ==========================================
 ! SECTION 4: STREAMING SERVICES
 ! Split into separate service-specific files in gist/filterlist.streaming.*.txt
 ! Supported platforms:
