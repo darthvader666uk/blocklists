@@ -1,14 +1,56 @@
-! ========== PEACOCK / NBC (streaming-specific) ==========
-! SSAI ad servers (verified blocking patterns)
+[Adblock Plus]
+! Title: Peacock Ad Blocking Rules
+! Last Updated: 2026-04-17
+! Description: Peacock/NBC ad blocking - see critical notes below
+!
+! ⚠️ CRITICAL APRIL 2026 UPDATE ⚠️
+! Peacock app updates (v7.4.21 Android, recent iOS) have broken ad blocking:
+! - Android: v7.4.21+ stopped working (April 13, 2026)
+! - iOS/Apple TV: Broken for weeks
+! - Workaround: Disable app auto-updates, stay on older version
+! - Effectiveness: 5-15% at best with SSAI (Server-Side Ad Insertion)
+!
+! See: https://gist.github.com/ozankiratli/801ba17705e7f2a904d2e443af5a64f8
+! Comments from April 2026 show frequent changes
+!
+! ==========================================
+! PEACOCK WHITELISTS (REQUIRED FOR PLAYBACK)
+! ==========================================
+@@||mytv.clients.peacocktv.com^
+@@||bff-ext.clients.peacocktv.com^
+@@||imageservice.disco.peacocktv.com^
+@@||play.ovp.peacocktv.com^
+@@||atom.peacocktv.com^
+@@||cybertron.id.peacocktv.com^
+@@||meg.disco.peacocktv.com^
+@@||ovp.peacocktv.com^
+@@||pconfig-prd.cdn.peacocktv.com^
+! CRITICAL: Video loading regex - DO NOT BLOCK
+@@||g[^.]+-vod-us-cmaf-prd-mc.cdn.peacocktv.com^
+
+! ==========================================
+! PEACOCK BLACKLIST (AD BLOCKING ATTEMPTS)
+! ==========================================
+! SSAI ad server
 ||mt.ssai.peacocktv.com^
-||bff-ext.clients.peacocktv.com^
-! Ad CDN clusters (community caution)
+
+! Ad CDN clusters (may trigger app updates' ad workarounds)
 ||f701e91aabed43fa8064e91da398bfbc.mediatailor.us-east-1.amazonaws.com^
 ||mediatailor.us-east-1.amazonaws.com^
+
 ! Analytics/tracking (safe to block)
 ||analytics.peacocktv.com^
 ||tracking.peacocktv.com^
 ||peacock-analytics.com^
 ||peacock-tracking.com^
+
 ! Ads.ironSource domains
 ||ads.ironsrc.mobi^
+
+! ==========================================
+! NOTES FOR USERS
+! ==========================================
+! - bff-ext.clients.peacocktv.com also serves ads during Live events (Olympics, etc)
+! - Blocking g[^.]+-vod-us-cmaf-prd-[^.]+.cdn.peacocktv.com breaks video playback
+! - These filters provide minimal protection due to SSAI architecture
+! - See ozankiratli gist for latest community updates

@@ -1,18 +1,15 @@
 [Adblock Plus]
-! Title: My Own Filter List - Disney+ Ad Blocking Rules
-! Last Updated: 2026-03-27
-! Description: Blocks Disney+ advertising domains and trackers
+! Title: Disney+ Ad Blocking Rules
+! Last Updated: 2026-04-17
+! Description: Disney+ advertising domain blocking
+! Source: Verified against ozankiratli gist (July 2025 + April 2026)
 ! 
-! NOTE: Disney+ uses a mix of Server-Side Ad Insertion (SSAI) and third-party ad networks.
-! This list targets the third-party domains that handle ads.
-! Effectiveness: ~30-40% ad reduction (SSAI ads cannot be blocked at DNS level)
-! 
-! TESTING NOTES:
-! ✓ Safe to enable - low risk of breaking playback
-! Review AdGuard Home logs if video playback stutters or fails
+! NOTE: Disney+ uses Server-Side Ad Insertion (SSAI) + third-party ad networks
+! Effectiveness: ~30-40% ad reduction (SSAI ads CANNOT be blocked at DNS level)
+! Format: AdBlock Plus (DNS-compatible)
 ! 
 ! ==========================================
-! PRIMARY DISNEY AD DOMAINS
+! DISNEY+ PRIMARY AD DOMAIN
 ! ==========================================
 
 ||disneyadvertising.com^

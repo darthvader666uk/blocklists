@@ -1,16 +1,74 @@
-! ========== ROKU CHANNEL (streaming-specific) ==========
+[Adblock Plus]
+! Title: Roku Ad Blocking Rules
+! Last Updated: 2026-04-17
+! Description: Roku/Roku Channel ad and tracking blocking
+! Source: Verified against ozankiratli gist (July 2025 + April 2026 comments)
+!
+! ==========================================
+! ROKU - DO NOT BLOCK (Critical functionality)
+! ==========================================
+! These domains are REQUIRED for Roku to function:
+! roku.com, rokutime.com, therokuchannel.roku.com
+! api.roku.com, api.rokutime.com
+! retail.rpay.roku.com, api.rpay.roku.com
+! image.roku.com (checks internet connectivity)
+
+! ==========================================
+! ROKU CHANNEL - WHITELISTS (if blocking entire *.sr.roku.com)
+! Only needed if using extensive regex blocking below
+! ==========================================
+! Channel functionality (whitelist if using broad regex)
+@@||configsvc.sc.roku.com^
+@@||keysvc.sc.roku.com^
+@@||content.sr.roku.com^
+@@||content-detail.sr.roku.com^
+@@||playback-detail.sr.roku.com^
+@@||images.sr.roku.com^
+@@||api2.sr.roku.com^
+@@||vod.delivery.roku.com^
+@@||vod-playlist.sr.roku.com^
+@@||rights-manager.sr.roku.com^
+@@||wv-license.sr.roku.com^
+@@||static-delivery.sr.roku.com^
+@@||bookmarks.sr.roku.com^
+@@||navigation.sr.roku.com^
+@@||images-svc.sr.roku.com^
+! Roku Channel app requirements (still being tested)
+@@||tis.cti.roku.com^
+@@||ls.cti.roku.com^
+
+! ==========================================
+! ROKU BLACKLIST - INDIVIDUAL DOMAINS
+! ==========================================
 ||roku.admeasurement.com^
 ||ravm.tv^
 ||display.ravm.tv^
-||log.roku.com^
-||ads.roku.com^
-||web.roku.com^
-||cti.roku.com^
-||voice.roku.com^
-||prod.mobile.roku.com^
 ||lat-services.api.data.roku.com^
-||microsites.sr.roku.com^
-||traces.sr.roku.com^
-||track.sr.roku.com^
-||userdata.sr.roku.com^
 ||captive.roku.com^
+
+! ==========================================
+! ROKU BLACKLIST - REGEX PATTERNS
+! Source: ozankiratli gist (July 2025)
+! ==========================================
+! Pattern 1: Block logs, ads, web, cti, voice, prod.mobile
+||^(([^.]+\.)*(logs|ads|web|prod\.mobile|cti|voice)(\.[^.]+)*\.)roku\.com$^
+
+! Pattern 2: Block specific server names (amarillo, amoeba, austin, etc)
+||^(([^.]+\.)*[^.]*(amarillo|amoeba|austin|benjamin|bryan|camden|cooper|copper|digdug|external|giga|gilbert|griffin|hereford|lb|liberty|littlefield|longview|madison|marlin|midland|paolo|richmond|rollingwood|scribe|sugarland|tyler|victoria|windsor)[^.]*(\.([^.]+)*\.))roku\.com$^
+
+! Pattern 3: Block captive, cloudservices, wwwimg
+||^((captive|cloudservices|wwwimg)\.))roku\.com$^
+
+! Pattern 4: Block .sr.roku.com tracking domains (bif, microsites, traces, track, userdata)
+||^((bif|microsites|traces|track|userdata)\.sr\.)roku\.com$^
+
+! Pattern 5: Block ravm.tv queries (all subdomains)
+||^([^.]+\.)*ravm\.tv$^
+
+! ==========================================
+! ROKU ADDITIONAL NOTES
+! ==========================================
+! - Roku Channel has different requirements than Roku OS
+! - Test whitelists if getting content loading issues
+! - Overkill admeasurement blocker: ^([^.]+\.)*roku([^.]+\.)*\.admeasurement([^.]+\.)*\.com$
+! - Roku is relatively stable (unlike Peacock/Paramount+ April 2026 breakage)

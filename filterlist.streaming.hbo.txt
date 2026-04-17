@@ -1,7 +1,10 @@
 [Adblock Plus]
-! ========== HBO MAX / MAX (ADGUARD HOME SAFE) ==========
-! Source: https://github.com/ajstrick81/HBO-Ads (2025-12-26)
+! ========== HBO MAX (2025+ rebrand - supports hbomax.com & max.com) ==========
+! Source: https://github.com/ajstrick81/HBO-Ads (updated 2026-04-17)
 ! Purpose: Conservative domain-based blocks compatible with DNS-level filtering (AdGuard Home)
+! 
+! NOTE: HBO Max rebranded from MAX back to HBO Max in July 2025
+! Both hbomax.com and max.com domains are active and require blocking
 ! 
 ! ⚠️ COMPATIBILITY NOTE: This list contains ONLY domain-based rules (||domain.com^)
 ! Path-scoped rules (||domain.com/path/*$media) don't work at DNS level and have been removed.
@@ -17,6 +20,10 @@
 @@||default.any-any.prd.api.discomax.com^
 @@||default.beam-emea.prd.api.discomax.com^
 @@||telegraph.prd.api.discomax.com^
+
+! HBO MAX whitelist (added July 2025 - rebrand infrastructure)
+@@||play.hbomax.com^
+@@||telegraph.prd.api.hbomax.com^
 
 ! ==========================================
 ! LOW-RISK DOMAIN BLOCKS (Safe - START HERE)
@@ -49,6 +56,27 @@
 ! gcp.* family (Google Cloud - higher risk)
 ||gcp.emea-free.prd.media.max.com^
 ||gcp.amer-free.prd.media.max.com^
+
+! ==========================================
+! MEDIUM-RISK DOMAIN BLOCKS - HBOMAX.COM (NEW - July 2025+)
+! HBO MAX rebrand infrastructure - same patterns as max.com
+! Start with cf.* family, then akm.*, then gcp.* if ads persist
+! ==========================================
+
+! cf.* family (Content Delivery - test first)
+||cf.emea-free.prd.media.hbomax.com^
+||cf.eu.prd.media.hbomax.com^
+||cf.latam-free.prd.media.hbomax.com^
+||cf.amer-free.prd.media.hbomax.com^
+
+! akm.* family (Akamai - medium risk for buffering)
+||akm.emea-free.prd.media.hbomax.com^
+||akm.eu.prd.media.hbomax.com^
+||akm.amer-free.prd.media.hbomax.com^
+
+! gcp.* family (Google Cloud - higher risk)
+||gcp.emea-free.prd.media.hbomax.com^
+||gcp.amer-free.prd.media.hbomax.com^
 
 ! ==========================================
 ! COMMENTED OUT - Browser-Only (Not AdGuard Home compatible)

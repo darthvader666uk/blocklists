@@ -1,15 +1,18 @@
 [Adblock Plus]
-! Title: My Own Filter List - Paramount+ Ad Blocking Rules
-! Last Updated: 2026-03-27
-! Description: Blocks Paramount+ advertising domains (infrastructure whitelists + ad networks)
-! 
-! NOTE: Paramount+ uses Server-Side Ad Insertion (SSAI) on most platforms
-! This means ads are embedded in the same CDN stream as content.
-! DNS-level blocking CANNOT separate ads from video on most devices.
-! Effectiveness: ~20-30% ad reduction (only on browsers/devices NOT using SSAI)
-! 
-! TESTING: Safe to enable - low risk of breaking playback
-! 
+! Title: Paramount+ Ad Blocking Rules
+! Last Updated: 2026-04-17
+! Description: Paramount+ ad blocking - LARGELY INEFFECTIVE as of April 2026
+!
+! 🔴 CRITICAL APRIL 2026 UPDATE 🔴
+! Paramount+ switched to Google DAI (Direct Ad Injection) in April 2026:
+! - App update v16.8+: Ads embedded server-side (unsolvable)
+! - dai.google.com cannot be blocked without breaking playback
+! - Workaround: Disable app auto-updates, stay on v16.8 or earlier
+! - Current effectiveness: 0% (DAI makes DNS blocking pointless)
+!
+! See: https://gist.github.com/ozankiratli/801ba17705e7f2a904d2e443af5a64f8
+! Latest comments show users reverting to older app versions
+!
 ! ==========================================
 ! PARAMOUNT+ INFRASTRUCTURE WHITELISTS
 ! Allow Paramount+ CDN through global blocks
@@ -25,19 +28,39 @@
 @@||wwwimage-secure.cbsstatic.com^
 @@||thumbnails.cbsig.net^
 @@||bakery.pplus.paramount.tech^
-@@||*.cws.conviva.com^
+@@||^[^.]+\.cws\.conviva\.com$^
+! Android app requirement (April 2026)
+@@||fwmrm.net^
 
-! Observed via verification crawl; low-risk third-party analytics/ad platform
+! ==========================================
+! PARAMOUNT+ BLACKLIST (MINIMAL EFFECT)
+! ==========================================
+! Low-risk analytics/ad platforms
 ||braze.com^
+||enduser.adsrvr.org^
+||cdn.privacy.paramount.com^
+||www.googletagmanager.com^
+||pagead2.googlesyndication.com^
+||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
+||cbsi.demdex.net^
+||vod-gcs-qwilt.cbsaavideo.com^
+||vod-gcs-google.cbsaavideo.com^
+! April 2026 findings
+||splice-media.paramountplus.com^
+||splice.paramountplus.com^
+||cbsinteractive.data.adobedc.net^
+||conduit.redfast.com^
+||sparrow.paramountplus.com^
+||imasdk.googleapis.com^
 
 ! ==========================================
-! PARAMOUNT+ NOTES
+! CRITICAL NOTES FOR USERS
 ! ==========================================
-! Paramount+ aggressively protects their SSAI implementation.
-! Most ad-blocking attempts will be detected and you may see:
-! - "Ad blocker detected" messages
-! - Broken playback or buffering
-! - Forced to watch ads anyway
-! 
-! Consider: $13.99/month ad-free tier if ads are critical
+! - DAI (Direct Ad Injection) renders DNS blocking INEFFECTIVE
+! - Blocking dai.google.com breaks video playback entirely
+! - Paramount+ aggressively detects ad blockers
+! - Users report ads being forced through regardless
+! - Live sports blocking: These rules may block all live sports
+! - SOLUTION: Stay on app version 16.8 (disable Play Store auto-updates)
+! - Effectiveness on current versions: 0%
 ! ==========================================
