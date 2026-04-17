@@ -26,3 +26,16 @@ X
 
 # Archived local backups
 archive/
+
+# Local AI Unit test setup
+.claude
+.codegpt
+.agents
+.cursor
+.claude-config
+.wellread
+.ncp
+.mcp
+.caliber
+.cline
+.github/copilot-instructions.md
