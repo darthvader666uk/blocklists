@@ -314,6 +314,23 @@ gum.criteo.com
 widget.criteo.com
 sslwidget.criteo.com
 
+! Additional conservative AdGuard hosts (observed in eBay crawl)
+tr.snapchat.com
+beacon.krxd.net
+usermatch.krxd.net
+s.pinimg.com
+ads.pinterest.com
+ct.pinterest.com
+analytics.pinterest.com
+pixel.advertising.com
+
+! Safer alternative: prefer site-scoped (extension) rules for minimal risk.
+! Example uBlock site-scoped rules (enable in uBlock/My filters if desired):
+! ||tr.snapchat.com^$third-party,domain=ebay.com|www.ebay.com
+! ||usermatch.krxd.net^$third-party,domain=ebay.com|www.ebay.com
+! ||s.pinimg.com^$third-party,domain=ebay.com|www.ebay.com
+! ||ads.pinterest.com^$third-party,domain=ebay.com|www.ebay.com
+
 
 ! ==========================================
 ! SECTION 4: STREAMING SERVICES

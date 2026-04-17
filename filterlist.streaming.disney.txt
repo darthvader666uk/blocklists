@@ -40,3 +40,8 @@
 ! Check GitHub community filters monthly for updates.
 ! https://github.com/ajstrick81
 ! ==========================================
+
+! Community suggestion (AdGuard-compatible regex)
+! Use as streaming-file regex; test before enabling globally
+! Regex to target Disney advertising subdomains:
+! ^([^.]+\.)*disneyadvertising\.com$

@@ -27,6 +27,9 @@
 @@||bakery.pplus.paramount.tech^
 @@||*.cws.conviva.com^
 
+! Observed via verification crawl; low-risk third-party analytics/ad platform
+||braze.com^
+
 ! ==========================================
 ! PARAMOUNT+ NOTES
 ! ==========================================
