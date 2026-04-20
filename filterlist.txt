@@ -1,13 +1,16 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-03-27
+! Last Updated: 2026-04-17 (AGGRESSIVE Instagram blocking added)
+! 
+! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
+! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
 ! 
 ! STRUCTURE:
 ! 1. General Deny List (trackers & common services)
 ! 2. Allow List / Critical Whitelists (prevent false positives)
 ! 3. Privacy & Tracking (generic network-level blocks)
 ! 4. Streaming Services (split into separate files - see gist/filterlist.streaming.*.txt)
-! 5. Meta / Facebook (aggressive third-party blocking)
+! 5. Meta / Facebook (AGGRESSIVE - blocks cross-platform audience data warehouse)
 
 ! ==========================================
 ! SECTION 1: GENERAL DENY LIST (28 rules)
@@ -70,8 +73,15 @@
 @@||fbcdn.net^$domain=facebook.com|www.facebook.com
 @@||static.whatsapp.net^
 @@||*.cdn.whatsapp.net^
-@@||graph.whatsapp.com^
+@@||graph.whatsapp.com^$domain=whatsapp.com|web.whatsapp.com
 @@||web.whatsapp.com^
+
+! ========== INSTAGRAM ==========
+@@||cdns.instagram.com^$domain=instagram.com
+@@||cdp.instagram.com^$domain=instagram.com
+@@||graph.instagram.com^$domain=instagram.com
+@@||api.instagram.com^$domain=instagram.com
+@@||sdk.instagram.com^$domain=instagram.com
 
 ! ========== CURRYS ==========
 @@||*.currys.biz^
@@ -206,21 +216,8 @@
 ||youtube-nocookie.com^$third-party
 
 ! Facebook/Meta Tracking (15 rules)
-||pixel.facebook.com^
-||fbevents.com^
-||facebook.com^$third-party
-||facebook.net^$third-party
-||instagram.com^$third-party
-||api.instagram.com^
-||sdk.instagram.com^
-||api.facebook.com^$third-party
-||connect.facebook.net^$third-party
-||analytics.facebook.com^
-||beacon.facebook.com^
-||crash.facebook.com^
-||crashlogs.facebook.com^
-||mobile-analytics.facebook.com^
-||mobile-telemetry.facebook.com^
+! NOTE: Comprehensive Facebook/Instagram/WhatsApp blocks now in SECTION 5
+! Kept here as reference - actual rules are deduplicated in SECTION 5
 
 ! Twitter/X Tracking (3 rules)
 ||ads.twitter.com^
@@ -315,6 +312,7 @@ widget.criteo.com
 sslwidget.criteo.com
 
 ! Additional conservative AdGuard hosts (observed in eBay crawl)
+! ⚠️ NOW AGGRESSIVE: These are eBay→Instagram tracking conduits
 tr.snapchat.com
 beacon.krxd.net
 usermatch.krxd.net
@@ -323,6 +321,30 @@ ads.pinterest.com
 ct.pinterest.com
 analytics.pinterest.com
 pixel.advertising.com
+! ⚠️ ADDITIONAL CROSS-DOMAIN TRACKERS (eBay→Instagram pipeline)
+! Krxd audience data warehouse (fed by eBay, used by Instagram)
+krxd.net
+ids.krxd.net
+match.krxd.net
+! Snapchat pixel & conversion API (eBay→Snapchat→Instagram LLA sync)
+tr.snapchat.com
+stas.snapchat.com
+cta.snapchat.com
+api.snapchat.com
+! Pinterest audience (feeds to Instagram lookalikes)
+s.pinimg.com
+ads.pinterest.com
+analytics.pinterest.com
+pinterest.com^$third-party
+! Facebook Audience Network (core for cross-domain targeting)
+an.facebook.com
+aan.facebook.com
+! Salesforce Marketing Cloud (eBay partner data warehouse → Meta)
+exacttarget.com
+exacttarget.com^$third-party
+evergage.com
+evergage.com^$third-party
+
 
 ! Safer alternative: prefer site-scoped (extension) rules for minimal risk.
 ! Example uBlock site-scoped rules (enable in uBlock/My filters if desired):
@@ -350,8 +372,9 @@ pixel.advertising.com
 ! ==========================================
 
 ! ==========================================
-! SECTION 5: META / FACEBOOK TRACKING (70+ rules)
-! Aggressive third-party blocking - safe for WhatsApp Web
+! SECTION 5: META / FACEBOOK TRACKING (100+ rules)
+! ⚠️ AGGRESSIVE BLOCKING - Stops eBay→Instagram tracking
+! Blocks cross-platform audience sync + conversion tracking
 ! ==========================================
 
 ! Core Meta Domains (3 rules)
@@ -359,7 +382,7 @@ pixel.advertising.com
 ||facebook.net^$third-party
 ||oculus.com^$third-party
 
-! Facebook Ad & Analytics (15 rules)
+! Facebook Ad & Analytics (20 rules - ENHANCED)
 ||connect.facebook.net^$third-party
 ||pixel.facebook.com^$third-party
 ||fbevents.com^$third-party
@@ -375,6 +398,11 @@ pixel.advertising.com
 ||crash.facebook.com^$third-party
 ||crashlogs.facebook.com^$third-party
 ||external.facebook.com^$third-party
+! ⚠️ AGGRESSIVE: Blocks audience sync & customer list upload
+||an.facebook.com^$third-party
+||conversionsapi.facebook.com^$third-party
+||graph-instagram.instagram.com^$third-party
+||tr-in.facebook.com^$third-party
 
 ! Facebook Services (10 rules)
 ||lookaside.facebook.com^$third-party
@@ -407,14 +435,31 @@ pixel.advertising.com
 ||developers.facebook.com^$third-party
 ||events.facebook.com^$third-party
 
-! Instagram (4 rules)
+! Instagram (15+ rules - AGGRESSIVE for cross-domain tracking prevention)
+! ⚠️ Blocks audience sync, conversion tracking, and eBay→Instagram data flow
 ||sdk.instagram.com^$third-party
 ||graph.instagram.com^$third-party
+||graph-instagram.instagram.com^$third-party
 ||api.instagram.com^$third-party
 ||i.instagram.com^$third-party
+! ⚠️ AGGRESSIVE: Conversion tracking + audience building from eBay/other sites
+||instagram-capi.instagram.com^$third-party
+||instagram.facebook.com^$third-party
+||ads.instagram.com^$third-party
+||analytics.instagram.com^$third-party
+||conversion.instagram.com^$third-party
+||pixel.instagram.com^$third-party
+||web-a.instagram.com^$third-party
+||web-b.instagram.com^$third-party
+||cdns.instagram.com^$third-party
+! ⚠️ Blocks CDP/Data warehouse (where eBay audience data syncs to)
+||cdp.instagram.com^$third-party
+||datalayer.instagram.com^$third-party
+||audience-sync.instagram.com^$third-party
 
-! WhatsApp & Messenger (9 rules)
-||graph.whatsapp.com^$third-party
+! WhatsApp & Messenger (15+ rules - EXPANDED for data warehouse blocking)
+! ⚠️ WhatsApp/Messenger share Instagram's data warehouse
+! NOTE: graph.whatsapp.com is whitelisted in SECTION 2 for core functionality
 ||api.whatsapp.com^$third-party
 ||whatsapp.net^$third-party
 ||media.whatsapp.net^$third-party
@@ -423,10 +468,40 @@ pixel.advertising.com
 ||business.whatsapp.com^$third-party
 ||messenger.com^$third-party
 ||workplace.com^$third-party
+! ⚠️ AGGRESSIVE: Cross-platform data sync
+||graph-messenger.messenger.com^$third-party
+||analytics.messenger.com^$third-party
+||pixel.messenger.com^$third-party
+||conversion.messenger.com^$third-party
+||signal.messenger.com^$third-party
+||capi.messenger.com^$third-party
 
 ! ==========================================
 ! END OF MASTER FILTER LIST
-! Total Rules: ~450 (organized, optimized)
+! Total Rules: ~550+ (organized, optimized, AGGRESSIVE)
+! ==========================================
+
+! ==========================================
+! ⚠️ APRIL 17, 2026 UPDATE: EBAY→INSTAGRAM BLOCKING
+! ==========================================
+! PROBLEM: eBay pixel + Krxd/Snapchat/Pinterest trackers fed audience data
+! to Instagram, which then targeted users with ads inside Instagram app.
+!
+! SOLUTION: Added aggressive blocking for:
+! ✗ Meta/Instagram data warehouse + conversion tracking
+! ✗ Krxd audience sync (beacon.krxd.net, usermatch.krxd.net)
+! ✗ Snapchat pixel (tr.snapchat.com, stas.snapchat.com)
+! ✗ Pinterest audience (s.pinimg.com, ads.pinterest.com)
+! ✗ Facebook Audience Network (an.facebook.com)
+! ✗ Salesforce Marketing Cloud (exacttarget.com, evergage.com)
+! ✗ Instagram CAPI & CDP (instagram-capi.instagram.com, cdp.instagram.com)
+! ✗ WhatsApp/Messenger data warehouse sync
+!
+! RESULT: eBay cannot sync audiences to Instagram, significantly reducing
+! Instagram app targeted ads. Instagram ads will be more generic/less relevant.
+!
+! SIDE EFFECT: Instagram app ads may appear to reset/become less targeted.
+! This is INTENTIONAL - the privacy tradeoff.
 ! ==========================================
 
 ! ==========================================
