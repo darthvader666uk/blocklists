@@ -212,7 +212,8 @@
 ||adservice.google.com^
 ||google.com^$third-party
 ||googleadservices.com^
-||googlevideo.com^$third-party
+! Temporarily disabled: blocking googlevideo as third-party broke YouTube playback (2026-04-23)
+! ||googlevideo.com^$third-party
 ||youtube-nocookie.com^$third-party
 
 ! Facebook/Meta Tracking (15 rules)

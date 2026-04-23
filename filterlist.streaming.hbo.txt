@@ -33,7 +33,8 @@
 ||fwmrm.net^
 ||v.fwmrm.net^
 ||braze.com^
-||telegraph.prd.api.hbomax.com^
+! Removed duplicate block: telegraph.prd.api.hbomax.com is whitelisted above — keeping whitelist only
+! ||telegraph.prd.api.hbomax.com^
 ||services.brightline.tv^
 
 ! ==========================================
@@ -42,20 +43,20 @@
 ! Start with cf.* family, then akm.*, then gcp.* if ads persist
 ! ==========================================
 
-! cf.* family (Content Delivery - test first)
-||cf.emea-free.prd.media.max.com^
-||cf.eu.prd.media.max.com^
-||cf.latam-free.prd.media.max.com^
-||cf.amer-free.prd.media.max.com^
+! COMMENTED OUT (2026-04-23): cf.* family blocks can break playback — disable until tested
+! ||cf.emea-free.prd.media.max.com^
+! ||cf.eu.prd.media.max.com^
+! ||cf.latam-free.prd.media.max.com^
+! ||cf.amer-free.prd.media.max.com^
 
-! akm.* family (Akamai - medium risk for buffering)
-||akm.emea-free.prd.media.max.com^
-||akm.eu.prd.media.max.com^
-||akm.amer-free.prd.media.max.com^
+! COMMENTED OUT (2026-04-23): akm.* (Akamai) blocks disabled to avoid breaking streams
+! ||akm.emea-free.prd.media.max.com^
+! ||akm.eu.prd.media.max.com^
+! ||akm.amer-free.prd.media.max.com^
 
-! gcp.* family (Google Cloud - higher risk)
-||gcp.emea-free.prd.media.max.com^
-||gcp.amer-free.prd.media.max.com^
+! COMMENTED OUT (2026-04-23): gcp.* (Google Cloud) blocks disabled to avoid breaking streams
+! ||gcp.emea-free.prd.media.max.com^
+! ||gcp.amer-free.prd.media.max.com^
 
 ! ==========================================
 ! MEDIUM-RISK DOMAIN BLOCKS - HBOMAX.COM (NEW - July 2025+)
@@ -63,20 +64,20 @@
 ! Start with cf.* family, then akm.*, then gcp.* if ads persist
 ! ==========================================
 
-! cf.* family (Content Delivery - test first)
-||cf.emea-free.prd.media.hbomax.com^
-||cf.eu.prd.media.hbomax.com^
-||cf.latam-free.prd.media.hbomax.com^
-||cf.amer-free.prd.media.hbomax.com^
+! COMMENTED OUT (2026-04-23): cf.* family (hbomax) disabled to avoid breaking playback
+! ||cf.emea-free.prd.media.hbomax.com^
+! ||cf.eu.prd.media.hbomax.com^
+! ||cf.latam-free.prd.media.hbomax.com^
+! ||cf.amer-free.prd.media.hbomax.com^
 
-! akm.* family (Akamai - medium risk for buffering)
-||akm.emea-free.prd.media.hbomax.com^
-||akm.eu.prd.media.hbomax.com^
-||akm.amer-free.prd.media.hbomax.com^
+! COMMENTED OUT (2026-04-23): akm.* family (hbomax) disabled to avoid breaking playback
+! ||akm.emea-free.prd.media.hbomax.com^
+! ||akm.eu.prd.media.hbomax.com^
+! ||akm.amer-free.prd.media.hbomax.com^
 
-! gcp.* family (Google Cloud - higher risk)
-||gcp.emea-free.prd.media.hbomax.com^
-||gcp.amer-free.prd.media.hbomax.com^
+! COMMENTED OUT (2026-04-23): gcp.* family (hbomax) disabled to avoid breaking playback
+! ||gcp.emea-free.prd.media.hbomax.com^
+! ||gcp.amer-free.prd.media.hbomax.com^
 
 ! ==========================================
 ! COMMENTED OUT - Browser-Only (Not AdGuard Home compatible)
