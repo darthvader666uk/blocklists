@@ -18,6 +18,7 @@ FILTER_FILES=(
   "filterlist.streaming.pluto.txt"
   "filterlist.streaming.tubi.txt"
   "filterlist.streaming.skyglass.txt"
+  "ublock-filters.txt"
 )
 
 errors=0
