@@ -130,6 +130,9 @@
 @@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
 @@||*.worldota.net^
 
+! ========== GOOGLE OAUTH / YOUTUBE EMBED WHITELISTS ==========
+@@||accounts.google.com^
+
 ! ========== DNS / VPN SERVICES ==========
 @@||yavin37.duckdns.org^$client='YouFibre'
 @@||yavin37.duckdns.org^$client='DeathStar'
@@ -260,7 +263,6 @@
 ||analytics.apple.com^
 ||apple.com^$third-party
 ||app-analytics.apple.com^
-||api-adservices.apple.com^
 
 ! Roku/SmartTV Tracking (8 rules)
 ||roku.admeasurement.com^
@@ -440,7 +442,6 @@ evergage.com^$third-party
 ! ⚠️ Blocks audience sync, conversion tracking, and eBay→Instagram data flow
 ||sdk.instagram.com^$third-party
 ||graph.instagram.com^$third-party
-||graph-instagram.instagram.com^$third-party
 ||api.instagram.com^$third-party
 ||i.instagram.com^$third-party
 ! ⚠️ AGGRESSIVE: Conversion tracking + audience building from eBay/other sites
