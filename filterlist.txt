@@ -218,7 +218,8 @@
 ! ||googlevideo.com^$third-party
 ! Disabled: blocked YouTube embeds in Reddit (accounts.google.com broken)
 ! ||google.com^$third-party
-||youtube-nocookie.com^$third-party
+! Disabled: blocked YouTube embeds in Reddit which uses youtube-nocookie.com
+! ||youtube-nocookie.com^$third-party
 
 ! Facebook/Meta Tracking (15 rules)
 ! NOTE: Comprehensive Facebook/Instagram/WhatsApp blocks now in SECTION 5
