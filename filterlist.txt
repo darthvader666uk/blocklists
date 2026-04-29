@@ -213,10 +213,11 @@
 ||googlesyndication.com^
 ||doubleclick.net^
 ||adservice.google.com^
-||google.com^$third-party
 ||googleadservices.com^
 ! Temporarily disabled: blocking googlevideo as third-party broke YouTube playback (2026-04-23)
 ! ||googlevideo.com^$third-party
+! Disabled: blocked YouTube embeds in Reddit (accounts.google.com broken)
+! ||google.com^$third-party
 ||youtube-nocookie.com^$third-party
 
 ! Facebook/Meta Tracking (15 rules)
