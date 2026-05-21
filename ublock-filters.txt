@@ -1,7 +1,7 @@
 ! uBlock Origin specific filters (cosmetic, scriptlets, removeparam)
 ! NOT compatible with AdGuard Home DNS-level blocking
 ! Import into uBlock Origin → My filters
-! Last updated: April 29, 2026
+! Last updated: May 15, 2026
 !
 ! === KEY ===
 ! ##       = Element hiding
@@ -13,6 +13,18 @@
 ! GENERAL (applies site-wide)
 ! ============================================================
 ##.promotedlink
+
+! ============================================================
+! HOTUKDEALS
+! Fix: EasyList over-aggressively hides .bRad--a which matches
+! vote box elements. Two approaches combined:
+! 1. Exception to prevent cosmetic hiding of bRad--a
+! 2. Force-display: show vote-box elements even if hidden
+! ============================================================
+hotukdeals.com#@#.bRad--a
+hotukdeals.com#@#.listLayout-box:has(> .bRad--a)
+hotukdeals.com##.vote-box.bRad--a:style(display: flex !important)
+hotukdeals.com##.listLayout-box:has(> .vote-box.bRad--a):style(display: block !important)
 
 ! ============================================================
 ! CAPITAL

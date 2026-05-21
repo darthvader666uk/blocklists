@@ -66,6 +66,9 @@
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
 
+! ========== PODCAST / MEDIA ANALYTICS ==========
+@@||analytics.podtrac.com^
+
 ! ========== FACEBOOK / WHATSAPP ==========
 @@||connect.facebook.net^$domain=facebook.com|www.facebook.com
 @@||graph.facebook.com^$domain=facebook.com|www.facebook.com
