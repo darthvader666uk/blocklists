@@ -66,6 +66,13 @@
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
 
+! ========== POSTEO.DE EMAIL ==========
+! posteo.de serves webmail, API, IMAP/SMTP, images, JS, CSS — all from same domain
+@@||posteo.de^
+@@||api.posteo.de^
+! Status page (separate subdomain)
+@@||posteo-status.de^
+
 ! ========== PODCAST / MEDIA ANALYTICS ==========
 @@||analytics.podtrac.com^
 
