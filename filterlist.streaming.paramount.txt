@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: Paramount+ Ad Blocking Rules
-! Last Updated: 2026-04-17
+! Last Updated: 2026-06-02
 ! Description: Paramount+ ad blocking - LARGELY INEFFECTIVE as of April 2026
 !
 ! 🔴 CRITICAL APRIL 2026 UPDATE 🔴
@@ -51,7 +51,11 @@
 ||cbsinteractive.data.adobedc.net^
 ||conduit.redfast.com^
 ||sparrow.paramountplus.com^
-||imasdk.googleapis.com^
+||imasdk.googleapis.com^  ! May break playback on some devices
+
+! May 2026 community additions
+||vaicore.site^
+||pubads.g.doubleclick.net^
 
 ! ==========================================
 ! CRITICAL NOTES FOR USERS

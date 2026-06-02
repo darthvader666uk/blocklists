@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-04-17 (AGGRESSIVE Instagram blocking added)
+! Last Updated: 2026-06-02
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
@@ -51,6 +51,13 @@
 ||spappmonitoring.com^
 ||startpage.com/sp/adsense/^
 ||cfpro.ru^
+
+! Streaming Telemetry & Analytics (May 2026 additions)
+||mparticle.com^
+||scorecardresearch.com^
+||sb.scorecardresearch.com^
+||omtrdc.net^
+||telemetry.nbcuott.com^
 
 ! ==========================================
 ! SECTION 2: ALLOW LIST / WHITELISTS
@@ -492,7 +499,7 @@ evergage.com^$third-party
 
 ! ==========================================
 ! END OF MASTER FILTER LIST
-! Total Rules: ~550+ (organized, optimized, AGGRESSIVE)
+! Total Rules: ~560+ (organized, optimized, AGGRESSIVE)
 ! ==========================================
 
 ! ==========================================

@@ -1,10 +1,12 @@
 [Adblock Plus]
 ! ========== HBO MAX (2025+ rebrand - supports hbomax.com & max.com) ==========
-! Source: https://github.com/ajstrick81/HBO-Ads (updated 2026-04-17)
+! Source: https://github.com/ajstrick81/HBO-Ads (ajstrick81 updated March 2026)
 ! Purpose: Conservative domain-based blocks compatible with DNS-level filtering (AdGuard Home)
 ! 
 ! NOTE: HBO Max rebranded from MAX back to HBO Max in July 2025
 ! Both hbomax.com and max.com domains are active and require blocking
+! 
+! Updated: 2026-06-02 (added litix.io, dnitv.com from ajstrick81 Mar 2026 update)
 ! 
 ! ⚠️ COMPATIBILITY NOTE: This list contains ONLY domain-based rules (||domain.com^)
 ! Path-scoped rules (||domain.com/path/*$media) don't work at DNS level and have been removed.
@@ -36,6 +38,10 @@
 ! Removed duplicate block: telegraph.prd.api.hbomax.com is whitelisted above — keeping whitelist only
 ! ||telegraph.prd.api.hbomax.com^
 ||services.brightline.tv^
+
+! New from ajstrick81/HBO-Ads (March 2026) - tested stable
+||litix.io^
+||dnitv.com^
 
 ! ==========================================
 ! MEDIUM-RISK DOMAIN BLOCKS (Test one-by-one)

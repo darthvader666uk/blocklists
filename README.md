@@ -4,7 +4,7 @@
 
 ---
 
-## 📍 LATEST UPDATE: April 17, 2026
+## 📍 LATEST UPDATE: June 2, 2026
 
 ### 🔴 **CRITICAL FINDINGS - April 2026 Streaming App Updates**
 
@@ -33,8 +33,8 @@
 | **Disney+** | `filterlist.streaming.disney.txt` | ✅ **WORKING** | 30-40% effectiveness (SSAI limitation), disneyadvertising.com targeted |
 | **Roku** | `filterlist.streaming.roku.txt` | ✅ **ENHANCED** | 5 regex patterns + 15 individual blocks, comprehensive coverage |
 | **Apple TV+** | `filterlist.streaming.appletv.txt` | ✅ **WORKING** | 9 verified rules |
-| **Peacock/NBC** | `filterlist.streaming.peacock.txt` | ⚠️ **BROKEN (April 2026)** | App v7.4.21+ changed ad delivery; filter updated with workaround notes; 5-15% effective |
-| **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; documented for reference; stay on v16.8 |
+| **Peacock/NBC** | `filterlist.streaming.peacock.txt` | ⚠️ **IMPROVED (May 2026)** | App v7.4.21+ changed ad delivery; ajstrick81 v2.7 claims renewed effectiveness on Android/iOS; 5-40% effective |
+| **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; fwmrm.net whitelist needed for Android app; stay on v16.8 |
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
 | **Hulu** | `filterlist.streaming.hulu.txt` | ✅ **WORKING** | 50% effectiveness (less SSAI-reliant) |
 | **Paramount+** (legacy) | `filterlist.streaming.paramount.txt` | 🔴 **UNSOLVABLE** | Google DAI (April 2026+) overrides DNS blocking |
@@ -49,10 +49,10 @@
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
 | **Rules** | ~585 carefully curated & verified |
-| **Last Updated** | **April 17, 2026** (Cross-referenced with community gist) |
+| **Last Updated** | **June 2, 2026** (Cross-referenced with community gist) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS |
-| **Verification** | Brave Search, Jina AI, Firecrawl (domains verified safe) |
+| **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
 | **Testing** | Normalized line endings (CRLF → LF), syntax verified |
 
 ---
@@ -99,7 +99,7 @@
 | **Roku** | 37 rules + 5 regex patterns | 40%+ | ✅ **ENHANCED** |
 | **Hulu** | 12 rules | 50% | ✅ **WORKING** |
 | **Sky Glass** | 21 ad network rules | 40% | ✅ **WORKING** |
-| **Peacock/NBC** | 11 whitelists + 2 blocks | 5-15% | ⚠️ **BROKEN (April 2026)** |
+| **Peacock/NBC** | 11 whitelists + 2 blocks | 5-40% | ⚠️ **IMPROVED (May 2026)** |
 | **Paramount+** | 25+ rules | 0% | 🔴 **DAI UNSOLVABLE** |
 | **Amazon Prime** | 5 rules | 0% | ⚠️ **SSAI ONLY** |
 
@@ -178,6 +178,8 @@
 
 ✅ **Cross-Referenced Against:**
 - ozankiratli community gist (138⭐, July 2025 + April 2026 comments)
+- ajstrick81 community research (v2.7, May 2026)
+- lit-bg community research
 - Brave Search API (domain verification)
 - Jina AI web extraction (current infrastructure analysis)
 - Firecrawl scraping (real-time service checking)
@@ -268,7 +270,7 @@ Following these services for changes:
 - **Filter Format:** AdBlock Plus (open standard)
 - **Community Reference:** ozankiratli gist (PiHole Streaming Lists)
 - **Verification:** Brave Search, Jina AI, Firecrawl
-- **Last Comprehensive Update:** April 17, 2026
+- **Last Comprehensive Update:** June 2, 2026
 
 ---
 
@@ -302,5 +304,5 @@ filterlist.streaming.*.txt          # Service-specific filters:
 
 **Made with ❤️ for ad-free streaming**
 
-*Last updated: April 17, 2026*
+*Last updated: June 2, 2026*
 *Cross-verified against: ozankiratli community research*

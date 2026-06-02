@@ -1,17 +1,20 @@
 [Adblock Plus]
 ! Title: Peacock Ad Blocking Rules
-! Last Updated: 2026-04-17
+! Last Updated: 2026-06-02
 ! Description: Peacock/NBC ad blocking - see critical notes below
 !
-! ⚠️ CRITICAL APRIL 2026 UPDATE ⚠️
+! ⚠️ CRITICAL MAY 2026 UPDATE ⚠️
 ! Peacock app updates (v7.4.21 Android, recent iOS) have broken ad blocking:
 ! - Android: v7.4.21+ stopped working (April 13, 2026)
 ! - iOS/Apple TV: Broken for weeks
 ! - Workaround: Disable app auto-updates, stay on older version
-! - Effectiveness: 5-15% at best with SSAI (Server-Side Ad Insertion)
+! - May 2026: ajstrick81 v2.7 claims renewed effectiveness on Android/iOS
+! - Effectiveness: 5-40% (improved May 2026 - community v2.7)
 !
 ! See: https://gist.github.com/ozankiratli/801ba17705e7f2a904d2e443af5a64f8
-! Comments from April 2026 show frequent changes
+! See also: https://github.com/ajstrick81 (community v2.7)
+! See also: https://github.com/lit-bg (additional research)
+! Comments from May 2026 show ongoing community efforts
 !
 ! ==========================================
 ! PEACOCK WHITELISTS (REQUIRED FOR PLAYBACK)
@@ -28,11 +31,16 @@
 ! CRITICAL: Video loading regex - DO NOT BLOCK
 @@||g[^.]+-vod-us-cmaf-prd-mc.cdn.peacocktv.com^
 
+! === NEW MAY 2026 - ajstrick81 v2.7 whitelists ===
+@@||assets.adobedtm.com^
+@@||ingest.webcol.sdp.peacocktv.com^
+
 ! ==========================================
 ! PEACOCK BLACKLIST (AD BLOCKING ATTEMPTS)
 ! ==========================================
 ! SSAI ad server
 ||mt.ssai.peacocktv.com^
+||ssai.peacocktv.com^
 
 ! Ad CDN clusters (may trigger app updates' ad workarounds)
 ||f701e91aabed43fa8064e91da398bfbc.mediatailor.us-east-1.amazonaws.com^
@@ -47,6 +55,19 @@
 ! Ads.ironSource domains
 ||ads.ironsrc.mobi^
 
+! === NEW MAY 2026 - ajstrick81 v2.7 domains ===
+||vac.peacocktv.com^
+||sas.peacocktv.com^
+||video-ads-module.ad-tech.nbcuni.com^
+||identity.mparticle.com^
+||census-app.scorecardresearch.com^
+||sb.scorecardresearch.com^
+||nbcstreaming.sc.omtrdc.net^
+||nbcstreaming.hb-api.omtrdc.net^
+||s0.2mdn.net^
+||ad.doubleclick.net^
+||telemetry.nbcuott.com^
+
 ! ==========================================
 ! NOTES FOR USERS
 ! ==========================================
@@ -54,3 +75,6 @@
 ! - Blocking g[^.]+-vod-us-cmaf-prd-[^.]+.cdn.peacocktv.com breaks video playback
 ! - These filters provide minimal protection due to SSAI architecture
 ! - See ozankiratli gist for latest community updates
+! 
+! CDN ad shard regex (ajstrick81 v2.7 - use with caution):
+! /^g\d{1,4}-(vod|sf|sle)-us-cmaf-prd-(cf|cc|ak|ph|dc|at)(-[a-z0-9]+)?\.cdn\.peacocktv\.com$/
