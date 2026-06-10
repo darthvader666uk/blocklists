@@ -4,7 +4,7 @@
 
 ---
 
-## 📍 LATEST UPDATE: June 2, 2026
+## 📍 LATEST UPDATE: June 10, 2026
 
 ### 🔴 **CRITICAL FINDINGS - April 2026 Streaming App Updates**
 
@@ -49,7 +49,7 @@
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
 | **Rules** | ~585 carefully curated & verified |
-| **Last Updated** | **June 2, 2026** (Cross-referenced with community gist) |
+| **Last Updated** | **June 10, 2026** (Cross-referenced with community gist) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
@@ -265,29 +265,98 @@ Following these services for changes:
 
 ---
 
+## 🔗 **Active Filter Lists (AdGuard Home + uBlock Origin)**
+
+All lists below are active and verified as of **10 June 2026**. These are the third-party lists running alongside my own custom filters.
+
+### 🛡️ Core Protection Lists
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **Hagezi Multi PRO** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt` | 212,493 | Extended protection — ads, trackers, malware, crypto |
+| **Hagezi Threat Intelligence Feeds** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt` | 1,426,847 | Security — threat intel domains |
+| **Threat Intelligence Feeds — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 56,860 | IP-based threat blocking |
+| **AdGuard DNS filter** | `https://filters.adtidy.org/extension/ublock/filters/2.txt` | 117,416 | AdGuard's core DNS filter |
+| **AdGuard CNAME Trackers** | `https://filters.adtidy.org/extension/chromium/filters/15.txt` | 157,261 | CNAME-based tracker blocking |
+
+### 🍪 Privacy & Annoyances
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **EasyList** | `https://easylist.to/easylist/easylist.txt` | 67,639 | Core ad blocking |
+| **EasyPrivacy** | `https://easylist.to/easylist/easyprivacy.txt` | 55,398 | Tracking protection |
+| **Easylist Cookie List** | `https://secure.fanboy.co.nz/fanboy-cookiemonster.txt` | 9,519 | Cookie notice removal |
+| **Fanboy's Annoyance List** | `https://secure.fanboy.co.nz/fanboy-annoyance.txt` | 25,634 | Social widgets, popups |
+| **AdGuard Annoyances** | `https://filters.adtidy.org/extension/ublock/filters/14.txt` | 54,428 | Annoyance removal |
+| **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,721 | Anti-fingerprinting |
+| **RL Tracking Parameter Removal** | `https://filters.adtidy.org/extension/chromium/filters/17.txt` | 2,538 | URL tracking param stripping |
+
+### 🔒 Security & Malware
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **uBlock Badware** | `https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt` | 4,213 | Malware, phishing, badware |
+| **uBlock Privacy** | `https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt` | 1,654 | Privacy-focused blocks |
+| **Dandelion Sprout's Anti-Malware** | `https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt` | 13,858 | Malware domain blocking |
+| **Phishing Army Extended** | `https://phishing.army/download/phishing_army_blocklist_extended.txt` | 144,818 | Phishing domain blocking |
+| **URLHaus Hosts** | `https://urlhaus.abuse.ch/downloads/hostfile/` | 544 | Malware URL blocking |
+
+### 📺 Smart TV
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **Perflyst & Dandelion Sprout Smart-TV Blocklist** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
+
+### 📝 My Custom Filter Lists
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **Master Filter List** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | 314 | Cross-service tracking + Meta blocking |
+| **Amazon** | `...raw/filterlist.streaming.amazon.txt` | 10 | Prime Video ads |
+| **Apple TV+** | `...raw/filterlist.streaming.appletv.txt` | 9 | Apple TV+ ads |
+| **Disney+** | `...raw/filterlist.streaming.disney.txt` | 2 | Disney+ advertising |
+| **HBO Max** | `...raw/filterlist.streaming.hbo.txt` | 15 | HBO Max / Max ads |
+| **Netflix** | `...raw/filterlist.streaming.netflix.txt` | 7 | Netflix tracking |
+| **Paramount+** | `...raw/filterlist.streaming.paramount.txt` | 30 | Paramount+ (DAI — 0% effective) |
+| **Sky Glass** | `...raw/filterlist.streaming.skyglass.txt` | 26 | Sky Glass ad networks |
+
+### 📊 Total Coverage
+
+| Metric | Value |
+|--------|-------|
+| **Third-party rules** | ~2,236,000+ |
+| **My custom rules** | ~413 |
+| **Lists active** | 20 |
+| **Last verified** | 10 June 2026 |
+
+---
+
 ## 📄 **License & Attribution**
 
 - **Filter Format:** AdBlock Plus (open standard)
-- **Community Reference:** ozankiratli gist (PiHole Streaming Lists)
+- **Community Reference:** ozankiratli gist, Hagezi, AdGuard, EasyList, uBlock Origin, Dandelion Sprout
 - **Verification:** Brave Search, Jina AI, Firecrawl
-- **Last Comprehensive Update:** June 2, 2026
+- **Last Comprehensive Update:** June 10, 2026
 
 ---
 
 ## 🔗 **File Structure**
 
 ```
-filterlist.txt                      # Main cross-service filter (585 rules)
-filterlist.adguard.txt              # AdGuard Home hostlist format
+filterlist.txt                      # Main cross-service filter (~314 rules)
 filterlist.streaming.*.txt          # Service-specific filters:
   - hbo.txt (HBO Max - PRODUCTION READY)
   - disney.txt (Disney+ - WORKING)
-  - paramount.txt (Paramount+ - INEFFECTIVE April 2026)
-  - peacock.txt (Peacock - BROKEN April 2026)
+  - paramount.txt (Paramount+ - DAI UNSOLVABLE)
+  - peacock.txt (Peacock - IMPROVED May 2026)
   - roku.txt (Roku - ENHANCED)
   - amazon.txt (Prime Video - LIMITED)
   - hulu.txt (Hulu - WORKING)
   - appletv.txt (Apple TV+ - WORKING)
+  - netflix.txt (Netflix - tracking)
+  - skyglass.txt (Sky Glass - WORKING)
+  - tubi.txt, pluto.txt (FAST services)
+ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters
 ```
 
 ---
@@ -304,5 +373,5 @@ filterlist.streaming.*.txt          # Service-specific filters:
 
 **Made with ❤️ for ad-free streaming**
 
-*Last updated: June 2, 2026*
-*Cross-verified against: ozankiratli community research*
+*Last updated: June 10, 2026*
+*Cross-verified against: ozankiratli community research, Hagezi, AdGuard, EasyList*

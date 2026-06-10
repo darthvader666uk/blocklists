@@ -247,9 +247,8 @@
 ||analytics.twitter.com^
 ||t.co^$third-party
 
-! Generic Ad Networks & Analytics (15 rules)
+! Generic Ad Networks & Analytics (14 rules)
 ||ads.yahoo.com^
-||scorecardresearch.com^
 ||quantserve.com^
 ||segment.com^
 ||cdn.segment.com^
