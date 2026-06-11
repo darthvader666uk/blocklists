@@ -34,8 +34,7 @@
 ||doh.dns.apple.com^
 ||doh.dns.apple.com.v.aaplimg.com^
 
-! Spotify (2 rules)
-||wl.spotify.com^
+! Spotify (1 rule)
 ||adeventtrackermonitoring.spotify.com^
 
 ! Twitter / X (1 rule)
