@@ -1,7 +1,7 @@
 ! uBlock Origin specific filters (cosmetic, scriptlets, removeparam)
 ! NOT compatible with AdGuard Home DNS-level blocking
 ! Import into uBlock Origin → My filters
-! Last updated: May 15, 2026
+! Last updated: June 30, 2026
 !
 ! === KEY ===
 ! ##       = Element hiding
@@ -130,6 +130,20 @@ twitter.com##[data-testid="tweet"]:has-text(Promoted)
 twitter.com##[data-testid="UserCell"]:has-text(Promoted)
 ! Strip tracking parameters
 ||twitter.com^$removeparam=twtid
+
+! ============================================================
+! BRAVE SEARCH
+! ============================================================
+! Hide sponsored results
+search.brave.com##[data-type="sponsored"]
+search.brave.com##.snippet[data-type="sponsored"]
+search.brave.com##.result[data-type="sponsored"]
+search.brave.com##.snippet:has-text(Sponsored)
+search.brave.com##.result:has-text(Sponsored)
+! Hide download CTA / browser promo
+search.brave.com##.download-cta
+search.brave.com##+js(set-local-storage-item, app.browserPromoDisabled, true)
+search.brave.com##+js(set-local-storage-item, app.showNTP, false)
 
 ! ============================================================
 ! VINTED
