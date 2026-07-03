@@ -213,6 +213,9 @@
 @@||api.reo.dev^
 @@||api.pushbullet.com^
 
+! ========== HONEYGAIN ==========
+! api.honeygain.com — blocked by Hagezi Multi PRO Extended, needs allow
+@@||api.honeygain.com^
 
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
