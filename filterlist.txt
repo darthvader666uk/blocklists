@@ -215,7 +215,7 @@
 
 ! ========== HONEYGAIN ==========
 ! api.honeygain.com — blocked by Hagezi Multi PRO Extended, needs allow
-@@||api.honeygain.com^
+@@||*.honeygain.com^
 
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
