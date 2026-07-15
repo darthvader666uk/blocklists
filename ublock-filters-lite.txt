@@ -5,7 +5,6 @@
 ! LIMITATIONS vs full uBlock Origin:
 ! - No scriptlet injection (##+js())
 ! - No :style() CSS overrides
-! - No $removeparam URL stripping
 ! - No :has() / :has-text() / :matches-attr() / :upward() / :if()
 ! - Basic cosmetic hiding (##) and network blocking only
 !
@@ -101,6 +100,75 @@ search.brave.com##.download-cta
 ! ============================================================
 www.vinted.co.uk##.slot-placeholder--skeleton.react-loading-skeleton
 www.vinted.co.uk##.slot-placeholder--leaderboard.slot-placeholder
+
+! ============================================================
+! EXTERNAL FILTER LISTS
+! Add these via uBlock Lite → Settings → Filter lists → Import
+! ============================================================
+
+! --- EasyList / Fanboy ---
+https://easylist.to/easylist/easylist.txt
+https://easylist.to/easylist/easyprivacy.txt
+https://easylist.to/easylist/fanboy-social.txt
+https://secure.fanboy.co.nz/fanboy-annoyance.txt
+https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
+https://secure.fanboy.co.nz/fanboy-social.txt
+
+! --- AdGuard (Chromium) ---
+https://filters.adtidy.org/extension/chromium/filters/3.txt
+https://filters.adtidy.org/extension/chromium/filters/4.txt
+https://filters.adtidy.org/extension/chromium/filters/11.txt
+https://filters.adtidy.org/extension/chromium/filters/14.txt
+https://filters.adtidy.org/extension/chromium/filters/15.txt
+https://filters.adtidy.org/extension/chromium/filters/17.txt
+
+! --- AdGuard (uBlock) ---
+https://filters.adtidy.org/extension/ublock/filters/2.txt
+https://filters.adtidy.org/extension/ublock/filters/3.txt
+https://filters.adtidy.org/extension/ublock/filters/14.txt
+https://filters.adtidy.org/extension/ublock/filters/17.txt
+
+! --- Hagezi (native device tracking) ---
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt
+
+! --- Security / Anti-malware ---
+https://phishing.army/download/phishing_army_blocklist_extended.txt
+https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt
+https://urlhaus.abuse.ch/downloads/hostfile/
+
+! --- Social cleanup ---
+https://raw.githubusercontent.com/robonxt/CleanYourTwitter/master/CleanYourTwitter.txt
+https://cdn.jsdelivr.net/gh/BevizLaszlo/UBlock-Filters-for-Social-Media@latest/filterlist.txt
+
+! --- Other ---
+https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt
+
+! --- Gist Lists (streaming ad blocking) ---
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.peacock.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt
+https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt
 
 ! ============================================================
 ! REMOVED RULES (not compatible with uBlock Lite)

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: Disney+ Ad Blocking Rules
-! Last Updated: 2026-04-17
+! Last Updated: 2026-07-15
 ! Description: Disney+ advertising domain blocking
 ! Source: Verified against ozankiratli gist (July 2025 + April 2026)
 ! 
@@ -13,6 +13,21 @@
 ! ==========================================
 
 ||disneyadvertising.com^
+
+! ==========================================
+! DISNEY+ AD DOMAINS
+! ==========================================
+||ads.disneyplus.com^
+||adserver.disneyplus.com^
+||tracking.disneyplus.com^
+||analytics.disneyplus.com^
+
+! ==========================================
+! DISNEY+ WHITELISTS (CRITICAL)
+! ==========================================
+@@||global.edge.bamgrid.com^
+@@||disney.api.edge.bamgrid.com^
+@@||cdn.registerdisney.go.com^
 
 ! ==========================================
 ! ASSOCIATED DISNEY/STREAMING INFRASTRUCTURE

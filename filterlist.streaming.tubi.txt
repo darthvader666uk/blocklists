@@ -1,4 +1,17 @@
+[Adblock Plus]
 ! ========== TUBI (streaming-specific) ==========
+! Last Updated: 2026-07-15
+! Effectiveness: ~50-60% (FreeWheel ad serving, separate ad domains)
+
+! ==========================================
+! TUBI WHITELISTS (CRITICAL)
+! ==========================================
+@@||api.tubi.tv^
+@@||tubicdn.com^
+
+! ==========================================
+! TUBI AD NETWORKS
+! ==========================================
 ||ads.tubi.tv^
 ||analytics.tubi.tv^
 ||tracking.tubi.tv^
@@ -7,3 +20,5 @@
 ||tubitrack.com^
 ||adserver.tubi.com^
 ||advertising.tubi.com^
+||ad.tubi.io^
+||pixel.tubi.tv^

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-06-02
+! Last Updated: 2026-07-15
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
@@ -43,13 +43,8 @@
 ! NVIDIA (1 rule)
 ||events.gfe.nvidia.com^
 
-! Generic Trackers (3 rules)
-||a-spy.com^
-||aispyer.com^
-||alltracker.org^
-||spappmonitoring.com^
+! Generic Trackers
 ||startpage.com/sp/adsense/^
-||cfpro.ru^
 
 ! Streaming Telemetry & Analytics (May 2026 additions)
 ||mparticle.com^
@@ -217,6 +212,10 @@
 ! api.honeygain.com — blocked by Hagezi Multi PRO Extended, needs allow
 @@||*.honeygain.com^
 
+! ========== BT.TN (Tesco voucher redirects) ==========
+! r.bttn.io blocked by external lists — needed for voucher activation
+@@||r.bttn.io^
+
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
 ! Network-level tracker blocks (AGGRESSIVE - safe for streaming)
@@ -249,9 +248,8 @@
 ||analytics.twitter.com^
 ||t.co^$third-party
 
-! Generic Ad Networks & Analytics (14 rules)
+! Generic Ad Networks & Analytics
 ||ads.yahoo.com^
-||quantserve.com^
 ||segment.com^
 ||cdn.segment.com^
 ||mixpanel.com^
@@ -263,7 +261,6 @@
 ||amplitude.io^
 ||heap.io^
 ||appsflyer.com^
-||fabric.io^
 
 ! Microsoft/LinkedIn Tracking (5 rules)
 ||clarity.ms^
@@ -271,18 +268,136 @@
 ||linkedinsitag.com^
 ||bing.com^$third-party
 
-! Amazon Tracking (5 rules)
+! Amazon Tracking
 ||amazon-adsystem.com^
 ||amazon.com^$third-party
 ||amazonadvertising.com^
 ||aiv-cdn.amazon.com^
 ||dmtracker.amazon.com^
 
-! Apple Tracking (5 rules)
+! TikTok / ByteDance Tracking (NEW — July 2026, zero coverage before)
+||analytics.tiktok.com^
+||ads.tiktok.com^
+||log.byteoversea.com^
+||mon.byteoversea.com^
+||mssdk.bytedance.com^
+||mssdk-bu.bytedance.com^
+||tnc3-aliec2.bytedance.com^
+||tnc3-alisc1.bytedance.com^
+||frontier.byteoversea.com^
+||gplog-sg.byteoversea.com^
+||gplog-va.byteoversea.com^
+||gpm-mon-sg.byteoversea.com^
+||gpm-mon-va.byteoversea.com^
+||xlog.byteoversea.com^
+||rtlog.byteoversea.com^
+||p16-ad.byteoversea.com^
+||v16-ad.byteoversea.com^
+||ads-sg.business-tiktok.com^
+||ads-va.business-tiktok.com^
+||ads-tiktokw.eu^
+||ads.inmobi.com^
+||mcs-tiktok.byteoversea.net^
+
+! Google Analytics 4 & Ads Endpoints (NEW — July 2026)
+||analyticsdata.googleapis.com^
+||analyticsadmin.googleapis.com^
+||analyticshub.googleapis.com^
+||analyticsinsights-pa.googleapis.com^
+||analyticssearch-pa.googleapis.com^
+||analyticsmobile-pa.googleapis.com^
+||analyticssuitefrontend-pa.googleapis.com^
+||consent-analytics.googleapis.com^
+||searchads360.googleapis.com^
+||doubleclickbidmanager.googleapis.com^
+||doubleclicksearch.googleapis.com^
+||adsdatahub.googleapis.com^
+||googleads.googleapis.com^
+||region2.google-analytics.com^
+||ssl.google-analytics.com^
+||ssl.googleanalytics.com^
+||googleoptimize.com^
+||google-analytics-cn.com^
+||googleadservices-cn.com^
+||googleoptimize-cn.com^
+||googletagmanager-cn.com^
+||googlevads-cn.com^
+
+! New Ad Tech Companies (NEW — July 2026)
+||applovin.com^
+||ads.applovin.com^
+||unityads.unity3d.com^
+||config.unityads.unity3d.com^
+||adserver.unityads.unity3d.com^
+||cdn-lb.unityads.unity3d.com^
+||ironsrc.com^
+||libs.ironsrc.com^
+||mediation.ironsrc.com^
+||chartboost.com^
+||ads.chartboost.com^
+||sdk.chartboost.com^
+||smaato.com^
+||soma.smaato.net^
+||ads.smaato.net^
+||fyber.com^
+||api.fyber.com^
+||adjust.com^$third-party
+||adjust.io^$third-party
+||branch.io^$third-party
+||api.branch.io^
+||kochava.com^$third-party
+||control.kochava.com^
+||singular.net^$third-party
+||tenjin.com^$third-party
+||events.tenjin.com^
+||adjoe.zone^
+||fraud.adjoe.zone^
+||prod.adjoe.zone^
+||adskeeper.co.uk^
+||toponad.com^
+||api.toponad.com^
+||bidon.com^
+||collect.tealiumiq.com^
+||tags.ticdn.com^
+||utiq.com^
+||audience.acpm.fr^
+||pixel.byspotify.com^
+||bat.bing.com^
+||bat.bing.net^
+||go.ezoic.net^
+||sf.ezoiccdn.com^
+||prebid-log.getpublica.com^
+||scope3.com^
+||prebid.scope3.com^
+
+! Apple Tracking & Analytics (NEW — expanded July 2026)
 ||apple-dns.net^
 ||analytics.apple.com^
 ||apple.com^$third-party
 ||app-analytics.apple.com^
+||apple-relay.akamaized.net^
+||searchads.apple.com^
+||iadcontent.apple.com^
+||iadcontent-lb.apple.com.akadns.net^
+||iadworkbench.apple.com^
+||iad-apple.com^
+||proxy-skadnetwork.apple.com^
+||experiments.apple.com^
+||drupalmetrics.ppg.apple.com^
+||partiality.itunes-apple.com.akadns.net^
+||searchads.lb-apple.com.akadns.net^
+||books-analytics-events.apple.com^
+||podcasts-analytics-events.apple.com^
+||tv-analytics-events.apple.com^
+||news-analytics-events.apple.com^
+||news-app-events.apple.com^
+||news-events.apple.com^
+||news-notification-events.apple.com^
+||news-sports-events.apple.com^
+||axm-telemetry.v.aaplimg.com^
+||prod-app-analytics-event-gateway.v.aaplimg.com^
+||securemetrics.v.aaplimg.com^
+||securemvt.v.aaplimg.com^
 
 ! Roku/SmartTV Tracking (8 rules)
 ||roku.admeasurement.com^
@@ -405,7 +520,7 @@ evergage.com^$third-party
 ||facebook.net^$third-party
 ||oculus.com^$third-party
 
-! Facebook Ad & Analytics (20 rules - ENHANCED)
+! Facebook Ad & Analytics (ENHANCED + NEW July 2026)
 ||connect.facebook.net^$third-party
 ||pixel.facebook.com^$third-party
 ||fbevents.com^$third-party
@@ -421,8 +536,11 @@ evergage.com^$third-party
 ||crash.facebook.com^$third-party
 ||crashlogs.facebook.com^$third-party
 ||external.facebook.com^$third-party
+||tr.facebook.com^$third-party
+||lens.facebook.com^$third-party
 ! ⚠️ AGGRESSIVE: Blocks audience sync & customer list upload
 ||an.facebook.com^$third-party
+||aan.facebook.com^$third-party
 ||conversionsapi.facebook.com^$third-party
 ||graph-instagram.instagram.com^$third-party
 ||tr-in.facebook.com^$third-party

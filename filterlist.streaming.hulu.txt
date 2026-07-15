@@ -1,11 +1,16 @@
+[Adblock Plus]
 ! ========== HULU (streaming-specific) ==========
+! Last Updated: 2026-07-15
+! Effectiveness: ~5-10% (Google DAI — mostly unblockable at DNS level)
+!
+! NOTE: Hulu uses Google Dynamic Ad Insertion (DAI).
+! Same architecture as Paramount+ — ads stitched server-side.
+! DNS blocking cannot separate ads from video content.
+! Only tracking/analytics can be blocked.
+
 ||ads.hulu.com^
 ||analytics.hulu.com^
 ||tracking.hulu.com^
-||hulu-ads.com^
-||huluanalytics.com^
-||hulu-tracking.com^
 ||advertising.hulu.com^
 ||adserver.hulu.com^
-||huluadsmgmt.com^
 ||ads.hulustream.com^

@@ -1,4 +1,18 @@
+[Adblock Plus]
 ! ========== PLUTO TV (streaming-specific) ==========
+! Last Updated: 2026-07-15
+! Effectiveness: ~60-70% (FreeWheel + own stitching, separate ad domains)
+
+! ==========================================
+! PLUTO TV WHITELISTS (CRITICAL)
+! ==========================================
+@@||api.pluto.tv^
+@@||boot.pluto.tv^
+@@||plutotv.net^
+
+! ==========================================
+! PLUTO TV AD NETWORKS
+! ==========================================
 ||ads.pluto.tv^
 ||analytics.pluto.tv^
 ||tracking.pluto.tv^
@@ -6,3 +20,7 @@
 ||plutoanalytics.com^
 ||adserver.pluto.tv^
 ||advertising.pluto.tv^
+||syndication.pluto.tv^
+||ssp.pluto.tv^
+||adstir.pluto.tv^
+||ads-stitcher.pluto.tv^

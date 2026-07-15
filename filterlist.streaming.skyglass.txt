@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Sky Glass Ad Blocking Rules
-! Last Updated: 2026-03-27
+! Last Updated: 2026-07-15
 ! Description: Blocks Sky Glass / Comcast smart TV ads and tracking
 !
 ! ==========================================
@@ -36,3 +36,14 @@
 ||2mdn.net^
 ||googleads.g.doubleclick.net^
 ||ads.aimitv.com^
+
+! ========== SKY / WOW (German variant) ==========
+||ads.sky.de^
+||adserver.sky.de^
+||tracking.sky.de^
+||analytics.sky.de^
+||ad.nowtv.de^
+||pixel.sky.com^
+||sky.adform.net^
+||adform.net^
+||ads.wowtv.de^

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Netflix Ad Blocking Rules
-! Last Updated: 2026-03-27
+! Last Updated: 2026-07-15
 ! Description: Blocks Netflix advertising and tracking domains with critical whitelists
 ! 
 ! NOTE: Netflix uses Server-Side Ad Insertion (SSAI) on most platforms
@@ -24,5 +24,11 @@
 ||adsrvr.org^
 ||adsafeprotected.com^
 ||adsrvr.com^
+
+! Netflix telemetry & analytics (safe to block — not video ads)
+||ichnaea.netflix.com^
+||comet.netflix.com^
+||nrd.netflix.com^
+||analytics-nflx.netflix.com^
 
 ! Note: Netflix uses SSAI in many platforms — domain-level blocks are high-risk. Keep only third-party ad networks here.

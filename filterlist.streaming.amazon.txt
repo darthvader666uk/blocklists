@@ -1,4 +1,23 @@
+[Adblock Plus]
 ! ========== AMAZON PRIME VIDEO (streaming-specific) ==========
+! Last Updated: 2026-07-15
+! Effectiveness: ~40-60% (SSAI + third-party mixed)
+!
+! NOTE: Amazon uses SSAI for ad-supported content.
+! These rules block third-party ad networks and tracking.
+! Video ads stitched server-side cannot be blocked at DNS level.
+
+! ==========================================
+! AMAZON WHITELISTS (CRITICAL)
+! ==========================================
+@@||unagi.amazon.com^
+@@||atv-ps.amazon.com^
+@@||fls-na.amazon.com^
+@@||primevideo.com^
+
+! ==========================================
+! AMAZON AD NETWORKS
+! ==========================================
 ||ads.amazon.com^
 ||analytics.amazon.com^
 ||tracking.amazon.com^
@@ -9,3 +28,12 @@
 ||advertising.amazon.com^
 ||adapis.amazon.com^
 ||prime-video-ads.com^
+||aax.amazon-adsystem.com^
+||z-na.amazon-adsystem.com^
+||s.amazon-adsystem.com^
+||c.amazon-adsystem.com^
+||mads.amazon-adsystem.com^
+||ads.primevideo.com^
+||device-metrics-us.amazon.com^
+||amazon-adsystem.com^
+||adsdelivery.amazon.com^

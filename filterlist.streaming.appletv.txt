@@ -1,10 +1,15 @@
+[Adblock Plus]
 ! ========== APPLE TV+ (streaming-specific) ==========
+! Last Updated: 2026-07-15
+! Effectiveness: ~10-20% (minimal ad surface, Apple's own infrastructure)
+
+! NOTE: Apple TV+ has minimal ads (mostly trailers/promos).
+! Most ad infrastructure is part of Apple Services platform.
+! apple-advertising.com / appletv-ads.com are speculative — likely don't exist.
+
 ||ads.apple.com^
 ||ads.tv.apple.com^
 ||analytics.tv.apple.com^
 ||tracking.tv.apple.com^
-||appletv-ads.com^
-||appletvplus-ads.com^
 ||adserver.apple.com^
-||apple-advertising.com^
 ||advertising.apple.com^

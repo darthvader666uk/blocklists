@@ -55,8 +55,7 @@ facebook.com##+js(trusted-click-element, body > div[id^="mount"] #scrollview ~ d
 facebook.com##div[id^="mount"] div:not([id]):not([class]):not([style]) > div[data-nosnippet]
 facebook.com##+js(aeld, scroll)
 facebook.com##body > div[class*="__fb-light-mode"]
-! Strip tracking parameters
-||facebook.com^$removeparam=fbclid
+
 
 ! ============================================================
 ! GAME8
@@ -92,8 +91,7 @@ google.com##.sge-feature
 www.instagram.com##article:has(div._aaql:has(svg)):style(visibility: hidden !important; height: 300px !important; overflow: hidden !important)
 www.instagram.com##article:has-text(Suggested for you):style(visibility: hidden !important; height: 300px !important; overflow: hidden !important)
 www.instagram.com##article:has-text(Because you follow):style(visibility: hidden !important; height: 300px !important; overflow: hidden !important)
-! Strip tracking parameters
-||instagram.com^$removeparam=igshid
+
 
 ! ============================================================
 ! REDDIT
@@ -128,8 +126,7 @@ twitch.tv##+js(twitch-videoad)
 twitter.com##[data-testid="tweet"]:has-text(/Promoted$/)
 twitter.com##[data-testid="tweet"]:has-text(Promoted)
 twitter.com##[data-testid="UserCell"]:has-text(Promoted)
-! Strip tracking parameters
-||twitter.com^$removeparam=twtid
+
 
 ! ============================================================
 ! BRAVE SEARCH
@@ -151,4 +148,37 @@ search.brave.com##+js(set-local-storage-item, app.showNTP, false)
 www.vinted.co.uk##.slot-placeholder--skeleton.react-loading-skeleton
 www.vinted.co.uk##.slot-placeholder--leaderboard.slot-placeholder
 
+! ============================================================
+! TRACKING PARAMETER STRIPPING (applies site-wide)
+! ============================================================
+! Google Analytics UTM params
+*$removeparam=utm_source
+*$removeparam=utm_medium
+*$removeparam=utm_campaign
+*$removeparam=utm_term
+*$removeparam=utm_content
+*$removeparam=utm_id
+*$removeparam=utm_cid
+*$removeparam=utm_name
+*$removeparam=utm_social
+*$removeparam=utm_social-type
+*$removeparam=utm_reader
+
+! Click tracking identifiers
+*$removeparam=fbclid
+*$removeparam=gclid
+*$removeparam=gclsrc
+*$removeparam=dclid
+*$removeparam=gbraid
+*$removeparam=wbraid
+*$removeparam=mc_cid
+*$removeparam=mc_eid
+
+! Other common trackers
+*$removeparam=_hsenc
+*$removeparam=_hsmi
+*$removeparam=vero_id
+*$removeparam=oly_anon_id
+*$removeparam=oly_enc_id
+*$removeparam=sdfp
 
