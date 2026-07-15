@@ -1,0 +1,133 @@
+! uBlock Origin Lite (Chrome MV3) Compatible Filters
+! Derived from ublock-filters.txt
+! Last updated: 2026-07-03
+!
+! LIMITATIONS vs full uBlock Origin:
+! - No scriptlet injection (##+js())
+! - No :style() CSS overrides
+! - No $removeparam URL stripping
+! - No :has() / :has-text() / :matches-attr() / :upward() / :if()
+! - Basic cosmetic hiding (##) and network blocking only
+!
+! Removed rules are listed at bottom with reason.
+
+! ============================================================
+! GENERAL (applies site-wide)
+! ============================================================
+##.promotedlink
+
+! ============================================================
+! CAPITAL
+! ============================================================
+capital.com##.cc_ab_43_2_0.form-container-small-content > .socialsLogin > .linedTitle
+
+! ============================================================
+! DISCORD
+! ============================================================
+discord.com##button[aria-label="Send a gift"]
+discord.com##button[aria-label="Open sticker picker"]
+discord.com##button[aria-label="Open emoji picker"]
+discord.com##button[aria-label="Add emoji"]
+
+! ============================================================
+! ECOSIA
+! ============================================================
+www.ecosia.org##.ad-result--ad-pill.ad-result.mainline__result.result
+
+! ============================================================
+! FACEBOOK
+! ============================================================
+facebook.com##div[id^="mount"] div:not([id]):not([class]):not([style]) > div[data-nosnippet]
+facebook.com##body > div[class*="__fb-light-mode"]
+
+! ============================================================
+! GAME8
+! ============================================================
+||assets.game8.co/store/ads/20241128_overlay_gift_02-100left.jpg$image
+
+! ============================================================
+! GOOGLE (Search, AI, Consent)
+! ============================================================
+google.*###search .g:has(cite:has-text(/https?:\/\/.*\.pinterest\.*/))
+google.*##.ivg-i.rg_el.rg_di.rg_bx:if(div > div > span.rg_ilmn:has-text(pinterest.))
+google.*##.g:has(a[href*=".pinterest."])
+google.*###search .g:has(a[href=".pinterest."])
+google.*###lb
+google.*##.exp-outline
+google.*##[style="display: block; opacity: 1;"]
+google.*##[data-hveid]>div
+google.*##div:has(>div>div>div>h2:has-text(People also ask))
+google.*##.EtOod.fP1Qef.vdQmEd
+google.com##div[data-content-feature="sge"]
+google.com##.XAIOverview
+google.com##.sge-feature
+
+! ============================================================
+! REDDIT
+! ============================================================
+reddit.*##shreddit-post[gold-count]
+www.reddit.com##.community-highlight-carousel
+
+! ============================================================
+! SEMRUSH
+! ============================================================
+www.semrush.com##.A5xKp1N56c9BXEZr3yDjQA\=\=.kPCOFm0ZqgxjclJ5VcoBEA\=\=
+
+! ============================================================
+! STARTPAGE
+! ============================================================
+startpage.com##.w-gl__result-sponsored
+startpage.com##.w-gl__ads
+
+! ============================================================
+! TWITTER / X
+! ============================================================
+twitter.com##[data-testid="tweet"]:has-text(/Promoted$/)
+twitter.com##[data-testid="tweet"]:has-text(Promoted)
+twitter.com##[data-testid="UserCell"]:has-text(Promoted)
+
+! ============================================================
+! BRAVE SEARCH
+! ============================================================
+search.brave.com##[data-type="sponsored"]
+search.brave.com##.snippet[data-type="sponsored"]
+search.brave.com##.result[data-type="sponsored"]
+search.brave.com##.snippet:has-text(Sponsored)
+search.brave.com##.result:has-text(Sponsored)
+search.brave.com##.download-cta
+
+! ============================================================
+! VINTED
+! ============================================================
+www.vinted.co.uk##.slot-placeholder--skeleton.react-loading-skeleton
+www.vinted.co.uk##.slot-placeholder--leaderboard.slot-placeholder
+
+! ============================================================
+! REMOVED RULES (not compatible with uBlock Lite)
+! ============================================================
+! ##+js(trusted-click-element, ...) — scriptlet injection, uBOL cannot run
+! ##+js(aeld, scroll) — scriptlet injection
+! ##+js(twitch-videoad.js) — scriptlet injection
+! ##+js(twitch-videoad) — scriptlet injection
+! ##+js(set-local-storage-item, ...) — scriptlet injection
+! :style(display: flex !important) — CSS override, uBOL cannot inject styles
+! :style(height: auto !important) — CSS override
+! :style(visibility: hidden !important) — CSS override
+! :style(display: block !important) — CSS override
+! $removeparam=fbclid — URL param stripping not supported
+! $removeparam=igshid — URL param stripping not supported
+! $removeparam=twtid — URL param stripping not supported
+! hotukdeals.com#@#.bRad--a — cosmetic exception (basic exceptions work but
+!   paired with :style() rule below, both removed for clean conversion)
+! hotukdeals.com#@#.listLayout-box:has(> .bRad--a) — :has() not supported
+! hotukdeals.com##.vote-box.bRad--a:style(display: flex !important) — :style()
+! hotukdeals.com##.listLayout-box:has(> .vote-box.bRad--a):style(display: block !important) — :has() + :style()
+! reddit.*##._1VhYfuKTAdUU_3j4cMjkr5:style(display:block !important) — :style()
+! www.instagram.com##article:has(div._aaql:has(svg)):style(...) — :has() + :style()
+! www.instagram.com##article:has-text(Suggested for you):style(...) — :has-text() + :style()
+! www.instagram.com##article:has-text(Because you follow):style(...) — :has-text() + :style()
+! www.reddit.com##.nd\:visible.hidden.community-highlight-carousel — escaped selector
+! facebook.com##div[aria-describedby] ... :matches-attr(...) :upward(...) — complex selectors
+! ||facebook.com^$removeparam=fbclid — removeparam not supported
+! ||instagram.com^$removeparam=igshid — removeparam not supported
+! ||twitter.com^$removeparam=twtid — removeparam not supported
