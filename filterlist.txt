@@ -216,6 +216,38 @@
 ! r.bttn.io blocked by external lists — needed for voucher activation
 @@||r.bttn.io^
 
+! ========== CASHBACK TRACKING (TopCashback, Quidco, Rakuten) ==========
+! Affiliate tracking must fire for cashback to be credited
+! Impact Network (used by TopCashback, most major retailers)
+@@||sjv.io^
+@@||prf.hn^
+@@||evyy.net^
+! Awin Network (primary for Quidco, used by others)
+! @@||awin1.com^ (already whitelisted above)
+! Tune/HasOffers (TopCashback primary)
+! @@||tatrck.com^ (already whitelisted above)
+! TradeDoubler (EU retailers)
+@@||tradedoubler.com^
+@@||clk.tradedoubler.com^
+@@||clkuk.tradedoubler.com^
+! Sovendus (voucher/tracking)
+! @@||sovendus-network.com^ (already whitelisted above)
+! LinkShare/Rakuten
+@@||linksynergy.com^
+! Commission Junction
+@@||cj.com^
+@@||commission-junction.com^
+! ShareASale
+@@||shareasale.com^
+! Webgains
+@@||webgains.com^
+! Cashback site domains (first-party - should not be blocked but ensuring)
+@@||topcashback.co.uk^
+@@||topcashback.com^
+@@||tcb.co.uk^
+@@||quidco.com^
+@@||rakuten.co.uk^
+
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
 ! Network-level tracker blocks (AGGRESSIVE - safe for streaming)
