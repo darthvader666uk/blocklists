@@ -151,6 +151,9 @@
 ! ========== FREETRADE ==========
 @@||magic.freetrade.io^
 
+! ========== JAMDOUGHNUT ==========
+@@||link.jamdoughnut.com^
+
 ! ========== CANVA ==========
 @@||cdn.metadata.io^
 
