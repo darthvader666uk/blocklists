@@ -148,6 +148,9 @@
 @@||yavin37.duckdns.org^$client='YouFibre'
 @@||yavin37.duckdns.org^$client='DeathStar'
 
+! ========== FREETRADE ==========
+@@||magic.freetrade.io^
+
 ! ========== CANVA ==========
 @@||cdn.metadata.io^
 
