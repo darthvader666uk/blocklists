@@ -254,6 +254,12 @@
 @@||quidco.com^
 @@||rakuten.co.uk^
 
+! ========== BLIZZARD / BATTLE.NET ==========
+! Whitelist all battle.net subdomains — needed for client auth, patching,
+! game downloads, store, and telemetry (rum.battle.net). External blocklists
+! (e.g. Pi-hole Blizzard list) aggressively block these.
+@@||*.battle.net^
+
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
 ! Network-level tracker blocks (AGGRESSIVE - safe for streaming)
