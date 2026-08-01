@@ -219,12 +219,17 @@
 @@||*.honeygain.com^
 
 ! ========== MYST NODES ==========
-! mystnodes.com — needed for node management dashboard
+! mystnodes.com — needed for node management dashboard & downloads
 @@||my.mystnodes.com^
+@@||mystnodes.com^
+@@||help.mystnodes.com^
 
 ! ========== ZILCH ==========
-! zilchcontentcards.ampxdirect.com — needed for Zilch content cards tracking
+! Zilch payment service & content delivery
 @@||zilchcontentcards.ampxdirect.com^
+@@||www.zilch.com^
+@@||payzilch.com^
+@@||ampxsearch.com^
 
 ! ========== BT.TN (Tesco voucher redirects) ==========
 ! r.bttn.io blocked by external lists — needed for voucher activation
