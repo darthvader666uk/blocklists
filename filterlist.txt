@@ -231,6 +231,10 @@
 @@||payzilch.com^
 @@||ampxsearch.com^
 
+! ========== FRESHA ==========
+! a.fresha.com — needed for Fresha booking/appointment tracking
+@@||a.fresha.com^
+
 ! ========== BT.TN (Tesco voucher redirects) ==========
 ! r.bttn.io blocked by external lists — needed for voucher activation
 @@||r.bttn.io^
