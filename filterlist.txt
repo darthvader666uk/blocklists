@@ -466,6 +466,35 @@
 ||securemetrics.v.aaplimg.com^
 ||securemvt.v.aaplimg.com^
 
+! ==========================================
+! AI CHATBOT TRACKING (Aug 2026)
+! Source: LeakyLM research (IMDEA Networks, May 2026)
+! AI chatbots forward data to 11+ ad platforms server-side
+! ==========================================
+
+! Anthropic/Claude server-side analytics proxy
+||a-cdn.anthropic.com^
+||a-api.anthropic.com^
+||a.claude.ai^
+
+! Intercom on Claude (fires unconditionally)
+||intercom.io^
+||intercomcdn.com^
+||widget.intercom.io^
+
+! Segment analytics (when not proxied first-party)
+||cdn.segment.com^
+||api.segment.io^
+
+! ==========================================
+! UTIQ TELECOM TRACKING (EU — Aug 2026)
+! Network-level tracking by European telecoms (Orange, Vodafone, Deutsche Telekom)
+! Uses subscriber identity at network level — no cookies needed
+! ==========================================
+||utiq.com^
+||utiq-aws.net^
+||utiqcontent.com^
+
 ! Roku/SmartTV Tracking
 ! NOTE: Most rules moved to filterlist.streaming.skyglass.txt and
 ! filterlist.streaming.roku.txt — removed 2026-08-04 to avoid duplication

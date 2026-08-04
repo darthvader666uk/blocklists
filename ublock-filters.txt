@@ -1,7 +1,7 @@
 ! uBlock Origin specific filters (cosmetic, scriptlets, removeparam)
 ! NOT compatible with AdGuard Home DNS-level blocking
 ! Import into uBlock Origin → My filters
-! Last updated: August 1, 2026 (synced from uBlock backup)
+! Last updated: August 4, 2026 (added new removeparam rules from research)
 !
 ! === KEY ===
 ! ##       = Element hiding
@@ -181,4 +181,36 @@ www.vinted.co.uk##.slot-placeholder--leaderboard.slot-placeholder
 *$removeparam=oly_anon_id
 *$removeparam=oly_enc_id
 *$removeparam=sdfp
+
+! Social platform tracking (new Aug 2026)
+*$removeparam=tgclid
+*$removeparam=srsltid
+*$removeparam=igshid
+*$removeparam=tw_medium
+*$removeparam=tw_profile_id
+*$removeparam=tw_source
+*$removeparam=refsrc
+*$removeparam=ref_src
+*$removeparam=ref_url
+
+! Affiliate & ad network tracking (new Aug 2026)
+*$removeparam=asc_campaign
+*$removeparam=asc_refurl
+*$removeparam=asc_source
+*$removeparam=ranMID
+*$removeparam=ranEAID
+*$removeparam=ranSiteID
+*$removeparam=elqTrackId
+*$removeparam=elq
+*$removeparam=elqaid
+*$removeparam=mkttid
+*$removeparam=laz_trackid
+
+! Microsoft & enterprise tracking (new Aug 2026)
+*$removeparam=ocid
+*$removeparam=ns_mchannel
+*$removeparam=ns_source
+*$removeparam=ns_campaign
+*$removeparam=ns_linkname
+*$removeparam=ns_fee
 

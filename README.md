@@ -273,11 +273,15 @@ All lists below are active and verified as of **4 August 2026**. These are the t
 
 | List | URL | Rules | Purpose |
 |------|-----|-------|---------|
-| **Hagezi Multi PRO** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt` | 212,493 | Extended protection — ads, trackers, malware, crypto |
+| **Hagezi Pro++** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt` | 272,540 | Maximum protection — ads, trackers, malware, crypto (upgraded from Pro Aug 2026) |
 | **Hagezi Threat Intelligence Feeds** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt` | 1,426,847 | Security — threat intel domains |
 | **Threat Intelligence Feeds — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 56,860 | IP-based threat blocking |
+| **Hagezi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | 230 | Vivo device tracking (new Aug 2026) |
+| **Hagezi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | 387 | Windows/Office telemetry (new Aug 2026) |
 | **AdGuard DNS filter** | `https://filters.adtidy.org/extension/ublock/filters/2.txt` | 117,416 | AdGuard's core DNS filter |
 | **AdGuard CNAME Trackers** | `https://filters.adtidy.org/extension/chromium/filters/15.txt` | 157,261 | CNAME-based tracker blocking |
+| **AdGuard CNAME Disguised Trackers** | `https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_trackers_justdomains.txt` | Varies | CNAME-cloaked tracker domains (Criteo, Adobe, Salesforce) — new Aug 2026 |
+| **AdGuard CNAME Disguised Ads** | `https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_ads_justdomains.txt` | Varies | CNAME-cloaked ad domains — new Aug 2026 |
 
 ### 🍪 Privacy & Annoyances
 
