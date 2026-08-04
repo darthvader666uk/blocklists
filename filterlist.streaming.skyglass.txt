@@ -47,3 +47,10 @@
 ||sky.adform.net^
 ||adform.net^
 ||ads.wowtv.de^
+
+! ========== SKY ADSMART (community-confirmed safe to block) ==========
+||skyadsmart.com^
+||dev-adload.skyadsmart.com^
+||hbbtv.skyadsmart.com^
+||prod-adload.skyadsmart.com^
+||sit-adload.skyadsmart.com^
