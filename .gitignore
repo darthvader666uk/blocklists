@@ -5,6 +5,7 @@ push-to-gist.bat
 # OS files
 .DS_Store
 Thumbs.db
+*.Identifier
 
 # Editor files
 .vscode/

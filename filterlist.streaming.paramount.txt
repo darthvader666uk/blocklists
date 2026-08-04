@@ -1,14 +1,17 @@
 [Adblock Plus]
 ! Title: Paramount+ Ad Blocking Rules
-! Last Updated: 2026-06-02
+! Last Updated: 2026-08-04
 ! Description: Paramount+ ad blocking - LARGELY INEFFECTIVE as of April 2026
 !
-! 🔴 CRITICAL APRIL 2026 UPDATE 🔴
+! ⚠️⚠️⚠️  DAI MAKES DNS BLOCKING 0% EFFECTIVE  ⚠️⚠️⚠️
+! =====================================================
 ! Paramount+ switched to Google DAI (Direct Ad Injection) in April 2026:
 ! - App update v16.8+: Ads embedded server-side (unsolvable)
 ! - dai.google.com cannot be blocked without breaking playback
+! - These rules provide ZERO ad blocking on current app versions
 ! - Workaround: Disable app auto-updates, stay on v16.8 or earlier
-! - Current effectiveness: 0% (DAI makes DNS blocking pointless)
+! - Effectiveness: 0% (DAI makes DNS blocking pointless)
+! =====================================================
 !
 ! See: https://gist.github.com/ozankiratli/801ba17705e7f2a904d2e443af5a64f8
 ! Latest comments show users reverting to older app versions
@@ -29,8 +32,9 @@
 @@||thumbnails.cbsig.net^
 @@||bakery.pplus.paramount.tech^
 @@||^[^.]+\.cws\.conviva\.com$^
-! Android app requirement (April 2026)
-@@||fwmrm.net^
+! NOTE: fwmrm.net (FreeWheel) was previously allowlisted here for Android app
+! compatibility, but Paramount+ uses Google DAI making DNS blocking ineffective.
+! The allowlist conflicted with HBO's ||fwmrm.net^ block — removed 2026-08-04.
 
 ! ==========================================
 ! PARAMOUNT+ BLACKLIST (MINIMAL EFFECT)

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-07-15
+! Last Updated: 2026-08-04
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
@@ -11,6 +11,11 @@
 ! 3. Privacy & Tracking (generic network-level blocks)
 ! 4. Streaming Services (split into separate files - see gist/filterlist.streaming.*.txt)
 ! 5. Meta / Facebook (AGGRESSIVE - blocks cross-platform audience data warehouse)
+!
+! DEDUPLICATION NOTE (2026-08-04):
+! Streaming-specific rules (Roku, Amazon, Peacock, Sky Glass) have been moved
+! to their respective filterlist.streaming.*.txt files. This list focuses on
+! cross-service trackers and general ad networks.
 
 ! ==========================================
 ! SECTION 1: GENERAL DENY LIST (28 rules)
@@ -47,11 +52,11 @@
 ||startpage.com/sp/adsense/^
 
 ! Streaming Telemetry & Analytics (May 2026 additions)
+! NOTE: ||sb.scorecardresearch.com^ and ||telemetry.nbcuott.com^ moved to
+! filterlist.streaming.peacock.txt — removed 2026-08-04 to avoid duplication
 ||mparticle.com^
 ||scorecardresearch.com^
-||sb.scorecardresearch.com^
 ||omtrdc.net^
-||telemetry.nbcuott.com^
 
 ! ==========================================
 ! SECTION 2: ALLOW LIST / WHITELISTS
@@ -288,7 +293,8 @@
 ||www.google-analytics.com^
 ||analytics.google.com^
 ||googletagmanager.com^
-||www.googletagmanager.com^
+! NOTE: ||www.googletagmanager.com^ removed — already allowlisted in Section 2
+! (line 124: @@||www.googletagmanager.com^) to prevent false positives
 ||googlesyndication.com^
 ||doubleclick.net^
 ||adservice.google.com^
@@ -330,9 +336,9 @@
 ||bing.com^$third-party
 
 ! Amazon Tracking
-||amazon-adsystem.com^
+! NOTE: ||amazon-adsystem.com^ and ||amazonadvertising.com^ moved to
+! filterlist.streaming.amazon.txt — removed 2026-08-04 to avoid duplication
 ||amazon.com^$third-party
-||amazonadvertising.com^
 ||aiv-cdn.amazon.com^
 ||dmtracker.amazon.com^
 
@@ -460,15 +466,10 @@
 ||securemetrics.v.aaplimg.com^
 ||securemvt.v.aaplimg.com^
 
-! Roku/SmartTV Tracking (8 rules)
-||roku.admeasurement.com^
-||tvinteractive.tv^
-||ravm.tv^
-||alphonso.tv^
-||smartclip.net^
-||ads.spotx.tv^
+! Roku/SmartTV Tracking
+! NOTE: Most rules moved to filterlist.streaming.skyglass.txt and
+! filterlist.streaming.roku.txt — removed 2026-08-04 to avoid duplication
 ||tvmeta.tvinteractive.tv^
-||mcp.tvinteractive.tv^
 
 ! Alibaba/Tencent/Other (5 rules)
 ||alibaba.com^$third-party
@@ -493,56 +494,57 @@
 ! query-parameter patterns and update this section with precise filters.
 
 ! ==================================================
-! AdGuard Home / hosts-style entries for EBAY leakage (plain hostnames)
-! NOTE: AdGuard Home uses DNS-level blocking; these entries are global
-! and will block the hostname for all clients. Review for side effects.
-pagead2.googlesyndication.com
-stats.g.doubleclick.net
-googleads.g.doubleclick.net
-adservice.google.com
-ad.doubleclick.net
-googletagmanager.com
+! EBAY LEAKAGE BLOCKS (DNS-level, globally active)
+! NOTE: These block eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest)
+! Converted from hosts-style to ||domain^ format for consistency (2026-08-04)
+! ==================================================
 
-! Criteo endpoints seen in crawl
-static.criteo.net
-dynamic.criteo.com
-gum.criteo.com
-widget.criteo.com
-sslwidget.criteo.com
+! Google ad/tracking endpoints seen in eBay crawl
+! NOTE: ad.doubleclick.net, adservice.google.com, googleads.g.doubleclick.net,
+! and googletagmanager.com are already in Section 3 (Privacy & Tracking).
+! Only pagead2.googlesyndication.com is unique to eBay crawl findings.
+||pagead2.googlesyndication.com^
 
-! Additional conservative AdGuard hosts (observed in eBay crawl)
-! ⚠️ NOW AGGRESSIVE: These are eBay→Instagram tracking conduits
-tr.snapchat.com
-beacon.krxd.net
-usermatch.krxd.net
-s.pinimg.com
-ads.pinterest.com
-ct.pinterest.com
-analytics.pinterest.com
-pixel.advertising.com
-! ⚠️ ADDITIONAL CROSS-DOMAIN TRACKERS (eBay→Instagram pipeline)
+! Criteo endpoints seen in eBay crawl
+||static.criteo.net^
+||dynamic.criteo.com^
+||gum.criteo.com^
+||widget.criteo.com^
+||sslwidget.criteo.com^
+
+! eBay→Instagram tracking conduits (AGGRESSIVE)
 ! Krxd audience data warehouse (fed by eBay, used by Instagram)
-krxd.net
-ids.krxd.net
-match.krxd.net
+||krxd.net^
+||ids.krxd.net^
+||match.krxd.net^
+||beacon.krxd.net^
+||usermatch.krxd.net^
+
 ! Snapchat pixel & conversion API (eBay→Snapchat→Instagram LLA sync)
-tr.snapchat.com
-stas.snapchat.com
-cta.snapchat.com
-api.snapchat.com
+||tr.snapchat.com^
+||stas.snapchat.com^
+||cta.snapchat.com^
+||api.snapchat.com^
+
 ! Pinterest audience (feeds to Instagram lookalikes)
-s.pinimg.com
-ads.pinterest.com
-analytics.pinterest.com
-pinterest.com^$third-party
+||s.pinimg.com^
+||ads.pinterest.com^
+||ct.pinterest.com^
+||analytics.pinterest.com^
+||pinterest.com^$third-party
+
 ! Facebook Audience Network (core for cross-domain targeting)
-an.facebook.com
-aan.facebook.com
+||an.facebook.com^
+||aan.facebook.com^
+
 ! Salesforce Marketing Cloud (eBay partner data warehouse → Meta)
-exacttarget.com
-exacttarget.com^$third-party
-evergage.com
-evergage.com^$third-party
+||exacttarget.com^
+||exacttarget.com^$third-party
+||evergage.com^
+||evergage.com^$third-party
+
+! Pixel tracking
+||pixel.advertising.com^
 
 
 ! Safer alternative: prefer site-scoped (extension) rules for minimal risk.

@@ -1,8 +1,9 @@
 [Adblock Plus]
 ! Title: Roku Ad Blocking Rules
-! Last Updated: 2026-04-17
+! Last Updated: 2026-08-04
 ! Description: Roku/Roku Channel ad and tracking blocking
 ! Source: Verified against ozankiratli gist (July 2025 + April 2026 comments)
+! NOTE: Regex patterns converted to hostnames for AdGuard Home DNS compatibility
 !
 ! ==========================================
 ! ROKU - DO NOT BLOCK (Critical functionality)
@@ -41,34 +42,76 @@
 ! ROKU BLACKLIST - INDIVIDUAL DOMAINS
 ! ==========================================
 ||roku.admeasurement.com^
-||ravm.tv^
-||display.ravm.tv^
 ||lat-services.api.data.roku.com^
 ||captive.roku.com^
+! NOTE: ravm.tv and display.ravm.tv moved to hostname rules section below
 
 ! ==========================================
-! ROKU BLACKLIST - REGEX PATTERNS
-! Source: ozankiratli gist (July 2025)
+! ROKU BLACKLIST - HOSTNAME RULES
+! Source: ozankiratli gist (July 2025), converted from regex for DNS compatibility
+! NOTE: Original regex patterns (||^...^) don't work in AdGuard Home DNS mode.
+!       Converted to individual hostname blocks below.
 ! ==========================================
-! Pattern 1: Block logs, ads, web, cti, voice, prod.mobile
-||^(([^.]+\.)*(logs|ads|web|prod\.mobile|cti|voice)(\.[^.]+)*\.)roku\.com$^
 
-! Pattern 2: Block specific server names (amarillo, amoeba, austin, etc)
-||^(([^.]+\.)*[^.]*(amarillo|amoeba|austin|benjamin|bryan|camden|cooper|copper|digdug|external|giga|gilbert|griffin|hereford|lb|liberty|littlefield|longview|madison|marlin|midland|paolo|richmond|rollingwood|scribe|sugarland|tyler|victoria|windsor)[^.]*(\.([^.]+)*\.))roku\.com$^
+! Roku ad/tracking subdomains (logs, ads, web, cti, voice, prod.mobile)
+||logs.roku.com^
+||ads.roku.com^
+||web.roku.com^
+||cti.roku.com^
+||voice.roku.com^
+||prod.mobile.roku.com^
 
-! Pattern 3: Block captive, cloudservices, wwwimg
-||^((captive|cloudservices|wwwimg)\.))roku\.com$^
+! Roku server hostnames (amarillo, amoeba, etc. — telemetry endpoints)
+||amarillo.roku.com^
+||amoeba.roku.com^
+||austin.roku.com^
+||benjamin.roku.com^
+||bryan.roku.com^
+||camden.roku.com^
+||cooper.roku.com^
+||copper.roku.com^
+||digdug.roku.com^
+||external.roku.com^
+||giga.roku.com^
+||gilbert.roku.com^
+||griffin.roku.com^
+||hereford.roku.com^
+||lb.roku.com^
+||liberty.roku.com^
+||littlefield.roku.com^
+||longview.roku.com^
+||madison.roku.com^
+||marlin.roku.com^
+||midland.roku.com^
+||paolo.roku.com^
+||richmond.roku.com^
+||rollingwood.roku.com^
+||scribe.roku.com^
+||sugarland.roku.com^
+||tyler.roku.com^
+||victoria.roku.com^
+||windsor.roku.com^
 
-! Pattern 4: Block .sr.roku.com tracking domains (bif, microsites, traces, track, userdata)
-||^((bif|microsites|traces|track|userdata)\.sr\.)roku\.com$^
+! Roku misc services
+||cloudservices.roku.com^
+||wwwimg.roku.com^
 
-! Pattern 5: Block ravm.tv queries (all subdomains)
-||^([^.]+\.)*ravm\.tv$^
+! .sr.roku.com tracking domains
+||bif.sr.roku.com^
+||microsites.sr.roku.com^
+||traces.sr.roku.com^
+||track.sr.roku.com^
+||userdata.sr.roku.com^
+
+! ravm.tv (all subdomains)
+||ravm.tv^
+||display.ravm.tv^
 
 ! ==========================================
 ! ROKU ADDITIONAL NOTES
 ! ==========================================
 ! - Roku Channel has different requirements than Roku OS
 ! - Test whitelists if getting content loading issues
-! - Overkill admeasurement blocker: ^([^.]+\.)*roku([^.]+\.)*\.admeasurement([^.]+\.)*\.com$
 ! - Roku is relatively stable (unlike Peacock/Paramount+ April 2026 breakage)
+! - Regex patterns converted to hostnames (Apr 2026) — originals broken in DNS mode
+! - Last updated: 2026-08-04

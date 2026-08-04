@@ -4,7 +4,7 @@
 
 ---
 
-## 📍 LATEST UPDATE: June 10, 2026
+## 📍 LATEST UPDATE: August 4, 2026
 
 ### 🔴 **CRITICAL FINDINGS - April 2026 Streaming App Updates**
 
@@ -49,7 +49,7 @@
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
 | **Rules** | ~585 carefully curated & verified |
-| **Last Updated** | **June 10, 2026** (Cross-referenced with community gist) |
+| **Last Updated** | **August 4, 2026** (Deduplication, Roku regex fix, conflict resolution) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
@@ -267,7 +267,7 @@ Following these services for changes:
 
 ## 🔗 **Active Filter Lists (AdGuard Home + uBlock Origin)**
 
-All lists below are active and verified as of **10 June 2026**. These are the third-party lists running alongside my own custom filters.
+All lists below are active and verified as of **4 August 2026**. These are the third-party lists running alongside my own custom filters.
 
 ### 🛡️ Core Protection Lists
 
@@ -309,25 +309,32 @@ All lists below are active and verified as of **10 June 2026**. These are the th
 
 ### 📝 My Custom Filter Lists
 
-| List | URL | Rules | Purpose |
-|------|-----|-------|---------|
-| **Master Filter List** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | 314 | Cross-service tracking + Meta blocking |
-| **Amazon** | `...raw/filterlist.streaming.amazon.txt` | 10 | Prime Video ads |
-| **Apple TV+** | `...raw/filterlist.streaming.appletv.txt` | 9 | Apple TV+ ads |
-| **Disney+** | `...raw/filterlist.streaming.disney.txt` | 2 | Disney+ advertising |
-| **HBO Max** | `...raw/filterlist.streaming.hbo.txt` | 15 | HBO Max / Max ads |
-| **Netflix** | `...raw/filterlist.streaming.netflix.txt` | 7 | Netflix tracking |
-| **Paramount+** | `...raw/filterlist.streaming.paramount.txt` | 30 | Paramount+ (DAI — 0% effective) |
-| **Sky Glass** | `...raw/filterlist.streaming.skyglass.txt` | 26 | Sky Glass ad networks |
+| List | URL | Blocks | Allows | Purpose |
+|------|-----|--------|--------|---------|
+| **Master Filter List** | `...raw/filterlist.txt` | 258 | 143 | Cross-service tracking + Meta blocking |
+| **Amazon** | `...raw/filterlist.streaming.amazon.txt` | 19 | 4 | Prime Video ads |
+| **Apple TV+** | `...raw/filterlist.streaming.appletv.txt` | 6 | 0 | Apple TV+ ads |
+| **Disney+** | `...raw/filterlist.streaming.disney.txt` | 5 | 3 | Disney+ advertising |
+| **HBO Max** | `...raw/filterlist.streaming.hbo.txt` | 6 | 8 | HBO Max / Max ads |
+| **Hulu** | `...raw/filterlist.streaming.hulu.txt` | 6 | 0 | Hulu ads |
+| **Netflix** | `...raw/filterlist.streaming.netflix.txt` | 7 | 3 | Netflix tracking |
+| **Paramount+** | `...raw/filterlist.streaming.paramount.txt` | 17 | 11 | Paramount+ (DAI — 0% effective) |
+| **Peacock** | `...raw/filterlist.streaming.peacock.txt` | 20 | 17 | Peacock/NBC ads |
+| **Pluto TV** | `...raw/filterlist.streaming.pluto.txt` | 11 | 3 | Pluto TV ads |
+| **Roku** | `...raw/filterlist.streaming.roku.txt` | 49 | 17 | Roku ad/tracking domains |
+| **Sky Glass** | `...raw/filterlist.streaming.skyglass.txt` | 27 | 7 | Sky Glass ad networks |
+| **Tubi** | `...raw/filterlist.streaming.tubi.txt` | 10 | 2 | Tubi ads |
+| **uBlock Cosmetic** | `ublock-filters.txt` | 54 | — | Browser-only cosmetic/scriptlet rules |
+| **uBlock Lite** | `ublock-filters-lite.txt` | 53 | — | MV3-compatible subset |
 
 ### 📊 Total Coverage
 
 | Metric | Value |
 |--------|-------|
 | **Third-party rules** | ~2,236,000+ |
-| **My custom rules** | ~413 |
+| **My custom rules** | ~650 (blocks + allows across all files) |
 | **Lists active** | 20 |
-| **Last verified** | 10 June 2026 |
+| **Last verified** | 4 August 2026 |
 
 ---
 
@@ -336,27 +343,28 @@ All lists below are active and verified as of **10 June 2026**. These are the th
 - **Filter Format:** AdBlock Plus (open standard)
 - **Community Reference:** ozankiratli gist, Hagezi, AdGuard, EasyList, uBlock Origin, Dandelion Sprout
 - **Verification:** Brave Search, Jina AI, Firecrawl
-- **Last Comprehensive Update:** June 10, 2026
+- **Last Comprehensive Update:** August 4, 2026
 
 ---
 
 ## 🔗 **File Structure**
 
 ```
-filterlist.txt                      # Main cross-service filter (~314 rules)
+filterlist.txt                      # Main cross-service filter (258 blocks + 143 allows)
 filterlist.streaming.*.txt          # Service-specific filters:
   - hbo.txt (HBO Max - PRODUCTION READY)
   - disney.txt (Disney+ - WORKING)
   - paramount.txt (Paramount+ - DAI UNSOLVABLE)
   - peacock.txt (Peacock - IMPROVED May 2026)
-  - roku.txt (Roku - ENHANCED)
+  - roku.txt (Roku - ENHANCED, regex converted to hostnames)
   - amazon.txt (Prime Video - LIMITED)
   - hulu.txt (Hulu - WORKING)
   - appletv.txt (Apple TV+ - WORKING)
   - netflix.txt (Netflix - tracking)
   - skyglass.txt (Sky Glass - WORKING)
   - tubi.txt, pluto.txt (FAST services)
-ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters
+ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters (54 rules)
+ublock-filters-lite.txt            # MV3-compatible subset (53 rules)
 ```
 
 ---
@@ -373,5 +381,5 @@ ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters
 
 **Made with ❤️ for ad-free streaming**
 
-*Last updated: June 10, 2026*
+*Last updated: August 4, 2026*
 *Cross-verified against: ozankiratli community research, Hagezi, AdGuard, EasyList*

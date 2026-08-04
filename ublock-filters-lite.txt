@@ -1,6 +1,6 @@
 ! uBlock Origin Lite (Chrome MV3) Compatible Filters
 ! Derived from ublock-filters.txt
-! Last updated: 2026-07-03
+! Last updated: 2026-08-04 (removed MV3-incompatible :has() rules)
 !
 ! LIMITATIONS vs full uBlock Origin:
 ! - No scriptlet injection (##+js())
@@ -47,15 +47,16 @@ facebook.com##body > div[class*="__fb-light-mode"]
 ! ============================================================
 ! GOOGLE (Search, AI, Consent)
 ! ============================================================
-google.*###search .g:has(cite:has-text(/https?:\/\/.*\.pinterest\.*/))
-google.*##.ivg-i.rg_el.rg_di.rg_bx:if(div > div > span.rg_ilmn:has-text(pinterest.))
-google.*##.g:has(a[href*=".pinterest."])
-google.*###search .g:has(a[href=".pinterest."])
+! NOTE: :has() and :has-text() selectors removed — not supported in MV3
+! These Pinterest-hiding rules only work in full uBlock Origin
+! google.*###search .g:has(cite:has-text(/https?:\/\/.*\.pinterest\.*/))
+! google.*##.g:has(a[href*=".pinterest."])
+! google.*###search .g:has(a[href=".pinterest."])
+! google.*##div:has(>div>div>div>h2:has-text(People also ask))
 google.*###lb
 google.*##.exp-outline
 google.*##[style="display: block; opacity: 1;"]
 google.*##[data-hveid]>div
-google.*##div:has(>div>div>div>h2:has-text(People also ask))
 google.*##.EtOod.fP1Qef.vdQmEd
 google.com##div[data-content-feature="sge"]
 google.com##.XAIOverview
@@ -81,9 +82,10 @@ startpage.com##.w-gl__ads
 ! ============================================================
 ! TWITTER / X
 ! ============================================================
-twitter.com##[data-testid="tweet"]:has-text(/Promoted$/)
-twitter.com##[data-testid="tweet"]:has-text(Promoted)
-twitter.com##[data-testid="UserCell"]:has-text(Promoted)
+! NOTE: :has-text() selectors removed — not supported in MV3
+! twitter.com##[data-testid="tweet"]:has-text(/Promoted$/)
+! twitter.com##[data-testid="tweet"]:has-text(Promoted)
+! twitter.com##[data-testid="UserCell"]:has-text(Promoted)
 
 ! ============================================================
 ! BRAVE SEARCH
@@ -91,8 +93,9 @@ twitter.com##[data-testid="UserCell"]:has-text(Promoted)
 search.brave.com##[data-type="sponsored"]
 search.brave.com##.snippet[data-type="sponsored"]
 search.brave.com##.result[data-type="sponsored"]
-search.brave.com##.snippet:has-text(Sponsored)
-search.brave.com##.result:has-text(Sponsored)
+! NOTE: :has-text() selectors removed — not supported in MV3
+! search.brave.com##.snippet:has-text(Sponsored)
+! search.brave.com##.result:has-text(Sponsored)
 search.brave.com##.download-cta
 
 ! ============================================================

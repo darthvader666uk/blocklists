@@ -1,7 +1,7 @@
 ! uBlock Origin specific filters (cosmetic, scriptlets, removeparam)
 ! NOT compatible with AdGuard Home DNS-level blocking
 ! Import into uBlock Origin → My filters
-! Last updated: June 30, 2026
+! Last updated: August 1, 2026 (synced from uBlock backup)
 !
 ! === KEY ===
 ! ##       = Element hiding
