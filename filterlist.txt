@@ -162,6 +162,17 @@
 ! ========== CANVA ==========
 @@||cdn.metadata.io^
 
+! ========== EA / ORIGIN ==========
+! EA Desktop game updates — false positives in Hagezi Pro++
+@@||beyondwickedmapping.org^
+@@||heartbeat.dm.origin.com^
+@@||eaassets-a.akamaihd.net^
+@@||eaconnect.ea.com^
+@@||gateway.ea.com^
+@@||dm-origin.ea.com^
+@@||*.ea.com^
+@@||*.origin.com^
+
 ! ========== SHOPIFY ==========
 @@||*.shopifycloud.com^
 @@||shopify.com^
