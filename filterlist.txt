@@ -575,6 +575,10 @@
 ! Pixel tracking
 ||pixel.advertising.com^
 
+! StreamNoAds (full streaming ad list) imported via AdGuard Home blocklist:
+! https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services
+! Added Aug 2026 — covers Netflix, Twitch, Crunchyroll, German streaming, ad infrastructure
+
 
 ! Safer alternative: prefer site-scoped (extension) rules for minimal risk.
 ! Example uBlock site-scoped rules (enable in uBlock/My filters if desired):
@@ -582,6 +586,35 @@
 ! ||usermatch.krxd.net^$third-party,domain=ebay.com|www.ebay.com
 ! ||s.pinimg.com^$third-party,domain=ebay.com|www.ebay.com
 ! ||ads.pinterest.com^$third-party,domain=ebay.com|www.ebay.com
+
+! ==========================================
+! MALWARE & SCAM DOMAINS (Aug 2026)
+! Source: Kaspersky, Microsoft threat research
+! ==========================================
+
+! SilentCryptoMiner RAT campaign (Kaspersky Apr 2026)
+||urush1bar4.online^
+||pesktop.com^
+
+! Fake KMS Activators
+||kms-full.com^
+||officialkmspico.com^
+
+! ==========================================
+! CRYPTO MINING DOMAINS (Aug 2026)
+! ==========================================
+||cloudcdn.gdn^
+||beeppool.info^
+||adless.io^
+||cloud-miner.de^
+||lightminer.co^
+||afminer.com^
+||ad-miner.com^
+||browsermine.com^
+||crypto-loot.com^
+||coin-have.com^
+||webmine.cz^
+||minero.pw^
 
 
 ! ==========================================

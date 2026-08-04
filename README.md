@@ -311,6 +311,13 @@ All lists below are active and verified as of **4 August 2026**. These are the t
 |------|-----|-------|---------|
 | **Perflyst & Dandelion Sprout Smart-TV Blocklist** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
 
+### 📺 Streaming Ad Blocking (Third-Party)
+
+| List | URL | Rules | Purpose |
+|------|-----|-------|---------|
+| **StreamNoAds** ⭐ NEW | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 250+ | Netflix, Twitch, Crunchyroll, German streaming, ad infrastructure |
+| **StreamNoAds Whitelist** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/whitelist-streaming` | Varies | Prevents playback breakage (required alongside blocklist) |
+
 ### 📝 My Custom Filter Lists
 
 | List | URL | Blocks | Allows | Purpose |
