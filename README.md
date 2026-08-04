@@ -294,6 +294,8 @@ All lists below are active and verified as of **4 August 2026**. These are the t
 | **AdGuard Annoyances** | `https://filters.adtidy.org/extension/ublock/filters/14.txt` | 54,428 | Annoyance removal |
 | **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,721 | Anti-fingerprinting |
 | **RL Tracking Parameter Removal** | `https://filters.adtidy.org/extension/chromium/filters/17.txt` | 2,538 | URL tracking param stripping |
+| **AdGuard Popup Hosts** | `https://filters.adtidy.org/extension/chromium/filters/22.txt` | Varies | Popup ad domain blocking |
+| **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | Varies | "Get our app" banner removal |
 
 ### 🔒 Security & Malware
 
@@ -310,6 +312,8 @@ All lists below are active and verified as of **4 August 2026**. These are the t
 | List | URL | Rules | Purpose |
 |------|-----|-------|---------|
 | **Perflyst & Dandelion Sprout Smart-TV Blocklist** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
+| **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | Varies | LG, Samsung, Sony, Roku — alternative to Perflyst |
+| **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | 77 | Samsung, LG, Roku telemetry |
 
 ### 📺 Streaming Ad Blocking (Third-Party)
 
