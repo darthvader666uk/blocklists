@@ -367,7 +367,8 @@ filterlist.streaming.*.txt          # Service-specific filters:
   - netflix.txt (Netflix - tracking)
   - skyglass.txt (Sky Glass - WORKING)
   - tubi.txt, pluto.txt (FAST services)
-ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters (54 rules)
+ublock-main.txt                    # uBlock Origin full backup (settings, lists, userFilters)
+ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters (legacy reference)
 ublock-filters-lite.txt            # MV3-compatible subset (53 rules)
 ```
 
