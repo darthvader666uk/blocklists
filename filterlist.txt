@@ -240,6 +240,15 @@
 @@||mystnodes.com^
 @@||help.mystnodes.com^
 
+! ========== MYSTERIUM NETWORK (dVPN) ==========
+! mysterium.network — decentralized VPN, must stay unblocked or node breaks
+! polygon1/ethereum1 = blockchain RPC (payments/settlements); broker = P2P signaling
+@@||mysterium.network^
+@@||polygon.drpc.org^
+@@||cloudflare-eth.com^
+@@||api.ipify.org^
+@@||badupnp.benjojo.co.uk^
+
 ! ========== ZILCH ==========
 ! Zilch payment service & content delivery
 @@||zilchcontentcards.ampxdirect.com^
