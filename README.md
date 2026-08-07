@@ -4,6 +4,18 @@
 
 ---
 
+## 📍 LATEST UPDATE: August 7, 2026
+
+### 🟢 **BLOCKLIST STACK OVERHAUL — Verified Against Hagezi's Official Docs**
+
+- **Reverted to Hagezi Multi PRO (`pro.txt`)** — his personal recommendation (Pro++ is "experienced users only, may contain false positives")
+- **Kept:** TIF + TIF-IPs, DynDNS, Badware Hoster, Native Vivo/WinOffice, Dandelion Sprout's Anti-Malware (explicitly recommended for AGH), Perflyst Smart-TV, StreamNoAds + companion whitelist
+- **Removed (redundant/FP sources, already curated inside Hagezi):** StevenBlack hosts, AdGuard DNS filter, AdGuard CNAME Trackers + disguised CNAME lists, Phishing Army Extended, ShadowWhisperer, Scam Blocklist, URLHaus, NoCoin, AdGuard Popup Hosts
+- **Allowlists:** uBlock Unbreak + StreamNoAds whitelist + Coupert (required for extension)
+- **Result:** 37 → 27 blocklists, ~3.7M → ~2.75M rules
+
+---
+
 ## 📍 LATEST UPDATE: August 4, 2026
 
 ### 🔴 **CRITICAL FINDINGS - April 2026 Streaming App Updates**
@@ -49,7 +61,7 @@
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
 | **Rules** | ~585 carefully curated & verified |
-| **Last Updated** | **August 4, 2026** (Deduplication, Roku regex fix, conflict resolution) |
+| **Last Updated** | **August 7, 2026** (Blocklist stack overhaul — verified against Hagezi docs, 37 → 27 lists) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
@@ -265,91 +277,55 @@ Following these services for changes:
 
 ---
 
-## 🔗 **Active Filter Lists (AdGuard Home + uBlock Origin)**
+## 🔗 **Active Filter Lists (AdGuard Home)**
 
-All lists below are active and verified as of **4 August 2026**. These are the third-party lists running alongside my own custom filters.
+All lists below are active and verified as of **7 August 2026**. Stack verified against Hagezi's official documentation (README + FAQ):
 
-### 🛡️ Core Protection Lists
+- Hagezi's documented recommendation = **one Multi tier + TIF** (his own public DNS runs Multi Pro + TIF)
+- **Multi PRO (`pro.txt`)** is Hagezi's personal recommendation — Pro++ (`pro.plus.txt`) is "experienced users only, may contain false positives"
+- Safe extras on top: DynDNS, Badware Hoster, Native Vivo/WinOffice; **Dandelion Sprout's Anti-Malware is explicitly recommended for AdGuard Home**
+- ❌ Removed in the Aug 2026 cleanup (already curated inside Hagezi, redundant or FP sources): StevenBlack hosts, AdGuard DNS filter, AdGuard CNAME Trackers + disguised CNAME lists, Phishing Army **Extended**, ShadowWhisperer, Scam Blocklist, URLHaus, NoCoin, AdGuard Popup Hosts
 
-| List | URL | Rules | Purpose |
-|------|-----|-------|---------|
-| **Hagezi Pro++** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt` | 272,540 | Maximum protection — ads, trackers, malware, crypto (upgraded from Pro Aug 2026) |
-| **Hagezi Threat Intelligence Feeds** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt` | 1,426,847 | Security — threat intel domains |
-| **Threat Intelligence Feeds — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 56,860 | IP-based threat blocking |
-| **Hagezi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | 230 | Vivo device tracking (new Aug 2026) |
-| **Hagezi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | 387 | Windows/Office telemetry (new Aug 2026) |
-| **AdGuard DNS filter** | `https://filters.adtidy.org/extension/ublock/filters/2.txt` | 117,416 | AdGuard's core DNS filter |
-| **AdGuard CNAME Trackers** | `https://filters.adtidy.org/extension/chromium/filters/15.txt` | 157,261 | CNAME-based tracker blocking |
-| **AdGuard CNAME Disguised Trackers** | `https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_trackers_justdomains.txt` | Varies | CNAME-cloaked tracker domains (Criteo, Adobe, Salesforce) — new Aug 2026 |
-| **AdGuard CNAME Disguised Ads** | `https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_ads_justdomains.txt` | Varies | CNAME-cloaked ad domains — new Aug 2026 |
-
-### 🍪 Privacy & Annoyances
+### 🛡️ Blocklists (27)
 
 | List | URL | Rules | Purpose |
 |------|-----|-------|---------|
-| **EasyList** | `https://easylist.to/easylist/easylist.txt` | 67,639 | Core ad blocking |
-| **EasyPrivacy** | `https://easylist.to/easylist/easyprivacy.txt` | 55,398 | Tracking protection |
-| **Easylist Cookie List** | `https://secure.fanboy.co.nz/fanboy-cookiemonster.txt` | 9,519 | Cookie notice removal |
-| **Fanboy's Annoyance List** | `https://secure.fanboy.co.nz/fanboy-annoyance.txt` | 25,634 | Social widgets, popups |
-| **AdGuard Annoyances** | `https://filters.adtidy.org/extension/ublock/filters/14.txt` | 54,428 | Annoyance removal |
-| **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,721 | Anti-fingerprinting |
-| **RL Tracking Parameter Removal** | `https://filters.adtidy.org/extension/chromium/filters/17.txt` | 2,538 | URL tracking param stripping |
-| **AdGuard Popup Hosts** | `https://filters.adtidy.org/extension/chromium/filters/22.txt` | Varies | Popup ad domain blocking |
-| **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | Varies | "Get our app" banner removal |
+| **Hagezi Multi PRO** ⭐ MAIN | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt` | 218,204 | Hagezi's personal recommendation — ads, trackers, malware, phishing, scam, popups, bug trackers |
+| **Hagezi Threat Intelligence Feeds** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt` | 2,444,220 | Threat intel domains (≥2GB RAM recommended in AGH; TIF Medium 412k for constrained devices) |
+| **Hagezi TIF — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 56,948 | IP-based threat blocking |
+| **Hagezi Dynamic DNS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt` | 1,525 | Security extra |
+| **Hagezi Badware Hoster** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt` | 1,259 | Security extra |
+| **Hagezi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | 228 | Vivo device tracking |
+| **Hagezi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | 390 | Windows/Office telemetry |
+| **Dandelion Sprout's Anti-Malware** | `https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt` | 14,021 | Malware blocking — Hagezi explicitly recommends for AGH |
+| **Perflyst & Dandelion Sprout Smart-TV** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
+| **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | 231 | LG/Samsung/Sony/Roku (optional — overlaps Perflyst) |
+| **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | 77 | Samsung/LG/Roku telemetry (optional — overlaps Perflyst) |
+| **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,814 | Anti-fingerprinting |
+| **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | 8,316 | "Get our app" banner removal |
+| **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 150 | Netflix ads, Twitch, Crunchyroll, German/Indian streaming, streaming ad platforms — requires companion whitelist |
 
-### 🔒 Security & Malware
+**My Custom Filter Lists** (12 active in AGH, ~700 rules): Master + streaming (Amazon, Apple TV+, Disney+, HBO Max, Netflix, Paramount+, Sky Glass, Hulu, Roku, Tubi, Pluto TV) — curated blocks + playback whitelists, see File Structure below. (Peacock file exists in repo but is not enabled — DAI makes it 0% effective.)
 
-| List | URL | Rules | Purpose |
-|------|-----|-------|---------|
-| **uBlock Badware** | `https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt` | 4,213 | Malware, phishing, badware |
-| **uBlock Privacy** | `https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt` | 1,654 | Privacy-focused blocks |
-| **Dandelion Sprout's Anti-Malware** | `https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt` | 13,858 | Malware domain blocking |
-| **Phishing Army Extended** | `https://phishing.army/download/phishing_army_blocklist_extended.txt` | 144,818 | Phishing domain blocking |
-| **URLHaus Hosts** | `https://urlhaus.abuse.ch/downloads/hostfile/` | 544 | Malware URL blocking |
+**uBlock-only** (browser extension, not used in AGH): `ublock-main.txt`, `ublock-filters.txt`, `ublock-filters-lite.txt`
 
-### 📺 Smart TV
-
-| List | URL | Rules | Purpose |
-|------|-----|-------|---------|
-| **Perflyst & Dandelion Sprout Smart-TV Blocklist** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
-| **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | Varies | LG, Samsung, Sony, Roku — alternative to Perflyst |
-| **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | 77 | Samsung, LG, Roku telemetry |
-
-### 📺 Streaming Ad Blocking (Third-Party)
+### ✅ Allowlists (3)
 
 | List | URL | Rules | Purpose |
 |------|-----|-------|---------|
-| **StreamNoAds** ⭐ NEW | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 250+ | Netflix, Twitch, Crunchyroll, German streaming, ad infrastructure |
-| **StreamNoAds Whitelist** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/whitelist-streaming` | Varies | Prevents playback breakage (required alongside blocklist) |
-
-### 📝 My Custom Filter Lists
-
-| List | URL | Blocks | Allows | Purpose |
-|------|-----|--------|--------|---------|
-| **Master Filter List** | `...raw/filterlist.txt` | 258 | 143 | Cross-service tracking + Meta blocking |
-| **Amazon** | `...raw/filterlist.streaming.amazon.txt` | 19 | 4 | Prime Video ads |
-| **Apple TV+** | `...raw/filterlist.streaming.appletv.txt` | 6 | 0 | Apple TV+ ads |
-| **Disney+** | `...raw/filterlist.streaming.disney.txt` | 5 | 3 | Disney+ advertising |
-| **HBO Max** | `...raw/filterlist.streaming.hbo.txt` | 6 | 8 | HBO Max / Max ads |
-| **Hulu** | `...raw/filterlist.streaming.hulu.txt` | 6 | 0 | Hulu ads |
-| **Netflix** | `...raw/filterlist.streaming.netflix.txt` | 7 | 3 | Netflix tracking |
-| **Paramount+** | `...raw/filterlist.streaming.paramount.txt` | 17 | 11 | Paramount+ (DAI — 0% effective) |
-| **Peacock** | `...raw/filterlist.streaming.peacock.txt` | 20 | 17 | Peacock/NBC ads |
-| **Pluto TV** | `...raw/filterlist.streaming.pluto.txt` | 11 | 3 | Pluto TV ads |
-| **Roku** | `...raw/filterlist.streaming.roku.txt` | 49 | 17 | Roku ad/tracking domains |
-| **Sky Glass** | `...raw/filterlist.streaming.skyglass.txt` | 27 | 7 | Sky Glass ad networks |
-| **Tubi** | `...raw/filterlist.streaming.tubi.txt` | 10 | 2 | Tubi ads |
-| **uBlock Cosmetic** | `ublock-filters.txt` | 54 | — | Browser-only cosmetic/scriptlet rules |
-| **uBlock Lite** | `ublock-filters-lite.txt` | 53 | — | MV3-compatible subset |
+| **uBlock filters – Unbreak** | `https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/unbreak.txt` | 2,536 | Curated anti-breakage exceptions (DNS-level: only plain `@@` rules apply) |
+| **StreamNoAds Whitelist** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/whitelist-streaming` | 40 | REQUIRED companion to StreamNoAds — protects playback CDNs |
+| **Coupert Whitelist** | `https://coupertteam.github.io/allowlist/smart-shopping.txt` | 62 | Required for Coupert extension (whitelists cashback/affiliate trackers network-wide — deliberate trade-off) |
 
 ### 📊 Total Coverage
 
 | Metric | Value |
 |--------|-------|
-| **Third-party rules** | ~2,236,000+ |
-| **My custom rules** | ~650 (blocks + allows across all files) |
-| **Lists active** | 20 |
-| **Last verified** | 4 August 2026 |
+| **Third-party blocklist rules** | ~2,753,000 |
+| **My custom rules** | ~700 (blocks + allows across all files) |
+| **Blocklists active** | 27 |
+| **Allowlists active** | 3 |
+| **Last verified** | 7 August 2026 |
 
 ---
 
@@ -358,7 +334,7 @@ All lists below are active and verified as of **4 August 2026**. These are the t
 - **Filter Format:** AdBlock Plus (open standard)
 - **Community Reference:** ozankiratli gist, Hagezi, AdGuard, EasyList, uBlock Origin, Dandelion Sprout
 - **Verification:** Brave Search, Jina AI, Firecrawl
-- **Last Comprehensive Update:** August 4, 2026
+- **Last Comprehensive Update:** August 7, 2026
 
 ---
 
@@ -397,5 +373,5 @@ ublock-filters-lite.txt            # MV3-compatible subset (53 rules)
 
 **Made with ❤️ for ad-free streaming**
 
-*Last updated: August 4, 2026*
+*Last updated: August 7, 2026*
 *Cross-verified against: ozankiratli community research, Hagezi, AdGuard, EasyList*
