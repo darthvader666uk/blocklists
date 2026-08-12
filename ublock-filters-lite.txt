@@ -1,6 +1,6 @@
 ! uBlock Origin Lite (Chrome MV3) Compatible Filters
 ! Derived from ublock-filters.txt
-! Last updated: 2026-08-04 (removed MV3-incompatible :has() rules)
+! Last updated: 2026-08-12 (added FB stop-gap; MV3-incompatible :has() rules still removed)
 !
 ! LIMITATIONS vs full uBlock Origin:
 ! - No scriptlet injection (##+js())
@@ -38,6 +38,9 @@ www.ecosia.org##.ad-result--ad-pill.ad-result.mainline__result.result
 ! ============================================================
 facebook.com##div[id^="mount"] div:not([id]):not([class]):not([style]) > div[data-nosnippet]
 facebook.com##body > div[class*="__fb-light-mode"]
+! Aug 2026: uBO dropped active FB support. MV3 cannot run the working
+! procedural (:has / :matches-css) or scriptlet filters - limited stop-gap only.
+facebook.com##div[data-ad-preview="message"]
 
 ! ============================================================
 ! GAME8

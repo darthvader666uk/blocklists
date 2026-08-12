@@ -107,6 +107,8 @@
 - Dashboard → Filter lists → Import → Paste raw URL
 - Or: **My filters** tab → paste rules directly
 
+> **Note:** uBlock Origin dropped active Facebook support in Aug 2026 — community stop-gap filters live in `ublock-main.txt` userFilters.
+
 #### AdGuard Browser Extension
 - Settings → Ad blocker → Custom & experimental → Custom filters
 - Add URL: Same as above
@@ -319,6 +321,10 @@ All lists below are active and verified as of **7 August 2026**. Stack verified 
 | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 150 | Netflix ads, Twitch, Crunchyroll, German/Indian streaming, streaming ad platforms — requires companion whitelist |
 
 **My Custom Filter Lists** (12 active in AGH, ~700 rules): Master + streaming (Amazon, Apple TV+, Disney+, HBO Max, Netflix, Paramount+, Sky Glass, Hulu, Roku, Tubi, Pluto TV) — curated blocks + playback whitelists, see File Structure below. (Peacock file exists in repo but is not enabled — DAI makes it 0% effective.)
+
+**Optional: Facebook/Meta DNS lists** (AGH network-wide; OPTIONAL — my curated `filterlist.txt` Section 5 already covers core Meta third-party domains, these add depth):
+- **Block List Project — Facebook** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/facebook.txt` | 22K+ Meta domains, hosts-format DNS blocking
+- **Bundy01 meta-blocklists** | `https://github.com/Bundy01/meta-blocklists` | Hosts-level blocking of all Meta domains
 
 **uBlock-only** (browser extension, not used in AGH): `ublock-main.txt`, `ublock-filters.txt`, `ublock-filters-lite.txt`
 
