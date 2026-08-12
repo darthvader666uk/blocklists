@@ -1,0 +1,49 @@
+[Adblock Plus]
+! ========== UK CATCH-UP TV (Channel 4 / All4 / My5) ==========
+! Last Updated: 2026-08-12
+! Effectiveness: PARTIAL (DNS-level only — device/app dependent)
+! Regional: UK ONLY
+!
+! SOURCE: Extracted from thecodingrasta/UK-CatchupDNS domains.txt top section.
+! NOTE: The upstream file is currently broken (324k domains — full Hagezi Pro list
+! accidentally appended). Only the REAL UK domains are kept here.
+!
+! RISK LEVEL: MEDIUM
+! - cdn.http.anno.channel4.com: some third-party apps (u.co.uk) need this
+!   whitelisted for playback — if a Channel 4 app fails, whitelist it first
+! - toots-a.akamaihd.net: shared Akamai CDN host — broad, remove if any
+!   unrelated site breaks
+! - ITVX NOT targeted: DNS blocking unreliable (ads from same host as content)
+! - BBC iPlayer NOT targeted: ad-free (TV Licence funded)
+! If playback fails, remove the most recent candidate first and retest.
+
+! ==========================================
+! CHANNEL 4 / ALL 4 / 4oD — AD & MEASUREMENT HOSTS
+! ==========================================
+||2a7e9.v.fwmrm.net^
+||2356e.v.fwmrm.net^
+||ads.channel4.com^
+||ads-pres.channel4.com^
+||c4ads.2cnt.net^
+||c4smarttv.2cnt.net^
+||cdn.http.anno.channel4.com^
+||cdn.ss.anno.channel4.com^
+||channel4.com.112.2o7.net^
+||channel4.com.sc.omtrdc.net^
+||channel4.com.ssl.sc.omtrdc.net^
+||ic.channel4.com^
+||monitor.channel4.com^
+||p.videologygroup.com^
+||securecdn.videologygroup.com^
+||sexperienceuk.channel4.com^
+||toots-a.akamaihd.net^
+||trk-euwest.tidaltv.com^
+||webstat.channel4.com^
+||webstats.channel4.com^
+
+! ==========================================
+! CHANNEL 5 / MY5 — AD & MEASUREMENT HOSTS
+! ==========================================
+||g3v-mir.fwgtm.akadns.net^
+||c5ads.ott.skymedia.co.uk^
+||c5appletv.2cnt.net^

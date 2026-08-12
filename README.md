@@ -4,6 +4,18 @@
 
 ---
 
+## 📍 LATEST UPDATE: August 12, 2026
+
+### 🟢 **COVERAGE GAP CLOSED — Native Device Trackers + DNS Bypass Prevention**
+
+- **Added Hagezi `native.*` OEM device lists** (additive — NOT included in Multi PRO, which is only partial 🟨 for native coverage): `native.amazon` (Fire TV/Stick ad bidding, OTT DTB), `native.roku` (ACR, ravm.tv), `native.samsung` (TV telemetry, Adobe Analytics), `native.apple` (Apple TV analytics, SKAdNetwork), `native.lgwebos`, `native.tiktok` — ~2,100 domains that were previously only in the uBlock config, not AdGuard Home
+- **Added Hagezi `doh-vpn-proxy-bypass`** — stops Roku/Fire TV hardcoded DoH from bypassing AdGuard Home's DNS entirely
+- **New UK catch-up list: `filterlist.streaming.ukcatchup.txt`** — Channel 4 / All4 / My5 ad & measurement hosts (23 domains), replacing the broken upstream `UK-CatchupDNS` `domains.txt` (which had the entire Hagezi Pro list accidentally appended — 324k domains)
+- **Whitelists unchanged:** Coupert + uBlock Unbreak + StreamNoAds whitelist (2,639 rules ≈ 0.1% of stack — not a factor)
+- **Filtered-rate note:** dashboard % dropped from ~30% → ~8% after the Aug 7 stack slim-down. Expected: the overhaul removed the highest-hit-rate lists (AdGuard DNS filter, CNAME trackers, popupads) and DAI/SSAI makes streaming ads unblockable at DNS. Native.* + DoH bypass should recover genuine coverage without Pro++-style breakage.
+
+---
+
 ## 📍 LATEST UPDATE: August 7, 2026
 
 ### 🟢 **BLOCKLIST STACK OVERHAUL — Verified Against Hagezi's Official Docs**
@@ -49,6 +61,7 @@
 | **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; fwmrm.net whitelist needed for Android app; stay on v16.8 |
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
 | **Hulu** | `filterlist.streaming.hulu.txt` | ✅ **WORKING** | 50% effectiveness (less SSAI-reliant) |
+| **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 23 verified domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
 | **Paramount+** (legacy) | `filterlist.streaming.paramount.txt` | 🔴 **UNSOLVABLE** | Google DAI (April 2026+) overrides DNS blocking |
 | **Main List** | `filterlist.txt` | ✅ **CURRENT** | 585+ cross-service + tracking rules |
 | **AdGuard Format** | `filterlist.adguard.txt` | ✅ **AVAILABLE** | Hostlist format (one per line) |
@@ -61,7 +74,7 @@
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
 | **Rules** | ~585 carefully curated & verified |
-| **Last Updated** | **August 7, 2026** (Blocklist stack overhaul — verified against Hagezi docs, 37 → 27 lists) |
+| **Last Updated** | **August 12, 2026** (native.* device lists + DoH bypass + UK catch-up list added) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
