@@ -77,6 +77,17 @@
 ! api.nordvpn.com and *.proxy.nordvpn.com — whitelist the whole domain
 @@||nordvpn.com^
 @@||*.nordvpn.com^
+@@||nordvpn.net^
+@@||nordaccount.com^
+@@||nordauth.com^
+@@||nordcdn.com^
+@@||nordcheckout.com^
+@@||nordvpnteams.com^
+@@||nordsecurity.com^
+@@||napps-1.com^
+! NOTE: cc-TLD marketing sites (nordvpn.co.uk/.de/.fr), lookalike/affiliate
+! domains (acenord.com, bestnord.com, getnord.net) and nordthreatprotection.com
+! DNS endpoints stay BLOCKED — not needed for VPN function (anti-phishing).
 
 ! ========== POSTEO.DE EMAIL ==========
 ! posteo.de serves webmail, API, IMAP/SMTP, images, JS, CSS — all from same domain
