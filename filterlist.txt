@@ -72,6 +72,12 @@
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
 
+! ========== NORDVPN (user requires — must stay unblocked) ==========
+! doh-vpn-proxy-bypass list blocks ||nordvpn.com^ which covers
+! api.nordvpn.com and *.proxy.nordvpn.com — whitelist the whole domain
+@@||nordvpn.com^
+@@||*.nordvpn.com^
+
 ! ========== POSTEO.DE EMAIL ==========
 ! posteo.de serves webmail, API, IMAP/SMTP, images, JS, CSS — all from same domain
 @@||posteo.de^
