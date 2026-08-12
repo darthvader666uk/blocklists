@@ -135,9 +135,7 @@
     "https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt",
     "https://filters.adtidy.org/extension/chromium/filters/21.txt"
   ],
-  "hiddenSettings": {
-    "suspendTabsUntilReady": false
-  },
+  "hiddenSettings": {},
   "whitelist": [
     "*..originpc.com/*",
     "*.airbnb.co.uk/*",
