@@ -449,9 +449,12 @@
 ||gql.reddit.com^$third-party
 
 ! ========== DISCORD ==========
+! Source: e.foundation community (https://community.e.foundation/t/unblocked-trackers-on-discord/82946)
+! Discord contacts these for mobile attribution and crash reporting
 ||sentry.io^$domain=~github.com|~gitlab.com|~stackoverflow.com
 ||sentry-answers.com^
 ||sentry-cdn.com^
+||*.appsflyersdk.com^
 
 ! ========== AI CHATBOT TRACKING ==========
 ||cdn.oaistatic.com^
