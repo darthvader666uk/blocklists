@@ -86,6 +86,7 @@
 ! Gateway, setup, and core iCloud services
 @@||gateway.icloud.com^
 @@||gateway.fe2.apple-dns.net^
+@@||gateway-asset.icloud-content.com^
 @@||setup.icloud.com^
 @@||icloud.com^
 @@||www.icloud.com^
@@ -98,6 +99,7 @@
 @@||reminders.icloud.com^
 @@||findmy.icloud.com^
 @@||fmf.fe2.apple-dns.net^
+@@||content.fe2.apple-dns.net^
 @@||keychain.icloud.com^
 @@||icloudkeychain.com^
 @@||idmsa.apple.com^
