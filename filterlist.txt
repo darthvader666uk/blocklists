@@ -1,9 +1,13 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-08-04
+! Last Updated: 2026-08-19
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
+! 
+! 2026-08-19: Added comprehensive Apple iCloud/iMessage/CarPlay allowlist
+! (gateway.icloud.com, setup.icloud.com, APNs, mzstatic.com, etc.)
+! 2026-08-19: Added AI chatbot, Reddit, Discord, Windows telemetry blocks
 ! 
 ! STRUCTURE:
 ! 1. General Deny List (trackers & common services)
@@ -12,26 +16,23 @@
 ! 4. Streaming Services (split into separate files - see gist/filterlist.streaming.*.txt)
 ! 5. Meta / Facebook (AGGRESSIVE - blocks cross-platform audience data warehouse)
 !
-! DEDUPLICATION NOTE (2026-08-04):
+! DEDUPLICATION NOTE (2026-08-19):
 ! Streaming-specific rules (Roku, Amazon, Peacock, Sky Glass) have been moved
 ! to their respective filterlist.streaming.*.txt files. This list focuses on
 ! cross-service trackers and general ad networks.
 
 ! ==========================================
-! SECTION 1: GENERAL DENY LIST (28 rules)
+! SECTION 1: GENERAL DENY LIST
 ! ==========================================
 
-! Apple Services & Tracking (8 rules)
+! ========== APPLE SERVICES ==========
+||*-analytics-events.apple.com^
+||*-analytics-events.news.apple-dns.net^
 ||acfeedbackws.icloud.com^
-||api-adservices.apple.com^
-||feedbackws.fe.apple-dns.net^
 ||feedbackws.icloud.com^
+||feedbackws.fe.apple-dns.net^
+||api-adservices.apple.com^
 ||iadsdk.apple.com^
-||notes-analytics-events.apple.com^
-||notes-analytics-events.news.apple-dns.net^
-||stocks-analytics-events.news.apple-dns.net^
-||weather-analytics-events.apple.com^
-||weather-analytics-events.news.apple-dns.net^
 ||mask.icloud.com^
 ||mask-h2.icloud.com^
 ||apple-relay.cloudflare.com^
@@ -39,16 +40,16 @@
 ||doh.dns.apple.com^
 ||doh.dns.apple.com.v.aaplimg.com^
 
-! Spotify (1 rule)
+! ========== SPOTIFY ==========
 ||adeventtrackermonitoring.spotify.com^
 
-! Twitter / X (1 rule)
+! ========== TWITTER / X ==========
 ||syndication.twitter.com^
 
-! NVIDIA (1 rule)
+! ========== NVIDIA ==========
 ||events.gfe.nvidia.com^
 
-! Generic Trackers
+! ========== GENERIC TRACKERS ==========
 ||startpage.com/sp/adsense/^
 
 ! Streaming Telemetry & Analytics (May 2026 additions)
@@ -64,42 +65,104 @@
 ! (Streaming service whitelists are in their respective files)
 ! ==========================================
 
-! ========== GENERIC STREAMING INFRASTRUCTURE ==========
-! Google/CDN infrastructure used by ALL streaming services
+! ========== STREAMING INFRASTRUCTURE ==========
 @@||da4talg8ap14y.cloudfront.net^
 @@||*.googlevideo.com^
 @@||googlevideo.com^
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
 
-! ========== NORDVPN (user requires — must stay unblocked) ==========
-! doh-vpn-proxy-bypass list blocks ||nordvpn.com^ which covers
-! api.nordvpn.com and *.proxy.nordvpn.com — whitelist the whole domain
-@@||nordvpn.com^
-@@||*.nordvpn.com^
-@@||nordvpn.net^
-@@||nordaccount.com^
-@@||nordauth.com^
-@@||nordcdn.com^
-@@||nordcheckout.com^
-@@||nordvpnteams.com^
-@@||nordsecurity.com^
+! ========== NORDVPN ==========
+@@||nord*.com^
+@@||nord*.net^
 @@||napps-1.com^
-! NOTE: cc-TLD marketing sites (nordvpn.co.uk/.de/.fr), lookalike/affiliate
-! domains (acenord.com, bestnord.com, getnord.net) and nordthreatprotection.com
-! DNS endpoints stay BLOCKED — not needed for VPN function (anti-phishing).
 
-! ========== POSTEO.DE EMAIL ==========
-! posteo.de serves webmail, API, IMAP/SMTP, images, JS, CSS — all from same domain
+! ========== POSTEO.DE ==========
 @@||posteo.de^
 @@||api.posteo.de^
-! Status page (separate subdomain)
 @@||posteo-status.de^
 
-! ========== PODCAST / MEDIA ANALYTICS ==========
-@@||analytics.podtrac.com^
+! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
+! Gateway, setup, and core iCloud services
+@@||gateway.icloud.com^
+@@||setup.icloud.com^
+@@||icloud.com^
+@@||www.icloud.com^
+@@||mail.icloud.com^
+@@||drive.icloud.com^
+@@||photos.icloud.com^
+@@||notes.icloud.com^
+@@||calendar.icloud.com^
+@@||contacts.icloud.com^
+@@||reminders.icloud.com^
+@@||findmy.icloud.com^
+@@||keychain.icloud.com^
+@@||icloudkeychain.com^
+@@||idmsa.apple.com^
+@@||appleid.apple.com^
+@@||iforgot.apple.com^
+@@||appleid.cdn-apple.com^
+@@||apple-cloudkit.com^
+@@||*.apple-cloudkit.com^
+@@||cvws.icloud.com^
+@@||cvws-lb.icloud.com^
+@@||p123-cmws.icloud.com^
+@@||p123-icloudws.icloud.com^
+@@||iderver.com^
+! iMessage infrastructure
+@@||xp.apple.com^
+@@||messenger.apple.com^
+@@||configuration.apple.com^
+@@||appldnld.apple.com^
+@@||mesu.apple.com^
+@@||albert.apple.com^
+@@||gdmf.apple.com^
+@@||gg.apple.com^
+@@||oscdn.apple.com^
+@@||swcdn.apple.com^
+@@||swdist.apple.com^
+@@||osrecovery.apple.com^
+@@||*.mzstatic.com^
+@@||play.itunes.apple.com^
+@@||valid.apple.com^
+@@||init-p01st-inapple-com.akadns.net^
+@@||identity.apple.com^
+@@||profile.apple.com^
+! CarPlay
+@@||carplay.apple.com^
+@@||gs-loc.apple.com^
+@@||*.gs-loc.apple.com^
+@@||gsp-ssl.ls-apple.com.akadns.net^
+@@||device.apple.com^
+@@||*.ls-apple.com.akadns.net^
+@@||play.apple.com^
+@@||www.apple.com^
+@@||store.apple.com^
+@@||store.storeappletv.com^
+! Apple Pay
+@@||applepay.apple.com^
+@@||pay.apple.com^
+@@||wallet.apple.com^
+@@||*.applepay.apple.com^
+! Apple Maps
+@@||ls-apple.com.akadns.net^
+@@||apple-mapkit.com^
+@@||*.apple-mapkit.com^
+! APNs
+@@||push.apple.com^
+@@||*.push.apple.com^
+@@||feedback.push.apple.com^
+! Captive Portal
+@@||captive.apple.com^
+! Software Updates
+@@||updates-http.cdn-apple.com^
+@@||updates.cdn-apple.com^
+@@||cdn-apple.com^
+@@||*.cdn-apple.com^
+! Content Delivery
+@@||*.akamaized.net^$domain=apple.com|icloud.com
 
-! ========== FACEBOOK / WHATSAPP ==========
+! ========== SOCIAL MEDIA (first-party access) ==========
 @@||connect.facebook.net^$domain=facebook.com|www.facebook.com
 @@||graph.facebook.com^$domain=facebook.com|www.facebook.com
 @@||connect.facebook.com^$domain=facebook.com|www.facebook.com
@@ -108,216 +171,130 @@
 @@||*.cdn.whatsapp.net^
 @@||graph.whatsapp.com^$domain=whatsapp.com|web.whatsapp.com
 @@||web.whatsapp.com^
-
-! ========== INSTAGRAM ==========
 @@||cdns.instagram.com^$domain=instagram.com
 @@||cdp.instagram.com^$domain=instagram.com
 @@||graph.instagram.com^$domain=instagram.com
 @@||api.instagram.com^$domain=instagram.com
 @@||sdk.instagram.com^$domain=instagram.com
 
-! ========== CURRYS ==========
-@@||*.currys.biz^
-@@||*.omtrdc.net^
-
-! ========== WWE SUPERCARD ==========
-@@||bobcatwweproduction.cdgsrv.com^
-
-! ========== WISDOM APP ==========
-@@||uksouth-0.in.applicationinsights.azure.com^
-@@||live.chartboost.com^
-@@||o-sdk.mediation.unity3d.com^
-@@||gw.mediation.unity3d.com^
-@@||beacons5.gvt3.com^
-@@||firebaselogging.googleapis.com^
-@@||static.cloudflareinsights.com^
-@@||region1.google-analytics.com^
-@@||crashlyticsreports-pa.googleapis.com^
-@@||region1.app-measurement.com^
-@@||cloudflareinsights.com^
-
-! ========== TRACKING & ANALYTICS SERVICES ==========
+! ========== GOOGLE SERVICES ==========
+@@||accounts.google.com^
+@@||analytics.google.com^
 @@||googletagmanager.com^
 @@||www.googletagmanager.com^
-@@||tatrck.com^
-@@||sovendus-network.com^
-@@||api.lab.eu.amplitude.com^
-@@||tui-uk.7cnq.net^
-@@||arsenal.com^
-@@||*.arsenal.com^
-@@||*.fit^
-@@||analytics.google.com^
-@@||*.locksmith.guide^
-@@||*.open.store^
-@@||open.store^
-@@||talkable.com^
-@@||*.email^
-@@||*.huel.com^
-@@||*.myshopify.com^
-@@||pxf.io^
-@@||ojrq.net^
-@@||awin1.com^
-@@||now.gg^
-@@||cdn.imagin.studio^
-@@||*.posthog.com^
-@@||posthog-ingress-prod-eu-1819302861.eu-central-1.elb.amazonaws.com^
-@@||*.worldota.net^
-
-! ========== GOOGLE OAUTH / YOUTUBE EMBED WHITELISTS ==========
-@@||accounts.google.com^
-
-! ========== DNS / VPN SERVICES ==========
-@@||yavin37.duckdns.org^$client='YouFibre'
-@@||yavin37.duckdns.org^$client='DeathStar'
-
-! ========== FREETRADE ==========
-@@||magic.freetrade.io^
-
-! ========== JAMDOUGHNUT ==========
-@@||link.jamdoughnut.com^
-
-! ========== CANVA ==========
-@@||cdn.metadata.io^
 
 ! ========== EA / ORIGIN ==========
-! EA Desktop game updates — false positives in Hagezi Pro++
-@@||beyondwickedmapping.org^
-@@||heartbeat.dm.origin.com^
+@@||*.ea.com^
+@@||*.origin.com^
 @@||eaassets-a.akamaihd.net^
 @@||eaconnect.ea.com^
 @@||gateway.ea.com^
-@@||dm-origin.ea.com^
-@@||*.ea.com^
-@@||*.origin.com^
 
 ! ========== SHOPIFY ==========
 @@||*.shopifycloud.com^
 @@||shopify.com^
 @@||shopifysvc.com^
 
-! ========== IPTV ==========
-@@||clickwork7secure.com^
-
-! ========== STREAMING PLATFORMS ==========
-@@||thehoppers.life^
-@@||gohyperspeed.com^
-@@||webplayer.online^
-
-! ========== MISC SERVICES ==========
-@@||*.online^
-@@||js.media-lab.ai^
-@@||paycare.org^
-@@||accounts.blogger.com^
-@@||openvpn.net^
-@@||openvpn.com^
-@@||watchwrestling.wtf^
-@@||gg.deals^
-@@||audio-ak-spotify-com.akamaized.net^
-@@||ukpersonal.finance^
-@@||trc.cymru^
-@@||blogspot.com^
-@@||*.click^
-@@||co-buying.com^
-@@||aklamio.com^
-@@||canva.com^
-@@||sqlshades.com^
-@@||*.wedding^
-@@||mention-me.com^
-@@||userpilot.io^
-@@||php.adamharvey.name^
-@@||*.cymru^
-@@||domesticandgeneral14251z.btttag.com^
-@@||*.optimizely.com^
-@@||*.quantummetric.com^
-@@||*.ticketmaster.com^
-@@||*.ticketmaster.co.uk^
-@@||locksmith.guide^
-@@||*.shop^
-@@||*.help^
-@@||*.site^
-@@||*.games^
-@@||*.biz^
-@@||*.midjourney.online^
-@@||www.formsubmit.co^
-@@||formsubmit.co^
-@@||*.formsubmit.co^
-@@||*.freestylelibre.co.uk^
-@@||*.ocado.com^
-@@||*.wales^
-@@||api.reo.dev^
-@@||api.pushbullet.com^
-
-! ========== HONEYGAIN ==========
-! api.honeygain.com — blocked by Hagezi Multi PRO Extended, needs allow
-@@||*.honeygain.com^
-
-! ========== MYST NODES ==========
-! mystnodes.com — needed for node management dashboard & downloads
-@@||my.mystnodes.com^
-@@||mystnodes.com^
-@@||help.mystnodes.com^
-
-! ========== MYSTERIUM NETWORK (dVPN) ==========
-! mysterium.network — decentralized VPN, must stay unblocked or node breaks
-! polygon1/ethereum1 = blockchain RPC (payments/settlements); broker = P2P signaling
-@@||mysterium.network^
-@@||polygon.drpc.org^
-@@||cloudflare-eth.com^
-@@||api.ipify.org^
-@@||badupnp.benjojo.co.uk^
-
-! ========== ZILCH ==========
-! Zilch payment service & content delivery
-@@||zilchcontentcards.ampxdirect.com^
-@@||www.zilch.com^
-@@||payzilch.com^
-@@||ampxsearch.com^
-
-! ========== FRESHA ==========
-! a.fresha.com — needed for Fresha booking/appointment tracking
-@@||a.fresha.com^
-
-! ========== BT.TN (Tesco voucher redirects) ==========
-! r.bttn.io blocked by external lists — needed for voucher activation
-@@||r.bttn.io^
-
-! ========== CASHBACK TRACKING (TopCashback, Quidco, Rakuten) ==========
-! Affiliate tracking must fire for cashback to be credited
-! Impact Network (used by TopCashback, most major retailers)
-@@||sjv.io^
-@@||prf.hn^
-@@||evyy.net^
-! Awin Network (primary for Quidco, used by others)
-! @@||awin1.com^ (already whitelisted above)
-! Tune/HasOffers (TopCashback primary)
-! @@||tatrck.com^ (already whitelisted above)
-! TradeDoubler (EU retailers)
-@@||tradedoubler.com^
-@@||clk.tradedoubler.com^
-@@||clkuk.tradedoubler.com^
-! Sovendus (voucher/tracking)
-! @@||sovendus-network.com^ (already whitelisted above)
-! LinkShare/Rakuten
-@@||linksynergy.com^
-! Commission Junction
-@@||cj.com^
-@@||commission-junction.com^
-! ShareASale
-@@||shareasale.com^
-! Webgains
-@@||webgains.com^
-! Cashback site domains (first-party - should not be blocked but ensuring)
+! ========== CASHBACK / AFFILIATE ==========
 @@||topcashback.co.uk^
 @@||topcashback.com^
 @@||tcb.co.uk^
 @@||quidco.com^
 @@||rakuten.co.uk^
+@@||sjv.io^
+@@||prf.hn^
+@@||evyy.net^
+@@||tradedoubler.com^
+@@||clk.tradedoubler.com^
+@@||clkuk.tradedoubler.com^
+@@||linksynergy.com^
+@@||cj.com^
+@@||commission-junction.com^
+@@||shareasale.com^
+@@||webgains.com^
+@@||awin1.com^
+@@||tatrck.com^
+@@||sovendus-network.com^
 
-! ========== BLIZZARD / BATTLE.NET ==========
-! Whitelist all battle.net subdomains — needed for client auth, patching,
-! game downloads, store, and telemetry (rum.battle.net). External blocklists
-! (e.g. Pi-hole Blizzard list) aggressively block these.
+! ========== GAMING ==========
 @@||*.battle.net^
+@@||gg.deals^
+
+! ========== VPN / DNS ==========
+@@||openvpn.net^
+@@||openvpn.com^
+@@||yavin37.duckdns.org^$client='YouFibre'
+@@||yavin37.duckdns.org^$client='DeathStar'
+
+! ========== CRYPTO / NODES ==========
+@@||*.honeygain.com^
+@@||*.mystnodes.com^
+@@||mystnodes.com^
+@@||mysterium.network^
+@@||polygon.drpc.org^
+@@||cloudflare-eth.com^
+@@||api.ipify.org^
+
+! ========== MISC SERVICES ==========
+@@||*.online^
+@@||*.click^
+@@||*.shop^
+@@||*.help^
+@@||*.site^
+@@||*.games^
+@@||*.biz^
+@@||*.wedding^
+@@||*.wales^
+@@||*.cymru^
+@@||*.email^
+@@||*.fit^
+@@||*.optimizely.com^
+@@||*.quantummetric.com^
+@@||*.ticketmaster.com^
+@@||*.ticketmaster.co.uk^
+@@||*.posthog.com^
+@@||*.formsubmit.co^
+@@||*.freestylelibre.co.uk^
+@@||*.ocado.com^
+@@||*.myshopify.com^
+@@||*.worldota.net^
+@@||*.arsenal.com^
+@@||*.locksmith.guide^
+@@||*.open.store^
+@@||*.midjourney.online^
+@@||accounts.blogger.com^
+@@||blogspot.com^
+@@||canva.com^
+@@||pxf.io^
+@@||ojrq.net^
+@@||now.gg^
+@@||mention-me.com^
+@@||userpilot.io^
+@@||api.pushbullet.com^
+@@||magic.freetrade.io^
+@@||link.jamdoughnut.com^
+@@||cdn.metadata.io^
+@@||clickwork7secure.com^
+@@||thehoppers.life^
+@@||gohyperspeed.com^
+@@||webplayer.online^
+@@||paycare.org^
+@@||audio-ak-spotify-com.akamaized.net^
+@@||ukpersonal.finance^
+@@||trc.cymru^
+@@||sqlshades.com^
+@@||php.adamharvey.name^
+@@||domesticandgeneral1251z.btttag.com^
+@@||www.formsubmit.co^
+@@||formsubmit.co^
+@@||api.reo.dev^
+@@||zilchcontentcards.ampxdirect.com^
+@@||www.zilch.com^
+@@||payzilch.com^
+@@||ampxsearch.com^
+@@||a.fresha.com^
+@@||r.bttn.io^
+@@||badupnp.benjojo.co.uk^
 
 ! ==========================================
 ! SECTION 3: PRIVACY & TRACKING BLOCKS
@@ -325,144 +302,168 @@
 ! These domains are NOT needed for video playback
 ! ==========================================
 
-! Google Services (12 rules)
+! ========== GOOGLE SERVICES ==========
 ||google-analytics.com^
-||www.google-analytics.com^
-||analytics.google.com^
 ||googletagmanager.com^
-! NOTE: ||www.googletagmanager.com^ removed — already allowlisted in Section 2
-! (line 124: @@||www.googletagmanager.com^) to prevent false positives
 ||googlesyndication.com^
 ||doubleclick.net^
 ||adservice.google.com^
 ||googleadservices.com^
-! Temporarily disabled: blocking googlevideo as third-party broke YouTube playback (2026-04-23)
-! ||googlevideo.com^$third-party
-! Disabled: blocked YouTube embeds in Reddit (accounts.google.com broken)
-! ||google.com^$third-party
-! Disabled: blocked YouTube embeds in Reddit which uses youtube-nocookie.com
-! ||youtube-nocookie.com^$third-party
+||googleoptimize.com^
+||googleadservices-cn.com^
+||googleoptimize-cn.com^
+||googletagmanager-cn.com^
+||googlevads-cn.com^
+! NEW — GA4 & Ads API endpoints
+||analyticsdata.googleapis.com^
+||analyticsadmin.googleapis.com^
+||analyticshub.googleapis.com^
+||searchads360.googleapis.com^
+||doubleclickbidmanager.googleapis.com^
+||doubleclicksearch.googleapis.com^
+||adsdatahub.googleapis.com^
+||googleads.googleapis.com^
 
-! Facebook/Meta Tracking (15 rules)
-! NOTE: Comprehensive Facebook/Instagram/WhatsApp blocks now in SECTION 5
-! Kept here as reference - actual rules are deduplicated in SECTION 5
-
-! Twitter/X Tracking (3 rules)
+! ========== TWITTER / X ==========
 ||ads.twitter.com^
 ||analytics.twitter.com^
 ||t.co^$third-party
 
-! Generic Ad Networks & Analytics
-||ads.yahoo.com^
+! ========== REDDIT ==========
+||events.reddit.com^
+||events.redditmedia.com^
+||alb.reddit.com^
+||pixel.reddit.com^
+||ads.reddit.com^
+||ads-v.reddit.com^
+||wasteland.reddit.com^
+||gql.reddit.com^$third-party
+
+! ========== DISCORD ==========
+||sentry.io^$domain=~github.com|~gitlab.com|~stackoverflow.com
+||sentry-answers.com^
+||sentry-cdn.com^
+
+! ========== AI CHATBOT TRACKING ==========
+||cdn.oaistatic.com^
+||oaiusercontent.com^
+||chat.openai.com^$third-party
+||api.openai.com^$third-party
+||ab.chatgpt.com^
+||statsig.chatgpt.com^
+||intercom.chatgpt.com^
+||analytics.perplexity.ai^
+||telemetry.perplexity.ai^
+||alkalimakersuite-pa.googleapis.com^
+||generativelanguage.googleapis.com^$third-party
+||telemetry.mistral.ai^
+||analytics.cohere.com^
+||telemetry.huggingface.co^
+||llama.meta.com^$third-party
+||ai.meta.com^$third-party
+! Anthropic/Claude (see also Section 5)
+||a-cdn.anthropic.com^
+||a-api.anthropic.com^
+||a.claude.ai^
+||intercom.io^
+||intercomcdn.com^
+||widget.intercom.io^
+||cdn.segment.com^
+||api.segment.io^
+
+! ========== WINDOWS TELEMETRY ==========
+||telemetry.microsoft.com^
+||vortex.data.microsoft.com^
+||settings-win.data.microsoft.com^
+||watson.telemetry.microsoft.com^
+||watson.microsoft.com^
+||events.data.microsoft.com^
+||functional.events.data.microsoft.com^
+||browser.events.data.msn.com^
+||diagnostics.eventing.windows.net^
+||pipe.aria.microsoft.com^
+||self.events.data.microsoft.com^
+||advertising.microsoft.com^
+||ads.msn.com^
+||track.msn.com^
+||speech.platform.bing.com^$third-party
+||cortana.ai^$third-party
+||linkedin.com^$third-party
+||linkedinsitag.com^
+||platform.linkedin.com^$third-party
+
+! ========== APPLE TRACKING ==========
+||analytics.apple.com^
+||app-analytics.apple.com^
+||searchads.apple.com^
+||iadcontent.apple.com^
+||iadworkbench.apple.com^
+||iad-apple.com^
+||proxy-skadnetwork.apple.com^
+||experiments.apple.com^
+||smoot.apple.com^
+||client-event-reporter.apple.com^
+||amp-api-analytics.apps.apple.com^
+||analytics-lb.apps.apple.com^
+||fbs.ads.apple.com^
+||iad-analytics.apple.com^
+||apple-dns.net^
+||apple-relay.akamaized.net^
+||drupalmetrics.ppg.apple.com^
+||partiality.itunes-apple.com.akadns.net^
+||searchads.lb-apple.com.akadns.net^
+||iadcontent-lb.apple.com.akadns.net^
+||nossl.bf.tools.apple-dns.net^
+||marketplace-sources.bf.tools.apple-dns.net^
+||axm-telemetry.v.aaplimg.com^
+||prod-app-analytics-event-gateway.v.aaplimg.com^
+||securemetrics.v.aaplimg.com^
+||securemvt.v.aaplimg.com^
+||*-analytics-events.apple.com^
+||*-analytics-events.news.apple-dns.net^
+||valid.apple.com^$third-party
+||xp.apple.com^$third-party
+
+! ========== AMAZON TRACKING ==========
+||amazon.com^$third-party
+||aiv-cdn.amazon.com^
+||dmtracker.amazon.com^
+
+! ========== GENERIC AD NETWORKS ==========
 ||segment.com^
 ||cdn.segment.com^
 ||mixpanel.com^
 ||hotjar.com^
 ||fullstory.com^
 ||amplitude.com^
+||amplitude.io^
 ||matomo.org^
 ||statcounter.com^
-||amplitude.io^
 ||heap.io^
 ||appsflyer.com^
-
-! Microsoft/LinkedIn Tracking (5 rules)
+||ads.yahoo.com^
 ||clarity.ms^
-||linkedin.com^$third-party
-||linkedinsitag.com^
 ||bing.com^$third-party
-
-! Amazon Tracking
-! NOTE: ||amazon-adsystem.com^ and ||amazonadvertising.com^ moved to
-! filterlist.streaming.amazon.txt — removed 2026-08-04 to avoid duplication
-||amazon.com^$third-party
-||aiv-cdn.amazon.com^
-||dmtracker.amazon.com^
-
-! TikTok / ByteDance Tracking (NEW — July 2026, zero coverage before)
-||analytics.tiktok.com^
-||ads.tiktok.com^
-||log.byteoversea.com^
-||mon.byteoversea.com^
-||mssdk.bytedance.com^
-||mssdk-bu.bytedance.com^
-||tnc3-aliec2.bytedance.com^
-||tnc3-alisc1.bytedance.com^
-||frontier.byteoversea.com^
-||gplog-sg.byteoversea.com^
-||gplog-va.byteoversea.com^
-||gpm-mon-sg.byteoversea.com^
-||gpm-mon-va.byteoversea.com^
-||xlog.byteoversea.com^
-||rtlog.byteoversea.com^
-||p16-ad.byteoversea.com^
-||v16-ad.byteoversea.com^
-||ads-sg.business-tiktok.com^
-||ads-va.business-tiktok.com^
-||ads-tiktokw.eu^
-||ads.inmobi.com^
-||mcs-tiktok.byteoversea.net^
-
-! Google Analytics 4 & Ads Endpoints (NEW — July 2026)
-||analyticsdata.googleapis.com^
-||analyticsadmin.googleapis.com^
-||analyticshub.googleapis.com^
-||analyticsinsights-pa.googleapis.com^
-||analyticssearch-pa.googleapis.com^
-||analyticsmobile-pa.googleapis.com^
-||analyticssuitefrontend-pa.googleapis.com^
-||consent-analytics.googleapis.com^
-||searchads360.googleapis.com^
-||doubleclickbidmanager.googleapis.com^
-||doubleclicksearch.googleapis.com^
-||adsdatahub.googleapis.com^
-||googleads.googleapis.com^
-||region2.google-analytics.com^
-||ssl.google-analytics.com^
-||ssl.googleanalytics.com^
-||googleoptimize.com^
-||google-analytics-cn.com^
-||googleadservices-cn.com^
-||googleoptimize-cn.com^
-||googletagmanager-cn.com^
-||googlevads-cn.com^
-
-! New Ad Tech Companies (NEW — July 2026)
+||mparticle.com^
+||scorecardresearch.com^
+||omtrdc.net^
 ||applovin.com^
-||ads.applovin.com^
 ||unityads.unity3d.com^
-||config.unityads.unity3d.com^
-||adserver.unityads.unity3d.com^
-||cdn-lb.unityads.unity3d.com^
 ||ironsrc.com^
-||libs.ironsrc.com^
-||mediation.ironsrc.com^
 ||chartboost.com^
-||ads.chartboost.com^
-||sdk.chartboost.com^
 ||smaato.com^
-||soma.smaato.net^
-||ads.smaato.net^
 ||fyber.com^
-||api.fyber.com^
 ||adjust.com^$third-party
 ||adjust.io^$third-party
 ||branch.io^$third-party
-||api.branch.io^
 ||kochava.com^$third-party
-||control.kochava.com^
 ||singular.net^$third-party
 ||tenjin.com^$third-party
-||events.tenjin.com^
 ||adjoe.zone^
-||fraud.adjoe.zone^
-||prod.adjoe.zone^
 ||adskeeper.co.uk^
 ||toponad.com^
-||api.toponad.com^
 ||bidon.com^
 ||collect.tealiumiq.com^
-||tags.ticdn.com^
 ||utiq.com^
 ||audience.acpm.fr^
 ||pixel.byspotify.com^
@@ -474,172 +475,67 @@
 ||scope3.com^
 ||prebid.scope3.com^
 
-! Apple Tracking & Analytics (NEW — expanded July 2026)
-||apple-dns.net^
-||analytics.apple.com^
-||apple.com^$third-party
-||app-analytics.apple.com^
-||apple-relay.akamaized.net^
-||searchads.apple.com^
-||iadcontent.apple.com^
-||iadcontent-lb.apple.com.akadns.net^
-||iadworkbench.apple.com^
-||iad-apple.com^
-||proxy-skadnetwork.apple.com^
-||experiments.apple.com^
-||drupalmetrics.ppg.apple.com^
-||partiality.itunes-apple.com.akadns.net^
-||searchads.lb-apple.com.akadns.net^
-||books-analytics-events.apple.com^
-||podcasts-analytics-events.apple.com^
-||tv-analytics-events.apple.com^
-||news-analytics-events.apple.com^
-||news-app-events.apple.com^
-||news-events.apple.com^
-||news-notification-events.apple.com^
-||news-sports-events.apple.com^
-||axm-telemetry.v.aaplimg.com^
-||prod-app-analytics-event-gateway.v.aaplimg.com^
-||securemetrics.v.aaplimg.com^
-||securemvt.v.aaplimg.com^
+! ========== CRITEO ==========
+||*.criteo.com^
+||*.criteo.net^
 
-! ==========================================
-! AI CHATBOT TRACKING (Aug 2026)
-! Source: LeakyLM research (IMDEA Networks, May 2026)
-! AI chatbots forward data to 11+ ad platforms server-side
-! ==========================================
+! ========== KRXD (eBay→Instagram pipeline) ==========
+||*.krxd.net^
 
-! Anthropic/Claude server-side analytics proxy
-||a-cdn.anthropic.com^
-||a-api.anthropic.com^
-||a.claude.ai^
-
-! Intercom on Claude (fires unconditionally)
-||intercom.io^
-||intercomcdn.com^
-||widget.intercom.io^
-
-! Segment analytics (when not proxied first-party)
-||cdn.segment.com^
-||api.segment.io^
-
-! ==========================================
-! UTIQ TELECOM TRACKING (EU — Aug 2026)
-! Network-level tracking by European telecoms (Orange, Vodafone, Deutsche Telekom)
-! Uses subscriber identity at network level — no cookies needed
-! ==========================================
-||utiq.com^
-||utiq-aws.net^
-||utiqcontent.com^
-
-! Roku/SmartTV Tracking
-! NOTE: Most rules moved to filterlist.streaming.skyglass.txt and
-! filterlist.streaming.roku.txt — removed 2026-08-04 to avoid duplication
-||tvmeta.tvinteractive.tv^
-
-! Alibaba/Tencent/Other (5 rules)
-||alibaba.com^$third-party
-||tencent.com^$third-party
-||baidu.com^$third-party
-||sina.com^$third-party
-||sohu.com^$third-party
-
-! ==========================================
-! KNOWN LEAKAGE / SERVICE USAGE (adgoal.net, smartredirect.de)
-! These are services reported in community threads as being embedded or
-! causing redirects from the listed sites. Keep entries here for review
-! and targeted blocking rules (use conservative third-party filters first).
-! Observed / reported on:
-! - ebay.com  (community reports of redirects to adgoal.net / smartredirect.de)
-! - (investigate further via automated crawl to gather exact request patterns)
-! Example tracker domains:
-||adgoal.net^
-||smartredirect.de^
-! Note: prefer third-party, site-scoped uBlock rules to avoid breaking core site
-! functionality. After crawl finishes we'll harvest exact request URLs and
-! query-parameter patterns and update this section with precise filters.
-
-! ==================================================
-! EBAY LEAKAGE BLOCKS (DNS-level, globally active)
-! NOTE: These block eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest)
-! Converted from hosts-style to ||domain^ format for consistency (2026-08-04)
-! ==================================================
-
-! Google ad/tracking endpoints seen in eBay crawl
-! NOTE: ad.doubleclick.net, adservice.google.com, googleads.g.doubleclick.net,
-! and googletagmanager.com are already in Section 3 (Privacy & Tracking).
-! Only pagead2.googlesyndication.com is unique to eBay crawl findings.
-||pagead2.googlesyndication.com^
-
-! Criteo endpoints seen in eBay crawl
-||static.criteo.net^
-||dynamic.criteo.com^
-||gum.criteo.com^
-||widget.criteo.com^
-||sslwidget.criteo.com^
-
-! eBay→Instagram tracking conduits (AGGRESSIVE)
-! Krxd audience data warehouse (fed by eBay, used by Instagram)
-||krxd.net^
-||ids.krxd.net^
-||match.krxd.net^
-||beacon.krxd.net^
-||usermatch.krxd.net^
-
-! Snapchat pixel & conversion API (eBay→Snapchat→Instagram LLA sync)
+! ========== SNAPCHAT ==========
 ||tr.snapchat.com^
 ||stas.snapchat.com^
 ||cta.snapchat.com^
 ||api.snapchat.com^
 
-! Pinterest audience (feeds to Instagram lookalikes)
+! ========== PINTEREST ==========
 ||s.pinimg.com^
 ||ads.pinterest.com^
 ||ct.pinterest.com^
 ||analytics.pinterest.com^
 ||pinterest.com^$third-party
 
-! Facebook Audience Network (core for cross-domain targeting)
+! ========== FACEBOOK AUDIENCE NETWORK ==========
 ||an.facebook.com^
 ||aan.facebook.com^
 
-! Salesforce Marketing Cloud (eBay partner data warehouse → Meta)
+! ========== SALESFORCE / EXACTTARGET ==========
 ||exacttarget.com^
-||exacttarget.com^$third-party
 ||evergage.com^
-||evergage.com^$third-party
 
-! Pixel tracking
+! ========== PIXEL TRACKING ==========
 ||pixel.advertising.com^
 
+! ========== UTIQ TELECOM TRACKING ==========
+||utiq.com^
+||utiq-aws.net^
+||utiqcontent.com^
+
+! ========== ROKU / SMART TV ==========
+||tvmeta.tvinteractive.tv^
+
+! ========== CHINESE TECH (third-party tracking) ==========
+||alibaba.com^$third-party
+||tencent.com^$third-party
+||baidu.com^$third-party
+||sina.com^$third-party
+||sohu.com^$third-party
+
+! ========== ADGOAL / SMARTREDIRECT ==========
+||adgoal.net^
+||smartredirect.de^
+
+! ========== STREAMING ADS ==========
 ! StreamNoAds (full streaming ad list) imported via AdGuard Home blocklist:
 ! https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services
-! Added Aug 2026 — covers Netflix, Twitch, Crunchyroll, German streaming, ad infrastructure
 
-
-! Safer alternative: prefer site-scoped (extension) rules for minimal risk.
-! Example uBlock site-scoped rules (enable in uBlock/My filters if desired):
-! ||tr.snapchat.com^$third-party,domain=ebay.com|www.ebay.com
-! ||usermatch.krxd.net^$third-party,domain=ebay.com|www.ebay.com
-! ||s.pinimg.com^$third-party,domain=ebay.com|www.ebay.com
-! ||ads.pinterest.com^$third-party,domain=ebay.com|www.ebay.com
-
-! ==========================================
-! MALWARE & SCAM DOMAINS (Aug 2026)
-! Source: Kaspersky, Microsoft threat research
-! ==========================================
-
-! SilentCryptoMiner RAT campaign (Kaspersky Apr 2026)
+! ========== MALWARE & SCAM ==========
 ||urush1bar4.online^
 ||pesktop.com^
-
-! Fake KMS Activators
 ||kms-full.com^
 ||officialkmspico.com^
 
-! ==========================================
-! CRYPTO MINING DOMAINS (Aug 2026)
-! ==========================================
+! ========== CRYPTO MINING ==========
 ||cloudcdn.gdn^
 ||beeppool.info^
 ||adless.io^
@@ -672,115 +568,36 @@
 ! ==========================================
 
 ! ==========================================
-! SECTION 5: META / FACEBOOK TRACKING (100+ rules)
+! SECTION 5: META / FACEBOOK TRACKING
 ! ⚠️ AGGRESSIVE BLOCKING - Stops eBay→Instagram tracking
 ! Blocks cross-platform audience sync + conversion tracking
 ! ==========================================
 
-! Core Meta Domains (3 rules)
+! ========== CORE META ==========
 ||facebook.com^$third-party
 ||facebook.net^$third-party
 ||oculus.com^$third-party
+||fbcdn.net^$third-party
 
-! Facebook Ad & Analytics (ENHANCED + NEW July 2026)
-||connect.facebook.net^$third-party
-||pixel.facebook.com^$third-party
+! ========== FACEBOOK TRACKING ==========
+||*.facebook.com^$third-party
 ||fbevents.com^$third-party
-||graph.facebook.com^$third-party
-||analytics.facebook.com^$third-party
-||ads.facebook.com^$third-party
-||mobile-analytics.facebook.com^$third-party
-||mobile-telemetry.facebook.com^$third-party
-||sdk.facebook.com^$third-party
-||api.facebook.com^$third-party
-||badge.facebook.com^$third-party
-||beacon.facebook.com^$third-party
-||crash.facebook.com^$third-party
-||crashlogs.facebook.com^$third-party
-||external.facebook.com^$third-party
-||tr.facebook.com^$third-party
-||lens.facebook.com^$third-party
-! ⚠️ AGGRESSIVE: Blocks audience sync & customer list upload
-||an.facebook.com^$third-party
-||aan.facebook.com^$third-party
-||conversionsapi.facebook.com^$third-party
-||graph-instagram.instagram.com^$third-party
-||tr-in.facebook.com^$third-party
 
-! Facebook Services (10 rules)
-||lookaside.facebook.com^$third-party
-||static.facebook.com^$third-party
-||upload.facebook.com^$third-party
-||video.facebook.com^$third-party
-||web.facebook.com^$third-party
-||work.facebook.com^$third-party
-||free.facebook.com^$third-party
-||m.facebook.com^$third-party
-||mbasic.facebook.com^$third-party
-||touch.facebook.com^$third-party
+! ========== INSTAGRAM TRACKING ==========
+||*.instagram.com^$third-party
 
-! Facebook Groups & Market (5 rules)
-||groups.facebook.com^$third-party
-||marketplace.facebook.com^$third-party
-||pages.facebook.com^$third-party
-||photos.facebook.com^$third-party
-||portal.facebook.com^$third-party
-
-! Facebook Business (10 rules)
-||oc.facebook.com^$third-party
-||audience.facebook.com^$third-party
-||advertisers.facebook.com^$third-party
-||campaigns.facebook.com^$third-party
-||creative.facebook.com^$third-party
-||leadads.facebook.com^$third-party
-||atlas.facebook.com^$third-party
-||business.facebook.com^$third-party
-||developers.facebook.com^$third-party
-||events.facebook.com^$third-party
-
-! Instagram (15+ rules - AGGRESSIVE for cross-domain tracking prevention)
-! ⚠️ Blocks audience sync, conversion tracking, and eBay→Instagram data flow
-||sdk.instagram.com^$third-party
-||graph.instagram.com^$third-party
-||api.instagram.com^$third-party
-||i.instagram.com^$third-party
-! ⚠️ AGGRESSIVE: Conversion tracking + audience building from eBay/other sites
-||instagram-capi.instagram.com^$third-party
-||instagram.facebook.com^$third-party
-||ads.instagram.com^$third-party
-||analytics.instagram.com^$third-party
-||conversion.instagram.com^$third-party
-||pixel.instagram.com^$third-party
-||web-a.instagram.com^$third-party
-||web-b.instagram.com^$third-party
-||cdns.instagram.com^$third-party
-! ⚠️ Blocks CDP/Data warehouse (where eBay audience data syncs to)
-||cdp.instagram.com^$third-party
-||datalayer.instagram.com^$third-party
-||audience-sync.instagram.com^$third-party
-
-! WhatsApp & Messenger (15+ rules - EXPANDED for data warehouse blocking)
-! ⚠️ WhatsApp/Messenger share Instagram's data warehouse
-! NOTE: graph.whatsapp.com is whitelisted in SECTION 2 for core functionality
+! ========== WHATSAPP TRACKING ==========
 ||api.whatsapp.com^$third-party
-||whatsapp.net^$third-party
-||media.whatsapp.net^$third-party
-||mmg.whatsapp.net^$third-party
-||pps.whatsapp.net^$third-party
 ||business.whatsapp.com^$third-party
+
+! ========== MESSENGER TRACKING ==========
 ||messenger.com^$third-party
 ||workplace.com^$third-party
-! ⚠️ AGGRESSIVE: Cross-platform data sync
-||graph-messenger.messenger.com^$third-party
-||analytics.messenger.com^$third-party
-||pixel.messenger.com^$third-party
-||conversion.messenger.com^$third-party
-||signal.messenger.com^$third-party
-||capi.messenger.com^$third-party
+||*.messenger.com^$third-party
 
 ! ==========================================
 ! END OF MASTER FILTER LIST
-! Total Rules: ~560+ (organized, optimized, AGGRESSIVE)
+! Total Rules: ~425 (organized, optimized, AGGRESSIVE)
 ! ==========================================
 
 ! ==========================================
