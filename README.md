@@ -62,7 +62,7 @@
 
 ---
 
-## ✅ **Filter Status by Service (April 2026)**
+## ✅ **Filter Status by Service (August 2026)**
 
 | Service | Filter File | Status | Notes |
 |---------|------------|--------|-------|
@@ -75,9 +75,7 @@
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
 | **Hulu** | `filterlist.streaming.hulu.txt` | ✅ **WORKING** | 50% effectiveness (less SSAI-reliant) |
 | **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 23 verified domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
-| **Paramount+** (legacy) | `filterlist.streaming.paramount.txt` | 🔴 **UNSOLVABLE** | Google DAI (April 2026+) overrides DNS blocking |
-| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 585+ cross-service + tracking rules |
-| **AdGuard Format** | `filterlist.adguard.txt` | ✅ **AVAILABLE** | Hostlist format (one per line) |
+| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 229 blocks + 196 allows (52% optimized with wildcards) |
 
 ---
 
@@ -86,13 +84,14 @@
 | Metric | Details |
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
-| **Rules** | ~425 carefully curated & optimized (wildcards) |
-| **Last Updated** | **August 19, 2026** (52% rule reduction, Apple allowlist, AI/Windows/Reddit blocks) |
+| **Rules** | ~431 carefully curated & optimized (wildcards) |
+| **Last Updated** | **August 19, 2026** (52% rule reduction, Apple allowlist, AI/Windows/Reddit blocks, Phishing Army + URLHaus added) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS, AdGuard DNS (cloud) |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
 | **Testing** | Normalized line endings (CRLF → LF), syntax verified |
-| **AdGuard DNS Limit** | Custom list at 426/1000 rules (575 headroom remaining) |
+| **AdGuard DNS Limit** | Custom list at 431/1000 rules (569 headroom remaining) |
+| **AdGuard Home** | 35 lists, ~565K rules total (TIF removed, Phishing Army + URLHaus added) |
 
 ---
 
@@ -316,40 +315,41 @@ All lists below are active and verified as of **19 August 2026**.
 
 | # | List | URL | Rules | Purpose |
 |---|------|-----|-------|---------|
-| 1 | **Hagezi Multi PRO** ⭐ MAIN | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt` | 221,392 | Hagezi's personal recommendation — ads, trackers, malware, phishing, scam, popups, bug trackers |
-| 2 | **Hagezi Threat Intelligence Feeds** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt` | 2,096,378 | Threat intel domains (≥2GB RAM recommended in AGH; TIF Medium 412k for constrained devices) |
-| 3 | **Hagezi TIF — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 55,764 | IP-based threat blocking |
-| 4 | **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,827 | Anti-fingerprinting |
-| 5 | **Perflyst & Dandelion Sprout Smart-TV** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
-| 6 | **Dandelion Sprout's Anti-Malware** | `https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt` | 14,021 | Malware blocking — Hagezi explicitly recommends for AGH |
-| 7 | **My Own Filter List - Master** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | 426 | Custom cross-service + tracking blocks (optimized with wildcards) |
-| 8 | **My Own Filter List - Amazon** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt` | 24 | Amazon Prime Video |
-| 9 | **My Own Filter List - Apple TV** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt` | 7 | Apple TV+ |
-| 10 | **My Own Filter List - Disney+** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt` | 9 | Disney+ |
-| 11 | **My Own Filter List - HBO Max** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt` | 15 | HBO Max/Max |
-| 12 | **My Own Filter List - Netflix** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt` | 11 | Netflix |
-| 13 | **My Own Filter List - Paramount+** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt` | 29 | Paramount+ |
-| 14 | **My Own Filter List - Sky** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt` | 40 | Sky Glass |
-| 15 | **My Own Filter List - Hulu** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt` | 7 | Hulu |
-| 16 | **My Own Filter List - Roku** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt` | 65 | Roku |
-| 17 | **My Own Filter List - Tubi** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt` | 13 | Tubi |
-| 18 | **My Own Filter List - Pluto TV** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt` | 15 | Pluto TV |
-| 19 | **HaGeZi Dynamic DNS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt` | 1,522 | Dynamic DNS blocking |
-| 20 | **HaGeZi Badware Hoster** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt` | 1,239 | Free hosters that host badware |
-| 21 | **Hagezi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | 230 | Vivo device tracking |
-| 22 | **Hagezi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | 390 | Windows/Office telemetry |
-| 23 | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 150 | Netflix ads, Twitch, Crunchyroll, German/Indian streaming |
-| 24 | **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | 231 | LG/Samsung/Sony/Roku |
-| 25 | **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | 77 | Samsung/LG/Roku telemetry |
-| 26 | **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | 8,346 | "Get our app" banner removal |
-| 27 | **Fire Stick/TV ad bidding** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.amazon.txt` | 363 | Fire TV/Stick ad bidding, OTT DTB |
-| 28 | **Roku ACR** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.roku.txt` | 73 | Roku ACR, ravm.tv |
-| 29 | **Samsung TV telemetry** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.samsung.txt` | 202 | Samsung TV telemetry, Adobe Analytics |
-| 30 | **Apple TV analytics** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.apple.txt` | 108 | Apple TV analytics, SKAdNetwork |
-| 31 | **LG webOS** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.lgwebos.txt` | 341 | LG webOS telemetry |
-| 32 | **TikTok ads/telemetry** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.txt` | 434 | TikTok ads/telemetry |
-| 33 | **Roku/Fire TV hardcoded DoH** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh-vpn-proxy-bypass.txt` | 16,631 | Stops DoH bypass |
-| 34 | **OISD Small** 🆕 | `https://small.oisd.nl/` | 58,908 | Ads + trackers (lightweight, different approach than HaGeZi) |
+| 1 | **Hagezi Multi PRO** ⭐ MAIN | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt` | 222,519 | Hagezi's personal recommendation — ads, trackers, malware, phishing, scam, popups, bug trackers |
+| 2 | **Hagezi TIF — IPs** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt` | 56,937 | IP-based threat blocking (lightweight, keeps TIF value without 2M domain bloat) |
+| 3 | **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | 7,827 | Anti-fingerprinting |
+| 4 | **Perflyst & Dandelion Sprout Smart-TV** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | 159 | Smart TV ad blocking |
+| 5 | **Dandelion Sprout's Anti-Malware** | `https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout%27s%20Anti-Malware%20List.txt` | 14,021 | Malware blocking — Hagezi explicitly recommends for AGH |
+| 6 | **My Own Filter List - Master** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | 431 | Custom cross-service + tracking blocks (optimized with wildcards) |
+| 7 | **My Own Filter List - Amazon** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt` | 24 | Amazon Prime Video |
+| 8 | **My Own Filter List - Apple TV** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt` | 7 | Apple TV+ |
+| 9 | **My Own Filter List - Disney+** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt` | 9 | Disney+ |
+| 10 | **My Own Filter List - HBO Max** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt` | 15 | HBO Max/Max |
+| 11 | **My Own Filter List - Netflix** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt` | 11 | Netflix |
+| 12 | **My Own Filter List - Paramount+** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt` | 29 | Paramount+ |
+| 13 | **My Own Filter List - Sky** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt` | 40 | Sky Glass |
+| 14 | **My Own Filter List - Hulu** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt` | 7 | Hulu |
+| 15 | **My Own Filter List - Roku** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt` | 65 | Roku |
+| 16 | **My Own Filter List - Tubi** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt` | 13 | Tubi |
+| 17 | **My Own Filter List - Pluto TV** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt` | 15 | Pluto TV |
+| 18 | **HaGeZi Dynamic DNS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt` | 1,522 | Dynamic DNS blocking |
+| 19 | **HaGeZi Badware Hoster** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt` | 1,239 | Free hosters that host badware |
+| 20 | **Hagezi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | 230 | Vivo device tracking |
+| 21 | **Hagezi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | 390 | Windows/Office telemetry |
+| 22 | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | 150 | Netflix ads, Twitch, Crunchyroll, German/Indian streaming |
+| 23 | **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | 231 | LG/Samsung/Sony/Roku |
+| 24 | **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | 77 | Samsung/LG/Roku telemetry |
+| 25 | **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | 8,346 | "Get our app" banner removal |
+| 26 | **Fire Stick/TV ad bidding** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.amazon.txt` | 363 | Fire TV/Stick ad bidding, OTT DTB |
+| 27 | **Roku ACR** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.roku.txt` | 73 | Roku ACR, ravm.tv |
+| 28 | **Samsung TV telemetry** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.samsung.txt` | 202 | Samsung TV telemetry, Adobe Analytics |
+| 29 | **Apple TV analytics** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.apple.txt` | 108 | Apple TV analytics, SKAdNetwork |
+| 30 | **LG webOS** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.lgwebos.txt` | 341 | LG webOS telemetry |
+| 31 | **TikTok ads/telemetry** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.txt` | 434 | TikTok ads/telemetry |
+| 32 | **Roku/Fire TV hardcoded DoH** | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh-vpn-proxy-bypass.txt` | 16,648 | Stops DoH bypass |
+| 33 | **OISD Small** 🆕 | `https://small.oisd.nl/` | 58,908 | Ads + trackers (lightweight, different approach than HaGeZi) |
+| 34 | **Phishing Army** 🆕 | `https://phishing.army/download/phishing_army_blocklist_extended.txt` | 157,227 | Dedicated phishing domain blocking |
+| 35 | **URLHaus** 🆕 | `https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh.txt` | 18,922 | Malicious URL blocking |
 
 **UK Catch-Up:** `filterlist.streaming.ukcatchup.txt` (24 rules) — Channel 4 / All4 / My5
 
@@ -357,9 +357,9 @@ All lists below are active and verified as of **19 August 2026**.
 
 | Metric | Value |
 |--------|-------|
-| **Third-party blocklist rules** | ~5,350,000 |
+| **Third-party blocklist rules** | ~565,000 |
 | **My custom rules** | ~750 (blocks + allows across all files) |
-| **Blocklists active** | 34 |
+| **Blocklists active** | 35 |
 | **Last verified** | 19 August 2026 |
 
 ---
@@ -393,9 +393,9 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 | List | Rules | Limit |
 |------|-------|-------|
-| My Own Filter List - Master | **426** | **426/1000** |
+| My Own Filter List - Master | **431** | **431/1000** |
 
-**Why wildcards matter:** AdGuard DNS limits custom lists to 1K rules. Our 52% reduction (882 → 425) keeps us well under the cap while maintaining full coverage.
+**Why wildcards matter:** AdGuard DNS limits custom lists to 1K rules. Our 52% reduction (882 → 431) keeps us well under the cap while maintaining full coverage.
 
 ---
 
