@@ -85,6 +85,7 @@
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Gateway, setup, and core iCloud services
 @@||gateway.icloud.com^
+@@||gateway.fe2.apple-dns.net^
 @@||setup.icloud.com^
 @@||icloud.com^
 @@||www.icloud.com^
@@ -96,6 +97,7 @@
 @@||contacts.icloud.com^
 @@||reminders.icloud.com^
 @@||findmy.icloud.com^
+@@||fmf.fe2.apple-dns.net^
 @@||keychain.icloud.com^
 @@||icloudkeychain.com^
 @@||idmsa.apple.com^
@@ -109,6 +111,10 @@
 @@||p123-cmws.icloud.com^
 @@||p123-icloudws.icloud.com^
 @@||iderver.com^
+! CRITICAL: Apple Private Relay & recommendation engine — blocked in Section 1 but needed for iMessage
+@@||apple-relay.cloudflare.com^
+@@||apple-relay.fastly-edge.com^
+@@||smoot.apple.com^
 ! iMessage infrastructure
 @@||xp.apple.com^
 @@||messenger.apple.com^
