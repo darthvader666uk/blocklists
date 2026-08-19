@@ -83,92 +83,190 @@
 @@||posteo-status.de^
 
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
-! Gateway, setup, and core iCloud services
+! Source: Apple Support (https://support.apple.com/en-us/101555)
+! Updated: 2026-08-19 — Comprehensive list from official Apple documentation
+
+! --- iCloud Core Services ---
+@@||*.icloud.com^
+@@||*.icloud-content.com^
+@@||*.icloud.apple.com^
+@@||*.apple-cloudkit.com^
+@@||*.apple-livephotoskit.com^
+@@||*.cdn-apple.com^
+@@||*.gc.apple.com^
+@@||*.iwork.apple.com^
+@@||*.apple-dns.net^
 @@||gateway.icloud.com^
 @@||gateway.fe2.apple-dns.net^
 @@||gateway-asset.icloud-content.com^
 @@||setup.icloud.com^
-@@||icloud.com^
-@@||www.icloud.com^
-@@||mail.icloud.com^
-@@||drive.icloud.com^
-@@||photos.icloud.com^
-@@||notes.icloud.com^
-@@||calendar.icloud.com^
-@@||contacts.icloud.com^
-@@||reminders.icloud.com^
-@@||findmy.icloud.com^
-@@||fmf.fe2.apple-dns.net^
-@@||content.fe2.apple-dns.net^
-@@||keychain.icloud.com^
-@@||icloudkeychain.com^
-@@||idmsa.apple.com^
-@@||appleid.apple.com^
-@@||iforgot.apple.com^
-@@||appleid.cdn-apple.com^
-@@||apple-cloudkit.com^
-@@||*.apple-cloudkit.com^
-@@||cvws.icloud.com^
-@@||cvws-lb.icloud.com^
-@@||p123-cmws.icloud.com^
-@@||p123-icloudws.icloud.com^
-@@||iderver.com^
-! CRITICAL: Apple Private Relay & recommendation engine — blocked in Section 1 but needed for iMessage
+@@||probe.icloud.com^
+@@||pong.icloud.com^
+@@||metrics.icloud.com^
+@@||statici.icloud.com^
+@@||ws-ee-maidsvc.icloud.com^
+
+! --- iCloud Private Relay (Required for iMessage) ---
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
 @@||apple-relay.cloudflare.com^
 @@||apple-relay.fastly-edge.com^
-@@||smoot.apple.com^
-! iMessage infrastructure
+@@||apple-relay.apple.com^
+@@||cp4.cloudflare.com^
+
+! --- Apple Account / Apple ID ---
+@@||account.apple.com^
+@@||appleid.cdn-apple.com^
+@@||idmsa.apple.com^
+@@||gsa.apple.com^
+@@||appleid.apple.com^
+@@||iforgot.apple.com^
+
+! --- Apple Intelligence / Siri / Search ---
+@@||guzzoni.apple.com^
+@@||*.smoot.apple.com^
+@@||apple-native-relay.apple.com^
+
+! --- iMessage Infrastructure ---
 @@||xp.apple.com^
 @@||messenger.apple.com^
 @@||configuration.apple.com^
-@@||appldnld.apple.com^
-@@||mesu.apple.com^
-@@||albert.apple.com^
-@@||gdmf.apple.com^
-@@||gg.apple.com^
-@@||oscdn.apple.com^
-@@||swcdn.apple.com^
-@@||swdist.apple.com^
-@@||osrecovery.apple.com^
 @@||*.mzstatic.com^
 @@||play.itunes.apple.com^
 @@||valid.apple.com^
-@@||init-p01st-inapple-com.akadns.net^
 @@||identity.apple.com^
 @@||profile.apple.com^
-! CarPlay
-@@||carplay.apple.com^
+@@||init-p01st-inapple-com.akadns.net^
+
+! --- Find My / Location Services ---
+@@||findmy.icloud.com^
+@@||fmf.fe2.apple-dns.net^
 @@||gs-loc.apple.com^
 @@||*.gs-loc.apple.com^
 @@||gsp-ssl.ls-apple.com.akadns.net^
-@@||device.apple.com^
 @@||*.ls-apple.com.akadns.net^
-@@||play.apple.com^
-@@||www.apple.com^
-@@||store.apple.com^
-@@||store.storeappletv.com^
-! Apple Pay
+@@||*.apple-mapkit.com^
+
+! --- Device Setup / Activation ---
+@@||albert.apple.com^
+@@||captive.apple.com^
+@@||gs.apple.com^
+@@||humb.apple.com^
+@@||static.ips.apple.com^
+@@||sq-device.apple.com^
+@@||tbsc.apple.com^
+@@||time-ios.apple.com^
+@@||time.apple.com^
+@@||time-macos.apple.com^
+
+! --- Software Updates ---
+@@||appldnld.apple.com^
+@@||gdmf.apple.com^
+@@||gg.apple.com^
+@@||mesu.apple.com^
+@@||oscdn.apple.com^
+@@||osrecovery.apple.com^
+@@||swcdn.apple.com^
+@@||swdist.apple.com^
+@@||swdownload.apple.com^
+@@||swscan.apple.com^
+@@||updates-http.cdn-apple.com^
+@@||updates.cdn-apple.com^
+@@||gdmf-ados.apple.com^
+@@||gsra.apple.com^
+@@||wkms-public.apple.com^
+@@||fcs-keys-pub-prod.cdn-apple.com^
+
+! --- Apple Push Notification Service (APNs) ---
+@@||*.push.apple.com^
+@@||feedback.push.apple.com^
+
+! --- Certificate Validation ---
+@@||certs.apple.com^
+@@||crl.apple.com^
+@@||ocsp.apple.com^
+@@||ocsp2.apple.com^
+@@||valid.apple.com^
+
+! --- App Store / Apps ---
+@@||*.itunes.apple.com^
+@@||*.apps.apple.com^
+@@||itunes.apple.com^
+@@||ppq.apple.com^
+@@||api.apple-cloudkit.com^
+@@||*.appattest.apple.com^
+@@||*.apps-marketplace.apple.com^
+@@||token.safebrowsing.apple^
+@@||audiocontentdownload.apple.com^
+@@||devimages-cdn.apple.com^
+@@||download.developer.apple.com^
+@@||playground-assets-cdn.apple.com^
+@@||playground-cdn.apple.com^
+@@||sylvan.apple.com^
+
+! --- Apple Pay / Wallet ---
 @@||applepay.apple.com^
 @@||pay.apple.com^
 @@||wallet.apple.com^
 @@||*.applepay.apple.com^
-! Apple Maps
+@@||pos-device.apple.com^
+
+! --- Content Caching ---
+@@||lcdn-registration.apple.com^
+@@||suconfig.apple.com^
+@@||xp-cdn.apple.com^
+@@||lcdn-locator.apple.com^
+@@||serverstatus.apple.com^
+
+! --- Beta / Feedback ---
+@@||bpapi.apple.com^
+@@||cssubmissions.apple.com^
+@@||fba.apple.com^
+
+! --- Diagnostics ---
+@@||diagassets.apple.com^
+
+! --- DNS ---
+@@||doh.dns.apple.com^
+
+! --- Associated Domains (Universal Links, Handoff) ---
+@@||app-site-association.cdn-apple.com^
+@@||app-site-association.networking.apple^
+
+! --- Keychain / Sync ---
+@@||keychain.icloud.com^
+@@||icloudkeychain.com^
+
+! --- Mail ---
+@@||mail.icloud.com^
+
+! --- Drive ---
+@@||drive.icloud.com^
+
+! --- Photos ---
+@@||photos.icloud.com^
+
+! --- Notes ---
+@@||notes.icloud.com^
+
+! --- Calendar ---
+@@||calendar.icloud.com^
+
+! --- Contacts ---
+@@||contacts.icloud.com^
+
+! --- Reminders ---
+@@||reminders.icloud.com^
+
+! --- CloudKit / XProtect ---
+@@||iderver.com^
+
+! --- Apple Maps ---
 @@||ls-apple.com.akadns.net^
-@@||apple-mapkit.com^
-@@||*.apple-mapkit.com^
-! APNs
-@@||push.apple.com^
-@@||*.push.apple.com^
-@@||feedback.push.apple.com^
-! Captive Portal
-@@||captive.apple.com^
-! Software Updates
-@@||updates-http.cdn-apple.com^
-@@||updates.cdn-apple.com^
-@@||cdn-apple.com^
-@@||*.cdn-apple.com^
-! Content Delivery
-@@||*.akamaized.net^$domain=apple.com|icloud.com
+
+! --- CarPlay ---
+@@||carplay.apple.com^
 
 ! ========== SOCIAL MEDIA (first-party access) ==========
 @@||connect.facebook.net^$domain=facebook.com|www.facebook.com
