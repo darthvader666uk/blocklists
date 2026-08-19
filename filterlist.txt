@@ -106,14 +106,16 @@
 @@||statici.icloud.com^
 @@||ws-ee-maidsvc.icloud.com^
 
-! --- iCloud Private Relay (Required for iMessage) ---
-@@||mask.icloud.com^
-@@||mask-h2.icloud.com^
-@@||mask-api.icloud.com^
-@@||apple-relay.cloudflare.com^
-@@||apple-relay.fastly-edge.com^
-@@||apple-relay.apple.com^
-@@||cp4.cloudflare.com^
+! --- iCloud Private Relay (BLOCKED for DNS filtering to work) ---
+! These are in Section 1 deny list — do NOT add to allowlist
+! If you want Private Relay, remove the deny rules instead
+! @@||mask.icloud.com^
+! @@||mask-h2.icloud.com^
+! @@||mask-api.icloud.com^
+! @@||apple-relay.cloudflare.com^
+! @@||apple-relay.fastly-edge.com^
+! @@||apple-relay.apple.com^
+! @@||cp4.cloudflare.com^
 
 ! --- Apple Account / Apple ID ---
 @@||account.apple.com^
@@ -227,8 +229,9 @@
 ! --- Diagnostics ---
 @@||diagassets.apple.com^
 
-! --- DNS ---
-@@||doh.dns.apple.com^
+! --- DNS (BLOCKED — forces Apple to use your DNS) ---
+! This is in Section 1 deny list — do NOT add to allowlist
+! @@||doh.dns.apple.com^
 
 ! --- Associated Domains (Universal Links, Handoff) ---
 @@||app-site-association.cdn-apple.com^
