@@ -82,6 +82,19 @@
 @@||api.posteo.de^
 @@||posteo-status.de^
 
+! ========== FALSE POSITIVES — SHARED HOSTING IPs ==========
+! Sites blocked not by domain but by their resolved IP, because they sit on
+! shared hosting whose address appears in an IP threat feed.
+! AdGuard Home reports these as "Blocked by CNAME or IP".
+! Expect more of these: any Vercel/Cloudflare/Netlify-hosted site can share an
+! address with something malicious. If a rule here stops working, try the
+! AdGuard Home form  @@||domain^$important  instead.
+!
+! 2026-09-02 — Cruise Nation (UK cruise retailer). Verified live (HTTP 200).
+! www.cruisenation.com -> CNAME cruisenation.com -> 216.150.1.193 (Vercel, Inc).
+! Blocked by: Threat Intelligence Feeds - IPs. Vercel shared IP, not the site.
+@@||cruisenation.com^
+
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
 ! Updated: 2026-08-19 — Comprehensive list from official Apple documentation

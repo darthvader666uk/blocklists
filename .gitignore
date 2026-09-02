@@ -45,3 +45,7 @@ archive/
 .opencode
 .windsurf
 .graymatter
+
+# Reference exports (local only — contain credentials, never publish)
+AdGuardHome.yaml
+AdGuardHome*.yaml
