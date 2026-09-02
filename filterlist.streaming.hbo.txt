@@ -10,7 +10,10 @@
 ! 
 ! ⚠️ COMPATIBILITY NOTE: This list contains ONLY domain-based rules (||domain.com^)
 ! Path-scoped rules (||domain.com/path/*$media) don't work at DNS level and have been removed.
-! Regex patterns are NOT supported by AdGuard Home DNS mode.
+! CORRECTED 2026-09-02: AdGuard Home DOES support regex (/REGEX/) and wildcards (*).
+! The earlier claim here was wrong. It cost nothing in this file, because ||fwmrm.net^
+! already matches every subdomain and is strictly broader than the regexes it replaced --
+! but see filterlist.streaming.roku.txt, where the same wrong belief did lose coverage.
 
 ! ==========================================
 ! WHITELISTS (CRITICAL - keep playback working)
@@ -33,7 +36,7 @@
 ! ==========================================
 
 ||fwmrm.net^
-||v.fwmrm.net^
+! (||v.fwmrm.net^ removed 2026-09-02 -- ||fwmrm.net^ already covers every subdomain)
 ||braze.com^
 ! Removed duplicate block: telegraph.prd.api.hbomax.com is whitelisted above — keeping whitelist only
 ! ||telegraph.prd.api.hbomax.com^
@@ -136,3 +139,25 @@
 !      (HBO is using SSAI or has updated their ad infrastructure)
 !
 ! ==========================================
+
+! ==========================================
+! CURRENT MAX AD HOSTS — from ajstrick81/HBO-Ads (upstream, checked 2026-09-02)
+! ==========================================
+! These are the hosts Max actually serves ads from now. The rules above
+! (fwmrm/braze/brightline/litix/dnitv) are generic third-party ad networks and
+! do not cover these at all.
+!
+! ⚠️ $important overrides allowlist rules. Verified safe here: the existing
+! @@ discomax whitelists are default.*/telegraph.*/images.*, none of which begin
+! with "gmss.". If you add a broader discomax allowlist later, this will still win.
+!
+! ⚠️ REGION: "amer-free" is the Americas free tier. On a UK/EMEA account these are
+! inert -- harmless, and kept because this list is published for others. If Max
+! still shows ads, check the AdGuard Home query log for an EMEA equivalent
+! (something matching *-free.prd.media.max.com) and add it here.
+
+||gmss.*.prd.api.discomax.com^$important
+||cf.amer-free.prd.media.max.com^$important
+||gcp.amer-free.prd.media.max.com^$important
+||fly.amer-free.prd.media.max.com^
+||akm.amer-free.prd.media.max.com^
