@@ -3,7 +3,9 @@
 ! Last Updated: 2026-08-04
 ! Description: Roku/Roku Channel ad and tracking blocking
 ! Source: Verified against ozankiratli gist (July 2025 + April 2026 comments)
-! NOTE: Regex patterns converted to hostnames for AdGuard Home DNS compatibility
+! NOTE: AdGuard Home DOES support regex (/REGEX/ syntax, per AdGuard's DNS filtering
+! syntax docs). Exact hostnames are kept below as a portable base; the regex block
+! at the end catches the name variants that exact hosts miss (amoeba2, giga.sb, ...).
 !
 ! ==========================================
 ! ROKU - DO NOT BLOCK (Critical functionality)
@@ -49,7 +51,9 @@
 ! ==========================================
 ! ROKU BLACKLIST - HOSTNAME RULES
 ! Source: ozankiratli gist (July 2025), converted from regex for DNS compatibility
-! NOTE: Original regex patterns (||^...^) don't work in AdGuard Home DNS mode.
+! NOTE (corrected 2026-09-02): regex DOES work in AdGuard Home. The earlier claim here
+! was wrong and cost coverage. Regex is inert in uBlock (it matches URLs, not hostnames),
+! which is harmless -- the exact hostnames above cover uBlock.
 !       Converted to individual hostname blocks below.
 ! ==========================================
 
@@ -103,9 +107,9 @@
 ||track.sr.roku.com^
 ||userdata.sr.roku.com^
 
-! ravm.tv (all subdomains)
+! ravm.tv — ||domain^ already covers every subdomain, so display.ravm.tv needs no
+! separate rule here. skyglass.txt keeps its own copy so it stands alone.
 ||ravm.tv^
-||display.ravm.tv^
 
 ! ==========================================
 ! ROKU ADDITIONAL NOTES
@@ -115,3 +119,31 @@
 ! - Roku is relatively stable (unlike Peacock/Paramount+ April 2026 breakage)
 ! - Regex patterns converted to hostnames (Apr 2026) — originals broken in DNS mode
 ! - Last updated: 2026-08-04
+
+! ==========================================
+! REGEX — variant catching (AdGuard Home / AdGuard DNS only)
+! Added 2026-09-02. Source: ozankiratli gist (updated 2026-09-02) + r/pihole 1v7jmeq.
+! Exact hostnames above miss prefixed/suffixed and deeper-nested variants:
+! amoeba2.roku.com, giga.sb.roku.com, foo.austin.roku.com etc.
+! If Roku breaks, delete THIS BLOCK FIRST — the exact hosts above are the safe base.
+! 'lb' is deliberately excluded from the name list: as a substring it matches far
+! too much. lb.roku.com is covered by the exact rule above.
+! ==========================================
+
+! Ad/telemetry labels at any depth.
+! 'cti' deliberately excluded: it would catch ls.cti/tis.cti.roku.com, which are
+! whitelisted above for Roku Channel playback. ||cti.roku.com^ above covers the base.
+/^(([^.]+\.)*(logs|ads|web|prod\.mobile|voice)(\.[^.]+)*\.)roku\.com$/
+
+! Rotating codename hosts, with characters before/after and deeper subdomains
+/^(([^.]+\.)*[^.]*(amarillo|amoeba|austin|benjamin|bryan|camden|cooper|copper|digdug|external|giga|gilbert|griffin|hereford|liberty|littlefield|longview|madison|marlin|midland|paolo|richmond|rollingwood|scribe|sugarland|tyler|victoria|windsor)[^.]*(\.[^.]+)*\.)roku\.com$/
+
+! Prefix hosts (adds customer-feedbacks, seen in r/pihole Aug 2026)
+/^((captive|cloudservices|wwwimg|customer-feedbacks)\.)roku\.com$/
+
+! Tracking under *.sr.roku.com (whitelisted content hosts above are unaffected)
+/^((bif|microsites|traces|track|userdata)\.sr\.)roku\.com$/
+
+! Roku ad measurement. The community regex misses roku.eu.admeasurement.com; the apex
+! is an ad-measurement domain only, so blocking it covers every arrangement.
+||admeasurement.com^
