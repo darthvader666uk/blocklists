@@ -13,8 +13,10 @@ match, and the README was the wrong one:
 
 - **Live config had 26 blocklists, not the 35 documented here.** The Aug 7 / 12 / 19 changes below
   were written up but **never applied** to AdGuard Home.
-- **Still enabled despite being listed as removed:** HaGeZi TIF (full), AdGuard DNS filter,
-  AdGuard CNAME Trackers.
+- **Still enabled despite being listed as removed:** HaGeZi TIF (full) and AdGuard DNS filter —
+  the latter mislabelled "AdGuard CNAME Trackers". Since the Aug 12 note blamed the filtered-rate
+  drop on its *removal*, that explanation never held: it was running the whole time. It is
+  DNS-native (unlike the browser lists) and is **kept** in the target stack, just renamed.
 - **Documented as added but absent:** OISD Small, all six `native.*` device lists,
   `doh-vpn-proxy-bypass`, StreamNoAds, FTPrivacy/BlocklistProject Smart TV, DynDNS, Badware Hoster,
   Mobile App Banners. The Aug 12 "coverage gap closed" work was therefore **still open** at DNS level.
@@ -28,7 +30,7 @@ match, and the README was the wrong one:
   filtered rate, ahead of the SSAI explanation given below. Verify the rule counts are non-zero on
   the Filters page.
 
-The corrected 37-list stack is in `.vscode/docs/adguard-home-stack.md` (local, not published).
+The corrected 38-list stack is in `.vscode/docs/adguard-home-stack.md` (local, not published).
 **The table further down now documents that target stack, not the old 26.**
 
 ### ➕ New whitelist: Cruise Nation
@@ -344,7 +346,7 @@ Following these services for changes:
 
 ## 🔗 **Active Filter Lists**
 
-### AdGuard Home — target stack (37 lists)
+### AdGuard Home — target stack (38 lists)
 
 Target stack as of **2 September 2026**, reconciled against the live `AdGuardHome.yaml`.
 Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 26 of these.
@@ -353,7 +355,7 @@ Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 2
 > documented as one. uBlock subscribes to 59 lists including browser-only ones that do
 > not belong in DNS filtering.
 
-#### 🛡️ Blocklists (37)
+#### 🛡️ Blocklists (38)
 
 | # | Group | List | URL | Purpose |
 |---|---|---|---|---|
@@ -365,35 +367,36 @@ Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 2
 | 6 | Security | **URLHaus** | `https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh.txt` | Malicious URLs (AdGuard Home native build) |
 | 7 | Security | **HaGeZi Badware Hoster** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt` | Free hosters that host badware |
 | 8 | Security | **HaGeZi Dynamic DNS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt` | Dynamic DNS abuse |
-| 9 | Privacy | **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | Anti-fingerprinting |
-| 10 | DNS bypass | **HaGeZi DoH/VPN/Proxy Bypass** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/doh-vpn-proxy-bypass.txt` | Stops Roku/Fire TV hardcoded DoH escaping your DNS |
-| 11 | Smart TV | **Perflyst & Dandelion Sprout Smart-TV** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | Smart TV ads |
-| 12 | Smart TV | **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | LG/Samsung/Sony/Roku |
-| 13 | Smart TV | **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | Samsung/LG/Roku telemetry |
-| 14 | Native OEM | **HaGeZi Native Amazon (Fire TV)** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt` | Fire TV/Stick ad bidding, OTT DTB |
-| 15 | Native OEM | **HaGeZi Native Roku (ACR)** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt` | Roku ACR, ravm.tv |
-| 16 | Native OEM | **HaGeZi Native Samsung** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt` | Samsung TV telemetry, Adobe Analytics |
-| 17 | Native OEM | **HaGeZi Native Apple** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt` | Apple TV analytics, SKAdNetwork |
-| 18 | Native OEM | **HaGeZi Native LG webOS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt` | LG webOS telemetry |
-| 19 | Native OEM | **HaGeZi Native TikTok** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt` | TikTok ads/telemetry |
-| 20 | Native OEM | **HaGeZi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | Vivo device tracking |
-| 21 | Native OEM | **HaGeZi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | Windows/Office telemetry |
-| 22 | Streaming | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | Netflix ads, Twitch, Crunchyroll, DE/IN streaming |
-| 23 | Mobile | **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | "Get our app" banner removal |
-| 24 | Mine | **My Own Filter List - Master** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | Custom cross-service + tracking blocks |
-| 25 | Mine | **My Own Filter List - Amazon** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt` | Amazon ad/tracking blocks |
-| 26 | Mine | **My Own Filter List - Appletv** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt` | Appletv ad/tracking blocks |
-| 27 | Mine | **My Own Filter List - Disney** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt` | Disney ad/tracking blocks |
-| 28 | Mine | **My Own Filter List - Hbo** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt` | Hbo ad/tracking blocks |
-| 29 | Mine | **My Own Filter List - Hulu** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt` | Hulu ad/tracking blocks |
-| 30 | Mine | **My Own Filter List - Netflix** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt` | Netflix ad/tracking blocks |
-| 31 | Mine | **My Own Filter List - Paramount** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt` | Paramount ad/tracking blocks |
-| 32 | Mine | **My Own Filter List - Peacock** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.peacock.txt` | Peacock ad/tracking blocks |
-| 33 | Mine | **My Own Filter List - Pluto** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt` | Pluto ad/tracking blocks |
-| 34 | Mine | **My Own Filter List - Roku** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt` | Roku ad/tracking blocks |
-| 35 | Mine | **My Own Filter List - Skyglass** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt` | Skyglass ad/tracking blocks |
-| 36 | Mine | **My Own Filter List - Tubi** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt` | Tubi ad/tracking blocks |
-| 37 | Mine | **My Own Filter List - Ukcatchup** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.ukcatchup.txt` | Ukcatchup ad/tracking blocks |
+| 9 | Core | **AdGuard DNS filter** | `https://filters.adtidy.org/extension/chromium/filters/15.txt` | DNS-native composite (Base+EasyList+EasyPrivacy, simplified for DNS) — ⚠️ currently mislabelled "AdGuard CNAME Trackers" in the live config |
+| 10 | Privacy | **AdGuard Fingerprinting** | `https://filters.adtidy.org/extension/chromium/filters/11.txt` | Anti-fingerprinting |
+| 11 | DNS bypass | **HaGeZi DoH/VPN/Proxy Bypass** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/doh-vpn-proxy-bypass.txt` | Stops Roku/Fire TV hardcoded DoH escaping your DNS |
+| 12 | Smart TV | **Perflyst & Dandelion Sprout Smart-TV** | `https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt` | Smart TV ads |
+| 13 | Smart TV | **FTPrivacy Smart TV** | `https://raw.githubusercontent.com/ftpmorph/ftpihole/master/blocklists/smart-tv-ads-tracking.txt` | LG/Samsung/Sony/Roku |
+| 14 | Smart TV | **BlocklistProject Smart TV** | `https://raw.githubusercontent.com/blocklistproject/Lists/master/smart-tv.txt` | Samsung/LG/Roku telemetry |
+| 15 | Native OEM | **HaGeZi Native Amazon (Fire TV)** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt` | Fire TV/Stick ad bidding, OTT DTB |
+| 16 | Native OEM | **HaGeZi Native Roku (ACR)** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt` | Roku ACR, ravm.tv |
+| 17 | Native OEM | **HaGeZi Native Samsung** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt` | Samsung TV telemetry, Adobe Analytics |
+| 18 | Native OEM | **HaGeZi Native Apple** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt` | Apple TV analytics, SKAdNetwork |
+| 19 | Native OEM | **HaGeZi Native LG webOS** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt` | LG webOS telemetry |
+| 20 | Native OEM | **HaGeZi Native TikTok** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt` | TikTok ads/telemetry |
+| 21 | Native OEM | **HaGeZi Native Vivo** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt` | Vivo device tracking |
+| 22 | Native OEM | **HaGeZi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | Windows/Office telemetry |
+| 23 | Streaming | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | Netflix ads, Twitch, Crunchyroll, DE/IN streaming |
+| 24 | Mobile | **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | "Get our app" banner removal |
+| 25 | Mine | **My Own Filter List - Master** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | Custom cross-service + tracking blocks |
+| 26 | Mine | **My Own Filter List - Amazon** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt` | Amazon ad/tracking blocks |
+| 27 | Mine | **My Own Filter List - Appletv** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt` | Appletv ad/tracking blocks |
+| 28 | Mine | **My Own Filter List - Disney** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt` | Disney ad/tracking blocks |
+| 29 | Mine | **My Own Filter List - Hbo** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt` | Hbo ad/tracking blocks |
+| 30 | Mine | **My Own Filter List - Hulu** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt` | Hulu ad/tracking blocks |
+| 31 | Mine | **My Own Filter List - Netflix** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt` | Netflix ad/tracking blocks |
+| 32 | Mine | **My Own Filter List - Paramount** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt` | Paramount ad/tracking blocks |
+| 33 | Mine | **My Own Filter List - Peacock** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.peacock.txt` | Peacock ad/tracking blocks |
+| 34 | Mine | **My Own Filter List - Pluto** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt` | Pluto ad/tracking blocks |
+| 35 | Mine | **My Own Filter List - Roku** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt` | Roku ad/tracking blocks |
+| 36 | Mine | **My Own Filter List - Skyglass** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt` | Skyglass ad/tracking blocks |
+| 37 | Mine | **My Own Filter List - Tubi** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt` | Tubi ad/tracking blocks |
+| 38 | Mine | **My Own Filter List - Ukcatchup** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.ukcatchup.txt` | Ukcatchup ad/tracking blocks |
 
 > ⚠️ **TIF-IPs false positives:** it blocks by resolved IP, so any site on a shared
 > Vercel/Cloudflare/Netlify address can be caught (e.g. `cruisenation.com` on 2026-09-02).
@@ -405,7 +408,7 @@ Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 2
 |--------|-------|
 | **Third-party blocklist rules** | ~600,000 (target stack) |
 | **My custom rules** | 469 in `filterlist.txt` (223 blocks + 246 allows) + ~300 across streaming files |
-| **Blocklists (target)** | 37 |
+| **Blocklists (target)** | 38 |
 | **Last verified** | 2 September 2026 (against live AdGuardHome.yaml) |
 
 ---
