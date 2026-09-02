@@ -531,8 +531,6 @@
 ||prod-app-analytics-event-gateway.v.aaplimg.com^
 ||securemetrics.v.aaplimg.com^
 ||securemvt.v.aaplimg.com^
-||*-analytics-events.apple.com^
-||*-analytics-events.news.apple-dns.net^
 ||valid.apple.com^$third-party
 ||xp.apple.com^$third-party
 
@@ -543,7 +541,6 @@
 
 ! ========== GENERIC AD NETWORKS ==========
 ||segment.com^
-||cdn.segment.com^
 ||mixpanel.com^
 ||hotjar.com^
 ||fullstory.com^
@@ -556,9 +553,6 @@
 ||ads.yahoo.com^
 ||clarity.ms^
 ||bing.com^$third-party
-||mparticle.com^
-||scorecardresearch.com^
-||omtrdc.net^
 ||applovin.com^
 ||unityads.unity3d.com^
 ||ironsrc.com^
@@ -576,7 +570,6 @@
 ||toponad.com^
 ||bidon.com^
 ||collect.tealiumiq.com^
-||utiq.com^
 ||audience.acpm.fr^
 ||pixel.byspotify.com^
 ||bat.bing.com^
