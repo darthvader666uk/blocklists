@@ -2,7 +2,8 @@
 set -uo pipefail
 
 # Always validate against the repo root, not the caller's cwd
-cd "$(dirname "${BASH_SOURCE[0]}")/.."
+# (gists are flat — this script lives at the root alongside the filter lists)
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # Filter List Validator
 # Validates Adblock Plus filter syntax for all .txt filter files
