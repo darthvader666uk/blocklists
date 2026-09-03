@@ -337,6 +337,15 @@
 @@||awin1.com^
 @@||tatrck.com^
 @@||sovendus-network.com^
+!
+! 2026-09-03 — UpPromote (Shopify affiliate app, Secomapp). Verified blocked:
+! pixel.uppromote.com resolved to 0.0.0.0 via AdGuard Home, 24.144.65.164 upstream.
+! Blocked by THREE lists at once (HaGeZi Pro, AdGuard filter 15, EasyPrivacy), so
+! disabling any one of them would not have helped — an allow rule is the only fix.
+! Same category as the affiliate networks above, which are already allowed here.
+! Apex form covers pixel./track./api./cdn. Risk: low (first-party Shopify affiliate
+! attribution, not a third-party ad network). Regional targeting: none.
+@@||uppromote.com^
 
 ! ========== GAMING ==========
 @@||*.battle.net^
