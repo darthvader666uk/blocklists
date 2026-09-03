@@ -82,18 +82,36 @@
 @@||api.posteo.de^
 @@||posteo-status.de^
 
-! ========== FALSE POSITIVES — SHARED HOSTING IPs ==========
-! Sites blocked not by domain but by their resolved IP, because they sit on
-! shared hosting whose address appears in an IP threat feed.
-! AdGuard Home reports these as "Blocked by CNAME or IP".
-! Expect more of these: any Vercel/Cloudflare/Netlify-hosted site can share an
-! address with something malicious. If a rule here stops working, try the
-! AdGuard Home form  @@||domain^$important  instead.
+! ========== FALSE POSITIVES — SHARED HOSTING (IP or CNAME) ==========
+! Legitimate sites blocked not by their own domain but by what they resolve to.
+! AdGuard Home reports both mechanisms identically as "Blocked by CNAME or IP",
+! so check which one you are actually dealing with before writing a rule:
+!
+!   (a) SHARED IP  — the site sits on hosting whose address appears in an IP
+!       threat feed. Any Vercel/Cloudflare/Netlify-hosted site can share an
+!       address with something malicious.
+!   (b) CNAME TO A BLOCKED HOST — the site is a CNAME into a site-builder or
+!       free-hosting platform that is blocked wholesale (e.g. HaGeZi Badware
+!       Hoster). The platform is listed; the site itself is innocent.
+!
+! For (b), ALWAYS allow the specific site, never the platform — allowing the
+! platform un-blocks every site on it, including whatever got it listed.
+! If a rule here stops working, try  @@||domain^$important  instead.
 !
 ! 2026-09-02 — Cruise Nation (UK cruise retailer). Verified live (HTTP 200).
 ! www.cruisenation.com -> CNAME cruisenation.com -> 216.150.1.193 (Vercel, Inc).
 ! Blocked by: Threat Intelligence Feeds - IPs. Vercel shared IP, not the site.
 @@||cruisenation.com^
+
+! 2026-09-03 — The Rising Sun, Rogerstone (village pub, Newport).
+! www.therisingsunrogerstone.com -> CNAME website-rendering.webador.com
+!   -> website-rendering.jouwweb.nl -> 35.204.150.5
+! Blocked by: hagezi - hoster, via ||webador.com^ (Webador/JouwWeb site builder
+! blocked as a free-hosting badware platform). Mechanism (b) above.
+! Scoped to this pub only — do NOT allow webador.com itself.
+! Note: 1.1.1.1 returns SERVFAIL for this domain while 8.8.8.8 resolves it, so
+! it may still fail intermittently depending on upstream. Not fixable here.
+@@||therisingsunrogerstone.com^
 
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
