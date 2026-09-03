@@ -2,6 +2,16 @@
 
 **A comprehensive, organized DNS-level filter list specifically optimized for blocking streaming service ads (HBO Max, Disney+, Apple TV+, Peacock, Roku, Paramount+, etc.) and aggressive tracking.**
 
+
+> ### 📦 Moved from Gist → repository
+>
+> This project used to live as a flat GitHub Gist. It is now a real repository
+> split into [`adguard/`](adguard/), [`ublock/`](ublock/) and
+> [`plugblock/`](plugblock/). **Filenames are unchanged; only their directories
+> are new — but every subscription URL changed.** If your AdGuard Home is still
+> pointed at the old `gist.githubusercontent.com` URLs it is serving a frozen
+> snapshot. See [MIGRATION.md](MIGRATION.md) for the old → new URL table.
+
 ---
 
 ## 📍 LATEST UPDATE: September 2, 2026
@@ -140,7 +150,7 @@ positive to recur for any Vercel / Cloudflare / Netlify-hosted site; each needs 
 
 1. **Download the raw file:**
    ```
-   https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt
+   https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/filterlist.txt
    ```
 
 2. **Add to AdGuard Home:**
@@ -383,20 +393,20 @@ Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 2
 | 22 | Native OEM | **HaGeZi Native Windows/Office** | `https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt` | Windows/Office telemetry |
 | 23 | Streaming | **StreamNoAds** | `https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services` | Netflix ads, Twitch, Crunchyroll, DE/IN streaming |
 | 24 | Mobile | **AdGuard Mobile App Banners** | `https://filters.adtidy.org/extension/chromium/filters/21.txt` | "Get our app" banner removal |
-| 25 | Mine | **My Own Filter List - Master** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.txt` | Custom cross-service + tracking blocks |
-| 26 | Mine | **My Own Filter List - Amazon** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.amazon.txt` | Amazon ad/tracking blocks |
-| 27 | Mine | **My Own Filter List - Appletv** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.appletv.txt` | Appletv ad/tracking blocks |
-| 28 | Mine | **My Own Filter List - Disney** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.disney.txt` | Disney ad/tracking blocks |
-| 29 | Mine | **My Own Filter List - Hbo** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hbo.txt` | Hbo ad/tracking blocks |
-| 30 | Mine | **My Own Filter List - Hulu** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.hulu.txt` | Hulu ad/tracking blocks |
-| 31 | Mine | **My Own Filter List - Netflix** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.netflix.txt` | Netflix ad/tracking blocks |
-| 32 | Mine | **My Own Filter List - Paramount** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.paramount.txt` | Paramount ad/tracking blocks |
-| 33 | Mine | **My Own Filter List - Peacock** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.peacock.txt` | Peacock ad/tracking blocks |
-| 34 | Mine | **My Own Filter List - Pluto** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.pluto.txt` | Pluto ad/tracking blocks |
-| 35 | Mine | **My Own Filter List - Roku** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.roku.txt` | Roku ad/tracking blocks |
-| 36 | Mine | **My Own Filter List - Skyglass** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.skyglass.txt` | Skyglass ad/tracking blocks |
-| 37 | Mine | **My Own Filter List - Tubi** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.tubi.txt` | Tubi ad/tracking blocks |
-| 38 | Mine | **My Own Filter List - Ukcatchup** | `https://gist.githubusercontent.com/darthvader666uk/ccfdab18b9d59830876c373db8b4210d/raw/filterlist.streaming.ukcatchup.txt` | Ukcatchup ad/tracking blocks |
+| 25 | Mine | **My Own Filter List - Master** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/filterlist.txt` | Custom cross-service + tracking blocks |
+| 26 | Mine | **My Own Filter List - Amazon** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.amazon.txt` | Amazon ad/tracking blocks |
+| 27 | Mine | **My Own Filter List - Appletv** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.appletv.txt` | Appletv ad/tracking blocks |
+| 28 | Mine | **My Own Filter List - Disney** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.disney.txt` | Disney ad/tracking blocks |
+| 29 | Mine | **My Own Filter List - Hbo** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.hbo.txt` | Hbo ad/tracking blocks |
+| 30 | Mine | **My Own Filter List - Hulu** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.hulu.txt` | Hulu ad/tracking blocks |
+| 31 | Mine | **My Own Filter List - Netflix** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.netflix.txt` | Netflix ad/tracking blocks |
+| 32 | Mine | **My Own Filter List - Paramount** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.paramount.txt` | Paramount ad/tracking blocks |
+| 33 | Mine | **My Own Filter List - Peacock** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.peacock.txt` | Peacock ad/tracking blocks |
+| 34 | Mine | **My Own Filter List - Pluto** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.pluto.txt` | Pluto ad/tracking blocks |
+| 35 | Mine | **My Own Filter List - Roku** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.roku.txt` | Roku ad/tracking blocks |
+| 36 | Mine | **My Own Filter List - Skyglass** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.skyglass.txt` | Skyglass ad/tracking blocks |
+| 37 | Mine | **My Own Filter List - Tubi** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.tubi.txt` | Tubi ad/tracking blocks |
+| 38 | Mine | **My Own Filter List - Ukcatchup** | `https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.ukcatchup.txt` | Ukcatchup ad/tracking blocks |
 
 > ⚠️ **TIF-IPs false positives:** it blocks by resolved IP, so any site on a shared
 > Vercel/Cloudflare/Netlify address can be caught (e.g. `cruisenation.com` on 2026-09-02).
@@ -457,27 +467,39 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 ---
 
-## 🔗 **File Structure**
+## 🔗 **Repository Layout**
 
 ```
-filterlist.txt                      # Main cross-service filter (229 blocks + 196 allows — 52% optimized)
-filterlist.streaming.*.txt          # Service-specific filters:
-  - hbo.txt (HBO Max - PRODUCTION READY)
-  - disney.txt (Disney+ - WORKING)
-  - paramount.txt (Paramount+ - DAI UNSOLVABLE)
-  - peacock.txt (Peacock - IMPROVED May 2026)
-  - roku.txt (Roku - ENHANCED, regex converted to hostnames)
-  - amazon.txt (Prime Video - LIMITED)
-  - hulu.txt (Hulu - WORKING)
-  - appletv.txt (Apple TV+ - WORKING)
-  - netflix.txt (Netflix - tracking)
-  - skyglass.txt (Sky Glass - WORKING)
-  - tubi.txt, pluto.txt (FAST services)
-  - ukcatchup.txt (Channel 4/All4/My5 - UK catch-up TV)
-ublock-main.txt                    # uBlock Origin full backup (settings, lists, userFilters)
-ublock-filters.txt                 # uBlock Origin cosmetic/scriptlet filters (legacy reference)
-ublock-filters-lite.txt            # MV3-compatible subset (53 rules)
+adguard/
+  filterlist.txt                    # Main cross-service filter (229 blocks + 196 allows — 52% optimized)
+  streaming/                        # Service-specific filters:
+    filterlist.streaming.hbo.txt        (HBO Max - PRODUCTION READY)
+    filterlist.streaming.disney.txt     (Disney+ - WORKING)
+    filterlist.streaming.paramount.txt  (Paramount+ - DAI UNSOLVABLE)
+    filterlist.streaming.peacock.txt    (Peacock - IMPROVED May 2026)
+    filterlist.streaming.roku.txt       (Roku - ENHANCED, regex converted to hostnames)
+    filterlist.streaming.amazon.txt     (Prime Video - LIMITED)
+    filterlist.streaming.hulu.txt       (Hulu - WORKING)
+    filterlist.streaming.appletv.txt    (Apple TV+ - WORKING)
+    filterlist.streaming.netflix.txt    (Netflix - tracking)
+    filterlist.streaming.skyglass.txt   (Sky Glass - WORKING)
+    filterlist.streaming.tubi.txt       (FAST service)
+    filterlist.streaming.pluto.txt      (FAST service)
+    filterlist.streaming.ukcatchup.txt  (Channel 4/All4/My5 - UK catch-up TV)
+
+ublock/
+  ublock-main.txt                   # uBlock Origin full backup (settings, lists, userFilters) — JSON
+  ublock-filters-lite.txt           # MV3-compatible subset (53 rules)
+
+plugblock/                          # Plug-and-play network blocking appliance (in design)
+  docs/ARCHITECTURE.md              # Design — transparent L2 bridge, fail-open
+  docs/RESEARCH-2026-09.md          # Prior-art + feasibility research
+
+scripts/
+  validate-filters.sh               # Syntax validator — run before committing
 ```
+
+**Filenames are unchanged from the original gist** — only their directories are new.
 
 ---
 

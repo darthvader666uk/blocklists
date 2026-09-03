@@ -49,3 +49,9 @@ archive/
 # Reference exports (local only — contain credentials, never publish)
 AdGuardHome.yaml
 AdGuardHome*.yaml
+
+# Python (plugblock)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
