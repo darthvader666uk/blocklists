@@ -489,7 +489,7 @@ adguard/
 
 ublock/
   ublock-main.txt                   # uBlock Origin full backup (settings, lists, userFilters) — JSON
-  ublock-filters-lite.txt           # MV3-compatible subset (53 rules)
+  ublock-filters-lite.txt           # DEPRECATED 2026-09-03 — frozen MV3 subset
 
 plugblock/                          # Plug-and-play network blocking appliance (in design)
   docs/ARCHITECTURE.md              # Design — transparent L2 bridge, fail-open
