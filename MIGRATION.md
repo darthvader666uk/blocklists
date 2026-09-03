@@ -1,5 +1,12 @@
 # Migration: Gist → repository
 
+> ## ✅ COMPLETE — 3 September 2026
+>
+> Every step below has been carried out. This file is kept as the historical
+> record of the cutover and the old → new URL mapping. **Nothing here still
+> needs doing.** Current install URLs are in the [README](README.md); the dated
+> write-up is in [CHANGELOG.md](CHANGELOG.md).
+
 The remote was a **GitHub Gist**, which cannot hold directories. This repo is now
 split into `adguard/`, `ublock/` and `plugblock/`, so the gist can no longer be
 the publishing target.
@@ -70,15 +77,23 @@ git clone https://gist.github.com/ccfdab18b9d59830876c373db8b4210d.git /tmp/gist
 Then replace its `README.md` with a pointer to the new repo, and commit/push from
 there.
 
-**Recommended extra:** prepend a deprecation notice to each list still in the
-gist. `!` is an ABP comment, so parsers ignore it, but anyone reading the list
-sees it:
+**Recommended extra:** add a deprecation notice to each list still in the gist.
+`!` is an ABP comment, so parsers ignore it, but anyone reading the list sees it.
+
+> ⚠️ The notice must go **after** line 1. Every list starts with `[Adblock Plus]`,
+> and that header has to stay first or parsers may not recognise the format — so
+> insert at line 2 rather than prepending. (The original version of this snippet
+> used `cat - "$f"`, which displaced the header. Fixed here.)
 
 ```bash
 cd /tmp/gist-tombstone && for f in filterlist*.txt; do
-  printf '! MOVED: https://github.com/darthvader666uk/blocklists — this copy is frozen and no longer updated.\n' | cat - "$f" > "$f.new" && mv "$f.new" "$f"
+  sed -i '1a ! MOVED: https://github.com/darthvader666uk/blocklists — this copy is frozen and no longer updated.' "$f"
 done
 ```
+
+Note this globs `filterlist*.txt` only. `ublock-filters-lite.txt` also wants the
+notice; `ublock-main.txt` is JSON and cannot carry a comment, so the gist README
+warns about it instead.
 
 ## Step 5 — Local cleanup
 

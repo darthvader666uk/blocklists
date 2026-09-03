@@ -14,117 +14,29 @@
 
 ---
 
-## 📍 LATEST UPDATE: September 2, 2026
+## 📰 Recent changes
 
-### 🔎 **CONFIG AUDIT — README reconciled against the live AdGuard Home config**
-
-The running `AdGuardHome.yaml` was diffed against this README for the first time. They did not
-match, and the README was the wrong one:
-
-- **Live config had 26 blocklists, not the 35 documented here.** The Aug 7 / 12 / 19 changes below
-  were written up but **never applied** to AdGuard Home.
-- **Still enabled despite being listed as removed:** HaGeZi TIF (full) and AdGuard DNS filter —
-  the latter mislabelled "AdGuard CNAME Trackers". Since the Aug 12 note blamed the filtered-rate
-  drop on its *removal*, that explanation never held: it was running the whole time. It is
-  DNS-native (unlike the browser lists) and is **kept** in the target stack, just renamed.
-- **Documented as added but absent:** OISD Small, all six `native.*` device lists,
-  `doh-vpn-proxy-bypass`, StreamNoAds, FTPrivacy/BlocklistProject Smart TV, DynDNS, Badware Hoster,
-  Mobile App Banners. The Aug 12 "coverage gap closed" work was therefore **still open** at DNS level.
-- **Six of this repo's own streaming lists were missing from AdGuard Home:** `roku`, `peacock`,
-  `hulu`, `pluto`, `tubi`, `ukcatchup` — including Roku, the best-performing list at 40%+. They were
-  loaded only in uBlock Origin, which does nothing for TVs and streaming sticks.
-- **Browser-extension lists were loaded into DNS mode** (EasyList, EasyPrivacy, Fanboy's Annoyance,
-  Cookie List, Annoyances, uBlock Privacy/Badware). AdGuard Home discards their cosmetic, scriptlet
-  and path rules, so they inflated the list count while contributing almost nothing.
-- **Every list reported `rules_count: 0` with no `last_updated`** — a likely cause of the low
-  filtered rate, ahead of the SSAI explanation given below. Verify the rule counts are non-zero on
-  the Filters page.
-
-The corrected 38-list stack is in `.vscode/docs/adguard-home-stack.md` (local, not published).
-**The table further down now documents that target stack, not the old 26.**
-
-### ➕ New whitelist: Cruise Nation
-
-`@@||cruisenation.com^` added to `filterlist.txt`. `www.cruisenation.com` was blocked by
-**Threat Intelligence Feeds - IPs** — not by domain, but because it resolves to `216.150.1.193`,
-a **Vercel shared IP** in the feed. Site verified live (HTTP 200). Expect this class of false
-positive to recur for any Vercel / Cloudflare / Netlify-hosted site; each needs its own
-`@@||domain^` entry.
+Dated entries have moved to **[CHANGELOG.md](CHANGELOG.md)**. Most recent:
+the gist → repository migration (3 Sep 2026), the uBlock Origin URL fixes and
+uBO Lite deprecation, and a full reconciliation of every rule count in this
+README against the actual files.
 
 ---
 
-## 📍 LATEST UPDATE: August 19, 2026
-
-### 🟢 **OPTIMIZATION — 52% Rule Reduction + Apple/iCloud/CarPlay Allowlist + AI Chatbot/Windows/Reddit/Discord Blocks**
-
-- **Filter list optimized from 882 → 425 rules (52% reduction)** using wildcards — critical for AdGuard DNS cloud (1K custom rule limit)
-- **Added comprehensive Apple iCloud/iMessage/CarPlay allowlist** — gateway.icloud.com, setup.icloud.com, APNs, mzstatic.com, etc. now unblocked
-- **Added AI chatbot tracking blocks** — OpenAI, Perplexity, Mistral, Cohere, HuggingFace, Meta AI
-- **Added Windows 11 telemetry blocks** — diagnostic data, advertising ID (core Windows still works)
-- **Added Reddit/Discord tracking blocks** — analytics and ads blocked, services still work
-- **Added OISD Small** to both AdGuard Home and AdGuard DNS — lightweight supplement to HaGeZi Pro
-
----
-
-## 📍 LATEST UPDATE: August 12, 2026
-
-### 🟢 **COVERAGE GAP CLOSED — Native Device Trackers + DNS Bypass Prevention**
-
-- **Added Hagezi `native.*` OEM device lists** (additive — NOT included in Multi PRO, which is only partial 🟨 for native coverage): `native.amazon` (Fire TV/Stick ad bidding, OTT DTB), `native.roku` (ACR, ravm.tv), `native.samsung` (TV telemetry, Adobe Analytics), `native.apple` (Apple TV analytics, SKAdNetwork), `native.lgwebos`, `native.tiktok` — ~2,100 domains that were previously only in the uBlock config, not AdGuard Home
-- **Added Hagezi `doh-vpn-proxy-bypass`** — stops Roku/Fire TV hardcoded DoH from bypassing AdGuard Home's DNS entirely
-- **New UK catch-up list: `filterlist.streaming.ukcatchup.txt`** — Channel 4 / All4 / My5 ad & measurement hosts (23 domains), replacing the broken upstream `UK-CatchupDNS` `domains.txt` (which had the entire Hagezi Pro list accidentally appended — 324k domains)
-- **Whitelists unchanged:** Coupert + uBlock Unbreak + StreamNoAds whitelist (2,639 rules ≈ 0.1% of stack — not a factor)
-- **Filtered-rate note:** dashboard % dropped from ~30% → ~8% after the Aug 7 stack slim-down. Expected: the overhaul removed the highest-hit-rate lists (AdGuard DNS filter, CNAME trackers, popupads) and DAI/SSAI makes streaming ads unblockable at DNS. Native.* + DoH bypass should recover genuine coverage without Pro++-style breakage.
-
----
-
-## 📍 LATEST UPDATE: August 7, 2026
-
-### 🟢 **BLOCKLIST STACK OVERHAUL — Verified Against Hagezi's Official Docs**
-
-- **Reverted to Hagezi Multi PRO (`pro.txt`)** — his personal recommendation (Pro++ is "experienced users only, may contain false positives")
-- **Kept:** TIF + TIF-IPs, DynDNS, Badware Hoster, Native Vivo/WinOffice, Dandelion Sprout's Anti-Malware (explicitly recommended for AGH), Perflyst Smart-TV, StreamNoAds + companion whitelist
-- **Removed (redundant/FP sources, already curated inside Hagezi):** StevenBlack hosts, AdGuard DNS filter, AdGuard CNAME Trackers + disguised CNAME lists, Phishing Army Extended, ShadowWhisperer, Scam Blocklist, URLHaus, NoCoin, AdGuard Popup Hosts
-- **Allowlists:** uBlock Unbreak + StreamNoAds whitelist + Coupert (required for extension)
-- **Result:** 37 → 27 blocklists, ~3.7M → ~2.75M rules
-
----
-
-## 📍 LATEST UPDATE: August 4, 2026
-
-### 🔴 **CRITICAL FINDINGS - April 2026 Streaming App Updates**
-
-**What Changed:**
-- **Peacock:** Android v7.4.21 (April 13, 2026) broke ad blocking; iOS broken for weeks
-- **Paramount+:** Switched to Google DAI (Direct Ad Injection) — DNS blocking now **0% effective**
-- **Roku:** Upgraded with comprehensive regex patterns — still working ✅
-
-**What You Should Know:**
-- **Peacock & Paramount+:** Users are disabling app auto-updates to stay on older versions
-- **Current Workaround:** Disable auto-updates in app stores, stay on Peacock v7.4.20 or earlier, Paramount+ v16.8 or earlier
-- **Effectiveness Reality:** SSAI (Server-Side Ad Insertion) limits DNS blocking to 5-40% effectiveness across all streaming services
-
-**Community Research:**
-- Cross-verified against ozankiratli community gist (138⭐, last updated July 10, 2025)
-- Latest gist comments show April 2026 app update breakage
-- Reference: https://gist.github.com/ozankiratli/801ba17705e7f2a904d2e443af5a64f8
-
----
-
-## ✅ **Filter Status by Service (August 2026)**
+## ✅ **Filter Status by Service (September 2026)**
 
 | Service | Filter File | Status | Notes |
 |---------|------------|--------|-------|
-| **HBO Max** 🔥 | `filterlist.streaming.hbo.txt` | ✅ **PRODUCTION READY** | Rebrand support (max.com + hbomax.com), 131 rules, whitelists protect playback |
+| **HBO Max** 🔥 | `filterlist.streaming.hbo.txt` | ✅ **PRODUCTION READY** | Rebrand support (max.com + hbomax.com), 18 rules (10 blocks + 8 allows), whitelists protect playback |
 | **Disney+** | `filterlist.streaming.disney.txt` | ✅ **WORKING** | 30-40% effectiveness (SSAI limitation), disneyadvertising.com targeted |
-| **Roku** | `filterlist.streaming.roku.txt` | ✅ **ENHANCED** | 5 regex patterns + 15 individual blocks, comprehensive coverage |
-| **Apple TV+** | `filterlist.streaming.appletv.txt` | ✅ **WORKING** | 9 verified rules |
+| **Roku** | `filterlist.streaming.roku.txt` | ✅ **ENHANCED** | 68 rules — 51 blocks + 17 allows, incl. 4 regex patterns (the only list using regex) |
+| **Apple TV+** | `filterlist.streaming.appletv.txt` | ✅ **WORKING** | 6 verified rules |
 | **Peacock/NBC** | `filterlist.streaming.peacock.txt` | ⚠️ **IMPROVED (May 2026)** | App v7.4.21+ changed ad delivery; ajstrick81 v2.7 claims renewed effectiveness on Android/iOS; 5-40% effective |
 | **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; fwmrm.net whitelist needed for Android app; stay on v16.8 |
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
 | **Hulu** | `filterlist.streaming.hulu.txt` | ✅ **WORKING** | 50% effectiveness (less SSAI-reliant) |
 | **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 23 verified domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
-| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 229 blocks + 196 allows (52% optimized with wildcards) |
+| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 470 rules — 223 blocks + 247 allows (wildcard-optimised) |
 
 ---
 
@@ -133,14 +45,14 @@ positive to recur for any Vercel / Cloudflare / Netlify-hosted site; each needs 
 | Metric | Details |
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
-| **Rules** | ~431 carefully curated & optimized (wildcards) |
-| **Last Updated** | **August 19, 2026** (52% rule reduction, Apple allowlist, AI/Windows/Reddit blocks, Phishing Army + URLHaus added) |
+| **Rules** | 470 in `filterlist.txt` (223 blocks + 247 allows), + 292 across the 13 streaming lists |
+| **Last Updated** | **3 September 2026** (migrated to a repository; all counts re-derived from the files) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS, AdGuard DNS (cloud) |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
 | **Testing** | Normalized line endings (CRLF → LF), syntax verified |
-| **AdGuard DNS Limit** | Custom list at 431/1000 rules (569 headroom remaining) |
-| **AdGuard Home** | 37 lists target / **26 actually running** as of the 2 Sep audit — see top of file |
+| **AdGuard DNS Limit** | Custom list at 470/1000 rules (530 headroom remaining) |
+| **AdGuard Home** | 38 lists target / **26 actually running** as of the 2 Sep audit — see [CHANGELOG.md](CHANGELOG.md) |
 
 ---
 
@@ -182,15 +94,15 @@ positive to recur for any Vercel / Cloudflare / Netlify-hosted site; each needs 
 ### Streaming Services (DNS-Level Blocking)
 | Service | Coverage | Effectiveness | Status |
 |---------|----------|---|---------|
-| **HBO Max/Max** ⭐ | 30 verified + regional rules | 20-30% | ✅ **PRODUCTION READY** |
-| **Disney+** | disneyadvertising.com + partners | 30-40% | ✅ **WORKING** |
-| **Apple TV+** | 9 rules | 20-30% | ✅ **WORKING** |
-| **Roku** | 37 rules + 5 regex patterns | 40%+ | ✅ **ENHANCED** |
-| **Hulu** | 12 rules | 50% | ✅ **WORKING** |
-| **Sky Glass** | 21 ad network rules | 40% | ✅ **WORKING** |
-| **Peacock/NBC** | 11 whitelists + 2 blocks | 5-40% | ⚠️ **IMPROVED (May 2026)** |
-| **Paramount+** | 25+ rules | 0% | 🔴 **DAI UNSOLVABLE** |
-| **Amazon Prime** | 5 rules | 0% | ⚠️ **SSAI ONLY** |
+| **HBO Max/Max** ⭐ | 18 rules (10 blocks + 8 allows) | 20-30% | ✅ **PRODUCTION READY** |
+| **Disney+** | 8 rules — disneyadvertising.com + partners | 30-40% | ✅ **WORKING** |
+| **Apple TV+** | 6 rules | 20-30% | ✅ **WORKING** |
+| **Roku** | 68 rules — 51 blocks + 17 allows, 4 regex | 40%+ | ✅ **ENHANCED** |
+| **Hulu** | 6 rules | 50% | ✅ **WORKING** |
+| **Sky Glass** | 39 rules — 32 blocks + 7 allows | 40% | ✅ **WORKING** |
+| **Peacock/NBC** | 37 rules — 20 blocks + 17 allows | 5-40% | ⚠️ **IMPROVED (May 2026)** |
+| **Paramount+** | 28 rules | 0% | 🔴 **DAI UNSOLVABLE** |
+| **Amazon Prime** | 23 rules | 0% | ⚠️ **SSAI ONLY** |
 
 ### Tracking & Analytics (~150 rules)
 - **Meta/Facebook** (70+ rules) — All third-party Facebook/Instagram tracking
@@ -319,7 +231,7 @@ positive to recur for any Vercel / Cloudflare / Netlify-hosted site; each needs 
 ### Format Support
 
 - **AdBlock Plus:** ✅ Full support
-- **AdGuard Home (DNS):** ✅ Full support (no regex in DNS mode)
+- **AdGuard Home (DNS):** ✅ Full support — **regex included**; `filterlist.streaming.roku.txt` relies on it
 - **AdGuard Browser:** ✅ Full support (regex enabled)
 - **uBlock Origin:** ✅ Full support
 - **NextDNS:** ✅ Full support
@@ -359,7 +271,7 @@ Following these services for changes:
 ### AdGuard Home — target stack (38 lists)
 
 Target stack as of **2 September 2026**, reconciled against the live `AdGuardHome.yaml`.
-Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 26 of these.
+The running config had only 26 of these; the apply-order notes are kept locally and are not published here.
 
 > **Note:** AdGuard Home and uBlock Origin are *separate* stacks and are no longer
 > documented as one. uBlock subscribes to 59 lists including browser-only ones that do
@@ -417,9 +329,9 @@ Apply via `.vscode/docs/adguard-home-stack.md` — the running config had only 2
 | Metric | Value |
 |--------|-------|
 | **Third-party blocklist rules** | ~600,000 (target stack) |
-| **My custom rules** | 469 in `filterlist.txt` (223 blocks + 246 allows) + ~300 across streaming files |
+| **My custom rules** | 470 in `filterlist.txt` (223 blocks + 247 allows) + 292 across the 13 streaming lists |
 | **Blocklists (target)** | 38 |
-| **Last verified** | 2 September 2026 (against live AdGuardHome.yaml) |
+| **Last verified** | Stack: 2 September 2026 (against live AdGuardHome.yaml). Rule counts: 3 September 2026 (re-derived from the files). |
 
 ---
 
@@ -452,9 +364,9 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 | List | Rules | Limit |
 |------|-------|-------|
-| My Own Filter List - Master | **431** | **431/1000** |
+| My Own Filter List - Master | **470** | **470/1000** |
 
-**Why wildcards matter:** AdGuard DNS limits custom lists to 1K rules. Our 52% reduction (882 → 431) keeps us well under the cap while maintaining full coverage.
+**Why wildcards matter:** AdGuard DNS limits custom lists to 1K rules. The August wildcard pass took the list from 882 → 425; it has since grown back to 470, still 47% below the pre-optimisation peak and comfortably under the cap.
 
 ---
 
@@ -463,7 +375,7 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 - **Filter Format:** AdBlock Plus (open standard)
 - **Community Reference:** ozankiratli gist, Hagezi, AdGuard, EasyList, uBlock Origin, Dandelion Sprout, OISD
 - **Verification:** Brave Search, Jina AI, Firecrawl
-- **Last Comprehensive Update:** August 19, 2026
+- **Last Comprehensive Update:** 3 September 2026
 
 ---
 
@@ -471,13 +383,13 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 ```
 adguard/
-  filterlist.txt                    # Main cross-service filter (229 blocks + 196 allows — 52% optimized)
+  filterlist.txt                    # Main cross-service filter (470 rules — 223 blocks + 247 allows)
   streaming/                        # Service-specific filters:
     filterlist.streaming.hbo.txt        (HBO Max - PRODUCTION READY)
     filterlist.streaming.disney.txt     (Disney+ - WORKING)
     filterlist.streaming.paramount.txt  (Paramount+ - DAI UNSOLVABLE)
     filterlist.streaming.peacock.txt    (Peacock - IMPROVED May 2026)
-    filterlist.streaming.roku.txt       (Roku - ENHANCED, regex converted to hostnames)
+    filterlist.streaming.roku.txt       (Roku - ENHANCED, 4 regex + 51 blocks)
     filterlist.streaming.amazon.txt     (Prime Video - LIMITED)
     filterlist.streaming.hulu.txt       (Hulu - WORKING)
     filterlist.streaming.appletv.txt    (Apple TV+ - WORKING)
@@ -516,5 +428,5 @@ scripts/
 
 **Made with ❤️ for ad-free streaming**
 
-*Last updated: August 19, 2026*
+*Last updated: 3 September 2026*
 *Cross-verified against: ozankiratli community research, Hagezi, AdGuard, EasyList, OISD*
