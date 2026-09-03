@@ -1,16 +1,39 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Netflix Ad Blocking Rules
-! Last Updated: 2026-07-15
-! Description: Blocks Netflix advertising and tracking domains with critical whitelists
-! 
-! NOTE: Netflix uses Server-Side Ad Insertion (SSAI) on most platforms
-! This means ads are embedded in the same CDN stream as content.
-! DNS-level blocking CANNOT separate ads from video.
-! Effectiveness: ~5-10% ad reduction (mostly third-party ad network blocks)
-! 
+! Last Updated: 2026-09-03
+! Description: Netflix ad-tier measurement/attribution blocks. Does NOT remove Netflix ads.
+!
+! ==========================================
+! READ THIS FIRST — WHY THIS LIST IS SMALL
+! ==========================================
+! Netflix serves ad-tier adverts via SSAI (server-side ad insertion): the ad
+! segments are stitched into the same encrypted HLS/DASH stream, from the same
+! first-party domains, as the programme itself. There is no separate ad request
+! to block. Blocking the delivery domain blocks the video too.
+!
+! DNS-level ad removal on Netflix is therefore NOT POSSIBLE — not with AdGuard
+! Home, not with Pi-hole, not with a browser extension. Anything claiming
+! otherwise is blocking third-party measurement, not the ads.
+!
+! The only reliable fix is the subscription tier. On Sky (Glass/Stream), Netflix
+! is bundled at "Standard with Ads" by DEFAULT on both Essential and Ultimate TV,
+! and Sky's Ad Skipping pack explicitly does NOT cover Netflix. Ad-free is a paid
+! upgrade through Sky: +£6/mth (Standard) or +£11/mth (Premium 4K).
+!
+! Sep 2026 context — expect ad load to keep rising:
+! - Netflix nearly DOUBLED US upfront ad commitments (announced 10 Aug 2026).
+! - Netflix confirmed (May 2026) it is testing PERSONALISED ad loads and
+!   frequency caps, so load varies per household and changes without notice.
+!   A sudden increase on one night is consistent with this, not with a filter
+!   regression.
+!
+! What this list does: blocks ad measurement / attribution / verification
+! partners. It reduces tracking. It does not reduce the number of adverts.
+! Effectiveness against adverts: ~0%. Against ad telemetry: good.
+!
 ! ==========================================
 ! NETFLIX INFRASTRUCTURE WHITELISTS (CRITICAL)
-! Allow Netflix CDN through global blocks
+! Verified resolving 2026-09-03. Never block these — playback depends on them.
 ! ==========================================
 
 @@||assets.nflxext.com^
@@ -18,17 +41,34 @@
 @@||occ.a.nflxso.net^
 
 ! ==========================================
-! NETFLIX AD NETWORKS (Third-Party)
+! AD MEASUREMENT / VERIFICATION PARTNERS
+! Netflix's publicly named ad-measurement partners. All verified resolving on
+! 2026-09-03 and confirmed NOT already covered by HaGeZi Multi PRO — so these
+! earn their place here rather than duplicating the subscribed stack.
+! Risk: LOW. These are measurement endpoints; playback does not depend on them.
 ! ==========================================
 
-||adsrvr.org^
 ||adsafeprotected.com^
-||adsrvr.com^
+||doubleverify.com^
+||dv.tech^
+||kantarmedia.com^
+||tvision.tv^
+||cint.com^
 
-! Netflix telemetry & analytics (safe to block — not video ads)
-||ichnaea.netflix.com^
-||comet.netflix.com^
-||nrd.netflix.com^
-||analytics-nflx.netflix.com^
-
-! Note: Netflix uses SSAI in many platforms — domain-level blocks are high-risk. Keep only third-party ad networks here.
+! ==========================================
+! REMOVED 2026-09-03 — do not re-add without re-verifying
+! ==========================================
+! comet.netflix.com          NXDOMAIN (dead)
+! analytics-nflx.netflix.com NXDOMAIN (dead — never existed as written)
+! adsrvr.com                 GoDaddy parked page, NOT The Trade Desk.
+!                            The real domain is adsrvr.org (see below).
+! adsrvr.org                 Redundant — already in HaGeZi Multi PRO.
+! ichnaea.netflix.com        Redundant — already in HaGeZi Multi PRO.
+! nrd.netflix.com            Resolves to a Netflix Partner Portal redirect
+!                            (nppdocs-prod-*.elb.amazonaws.com), not an ad or
+!                            telemetry endpoint. No value in blocking it.
+!
+! To confirm what the Sky Glass Netflix app actually contacts, watch the
+! AdGuard Home query log (filter: netflix) during an ad break. That is the only
+! authoritative source — everything above is verified-real but not proven to be
+! called by this specific app build.

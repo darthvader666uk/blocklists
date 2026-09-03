@@ -13,7 +13,7 @@
 ! 1. General Deny List (trackers & common services)
 ! 2. Allow List / Critical Whitelists (prevent false positives)
 ! 3. Privacy & Tracking (generic network-level blocks)
-! 4. Streaming Services (split into separate files - see gist/filterlist.streaming.*.txt)
+! 4. Streaming Services (split into separate files - see adguard/streaming/filterlist.streaming.*.txt)
 ! 5. Meta / Facebook (AGGRESSIVE - blocks cross-platform audience data warehouse)
 !
 ! DEDUPLICATION NOTE (2026-08-19):
@@ -679,19 +679,21 @@
 
 ! ==========================================
 ! SECTION 4: STREAMING SERVICES
-! Split into separate service-specific files in gist/filterlist.streaming.*.txt
-! Supported platforms:
-! - gist/filterlist.streaming.hbo.txt
-! - gist/filterlist.streaming.netflix.txt
-! - gist/filterlist.streaming.peacock.txt
-! - gist/filterlist.streaming.appletv.txt
-! - gist/filterlist.streaming.hulu.txt
-! - gist/filterlist.streaming.amazon.txt
-! - gist/filterlist.streaming.roku.txt
-! - gist/filterlist.streaming.disney.txt
-! - gist/filterlist.streaming.tubi.txt
-! - gist/filterlist.streaming.pluto.txt
-! - gist/filterlist.streaming.skyglass.txt
+! Split into separate service-specific files in adguard/streaming/
+! Supported platforms (13):
+! - filterlist.streaming.amazon.txt
+! - filterlist.streaming.appletv.txt
+! - filterlist.streaming.disney.txt
+! - filterlist.streaming.hbo.txt
+! - filterlist.streaming.hulu.txt
+! - filterlist.streaming.netflix.txt
+! - filterlist.streaming.paramount.txt
+! - filterlist.streaming.peacock.txt
+! - filterlist.streaming.pluto.txt
+! - filterlist.streaming.roku.txt
+! - filterlist.streaming.skyglass.txt
+! - filterlist.streaming.tubi.txt
+! - filterlist.streaming.ukcatchup.txt
 ! ==========================================
 
 ! ==========================================
