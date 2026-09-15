@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-08-19
+! Last Updated: 2026-09-15
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
@@ -76,6 +76,13 @@
 @@||nord*.com^
 @@||nord*.net^
 @@||napps-1.com^
+! NordVPN Meshnet/notification broker (VerneMQ MQTT) on an AWS ELB. The
+! hostname is nfct-prod-nordvpn-vernemq-<hash>.elb.<region>.amazonaws.com and
+! the hash rotates on redeploy, so match the family rather than one host.
+! Blocked by HaGeZi DoH/VPN/Proxy/Bypass (2026-09-15), which lists VPN
+! infrastructure by design. nc-mqtt.nordvpn.com is allowed by ||nord*.com^.
+! ||nord*.com^ above does not cover it: the first label starts with nfct-.
+@@/^nfct-prod-nordvpn-[a-z0-9-]+\.elb\.[a-z0-9-]+\.amazonaws\.com$/
 
 ! ========== POSTEO.DE ==========
 @@||posteo.de^
