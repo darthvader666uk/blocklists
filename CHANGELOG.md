@@ -5,6 +5,31 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 15 September 2026
+
+### ➖ Removed HaGeZi DoH/VPN/Proxy Bypass from AdGuard Home
+
+- It was blocking `nfct-prod-nordvpn-vernemq-*.elb.us-east-1.amazonaws.com`, the
+  NordVPN browser extension's control channel (VerneMQ MQTT on an AWS load
+  balancer). The list flags VPN infrastructure by design, so it will keep
+  colliding with Nord.
+- Removed outright rather than swapped for HaGeZi's DoH-only `doh.txt`, so the
+  Roku/Fire TV hardcoded-DoH bypass protection it was added for on 19 Aug is
+  **no longer covered**. `doh.txt` (3,316 rules, only touches Nord's own DNS
+  resolvers) is the drop-in if that gap needs closing.
+- Stack is now 37 lists target / 25 running.
+
+### ✅ Allowlist: NordVPN AWS broker
+
+- `@@/^nfct-prod-nordvpn-[a-z0-9-]+\.elb\.[a-z0-9-]+\.amazonaws\.com$/` in the
+  master list. Regex because the hash rotates on redeploy. Kept even though the
+  blocking list is gone, so the block cannot come back with it.
+- Unrelated to HBO Max's "Are You Using a VPN?" banner, which appeared the same
+  day: that is exit-IP reputation on Nord's own ASN (AS147049 PacketHub S.A.)
+  and nothing at DNS changes it.
+
+---
+
 ## 3 September 2026
 
 ### 📦 Gist → repository migration completed
