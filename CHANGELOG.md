@@ -5,6 +5,18 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 19 September 2026
+
+### ✅ Allowlist: ad.doubleclick.net (click-through redirector)
+
+- `@@||ad.doubleclick.net^` in the master list. This host is Google Ad
+  Manager's click redirector (link -> ad.doubleclick.net -> 302 -> destination),
+  so blocking it makes sponsored links and tracked buttons silently do nothing.
+  Was being caught by the Peacock list's `||ad.doubleclick.net^` and by
+  `||doubleclick.net^` in the master; the allow rule overrides both.
+- Dropped the explicit block from the Peacock list. The ad-serving hosts
+  (`googleads.g`, `pubads.g`, `securepubads.g`) stay blocked.
+
 ## 15 September 2026
 
 ### ➖ Removed HaGeZi DoH/VPN/Proxy Bypass from AdGuard Home

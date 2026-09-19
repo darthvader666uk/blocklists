@@ -120,6 +120,16 @@
 ! it may still fail intermittently depending on upstream. Not fixable here.
 @@||therisingsunrogerstone.com^
 
+! ========== GOOGLE AD MANAGER CLICK REDIRECTOR ==========
+! 2026-09-19 — ad.doubleclick.net is the click-through host for Google Ad
+! Manager / Campaign Manager: sponsored links, retailer buttons and tracked
+! links in emails go ad.doubleclick.net -> 302 -> real destination. With it
+! blocked the click is silently dropped, so UI elements look dead.
+! Blocked by: ||doubleclick.net^ in SECTION 3 (and every third-party list).
+! Allowing this ONE host only re-enables click-through and its tracking;
+! the ad-serving hosts (googleads.g / pubads.g / securepubads.g) stay blocked.
+@@||ad.doubleclick.net^
+
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
 ! Updated: 2026-08-19 — Comprehensive list from official Apple documentation

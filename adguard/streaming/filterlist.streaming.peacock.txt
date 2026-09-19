@@ -70,7 +70,8 @@
 ||nbcstreaming.sc.omtrdc.net^
 ||nbcstreaming.hb-api.omtrdc.net^
 ||s0.2mdn.net^
-||ad.doubleclick.net^
+! ad.doubleclick.net removed 2026-09-19: it is the click-through redirector,
+! blocking it kills tracked links. Allowed in the master list.
 ||telemetry.nbcuott.com^
 
 ! ==========================================
