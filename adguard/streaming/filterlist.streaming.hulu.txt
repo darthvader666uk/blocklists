@@ -1,16 +1,13 @@
 [Adblock Plus]
 ! ========== HULU (streaming-specific) ==========
-! Last Updated: 2026-07-15
-! Effectiveness: ~5-10% (Google DAI — mostly unblockable at DNS level)
+! Last Updated: 2026-09-28
+! Effectiveness: ~50% (US app only, in the UK Hulu content comes via Disney+)
 !
-! NOTE: Hulu uses Google Dynamic Ad Insertion (DAI).
-! Same architecture as Paramount+ — ads stitched server-side.
-! DNS blocking cannot separate ads from video content.
-! Only tracking/analytics can be blocked.
+! NOTE: Hulu and Disney+ run on Disney's own ad server, not Google DAI
+! (https://variety.com/2023/digital/news/disney-ad-server-tech-disney-plus-yoda-1235497663/).
+! The Disney ad hosts live in filterlist.streaming.disney.txt, including the
+! diproton-ads CNAME regex, which also covers Hulu.
+! 2026-09-28: removed analytics/tracking/advertising/adserver.hulu.com and
+! ads.hulustream.com, guessed hostnames that do not exist.
 
 ||ads.hulu.com^
-||analytics.hulu.com^
-||tracking.hulu.com^
-||advertising.hulu.com^
-||adserver.hulu.com^
-||ads.hulustream.com^

@@ -27,16 +27,16 @@ README against the actual files.
 
 | Service | Filter File | Status | Notes |
 |---------|------------|--------|-------|
-| **HBO Max** 🔥 | `filterlist.streaming.hbo.txt` | ✅ **PRODUCTION READY** | Rebrand support (max.com + hbomax.com), 18 rules (10 blocks + 8 allows), whitelists protect playback |
+| **HBO Max** 🔥 | `filterlist.streaming.hbo.txt` | ✅ **PRODUCTION READY** | Rebrand support (max.com + hbomax.com), 21 rules (13 blocks + 8 allows) incl. UK/EMEA ad hosts, whitelists protect playback |
 | **Disney+** | `filterlist.streaming.disney.txt` | ✅ **WORKING** | 30-40% effectiveness (SSAI limitation), disneyadvertising.com targeted |
-| **Roku** | `filterlist.streaming.roku.txt` | ✅ **ENHANCED** | 68 rules — 51 blocks + 17 allows, incl. 4 regex patterns (the only list using regex) |
-| **Apple TV+** | `filterlist.streaming.appletv.txt` | ✅ **WORKING** | 6 verified rules |
+| **Roku** | `filterlist.streaming.roku.txt` | ✅ **ENHANCED** | 32 rules — 17 blocks + 15 allows, incl. 2 regex patterns |
+| **Apple TV** | `filterlist.streaming.appletv.txt` | ⚪ **NO AD TIER** | 2 rules, kept as a stub (Apple has "no plans" for ads) |
 | **Peacock/NBC** | `filterlist.streaming.peacock.txt` | ⚠️ **IMPROVED (May 2026)** | App v7.4.21+ changed ad delivery; ajstrick81 v2.7 claims renewed effectiveness on Android/iOS; 5-40% effective |
-| **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; fwmrm.net whitelist needed for Android app; stay on v16.8 |
+| **Paramount+** | `filterlist.streaming.paramount.txt` | 🔴 **INEFFECTIVE (April 2026)** | DAI makes DNS blocking 0% effective; stay on an older app version |
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
-| **Hulu** | `filterlist.streaming.hulu.txt` | ✅ **WORKING** | 50% effectiveness (less SSAI-reliant) |
-| **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 23 verified domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
-| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 470 rules — 223 blocks + 247 allows (wildcard-optimised) |
+| **Hulu** | `filterlist.streaming.hulu.txt` | ⚪ **STUB** | US app only, 1 rule. Disney's ad hosts are in the Disney list |
+| **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 17 domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
+| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 369 rules — 142 blocks + 227 allows (wildcard-optimised) |
 
 ---
 
@@ -45,13 +45,13 @@ README against the actual files.
 | Metric | Details |
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
-| **Rules** | 470 in `filterlist.txt` (223 blocks + 247 allows), + 292 across the 13 streaming lists |
-| **Last Updated** | **3 September 2026** (migrated to a repository; all counts re-derived from the files) |
+| **Rules** | 369 in `filterlist.txt` (142 blocks + 227 allows), + 164 across the 13 streaming lists |
+| **Last Updated** | **28 September 2026** (full review, all counts re-derived from the files) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS, AdGuard DNS (cloud) |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
 | **Testing** | Normalized line endings (CRLF → LF), syntax verified |
-| **AdGuard DNS Limit** | Custom list at 470/1000 rules (530 headroom remaining) |
+| **AdGuard DNS Limit** | Custom list at 369/1000 rules (631 headroom remaining) |
 | **AdGuard Home** | 37 lists target / **25 actually running** (26 at the 2 Sep audit, HaGeZi DoH/VPN/Proxy Bypass removed 15 Sep) — see [CHANGELOG.md](CHANGELOG.md) |
 
 ---
@@ -94,25 +94,25 @@ README against the actual files.
 ### Streaming Services (DNS-Level Blocking)
 | Service | Coverage | Effectiveness | Status |
 |---------|----------|---|---------|
-| **HBO Max/Max** ⭐ | 18 rules (10 blocks + 8 allows) | 20-30% | ✅ **PRODUCTION READY** |
-| **Disney+** | 8 rules — disneyadvertising.com + partners | 30-40% | ✅ **WORKING** |
-| **Apple TV+** | 6 rules | 20-30% | ✅ **WORKING** |
-| **Roku** | 68 rules — 51 blocks + 17 allows, 4 regex | 40%+ | ✅ **ENHANCED** |
-| **Hulu** | 6 rules | 50% | ✅ **WORKING** |
-| **Sky Glass** | 39 rules — 32 blocks + 7 allows | 40% | ✅ **WORKING** |
-| **Peacock/NBC** | 37 rules — 20 blocks + 17 allows | 5-40% | ⚠️ **IMPROVED (May 2026)** |
-| **Paramount+** | 28 rules | 0% | 🔴 **DAI UNSOLVABLE** |
-| **Amazon Prime** | 23 rules | 0% | ⚠️ **SSAI ONLY** |
+| **HBO Max/Max** ⭐ | 21 rules (13 blocks + 8 allows) | 20-30% | ✅ **PRODUCTION READY** |
+| **Disney+** | 6 rules — disneyadvertising.com + diproton-ads regex | 30-40% | ✅ **WORKING** |
+| **Apple TV** | 2 rules | n/a | ⚪ **NO AD TIER** |
+| **Roku** | 32 rules — 17 blocks + 15 allows, 2 regex | 40%+ | ✅ **ENHANCED** |
+| **Hulu** | 1 rule | 50% (US app) | ⚪ **STUB** |
+| **Sky Glass** | 20 rules — 13 blocks + 7 allows | 40% | ✅ **WORKING** |
+| **Peacock/NBC** | 23 rules — 6 blocks + 17 allows | 5-40% | ⚠️ **IMPROVED (May 2026)** |
+| **Paramount+** | 23 rules | 0% | 🔴 **DAI UNSOLVABLE** |
+| **Amazon Prime** | 8 rules | 0% | ⚠️ **SSAI ONLY** |
 
-### Tracking & Analytics (~150 rules)
-- **Meta/Facebook** (70+ rules) — All third-party Facebook/Instagram tracking
-- **Google** (15+ rules) — Google Analytics, AdSense, DoubleClick, Ads, Tagmanager
-- **Apple** (16 rules) — iCloud Feedback, Weather analytics
+### Tracking & Analytics
+- **Meta/Facebook** — covered by the third-party lists (the old `$third-party` rules were ignored by AdGuard Home and removed 2026-09-28)
+- **Google** — Google Analytics, AdSense, DoubleClick, Ads, Tagmanager
+- **Apple** — iCloud Feedback, Weather analytics
 - **Microsoft** (Copilot blocking, Telemetry)
 - **OpenAI, Anthropic, Gemini** — AI service blocking
 - **Pinterest, Snapchat, TikTok** — Social media tracking
 
-### Ad Networks & CDNs (50+ rules)
+### Ad Networks & CDNs
 - General ad servers (adsrvr.org, adsafeprotected.com)
 - Attribution networks (krxd.net, everesttech.net)
 - SSAI services (fwmrm.net, braze.com)
@@ -382,20 +382,20 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 ```
 adguard/
-  filterlist.txt                    # Main cross-service filter (470 rules — 223 blocks + 247 allows)
+  filterlist.txt                    # Main cross-service filter (369 rules — 142 blocks + 227 allows)
   streaming/                        # Service-specific filters:
     filterlist.streaming.hbo.txt        (HBO Max - PRODUCTION READY)
     filterlist.streaming.disney.txt     (Disney+ - WORKING)
     filterlist.streaming.paramount.txt  (Paramount+ - DAI UNSOLVABLE)
     filterlist.streaming.peacock.txt    (Peacock - IMPROVED May 2026)
-    filterlist.streaming.roku.txt       (Roku - ENHANCED, 4 regex + 51 blocks)
+    filterlist.streaming.roku.txt       (Roku - ENHANCED, 2 regex + 17 blocks)
     filterlist.streaming.amazon.txt     (Prime Video - LIMITED)
-    filterlist.streaming.hulu.txt       (Hulu - WORKING)
-    filterlist.streaming.appletv.txt    (Apple TV+ - WORKING)
+    filterlist.streaming.hulu.txt       (Hulu - stub, US app)
+    filterlist.streaming.appletv.txt    (Apple TV - stub, no ad tier)
     filterlist.streaming.netflix.txt    (Netflix - tracking)
     filterlist.streaming.skyglass.txt   (Sky Glass - WORKING)
-    filterlist.streaming.tubi.txt       (FAST service)
-    filterlist.streaming.pluto.txt      (FAST service)
+    filterlist.streaming.tubi.txt       (FAST service, stub, covered upstream)
+    filterlist.streaming.pluto.txt      (FAST service, stub, covered upstream)
     filterlist.streaming.ukcatchup.txt  (Channel 4/All4/My5 - UK catch-up TV)
 
 ublock/

@@ -43,8 +43,10 @@
 ! ==========================================
 ! AD MEASUREMENT / VERIFICATION PARTNERS
 ! Netflix's publicly named ad-measurement partners. All verified resolving on
-! 2026-09-03 and confirmed NOT already covered by HaGeZi Multi PRO — so these
-! earn their place here rather than duplicating the subscribed stack.
+! 2026-09-03. CORRECTED 2026-09-28: adsafeprotected.com and doubleverify.com are
+! already in the AdGuard DNS filter, and HaGeZi has cdn.dv.tech and collector.cint.com.
+! kantarmedia.com, tvision.tv and cint.com are mostly corporate websites, not beacons.
+! Kept as a self-contained Netflix list, but they add little on this stack.
 ! Risk: LOW. These are measurement endpoints; playback does not depend on them.
 ! ==========================================
 

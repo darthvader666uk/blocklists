@@ -1,13 +1,13 @@
 [Adblock Plus]
 ! Title: Disney+ Ad Blocking Rules
-! Last Updated: 2026-07-15
+! Last Updated: 2026-09-28
 ! Description: Disney+ advertising domain blocking
 ! Source: Verified against ozankiratli gist (July 2025 + April 2026)
-! 
+!
 ! NOTE: Disney+ uses Server-Side Ad Insertion (SSAI) + third-party ad networks
 ! Effectiveness: ~30-40% ad reduction (SSAI ads CANNOT be blocked at DNS level)
 ! Format: AdBlock Plus (DNS-compatible)
-! 
+!
 ! ==========================================
 ! DISNEY+ PRIMARY AD DOMAIN
 ! ==========================================
@@ -17,10 +17,15 @@
 ! ==========================================
 ! DISNEY+ AD DOMAINS
 ! ==========================================
-||ads.disneyplus.com^
-||adserver.disneyplus.com^
-||tracking.disneyplus.com^
 ||analytics.disneyplus.com^
+
+! 2026-09-28: Disney's ad decision servers, hosted as Hulu AWS regions
+! (diproton-ads-prod-us-east-1 / -eu-west-1 / -eu-central-1 ...). AdGuard
+! Home matches the CNAME chain, so this catches them behind any front host.
+! Source: r/pihole 1k5zxxf (Apr 2025, still in use Jun 2026).
+! Side effects reported: some devices skip 10-15s of the programme around
+! the break, Roku/Fire TV may show "Commercial break in progress" instead.
+/^diproton-ads-[^.]+\.hulu\.com\.akadns\.net$/
 
 ! ==========================================
 ! DISNEY+ WHITELISTS (CRITICAL)
@@ -46,14 +51,8 @@
 ! 1. Comment out all rules and test playback
 ! 2. Re-enable ONE rule at a time, testing after each
 ! 3. Monitor AdGuard Home logs for DNS blocks during playback
-! 4. Consider paying for ad-free Disney+ ($13.99 USD/month) if ads are critical
+! 4. Consider paying for ad-free Disney+ if ads are critical
 !
 ! Disney frequently updates CDN patterns and ad server domains.
 ! Check GitHub community filters monthly for updates.
-! https://github.com/ajstrick81
 ! ==========================================
-
-! Community suggestion (AdGuard-compatible regex)
-! Use as streaming-file regex; test before enabling globally
-! Regex to target Disney advertising subdomains:
-! ^([^.]+\.)*disneyadvertising\.com$

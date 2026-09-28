@@ -1,15 +1,16 @@
 [Adblock Plus]
 ! Title: Paramount+ Ad Blocking Rules
-! Last Updated: 2026-08-04
-! Description: Paramount+ ad blocking - LARGELY INEFFECTIVE as of April 2026
+! Last Updated: 2026-09-28
+! Description: Paramount+ ad blocking - INEFFECTIVE (0%) since April 2026
 !
 ! ⚠️⚠️⚠️  DAI MAKES DNS BLOCKING 0% EFFECTIVE  ⚠️⚠️⚠️
 ! =====================================================
-! Paramount+ switched to Google DAI (Direct Ad Injection) in April 2026:
+! Paramount+ switched to Google DAI (Dynamic Ad Insertion) in April 2026:
 ! - App update v16.8+: Ads embedded server-side (unsolvable)
 ! - dai.google.com cannot be blocked without breaking playback
 ! - These rules provide ZERO ad blocking on current app versions
-! - Workaround: Disable app auto-updates, stay on v16.8 or earlier
+! - Workaround: Disable app auto-updates, stay on an older version
+!   (reports disagree on whether v16.8 itself is affected)
 ! - Effectiveness: 0% (DAI makes DNS blocking pointless)
 ! =====================================================
 !
@@ -31,7 +32,7 @@
 @@||wwwimage-secure.cbsstatic.com^
 @@||thumbnails.cbsig.net^
 @@||bakery.pplus.paramount.tech^
-@@||^[^.]+\.cws\.conviva\.com$^
+@@||cws.conviva.com^
 ! NOTE: fwmrm.net (FreeWheel) was previously allowlisted here for Android app
 ! compatibility, but Paramount+ uses Google DAI making DNS blocking ineffective.
 ! The allowlist conflicted with HBO's ||fwmrm.net^ block — removed 2026-08-04.
@@ -40,11 +41,8 @@
 ! PARAMOUNT+ BLACKLIST (MINIMAL EFFECT)
 ! ==========================================
 ! Low-risk analytics/ad platforms
-||braze.com^
 ||enduser.adsrvr.org^
 ||cdn.privacy.paramount.com^
-||www.googletagmanager.com^
-||pagead2.googlesyndication.com^
 ||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
 ||cbsi.demdex.net^
 ||vod-gcs-qwilt.cbsaavideo.com^
@@ -55,20 +53,18 @@
 ||cbsinteractive.data.adobedc.net^
 ||conduit.redfast.com^
 ||sparrow.paramountplus.com^
-||imasdk.googleapis.com^  ! May break playback on some devices
 
 ! May 2026 community additions
 ||vaicore.site^
-||pubads.g.doubleclick.net^
 
 ! ==========================================
 ! CRITICAL NOTES FOR USERS
 ! ==========================================
-! - DAI (Direct Ad Injection) renders DNS blocking INEFFECTIVE
+! - DAI (Dynamic Ad Insertion) renders DNS blocking INEFFECTIVE
 ! - Blocking dai.google.com breaks video playback entirely
 ! - Paramount+ aggressively detects ad blockers
 ! - Users report ads being forced through regardless
 ! - Live sports blocking: These rules may block all live sports
-! - SOLUTION: Stay on app version 16.8 (disable Play Store auto-updates)
+! - SOLUTION: Stay on an older app version (disable Play Store auto-updates)
 ! - Effectiveness on current versions: 0%
 ! ==========================================

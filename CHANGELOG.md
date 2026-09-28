@@ -7,6 +7,74 @@ instructions and the active list stack live in the [README](README.md).
 
 ## 28 September 2026
 
+### 🧹 Full filter review
+
+Four-way review of every AdGuard file: per-service research (US, UK, devices),
+every host resolved against 1.1.1.1 and 8.8.8.8, and a cross-file check.
+Rules: master 474 → 369, streaming lists 290 → 164. Almost everything removed
+was already doing nothing.
+
+**Rules AdGuard Home was ignoring**
+- About 50 master rules used `$third-party` or `$domain=`. AdGuard Home drops any
+  rule with a modifier it doesn't support, so the whole Meta/Instagram/WhatsApp
+  section (Section 5) and blocks like `t.co`, `linkedin.com`, `adjust.com` never
+  ran. Removed. The Meta pixel hosts are covered by the third-party lists.
+- Broken syntax: `peacock.txt` video allow was regex without slashes (fixed to
+  `/.../`, so it now actually protects playback), `paramount.txt` Conviva allow
+  was mangled (now `@@||cws.conviva.com^`), `paramount.txt` imasdk rule had an
+  inline comment (removed), `startpage.com/sp/adsense/` was a path rule (removed).
+
+**Behaviour changes**
+- Removed 12 allows for whole domain endings (`*.online`, `*.click`, `*.shop`,
+  `*.help`, `*.site`, `*.games`, `*.biz`, `*.wedding`, `*.wales`, `*.cymru`,
+  `*.email`, `*.fit`). They overrode every block under those endings, TIF
+  malware blocks included. Replaced with `@@||currys.biz^`, the others' known
+  sites already had rules. `||urush1bar4.online^` and `||vaicore.site^` now fire.
+- `peacock.txt`: dropped `||mediatailor.us-east-1.amazonaws.com^`, it blocked
+  AWS MediaTailor for every customer in the region (Roku Channel, Pluto live).
+- `amazon.txt`: dropped the `unagi.amazon.com` / `fls-na.amazon.com` allows,
+  which cancelled HaGeZi native.amazon's Fire TV telemetry blocks.
+- `roku.txt`: dropped `||captive.roku.com^` (connectivity check).
+
+**Added**
+- `hbo.txt`: `cf/akm/gcp.emea-free.prd.media.max.com`, the UK/EMEA ad hosts
+  (AdguardTeam/AdguardFilters #215201). The existing amer-free ones are US only.
+- `disney.txt`: `/^diproton-ads-[^.]+\.hulu\.com\.akadns\.net$/`, Disney's ad
+  decision servers via CNAME (r/pihole 1k5zxxf). May cause a 10-15s skip or a
+  "Commercial break in progress" screen on some devices.
+
+**Dead weight removed**
+- 104 block and 14 allow rules for hosts that no longer exist (NXDOMAIN).
+- Pluto, Tubi, Hulu and Apple TV were almost entirely guessed hostnames. Kept
+  as documented stubs so the AdGuard Home subscriptions stay valid.
+- Roku's 28 codename hosts (all dead, the regex covers live variants) and two
+  regex lines that only repeated plain rules. The German Sky/WOW section.
+- Duplicates and child rules already covered by a parent, plus blocks that an
+  allow elsewhere always overrode (e.g. `||googletagmanager.com^`).
+
+**Comments corrected**
+- The "AdGuard Home can't do regex" notes in `hbo.txt` and `roku.txt`.
+- Effectiveness figures, "Last Updated" dates, "DAI" (Dynamic Ad Insertion),
+  Hulu's ad stack (Disney's own server, not Google DAI), Apple TV (no ad tier),
+  `toots-a.akamaihd.net` (ITV's own host, not shared), Sky AdSmart (blocking
+  may give blank breaks), and the master's rule counts.
+
+**Validator**
+- `validate-filters.sh` now checks AdGuard files for unsupported modifiers,
+  inline comments, path rules, regex syntax outside `/.../`, invalid regex and
+  duplicate allows. Run against the old files it flags 56 problems.
+
+**iCloud Private Relay unblocked**
+- Private Relay should not be blocked. The 2026-08-19 change that blocked it
+  (`mask`, `mask-h2`, `apple-relay.*`) was an oversight, and `@@||*.icloud.com^`
+  was overriding the `mask` rules anyway. Removed the blocks and switched on
+  the relay allows so no third-party list can block it either.
+- Same principle for the other Apple blocks an allow was overriding
+  (feedbackws, news analytics-events, bare `apple-dns.net`): the allow is the
+  intent, so the blocks went.
+- Trade-off: with Private Relay on, Safari on Apple devices resolves DNS
+  through the relay, so AdGuard Home doesn't filter Safari browsing.
+
 ### ✅ Allowlist: firebaseremoteconfig.googleapis.com (Costco UK login)
 
 - `@@||firebaseremoteconfig.googleapis.com^` in the master list. Firebase

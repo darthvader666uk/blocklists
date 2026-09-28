@@ -85,6 +85,54 @@ check_malformed() {
   return $found
 }
 
+# AdGuard Home DNS-mode checks. AGH silently ignores rules it can't use, so these
+# catch rules that load without error but never match.
+check_dns_rules() {
+  local file="$1"
+  local found
+  found=$(python3 - "$file" <<'PY'
+import re, sys
+OK_MODS = {'important', 'badfilter', 'client', 'dnstype', 'dnsrewrite', 'denyallow', 'ctag'}
+seen = {}
+for n, line in enumerate(open(sys.argv[1], encoding='utf-8'), 1):
+    r = line.rstrip('\n')
+    if not r.strip() or r.startswith(('!', '#', '[')):
+        continue
+    body = r[2:] if r.startswith('@@') else r
+    if body.startswith('/'):
+        m = re.match(r'^/(.*)/(?:\$(.*))?$', body)
+        if not m:
+            print(f'{n}: regex without closing slash: {r[:70]}'); continue
+        try:
+            re.compile(m.group(1))
+        except re.error as e:
+            print(f'{n}: invalid regex ({e}): {r[:70]}')
+        mods = m.group(2)
+    else:
+        if re.search(r'\s', body):
+            print(f'{n}: whitespace in rule (inline comments are not supported): {r[:70]}')
+        pattern, _, mods = body.partition('$')
+        if '/' in pattern:
+            print(f'{n}: path rule, never matches at DNS level: {r[:70]}')
+        if re.search(r'[\[\]()\\{}+]', pattern):
+            print(f'{n}: regex syntax outside /.../, matched literally: {r[:70]}')
+    if mods:
+        bad = [x.split('=')[0].lstrip('~') for x in mods.split(',') if x.split('=')[0].lstrip('~') not in OK_MODS]
+        if bad:
+            print(f'{n}: unsupported modifier {bad}, AdGuard Home ignores the whole rule: {r[:70]}')
+    if r in seen:
+        print(f'{n}: duplicate of line {seen[r]}: {r[:70]}')
+    seen.setdefault(r, n)
+PY
+)
+  if [[ -n "$found" ]]; then
+    echo -e "  ${RED}Rules AdGuard Home will ignore or mis-read${NC}"
+    echo "$found" | sed 's/^/    /'
+    return 1
+  fi
+  return 0
+}
+
 check_json() {
   local file="$1"
   if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
@@ -112,6 +160,9 @@ for file in "${FILTER_FILES[@]}"; do
   check_trailing_whitespace "$file" || file_errors=$((file_errors + 1))
   check_block_duplicates "$file" || file_errors=$((file_errors + 1))
   check_malformed "$file" || file_errors=$((file_errors + 1))
+  if [[ "$file" == adguard/* ]]; then
+    check_dns_rules "$file" || file_errors=$((file_errors + 1))
+  fi
   if [[ $file_errors -eq 0 ]]; then
     echo -e "  ${GREEN}✓ Clean${NC}"
   fi

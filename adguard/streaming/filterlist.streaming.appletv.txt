@@ -1,15 +1,15 @@
 [Adblock Plus]
-! ========== APPLE TV+ (streaming-specific) ==========
-! Last Updated: 2026-07-15
-! Effectiveness: ~10-20% (minimal ad surface, Apple's own infrastructure)
+! ========== APPLE TV (streaming-specific) ==========
+! Last Updated: 2026-09-28
+! Effectiveness: n/a (no ad tier)
 
-! NOTE: Apple TV+ has minimal ads (mostly trailers/promos).
-! Most ad infrastructure is part of Apple Services platform.
-! apple-advertising.com / appletv-ads.com are speculative — likely don't exist.
+! NOTE: Apple TV+ was renamed Apple TV in Oct 2025. Apple says it has
+! "no plans" for an ad-supported tier (Eddy Cue, Nov 2025), so there is
+! nothing to block beyond trailers and promos served with the content.
+! 2026-09-28: removed ads/analytics/tracking.tv.apple.com and
+! adserver.apple.com, guessed hostnames that do not exist.
+! Kept as a stub so the AdGuard Home subscription stays valid.
 
+! Apple Ads advertiser portal (blocks the web UI only, not TV playback)
 ||ads.apple.com^
-||ads.tv.apple.com^
-||analytics.tv.apple.com^
-||tracking.tv.apple.com^
-||adserver.apple.com^
 ||advertising.apple.com^

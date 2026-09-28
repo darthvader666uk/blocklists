@@ -1,26 +1,18 @@
 [Adblock Plus]
 ! ========== PLUTO TV (streaming-specific) ==========
-! Last Updated: 2026-07-15
-! Effectiveness: ~60-70% (FreeWheel + own stitching, separate ad domains)
+! Last Updated: 2026-09-28
+! Effectiveness: low (ads are stitched into the stream server-side)
+
+! NOTE: Pluto stitches ads into the stream (service-stitcher.clusters.pluto.tv),
+! so DNS cannot remove them. Its real ad and tracking hosts (sp.pluto.tv,
+! saa.pluto.tv, service-ad-impression-proxy-*, service-ad-image-*) are already
+! in HaGeZi Pro.
+! 2026-09-28: removed 10 guessed hostnames that do not exist, the
+! plutotv.net allow (no records) and plutoanalytics.com (not Pluto-owned).
+! Kept as a stub so the AdGuard Home subscription stays valid.
 
 ! ==========================================
 ! PLUTO TV WHITELISTS (CRITICAL)
 ! ==========================================
 @@||api.pluto.tv^
 @@||boot.pluto.tv^
-@@||plutotv.net^
-
-! ==========================================
-! PLUTO TV AD NETWORKS
-! ==========================================
-||ads.pluto.tv^
-||analytics.pluto.tv^
-||tracking.pluto.tv^
-||pluto-ads.com^
-||plutoanalytics.com^
-||adserver.pluto.tv^
-||advertising.pluto.tv^
-||syndication.pluto.tv^
-||ssp.pluto.tv^
-||adstir.pluto.tv^
-||ads-stitcher.pluto.tv^

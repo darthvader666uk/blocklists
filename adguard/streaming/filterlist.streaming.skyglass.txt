@@ -1,11 +1,12 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Sky Glass Ad Blocking Rules
-! Last Updated: 2026-07-15
+! Last Updated: 2026-09-28
 ! Description: Blocks Sky Glass / Comcast smart TV ads and tracking
 !
 ! ==========================================
 ! SKY GLASS / COMCAST INFRASTRUCTURE WHITELISTS
-! Allow critical CDN/streaming infrastructure through
+! Sky platform, playback and telemetry hosts (sift.comcast.com is telemetry).
+! No upstream list blocks these today, kept as insurance.
 ! ==========================================
 
 @@||collector-eu.sift.comcast.com^
@@ -21,11 +22,7 @@
 ||alphonso.tv^
 ||display.ravm.tv^
 ||tvinteractive.tv^
-||mcp.tvinteractive.tv^
-||control.tvinteractive.tv^
-||control2.tvinteractive.tv^
-||tvmeta-dynamic.tvinteractive.tv^
-||ads.spotx.tv^
+! (mcp/control/control2/tvmeta-dynamic.tvinteractive.tv removed 2026-09-28, covered above)
 ||tv.ads.spotx.tv^
 ||tvx.adgrx.com^
 ||smartclip.com^
@@ -34,23 +31,15 @@
 ||ad.71i.de^
 ||advertising.com^
 ||2mdn.net^
-||googleads.g.doubleclick.net^
-||ads.aimitv.com^
 
-! ========== SKY / WOW (German variant) ==========
-||ads.sky.de^
-||adserver.sky.de^
-||tracking.sky.de^
-||analytics.sky.de^
-||ad.nowtv.de^
-||pixel.sky.com^
-||sky.adform.net^
+! (German Sky/WOW section removed 2026-09-28: 7 of 8 hosts no longer exist
+! and none apply to UK Sky Glass. ads.sky.de is in StreamNoAds.)
 ||adform.net^
-||ads.wowtv.de^
 
-! ========== SKY ADSMART (community-confirmed safe to block) ==========
+! ========== SKY ADSMART ==========
+! Risk: MEDIUM. Sky Community reports that when AdSmart insertion fails on
+! Glass/Stream the screen goes blank or drops back to live for the break
+! (helpforum.sky.com/t5/Sky-Glass/Channel-turns-screen-blank-on-every-advert-break/m-p/4727462).
+! So blocking this may give blank ad breaks rather than no ads.
+! Subdomains (dev/hbbtv/prod/sit-adload) are covered by the parent rule.
 ||skyadsmart.com^
-||dev-adload.skyadsmart.com^
-||hbbtv.skyadsmart.com^
-||prod-adload.skyadsmart.com^
-||sit-adload.skyadsmart.com^

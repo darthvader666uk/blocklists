@@ -1,18 +1,21 @@
 [Adblock Plus]
 ! ========== AMAZON PRIME VIDEO (streaming-specific) ==========
-! Last Updated: 2026-07-15
-! Effectiveness: ~40-60% (SSAI + third-party mixed)
+! Last Updated: 2026-09-28
+! Effectiveness: 0% for Prime Video ads (SSAI), tracking only
 !
 ! NOTE: Amazon uses SSAI for ad-supported content.
 ! These rules block third-party ad networks and tracking.
 ! Video ads stitched server-side cannot be blocked at DNS level.
+! Fire TV sponsored tiles (aviary.amazon.com) are in HaGeZi native.amazon.
+! 2026-09-28: removed the unagi.amazon.com and fls-na.amazon.com allows (US
+! telemetry endpoints that cancelled HaGeZi native.amazon's blocks), 5 dead
+! hosts, 3 guessed lookalike domains (amazon-tracking.com is parked) and 5
+! amazon-adsystem.com subdomains already covered by the parent rule.
 
 ! ==========================================
 ! AMAZON WHITELISTS (CRITICAL)
 ! ==========================================
-@@||unagi.amazon.com^
 @@||atv-ps.amazon.com^
-@@||fls-na.amazon.com^
 @@||primevideo.com^
 
 ! ==========================================
@@ -20,20 +23,7 @@
 ! ==========================================
 ||ads.amazon.com^
 ||analytics.amazon.com^
-||tracking.amazon.com^
-||amazon-ads.com^
-||amazon-analytics.com^
-||amazon-tracking.com^
 ||amazonadvertising.com^
 ||advertising.amazon.com^
-||adapis.amazon.com^
-||prime-video-ads.com^
-||aax.amazon-adsystem.com^
-||z-na.amazon-adsystem.com^
-||s.amazon-adsystem.com^
-||c.amazon-adsystem.com^
-||mads.amazon-adsystem.com^
-||ads.primevideo.com^
 ||device-metrics-us.amazon.com^
 ||amazon-adsystem.com^
-||adsdelivery.amazon.com^

@@ -6,9 +6,9 @@
 ! NOTE: HBO Max rebranded from MAX back to HBO Max in July 2025
 ! Both hbomax.com and max.com domains are active and require blocking
 ! 
-! Updated: 2026-06-02 (added litix.io, dnitv.com from ajstrick81 Mar 2026 update)
+! Updated: 2026-09-28 (EMEA ad hosts added, dead hbomax.com and wrong regex notes removed)
 ! 
-! ⚠️ COMPATIBILITY NOTE: This list contains ONLY domain-based rules (||domain.com^)
+! ⚠️ COMPATIBILITY NOTE: This list uses domain rules (||domain.com^) plus one wildcard (gmss.*)
 ! Path-scoped rules (||domain.com/path/*$media) don't work at DNS level and have been removed.
 ! CORRECTED 2026-09-02: AdGuard Home DOES support regex (/REGEX/) and wildcards (*).
 ! The earlier claim here was wrong. It cost nothing in this file, because ||fwmrm.net^
@@ -47,97 +47,35 @@
 ||dnitv.com^
 
 ! ==========================================
-! MEDIUM-RISK DOMAIN BLOCKS (Test one-by-one)
-! These have been observed in Sky Glass logs but MAY cause buffering
-! Start with cf.* family, then akm.*, then gcp.* if ads persist
+! DISABLED - LIKELY CONTENT CDN
 ! ==========================================
-
-! COMMENTED OUT (2026-04-23): cf.* family blocks can break playback — disable until tested
-! ||cf.emea-free.prd.media.max.com^
+! cf.eu / akm.eu look like the main content CDN rather than ad hosts.
+! Blocking them risks buffering or no playback. Leave disabled.
 ! ||cf.eu.prd.media.max.com^
-! ||cf.latam-free.prd.media.max.com^
-! ||cf.amer-free.prd.media.max.com^
-
-! COMMENTED OUT (2026-04-23): akm.* (Akamai) blocks disabled to avoid breaking streams
-! ||akm.emea-free.prd.media.max.com^
 ! ||akm.eu.prd.media.max.com^
-! ||akm.amer-free.prd.media.max.com^
-
-! COMMENTED OUT (2026-04-23): gcp.* (Google Cloud) blocks disabled to avoid breaking streams
-! ||gcp.emea-free.prd.media.max.com^
-! ||gcp.amer-free.prd.media.max.com^
-
-! ==========================================
-! MEDIUM-RISK DOMAIN BLOCKS - HBOMAX.COM (NEW - July 2025+)
-! HBO MAX rebrand infrastructure - same patterns as max.com
-! Start with cf.* family, then akm.*, then gcp.* if ads persist
-! ==========================================
-
-! COMMENTED OUT (2026-04-23): cf.* family (hbomax) disabled to avoid breaking playback
-! ||cf.emea-free.prd.media.hbomax.com^
-! ||cf.eu.prd.media.hbomax.com^
-! ||cf.latam-free.prd.media.hbomax.com^
-! ||cf.amer-free.prd.media.hbomax.com^
-
-! COMMENTED OUT (2026-04-23): akm.* family (hbomax) disabled to avoid breaking playback
-! ||akm.emea-free.prd.media.hbomax.com^
-! ||akm.eu.prd.media.hbomax.com^
-! ||akm.amer-free.prd.media.hbomax.com^
-
-! COMMENTED OUT (2026-04-23): gcp.* family (hbomax) disabled to avoid breaking playback
-! ||gcp.emea-free.prd.media.hbomax.com^
-! ||gcp.amer-free.prd.media.hbomax.com^
+! (latam-free and the hbomax.com media hosts were removed 2026-09-28, they no longer exist)
 
 ! ==========================================
 ! COMMENTED OUT - Browser-Only (Not AdGuard Home compatible)
 ! ==========================================
-! These rules work ONLY in browser extensions (uBlock Origin, Adblock Plus)
-! They DO NOT work in AdGuard Home DNS mode - do not uncomment
-!
-! Path-scoped rules (DNS can't filter by path):
-! ||v.fwmrm.net/ad/*$media       ← BROWSER ONLY, won't work in AdGuard Home
-! ||v.fwmrm.net/ad/*$script      ← BROWSER ONLY, won't work in AdGuard Home
-! ||v.fwmrm.net/vast/*           ← BROWSER ONLY
-! ||fwmrm.net/ad/*$media         ← BROWSER ONLY
-! ||fwmrm.net/ad/*$script        ← BROWSER ONLY
-! ||app.link/_r?sdk=*            ← BROWSER ONLY (wildcard path + query params)
-!
-! Regex patterns (AdGuard Home's DNS mode doesn't support regex):
-! /^([a-z0-9-]+\.)?litix\.io$/   ← BROWSER ONLY regex
-! /^[a-z0-9-]+\.litix\.io$/      ← BROWSER ONLY regex
-! /^[out0-9a-z]+\.litix\.io$/    ← BROWSER ONLY regex
-! /^([a-z0-9-]+\.)?fwmrm\.net$/  ← BROWSER ONLY regex
-! /^[0-9a-z-]+\.v\.fwmrm\.net$/  ← BROWSER ONLY regex
+! Path-scoped rules only work in browser extensions (uBlock Origin, Adblock Plus).
+! DNS can't filter by path, so these do nothing in AdGuard Home:
+! ||v.fwmrm.net/ad/*$media
+! ||v.fwmrm.net/ad/*$script
+! ||v.fwmrm.net/vast/*
+! ||fwmrm.net/ad/*$media
+! ||fwmrm.net/ad/*$script
+! ||app.link/_r?sdk=*
+! (The old litix.io / fwmrm.net regexes are not needed: ||litix.io^ and
+! ||fwmrm.net^ above already match every subdomain.)
 
 ! ==========================================
-! TESTING INSTRUCTIONS FOR ADGUARD HOME
+! TROUBLESHOOTING (AdGuard Home)
 ! ==========================================
-!
-! 1. ENABLE: All whitelists + LOW-RISK blocks only (fwmrm.net, braze.com, etc.)
-!    • Monitor playback on Sky Glass for 5-10 minutes
-!    • Check AdGuard Home Dashboard → Query Log for blocked domains
-!
-! 2. IF NO ADS: Testing complete ✓
-!
-! 3. IF ADS PERSIST: Enable medium-risk blocks one-at-a-time in this order:
-!    a) Enable cf.* family (content delivery)
-!       - Wait 2 minutes, test playback
-!       - If buffering/stuttering → disable cf.* and stop
-!    
-!    b) Enable akm.* family (Akamai)
-!       - Wait 2 minutes, test playback
-!       - If buffering/stuttering → disable akm.* and stop
-!    
-!    c) Enable gcp.* family (Google Cloud)
-!       - Wait 2 minutes, test playback
-!       - If buffering/stuttering → disable gcp.* and stop
-!
-! 4. EXPECTED RESULTS:
-!    • HBO Max ads should be blocked (no pre-roll, mid-roll reduced)
-!    • Playback should be smooth with no stuttering
-!    • If you see "We notice you're using an ad blocker" → ads can't be blocked further
-!      (HBO is using SSAI or has updated their ad infrastructure)
-!
+! 1. If playback buffers or fails, check Query Log for blocked *.media.max.com
+!    hosts during playback and disable that rule first.
+! 2. If you see "We notice you're using an ad blocker", ads can't be blocked
+!    further (HBO is using SSAI or has updated its ad infrastructure).
 ! ==========================================
 
 ! ==========================================
@@ -151,13 +89,16 @@
 ! @@ discomax whitelists are default.*/telegraph.*/images.*, none of which begin
 ! with "gmss.". If you add a broader discomax allowlist later, this will still win.
 !
-! ⚠️ REGION: "amer-free" is the Americas free tier. On a UK/EMEA account these are
-! inert -- harmless, and kept because this list is published for others. If Max
-! still shows ads, check the AdGuard Home query log for an EMEA equivalent
-! (something matching *-free.prd.media.max.com) and add it here.
+! REGION: "amer-free" is the Americas free tier, inert on a UK account but kept
+! because this list is published for others. "emea-free" is the UK/EMEA
+! equivalent, added 2026-09-28 from AdguardTeam/AdguardFilters issue #215201
+! (Oct 2025): "removes ads without affecting application functionality".
 
 ||gmss.*.prd.api.discomax.com^$important
 ||cf.amer-free.prd.media.max.com^$important
 ||gcp.amer-free.prd.media.max.com^$important
 ||fly.amer-free.prd.media.max.com^
 ||akm.amer-free.prd.media.max.com^
+||cf.emea-free.prd.media.max.com^
+||akm.emea-free.prd.media.max.com^
+||gcp.emea-free.prd.media.max.com^

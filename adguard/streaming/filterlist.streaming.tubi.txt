@@ -1,24 +1,14 @@
 [Adblock Plus]
 ! ========== TUBI (streaming-specific) ==========
-! Last Updated: 2026-07-15
-! Effectiveness: ~50-60% (FreeWheel ad serving, separate ad domains)
+! Last Updated: 2026-09-28
+! Effectiveness: covered upstream (UK launch Feb 2024)
 
-! ==========================================
-! TUBI WHITELISTS (CRITICAL)
-! ==========================================
-@@||api.tubi.tv^
-@@||tubicdn.com^
-
-! ==========================================
-! TUBI AD NETWORKS
-! ==========================================
-||ads.tubi.tv^
-||analytics.tubi.tv^
-||tracking.tubi.tv^
-||tubi-ads.com^
-||tubianalytics.com^
-||tubitrack.com^
-||adserver.tubi.com^
-||advertising.tubi.com^
-||ad.tubi.io^
-||pixel.tubi.tv^
+! NOTE: Tubi's real domains are tubitv.com, tubi.io, tubi.video and adrise.tv,
+! and it runs its own ad server ("rainmaker"/adrise), not FreeWheel. Its ad
+! hosts (rainmaker.production-public.tubi.io, ads.production-public.tubi.io,
+! ark.tubi.video, ads.adrise.tv) are already in HaGeZi Pro.
+! If Tubi freezes on a black screen at an ad break on Apple TV, the cause is
+! HaGeZi blocking ark.tubi.video: allow it in the master list.
+! 2026-09-28: removed every rule. All were guessed hostnames that either do
+! not exist or only resolve through tubi.com's wildcard record.
+! Kept as a stub so the AdGuard Home subscription stays valid.

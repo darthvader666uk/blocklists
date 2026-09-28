@@ -2,8 +2,8 @@
 ! Title: My Own Filter List - Master (Non-Streaming)
 ! Last Updated: 2026-09-28
 ! 
-! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
-! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
+! 2026-09-28: the Meta/Instagram/WhatsApp $third-party rules were removed.
+! AdGuard Home ignores any rule with an unsupported modifier, so they never ran.
 ! 
 ! 2026-08-19: Added comprehensive Apple iCloud/iMessage/CarPlay allowlist
 ! (gateway.icloud.com, setup.icloud.com, APNs, mzstatic.com, etc.)
@@ -14,7 +14,7 @@
 ! 2. Allow List / Critical Whitelists (prevent false positives)
 ! 3. Privacy & Tracking (generic network-level blocks)
 ! 4. Streaming Services (split into separate files - see adguard/streaming/filterlist.streaming.*.txt)
-! 5. Meta / Facebook (AGGRESSIVE - blocks cross-platform audience data warehouse)
+! 5. (removed 2026-09-28, see note at the end)
 !
 ! DEDUPLICATION NOTE (2026-08-19):
 ! Streaming-specific rules (Roku, Amazon, Peacock, Sky Glass) have been moved
@@ -27,16 +27,8 @@
 
 ! ========== APPLE SERVICES ==========
 ||*-analytics-events.apple.com^
-||*-analytics-events.news.apple-dns.net^
-||acfeedbackws.icloud.com^
-||feedbackws.icloud.com^
-||feedbackws.fe.apple-dns.net^
 ||api-adservices.apple.com^
 ||iadsdk.apple.com^
-||mask.icloud.com^
-||mask-h2.icloud.com^
-||apple-relay.cloudflare.com^
-||apple-relay.fastly-edge.com^
 ||doh.dns.apple.com^
 ||doh.dns.apple.com.v.aaplimg.com^
 
@@ -49,12 +41,9 @@
 ! ========== NVIDIA ==========
 ||events.gfe.nvidia.com^
 
-! ========== GENERIC TRACKERS ==========
-||startpage.com/sp/adsense/^
-
 ! Streaming Telemetry & Analytics (May 2026 additions)
-! NOTE: ||sb.scorecardresearch.com^ and ||telemetry.nbcuott.com^ moved to
-! filterlist.streaming.peacock.txt — removed 2026-08-04 to avoid duplication
+! NOTE: sb.scorecardresearch.com, identity.mparticle.com and nbcstreaming.*.omtrdc.net
+! are covered by these parent rules (Peacock no longer repeats them, 2026-09-28)
 ||mparticle.com^
 ||scorecardresearch.com^
 ||omtrdc.net^
@@ -67,7 +56,6 @@
 
 ! ========== STREAMING INFRASTRUCTURE ==========
 @@||da4talg8ap14y.cloudfront.net^
-@@||*.googlevideo.com^
 @@||googlevideo.com^
 @@||imasdk.googleapis.com^
 @@||clientstream.launchdarkly.com^
@@ -163,16 +151,17 @@
 @@||statici.icloud.com^
 @@||ws-ee-maidsvc.icloud.com^
 
-! --- iCloud Private Relay (BLOCKED for DNS filtering to work) ---
-! These are in Section 1 deny list — do NOT add to allowlist
-! If you want Private Relay, remove the deny rules instead
-! @@||mask.icloud.com^
-! @@||mask-h2.icloud.com^
-! @@||mask-api.icloud.com^
-! @@||apple-relay.cloudflare.com^
-! @@||apple-relay.fastly-edge.com^
-! @@||apple-relay.apple.com^
-! @@||cp4.cloudflare.com^
+! --- iCloud Private Relay (ALLOWED) ---
+! 2026-09-28: Private Relay must NOT be blocked. The Section 1 deny rules and
+! the apple-relay.akamaized.net block were removed and these allows switched on.
+@@||mask.icloud.com^
+@@||mask-h2.icloud.com^
+@@||mask-api.icloud.com^
+@@||apple-relay.cloudflare.com^
+@@||apple-relay.fastly-edge.com^
+@@||apple-relay.apple.com^
+@@||cp4.cloudflare.com^
+@@||apple-relay.akamaized.net^
 
 ! --- Apple Account / Apple ID ---
 @@||account.apple.com^
@@ -196,10 +185,8 @@
 @@||valid.apple.com^
 @@||identity.apple.com^
 @@||profile.apple.com^
-@@||init-p01st-inapple-com.akadns.net^
 
 ! --- Find My / Location Services ---
-@@||findmy.icloud.com^
 @@||fmf.fe2.apple-dns.net^
 @@||gs-loc.apple.com^
 @@||*.gs-loc.apple.com^
@@ -239,14 +226,12 @@
 
 ! --- Apple Push Notification Service (APNs) ---
 @@||*.push.apple.com^
-@@||feedback.push.apple.com^
 
 ! --- Certificate Validation ---
 @@||certs.apple.com^
 @@||crl.apple.com^
 @@||ocsp.apple.com^
 @@||ocsp2.apple.com^
-@@||valid.apple.com^
 
 ! --- App Store / Apps ---
 @@||*.itunes.apple.com^
@@ -295,7 +280,6 @@
 @@||app-site-association.networking.apple^
 
 ! --- Keychain / Sync ---
-@@||keychain.icloud.com^
 @@||icloudkeychain.com^
 
 ! --- Mail ---
@@ -320,7 +304,6 @@
 @@||reminders.icloud.com^
 
 ! --- CloudKit / XProtect ---
-@@||iderver.com^
 
 ! --- Apple Maps ---
 @@||ls-apple.com.akadns.net^
@@ -329,19 +312,9 @@
 @@||carplay.apple.com^
 
 ! ========== SOCIAL MEDIA (first-party access) ==========
-@@||connect.facebook.net^$domain=facebook.com|www.facebook.com
-@@||graph.facebook.com^$domain=facebook.com|www.facebook.com
-@@||connect.facebook.com^$domain=facebook.com|www.facebook.com
-@@||fbcdn.net^$domain=facebook.com|www.facebook.com
 @@||static.whatsapp.net^
 @@||*.cdn.whatsapp.net^
-@@||graph.whatsapp.com^$domain=whatsapp.com|web.whatsapp.com
 @@||web.whatsapp.com^
-@@||cdns.instagram.com^$domain=instagram.com
-@@||cdp.instagram.com^$domain=instagram.com
-@@||graph.instagram.com^$domain=instagram.com
-@@||api.instagram.com^$domain=instagram.com
-@@||sdk.instagram.com^$domain=instagram.com
 
 ! ========== GOOGLE SERVICES ==========
 @@||accounts.google.com^
@@ -353,7 +326,6 @@
 @@||*.ea.com^
 @@||*.origin.com^
 @@||eaassets-a.akamaihd.net^
-@@||eaconnect.ea.com^
 @@||gateway.ea.com^
 
 ! ========== SHOPIFY ==========
@@ -411,24 +383,18 @@
 @@||api.ipify.org^
 
 ! ========== MISC SERVICES ==========
-@@||*.online^
-@@||*.click^
-@@||*.shop^
-@@||*.help^
-@@||*.site^
-@@||*.games^
-@@||*.biz^
-@@||*.wedding^
-@@||*.wales^
-@@||*.cymru^
-@@||*.email^
-@@||*.fit^
+! 2026-09-28: removed 12 allows for whole domain endings (*.online, *.click,
+! *.shop, *.help, *.site, *.games, *.biz, *.wedding, *.wales, *.cymru, *.email,
+! *.fit). They overrode every block under those endings, TIF malware included.
+! Added in bulk 2026-02-03 for a few sites: currys.biz (below), webplayer.online,
+! trc.cymru and *.midjourney.online already have their own rules. "Join Custard"
+! (*.online) is unknown. If a site on one of those endings breaks, allow it here.
+@@||currys.biz^
 @@||*.optimizely.com^
 @@||*.quantummetric.com^
 @@||*.ticketmaster.com^
 @@||*.ticketmaster.co.uk^
 @@||*.posthog.com^
-@@||*.formsubmit.co^
 @@||*.freestylelibre.co.uk^
 @@||*.ocado.com^
 @@||*.myshopify.com^
@@ -459,8 +425,6 @@
 @@||trc.cymru^
 @@||sqlshades.com^
 @@||php.adamharvey.name^
-@@||domesticandgeneral1251z.btttag.com^
-@@||www.formsubmit.co^
 @@||formsubmit.co^
 @@||api.reo.dev^
 @@||zilchcontentcards.ampxdirect.com^
@@ -479,7 +443,6 @@
 
 ! ========== GOOGLE SERVICES ==========
 ||google-analytics.com^
-||googletagmanager.com^
 ||googlesyndication.com^
 ||doubleclick.net^
 ||adservice.google.com^
@@ -502,7 +465,6 @@
 ! ========== TWITTER / X ==========
 ||ads.twitter.com^
 ||analytics.twitter.com^
-||t.co^$third-party
 
 ! ========== REDDIT ==========
 ||events.reddit.com^
@@ -512,63 +474,41 @@
 ||ads.reddit.com^
 ||ads-v.reddit.com^
 ||wasteland.reddit.com^
-||gql.reddit.com^$third-party
 
 ! ========== DISCORD ==========
 ! Source: e.foundation community (https://community.e.foundation/t/unblocked-trackers-on-discord/82946)
 ! Discord contacts these for mobile attribution and crash reporting
-||sentry.io^$domain=~github.com|~gitlab.com|~stackoverflow.com
-||sentry-answers.com^
 ||sentry-cdn.com^
 ||*.appsflyersdk.com^
 
 ! ========== AI CHATBOT TRACKING ==========
 ||cdn.oaistatic.com^
 ||oaiusercontent.com^
-||chat.openai.com^$third-party
-||api.openai.com^$third-party
 ||ab.chatgpt.com^
 ||statsig.chatgpt.com^
 ||intercom.chatgpt.com^
-||analytics.perplexity.ai^
-||telemetry.perplexity.ai^
 ||alkalimakersuite-pa.googleapis.com^
-||generativelanguage.googleapis.com^$third-party
 ||telemetry.mistral.ai^
-||analytics.cohere.com^
 ||telemetry.huggingface.co^
-||llama.meta.com^$third-party
-||ai.meta.com^$third-party
 ! Anthropic/Claude (see also Section 5)
 ||a-cdn.anthropic.com^
 ||a-api.anthropic.com^
 ||a.claude.ai^
 ||intercom.io^
 ||intercomcdn.com^
-||widget.intercom.io^
-||cdn.segment.com^
 ||api.segment.io^
 
 ! ========== WINDOWS TELEMETRY ==========
 ||telemetry.microsoft.com^
 ||vortex.data.microsoft.com^
 ||settings-win.data.microsoft.com^
-||watson.telemetry.microsoft.com^
 ||watson.microsoft.com^
 ||events.data.microsoft.com^
-||functional.events.data.microsoft.com^
 ||browser.events.data.msn.com^
-||diagnostics.eventing.windows.net^
 ||pipe.aria.microsoft.com^
-||self.events.data.microsoft.com^
 ||advertising.microsoft.com^
 ||ads.msn.com^
 ||track.msn.com^
-||speech.platform.bing.com^$third-party
-||cortana.ai^$third-party
-||linkedin.com^$third-party
-||linkedinsitag.com^
-||platform.linkedin.com^$third-party
 
 ! ========== APPLE TRACKING ==========
 ||analytics.apple.com^
@@ -576,34 +516,18 @@
 ||searchads.apple.com^
 ||iadcontent.apple.com^
 ||iadworkbench.apple.com^
-||iad-apple.com^
 ||proxy-skadnetwork.apple.com^
 ||experiments.apple.com^
 ||smoot.apple.com^
 ||client-event-reporter.apple.com^
-||amp-api-analytics.apps.apple.com^
-||analytics-lb.apps.apple.com^
-||fbs.ads.apple.com^
-||iad-analytics.apple.com^
-||apple-dns.net^
 ||apple-relay.akamaized.net^
 ||drupalmetrics.ppg.apple.com^
 ||partiality.itunes-apple.com.akadns.net^
 ||searchads.lb-apple.com.akadns.net^
-||iadcontent-lb.apple.com.akadns.net^
-||nossl.bf.tools.apple-dns.net^
-||marketplace-sources.bf.tools.apple-dns.net^
 ||axm-telemetry.v.aaplimg.com^
 ||prod-app-analytics-event-gateway.v.aaplimg.com^
 ||securemetrics.v.aaplimg.com^
 ||securemvt.v.aaplimg.com^
-||valid.apple.com^$third-party
-||xp.apple.com^$third-party
-
-! ========== AMAZON TRACKING ==========
-||amazon.com^$third-party
-||aiv-cdn.amazon.com^
-||dmtracker.amazon.com^
 
 ! ========== GENERIC AD NETWORKS ==========
 ||segment.com^
@@ -618,19 +542,12 @@
 ||appsflyer.com^
 ||ads.yahoo.com^
 ||clarity.ms^
-||bing.com^$third-party
 ||applovin.com^
 ||unityads.unity3d.com^
 ||ironsrc.com^
 ||chartboost.com^
 ||smaato.com^
 ||fyber.com^
-||adjust.com^$third-party
-||adjust.io^$third-party
-||branch.io^$third-party
-||kochava.com^$third-party
-||singular.net^$third-party
-||tenjin.com^$third-party
 ||adjoe.zone^
 ||adskeeper.co.uk^
 ||toponad.com^
@@ -644,7 +561,6 @@
 ||sf.ezoiccdn.com^
 ||prebid-log.getpublica.com^
 ||scope3.com^
-||prebid.scope3.com^
 
 ! ========== CRITEO ==========
 ||*.criteo.com^
@@ -655,8 +571,6 @@
 
 ! ========== SNAPCHAT ==========
 ||tr.snapchat.com^
-||stas.snapchat.com^
-||cta.snapchat.com^
 ||api.snapchat.com^
 
 ! ========== PINTEREST ==========
@@ -664,11 +578,9 @@
 ||ads.pinterest.com^
 ||ct.pinterest.com^
 ||analytics.pinterest.com^
-||pinterest.com^$third-party
 
 ! ========== FACEBOOK AUDIENCE NETWORK ==========
 ||an.facebook.com^
-||aan.facebook.com^
 
 ! ========== SALESFORCE / EXACTTARGET ==========
 ||exacttarget.com^
@@ -681,16 +593,6 @@
 ||utiq.com^
 ||utiq-aws.net^
 ||utiqcontent.com^
-
-! ========== ROKU / SMART TV ==========
-||tvmeta.tvinteractive.tv^
-
-! ========== CHINESE TECH (third-party tracking) ==========
-||alibaba.com^$third-party
-||tencent.com^$third-party
-||baidu.com^$third-party
-||sina.com^$third-party
-||sohu.com^$third-party
 
 ! ========== ADGOAL / SMARTREDIRECT ==========
 ||adgoal.net^
@@ -707,10 +609,7 @@
 ||officialkmspico.com^
 
 ! ========== CRYPTO MINING ==========
-||cloudcdn.gdn^
-||beeppool.info^
 ||adless.io^
-||cloud-miner.de^
 ||lightminer.co^
 ||afminer.com^
 ||ad-miner.com^
@@ -718,8 +617,6 @@
 ||crypto-loot.com^
 ||coin-have.com^
 ||webmine.cz^
-||minero.pw^
-
 
 ! ==========================================
 ! SECTION 4: STREAMING SERVICES
@@ -741,40 +638,16 @@
 ! ==========================================
 
 ! ==========================================
-! SECTION 5: META / FACEBOOK TRACKING
-! ⚠️ AGGRESSIVE BLOCKING - Stops eBay→Instagram tracking
-! Blocks cross-platform audience sync + conversion tracking
-! ==========================================
-
-! ========== CORE META ==========
-||facebook.com^$third-party
-||facebook.net^$third-party
-||oculus.com^$third-party
-||fbcdn.net^$third-party
-
-! ========== FACEBOOK TRACKING ==========
-||*.facebook.com^$third-party
-||fbevents.com^$third-party
-
-! ========== INSTAGRAM TRACKING ==========
-||*.instagram.com^$third-party
-
-! ========== WHATSAPP TRACKING ==========
-||api.whatsapp.com^$third-party
-||business.whatsapp.com^$third-party
-
-! ========== MESSENGER TRACKING ==========
-||messenger.com^$third-party
-||workplace.com^$third-party
-||*.messenger.com^$third-party
-
-! ==========================================
 ! END OF MASTER FILTER LIST
-! Total Rules: ~425 (organized, optimized, AGGRESSIVE)
+! Total Rules: 369 on 2026-09-28 (re-count with: grep -vcE '^\s*(!|\[|$)' <file>)
 ! ==========================================
 
 ! ==========================================
 ! ⚠️ APRIL 17, 2026 UPDATE: EBAY→INSTAGRAM BLOCKING
+! CORRECTED 2026-09-28: the Meta/Instagram/WhatsApp/Messenger rules below were
+! $third-party rules, which AdGuard Home ignores, so they never blocked anything
+! and have been removed. The Krxd, Snapchat, Pinterest, Audience Network and
+! Salesforce blocks listed here DO work and are still in Section 3.
 ! ==========================================
 ! PROBLEM: eBay pixel + Krxd/Snapchat/Pinterest trackers fed audience data
 ! to Instagram, which then targeted users with ads inside Instagram app.
@@ -807,7 +680,7 @@
 ! 
 ! Affected Services:
 ! - Netflix (self-hosted SSAI) — ADS CANNOT BE BLOCKED
-! - Hulu (uses Google DynamicAdInsertion) — ADS CANNOT BE BLOCKED
+! - Hulu (Disney's own ad server, see filterlist.streaming.hulu.txt) — PARTIAL
 ! - Amazon Prime Video (uses SSAI) — ADS CANNOT BE BLOCKED
 ! - Paramount+ (uses Google DynamicAdInsertion on most platforms) — ADS MOSTLY CANNOT BE BLOCKED
 ! 
@@ -817,19 +690,19 @@
 
 ! ✅ SUCCESSFULLY BLOCKABLE (DNS-Level)
 ! These services use separate ad-tech domains:
-! - HBO Max/Max ⭐ (20+ rules — GitHub-verified working)
+! - HBO Max/Max ⭐ (incl. EMEA ad hosts, GitHub-verified working)
 ! - Disney+ (disneyadvertising.com)
-! - Apple TV+ (separate ad servers)
+! - Apple TV (no ad tier, nothing to block)
 ! - Peacock (SSAI but CDN patterns can help reduce ads)
-! - Roku (25+ ad/tracking domains)
-! - Sky Glass (21+ smart TV ad networks)
+! - Roku (exact hosts + regex for renamed variants)
+! - Sky Glass (smart TV ad networks, AdSmart may give blank breaks)
 
 ! ⚠️ TIER 2 BLOCKABLE (Fragile/Partial)
 ! These work but may break frequently as services update:
 ! - Peacock (Peacock frequently changes CDN patterns — rules may break weekly)
 ! - Paramount+ on Browser (SSAI on most devices except Roku)
 
-! ��� TECHNICAL NOTES
+! TECHNICAL NOTES
 ! Format Compatibility:
 ! ✓ AdBlock Plus format (||domain.com^) — natively supported
 ! ✓ AdGuard Home — converts to regex internally
@@ -840,13 +713,13 @@
 ! This list is OPTIMIZED FOR AdGuard Home (DNS-level blocking)
 ! It will also work in browser extensions (uBlock Origin, AdGuard, etc.)
 
-! ��� ESTIMATED EFFECTIVENESS
+! ESTIMATED EFFECTIVENESS
 ! - Website ads (general): 95%+ blocked
 ! - Streaming service ads: 30-60% (depends on SSAI usage)
 ! - Tracking/analytics: 98%+ blocked
 ! - Smart TV ads (Roku/Sky Glass): 85%+ blocked
 
-! ⚡ LAST UPDATE: 2026-03-27
+! ⚡ LAST UPDATE: 2026-09-28
 ! Source: Combined from GitHub issues #215201 (Max), ajstrick81/HBO-Ads,
 !         ozankiratli streaming list, user testing on Sky Glass, and verified community techniques
 ! ==========================================

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! ========== UK CATCH-UP TV (Channel 4 / All4 / My5) ==========
-! Last Updated: 2026-08-12
+! Last Updated: 2026-09-28
 ! Effectiveness: PARTIAL (DNS-level only — device/app dependent)
 ! Regional: UK ONLY
 !
@@ -9,11 +9,16 @@
 ! accidentally appended). Only the REAL UK domains are kept here.
 !
 ! RISK LEVEL: MEDIUM
-! - cdn.http.anno.channel4.com: some third-party apps (u.co.uk) need this
-!   whitelisted for playback — if a Channel 4 app fails, whitelist it first
-! - toots-a.akamaihd.net: shared Akamai CDN host — broad, remove if any
-!   unrelated site breaks
-! - ITVX NOT targeted: DNS blocking unreliable (ads from same host as content)
+! - cdn.http.anno.channel4.com: UKTV's own U app needs this (Channel 4 Sales
+!   sells UKTV's ads). If U or a Channel 4 app fails, allow it first
+!   (r/pihole 1d8r3xk). Trade-off: Channel 4 ads come back.
+! - toots-a.akamaihd.net: ITV's own ad/ident host (each *-a.akamaihd.net name
+!   belongs to one customer), so no collateral. Also in HaGeZi Pro.
+! - ITVX on-demand ads (tom.itv.com -> itv-ads.aimatch.com) are already blocked
+!   upstream via CNAME. ITVX live, Channel 4 live and Sky Go use Yospace SSAI,
+!   which DNS cannot remove.
+! - StreamNoAds blocks yospace.com and conviva.com. If a live stream freezes
+!   at an ad break, check those first (Conviva reported for ITVX).
 ! - BBC iPlayer NOT targeted: ad-free (TV Licence funded)
 ! If playback fails, remove the most recent candidate first and retest.
 
@@ -23,27 +28,23 @@
 ||2a7e9.v.fwmrm.net^
 ||2356e.v.fwmrm.net^
 ||ads.channel4.com^
-||ads-pres.channel4.com^
-||c4ads.2cnt.net^
 ||c4smarttv.2cnt.net^
 ||cdn.http.anno.channel4.com^
 ||cdn.ss.anno.channel4.com^
 ||channel4.com.112.2o7.net^
-||channel4.com.sc.omtrdc.net^
-||channel4.com.ssl.sc.omtrdc.net^
 ||ic.channel4.com^
 ||monitor.channel4.com^
 ||p.videologygroup.com^
 ||securecdn.videologygroup.com^
-||sexperienceuk.channel4.com^
 ||toots-a.akamaihd.net^
-||trk-euwest.tidaltv.com^
 ||webstat.channel4.com^
 ||webstats.channel4.com^
 
 ! ==========================================
 ! CHANNEL 5 / MY5 — AD & MEASUREMENT HOSTS
 ! ==========================================
+! g3v-mir.fwgtm.akadns.net is the CNAME target for all EU FreeWheel hosts,
+! so this is effectively ||fwmrm.net^ (also in StreamNoAds and hbo.txt).
 ||g3v-mir.fwgtm.akadns.net^
 ||c5ads.ott.skymedia.co.uk^
 ||c5appletv.2cnt.net^
