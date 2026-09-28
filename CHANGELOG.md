@@ -5,6 +5,19 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 28 September 2026
+
+### ✅ Allowlist: firebaseremoteconfig.googleapis.com (Costco UK login)
+
+- `@@||firebaseremoteconfig.googleapis.com^` in the master list. Firebase
+  Remote Config serves feature flags, not ads. Costco UK's site fetches its
+  config there, and with it blocked the login bounced to
+  `/maintenance/?err=1` (a 404 page). Confirmed fixed with an AGH custom rule
+  before adding it here.
+- Blocked by StreamNoAds, which can't be edited, so the allow rule lives in
+  the master. It's global (DNS can't scope it to one site), so any streaming
+  app that toggles ads via Remote Config gets its config back too.
+
 ## 19 September 2026
 
 ### ✅ Allowlist: ad.doubleclick.net (click-through redirector)

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-09-15
+! Last Updated: 2026-09-28
 ! 
 ! CRITICAL: Added aggressive Meta/Instagram/WhatsApp blocking to cut off
 ! eBay→Instagram tracking pipeline (Krxd, Snapchat, Pinterest audience sync)
@@ -129,6 +129,15 @@
 ! Allowing this ONE host only re-enables click-through and its tracking;
 ! the ad-serving hosts (googleads.g / pubads.g / securepubads.g) stay blocked.
 @@||ad.doubleclick.net^
+
+! ========== FIREBASE REMOTE CONFIG ==========
+! 2026-09-28: firebaseremoteconfig.googleapis.com serves feature flags to
+! sites and apps built on Firebase. Costco UK (sip-web-prod-uk) fetches its
+! config here and, with it blocked, login bounces to /maintenance/?err=1.
+! Blocked by: StreamNoAds (third-party list in AGH).
+! Risk: LOW, config only, no ad serving. Some streaming apps may use it to
+! toggle ad features. DNS cannot scope it per site, so this is global.
+@@||firebaseremoteconfig.googleapis.com^
 
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
