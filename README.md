@@ -274,8 +274,10 @@ Target stack as of **2 September 2026**, reconciled against the live `AdGuardHom
 The running config had only 26 of these; the apply-order notes are kept locally and are not published here.
 
 > **Note:** AdGuard Home and uBlock Origin are *separate* stacks and are no longer
-> documented as one. uBlock subscribes to 59 lists including browser-only ones that do
-> not belong in DNS filtering.
+> documented as one. uBlock (desktop) runs a trimmed 19-list set that assumes AdGuard Home
+> handles DNS: uBO built-ins, EasyList, the EasyList annoyance lists, HaGeZi PRO + Amazon,
+> Netflix and two cosmetic lists. The master list is deliberately left out, because its
+> `@@` allow rules override EasyList in uBO.
 
 #### 🛡️ Blocklists (37)
 

@@ -5,6 +5,30 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 30 September 2026
+
+### ✂️ uBlock Origin desktop list trimmed: 65 → 19
+
+Modelled on the Android set, which Firefox mobile forced down to a smaller size and
+which turned out to block MORE visually. AdGuard Home covers DNS, so uBO is there for
+cosmetic filters, scriptlets and path rules.
+
+- **Added:** EasyList and the EasyList annoyance lists (cookie notices, social widgets,
+  other annoyances, newsletters, notifications) as uBO built-ins, replacing the
+  imported URLs.
+- **Removed from uBO:** the master `filterlist.txt`. Its allow rules (`imasdk.googleapis.com`,
+  `ad.doubleclick.net`, `googletagmanager.com`) override EasyList's blocks in uBO.
+- **Removed:** every TV/device list (Roku, Samsung, LG, Huawei, Vivo, Xiaomi, TIF, TIF-IPs,
+  smart-TV lists, AdGuard `filter_7`), TV streaming lists, HaGeZi DoH/VPN/Proxy Bypass
+  (already gone from AGH), StreamNoAds, OISD small, yokoffing, and duplicate copies of
+  uBO Badware/Privacy, Fanboy Social and AdGuard 3/14/17.
+- Settings and trusted sites are unchanged. My filters gains one rule,
+  `||web.whatsapp.com/wam` (WhatsApp Web's analytics beacon, from EasyPrivacy). It never
+  worked before because the master list's `@@||web.whatsapp.com^` overrode it.
+
+Android runs HaGeZi Multi NORMAL rather than PRO. PRO was too big for uBO on Firefox
+Android. Desktop keeps PRO.
+
 ## 28 September 2026
 
 ### 🧹 Full filter review
