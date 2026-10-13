@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-09-28
+! Last Updated: 2026-10-13
 ! 
 ! 2026-09-28: the Meta/Instagram/WhatsApp $third-party rules were removed.
 ! AdGuard Home ignores any rule with an unsupported modifier, so they never ran.
@@ -354,6 +354,25 @@
 @@||tatrck.com^
 @@||sovendus-network.com^
 !
+! 2026-10-13 — replaces the Coupert allowlist in AdGuard Home, which also unblocked data
+! brokers (bluekai, tealium, ensighten, tealeaf, thebrighttag). These are only its
+! affiliate redirect hosts that HaGeZi Pro blocks and this list did not already allow.
+! CJ:
+@@||jdoqocy.com^
+@@||qksrv.net^
+! Pepperjam / Ascend:
+@@||pntra.com^
+@@||pntrac.com^
+@@||pntrs.com^
+@@||pjatr.com^
+@@||pjtra.com^
+@@||gopjn.com^
+@@||pepperjamnetwork.com^
+! Affiliate Future, Commission Factory, AvantLink:
+@@||affiliatefuture.com^
+@@||t.cfjump.com^
+@@||classic.avantlink.com^
+!
 ! 2026-09-03 — UpPromote (Shopify affiliate app, Secomapp). Verified blocked:
 ! pixel.uppromote.com resolved to 0.0.0.0 via AdGuard Home, 24.144.65.164 upstream.
 ! Blocked by THREE lists at once (HaGeZi Pro, AdGuard filter 15, EasyPrivacy), so
@@ -582,6 +601,12 @@
 ! ========== FACEBOOK AUDIENCE NETWORK ==========
 ||an.facebook.com^
 
+! ========== META PIXEL ==========
+! The Pixel script that shops load. Not in HaGeZi Pro, OISD Small or the
+! AdGuard DNS filter. The Instagram/Facebook apps do not use it. Breaks
+! "Log in with Facebook", embedded FB posts and Messenger chat widgets on sites.
+||connect.facebook.net^
+
 ! ========== SALESFORCE / EXACTTARGET ==========
 ||exacttarget.com^
 ||evergage.com^
@@ -639,7 +664,7 @@
 
 ! ==========================================
 ! END OF MASTER FILTER LIST
-! Total Rules: 369 on 2026-09-28 (re-count with: grep -vcE '^\s*(!|\[|$)' <file>)
+! Total Rules: 382 on 2026-10-13 (re-count with: grep -vcE '^\s*(!|\[|$)' <file>)
 ! ==========================================
 
 ! ==========================================

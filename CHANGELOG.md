@@ -5,6 +5,46 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 13 October 2026
+
+### 🔒 Meta Pixel blocked: `connect.facebook.net`
+
+Added `||connect.facebook.net^` to `filterlist.txt`. None of the running lists
+(HaGeZi Pro, OISD Small, AdGuard DNS filter) block it, only HaGeZi Ultimate does, so
+shop sites were loading the Pixel on every device without uBlock and feeding browsing
+into Instagram ad targeting.
+
+- The Instagram and Facebook apps do not use this domain, so they are unaffected.
+- Breaks "Log in with Facebook", embedded Facebook posts/comments and Messenger chat
+  widgets on third-party sites.
+- This cuts targeting, not the ads. Instagram ads come from the same hosts as the feed
+  and cannot be blocked at DNS. Server-side Conversions API events are also out of reach.
+
+### 🔍 AdGuard Home stack audit against the live config
+
+Read the live `AdGuardHome.yaml` (35 lists) and measured every list against HaGeZi Pro for
+the domains it adds. Full numbers in the local research notes.
+
+- **Swapped:** Dandelion Sprout's Anti-Malware to its AdGuard Home build. The browser build
+  writes its rules with `$all`/`$doc`, which AGH ignores, so about 10 of 14,058 rules ran.
+- **Added:** HaGeZi TIF Mini (~236K, about 78K domains not otherwise covered).
+- **Removed:** StreamNoAds (AI-generated entries, ~80 of 150 domains do not resolve, and it
+  root-blocked `yospace.com`, which UK live streams use) and FTPrivacy Smart TV (no update
+  since 2022).
+- **Removed both DNS allowlists**, never documented here. *uBlock filters – Unbreak* is a
+  browser list: 6 of its 1,281 rules work in DNS, one of them unblocking
+  `ads.digital.disneyadvertising.com` against the Disney list. *Coupert Whitelist* unblocked
+  data brokers and tag managers (bluekai, tealium, ensighten, tealeaf, thebrighttag) as well as
+  affiliate redirects.
+- **`filterlist.txt`:** 12 allow rules replace Coupert's affiliate hosts that were not already
+  allowed (CJ `jdoqocy`/`qksrv`, Pepperjam, Affiliate Future, Commission Factory, AvantLink),
+  so cashback keeps tracking without the brokers.
+- **Skipped:** HaGeZi spam-tlds (blocks every `.shop`/`.store`/`.online`/`.site`, reversing
+  the September advice), Pop-Up Ads (fully inside Pro), 1Hosts Lite (maintainer gaps).
+- **README:** the stack table now records the 34 live lists instead of the 37-list target.
+
+---
+
 ## 30 September 2026
 
 ### ✂️ uBlock Origin desktop list trimmed: 65 → 19
