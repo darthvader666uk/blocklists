@@ -14,9 +14,10 @@
 !   (r/pihole 1d8r3xk). Trade-off: Channel 4 ads come back.
 ! - toots-a.akamaihd.net: ITV's own ad/ident host (each *-a.akamaihd.net name
 !   belongs to one customer), so no collateral. Also in HaGeZi Pro.
-! - ITVX on-demand ads (tom.itv.com -> itv-ads.aimatch.com) are already blocked
-!   upstream via CNAME. ITVX live, Channel 4 live and Sky Go use Yospace SSAI,
-!   which DNS cannot remove.
+! - ITVX on-demand ads (tom.itv.com -> itv-ads.aimatch.com) can NOT be blocked:
+!   ITVX shows "Ad blocker detected" (error 06-01) and refuses to play. The
+!   master filterlist.txt allows tom.itv.com. ITVX live, Channel 4 live and
+!   Sky Go use Yospace SSAI, which DNS cannot remove.
 ! - StreamNoAds blocks yospace.com and conviva.com. If a live stream freezes
 !   at an ad break, check those first (Conviva reported for ITVX).
 ! - BBC iPlayer NOT targeted: ad-free (TV Licence funded)

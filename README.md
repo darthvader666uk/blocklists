@@ -36,7 +36,7 @@ README against the actual files.
 | **Amazon Prime** | `filterlist.streaming.amazon.txt` | ⚠️ **LIMITED** | SSAI-only = cannot be blocked at DNS |
 | **Hulu** | `filterlist.streaming.hulu.txt` | ⚪ **STUB** | US app only, 1 rule. Disney's ad hosts are in the Disney list |
 | **Channel 4 / All4 + My5** | `filterlist.streaming.ukcatchup.txt` | 🆕 **NEW (Aug 2026)** | UK-only catch-up TV; 17 domains; medium FP risk (whitelist `cdn.http.anno.channel4.com` if playback fails) |
-| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 382 rules — 143 blocks + 239 allows (wildcard-optimised) |
+| **Main List** | `filterlist.txt` | ✅ **CURRENT** | 383 rules — 143 blocks + 240 allows (wildcard-optimised) |
 
 ---
 
@@ -45,13 +45,13 @@ README against the actual files.
 | Metric | Details |
 |--------|---------|
 | **Format** | AdBlock Plus (`\|\|domain.com^`) + regex support |
-| **Rules** | 382 in `filterlist.txt` (143 blocks + 239 allows), + 164 across the 13 streaming lists |
+| **Rules** | 383 in `filterlist.txt` (143 blocks + 240 allows), + 164 across the 13 streaming lists |
 | **Last Updated** | **13 October 2026** (stack checked against the live AdGuard Home config) |
 | **Primary Use** | AdGuard Home DNS-level blocking |
 | **Also Works** | AdGuard browser extension, uBlock Origin, Adblock Plus, NextDNS, AdGuard DNS (cloud) |
 | **Verification** | Cross-referenced against ozankiratli, ajstrick81, lit-bg community research |
 | **Testing** | Normalized line endings (CRLF → LF), syntax verified |
-| **AdGuard DNS Limit** | Custom list at 382/1000 rules (618 headroom remaining) |
+| **AdGuard DNS Limit** | Custom list at 383/1000 rules (617 headroom remaining) |
 | **AdGuard Home** | 34 lists, checked against the live config 13 Oct 2026 — see [CHANGELOG.md](CHANGELOG.md) |
 
 ---
@@ -335,7 +335,7 @@ HaGeZi spam-tlds (blocks all `.shop`/`.store`/`.online`), Pop-Up Ads (inside Pro
 | Metric | Value |
 |--------|-------|
 | **Third-party blocklist rules** | ~883,000 before overlap (Pro 193K, AdGuard DNS 184K, Phishing Army 141K, TIF Mini 236K) |
-| **My custom rules** | 382 in `filterlist.txt` (143 blocks + 239 allows) + 164 across the 13 streaming lists |
+| **My custom rules** | 383 in `filterlist.txt` (143 blocks + 240 allows) + 164 across the 13 streaming lists |
 | **Blocklists** | 34 |
 | **Last verified** | 13 October 2026, against the live AdGuardHome.yaml. Rule counts re-derived from the files. |
 
@@ -389,7 +389,7 @@ When you're out and about, AdGuard DNS provides backup DNS filtering. **Personal
 
 ```
 adguard/
-  filterlist.txt                    # Main cross-service filter (382 rules — 143 blocks + 239 allows)
+  filterlist.txt                    # Main cross-service filter (383 rules — 143 blocks + 240 allows)
   streaming/                        # Service-specific filters:
     filterlist.streaming.hbo.txt        (HBO Max - PRODUCTION READY)
     filterlist.streaming.disney.txt     (Disney+ - WORKING)

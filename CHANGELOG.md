@@ -7,6 +7,19 @@ instructions and the active list stack live in the [README](README.md).
 
 ## 13 October 2026
 
+### 📺 ITVX unblocked: `tom.itv.com`
+
+Added `@@||tom.itv.com^` to `filterlist.txt`. It CNAMEs to `itv-ads.aimatch.com`, which
+AdGuard DNS filter blocks, and ITVX answers that with "Ad blocker detected" (error 06-01)
+and no playback, with uBlock off. HaGeZi dropped it from Pro for the same reason
+([hagezi/dns-blocklists#9690](https://github.com/hagezi/dns-blocklists/issues/9690)).
+ITVX on-demand ads come back. The `ukcatchup` note that called this block a win is corrected.
+
+The allow did nothing at first: AGH's upstreams included `dns.adguard-dns.com` (AdGuard's
+filtering resolver) in parallel mode, so it often answered `0.0.0.0` after AGH had already
+allowed the name, and the optimistic cache kept serving it. Swapped for an unfiltered upstream
+in the AGH settings (not part of this repo), then cleared the AGH cache.
+
 ### 🔒 Meta Pixel blocked: `connect.facebook.net`
 
 Added `||connect.facebook.net^` to `filterlist.txt`. None of the running lists

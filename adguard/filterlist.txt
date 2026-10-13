@@ -127,6 +127,14 @@
 ! toggle ad features. DNS cannot scope it per site, so this is global.
 @@||firebaseremoteconfig.googleapis.com^
 
+! ========== ITVX AD DECISIONING ==========
+! 2026-10-13: tom.itv.com is a CNAME to itv-ads.aimatch.com, which AdGuard DNS
+! filter blocks (||aimatch.com^). With it blocked, ITVX on-demand shows "Ad
+! blocker detected" (error 06-01) and will not play. HaGeZi unblocked it in
+! Pro for the same reason (hagezi/dns-blocklists#9690).
+! Risk: MEDIUM, ITVX on-demand ads come back. Regional: UK.
+@@||tom.itv.com^
+
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
 ! Updated: 2026-08-19 — Comprehensive list from official Apple documentation
