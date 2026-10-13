@@ -134,6 +134,10 @@
 ! Pro for the same reason (hagezi/dns-blocklists#9690).
 ! Risk: MEDIUM, ITVX on-demand ads come back. Regional: UK.
 @@||tom.itv.com^
+! toots-a.akamaihd.net serves the pre-roll video once tom.itv.com answers.
+! HaGeZi Pro blocks it, and a failed pre-roll also gives 06-01, so a fresh
+! episode never starts (resuming skips the pre-roll and works).
+@@||toots-a.akamaihd.net^
 
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)

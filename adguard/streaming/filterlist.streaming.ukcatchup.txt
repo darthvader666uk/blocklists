@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! ========== UK CATCH-UP TV (Channel 4 / All4 / My5) ==========
-! Last Updated: 2026-09-28
+! Last Updated: 2026-10-13
 ! Effectiveness: PARTIAL (DNS-level only — device/app dependent)
 ! Regional: UK ONLY
 !
@@ -12,8 +12,8 @@
 ! - cdn.http.anno.channel4.com: UKTV's own U app needs this (Channel 4 Sales
 !   sells UKTV's ads). If U or a Channel 4 app fails, allow it first
 !   (r/pihole 1d8r3xk). Trade-off: Channel 4 ads come back.
-! - toots-a.akamaihd.net: ITV's own ad/ident host (each *-a.akamaihd.net name
-!   belongs to one customer), so no collateral. Also in HaGeZi Pro.
+! - toots-a.akamaihd.net: ITV's pre-roll video host. NOT blocked: ITVX shows
+!   "Ad blocker detected" (06-01) on a fresh episode. Allowed in filterlist.txt.
 ! - ITVX on-demand ads (tom.itv.com -> itv-ads.aimatch.com) can NOT be blocked:
 !   ITVX shows "Ad blocker detected" (error 06-01) and refuses to play. The
 !   master filterlist.txt allows tom.itv.com. ITVX live, Channel 4 live and
@@ -37,7 +37,6 @@
 ||monitor.channel4.com^
 ||p.videologygroup.com^
 ||securecdn.videologygroup.com^
-||toots-a.akamaihd.net^
 ||webstat.channel4.com^
 ||webstats.channel4.com^
 

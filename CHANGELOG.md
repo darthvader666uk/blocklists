@@ -7,6 +7,13 @@ instructions and the active list stack live in the [README](README.md).
 
 ## 13 October 2026
 
+### 📺 ITVX pre-roll host allowed: `toots-a.akamaihd.net`
+
+Added `@@||toots-a.akamaihd.net^` to `filterlist.txt` and dropped it from `ukcatchup`.
+Once `tom.itv.com` resolved, the player fetched the pre-roll from this host, which HaGeZi Pro
+and `ukcatchup` both blocked. A failed pre-roll also shows 06-01, so fresh episodes never
+started, while resuming one (no pre-roll) worked.
+
 ### 📺 ITVX unblocked: `tom.itv.com`
 
 Added `@@||tom.itv.com^` to `filterlist.txt`. It CNAMEs to `itv-ads.aimatch.com`, which
