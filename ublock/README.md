@@ -9,6 +9,10 @@
 restore it via uBlock Origin → Settings → Restore from file. The validator
 JSON-checks it rather than parsing it as filters.
 
+The **Trusted sites** list is stripped from the published copy (only uBlock's
+built-in `-scheme` defaults remain), because it names personal accounts. The
+full backup is kept locally as `my-ublock-backup_*.txt`, which is gitignored.
+
 `ublock-filters-lite.txt` is **deprecated as of 2026-09-03** and frozen — the
 maintainer moved back to full uBlock Origin on Firefox. It stays published so
 existing subscribers do not get a 404, but it receives no new rules and no

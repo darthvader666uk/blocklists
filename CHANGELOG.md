@@ -43,6 +43,20 @@ the domains it adds. Full numbers in the local research notes.
   the September advice), Pop-Up Ads (fully inside Pro), 1Hosts Lite (maintainer gaps).
 - **README:** the stack table now records the 34 live lists instead of the 37-list target.
 
+### 🧩 uBlock Origin desktop: 19 → 21 lists
+
+- **Re-enabled EasyPrivacy.** It is a uBO default, and the 30 September trim switched it off.
+  It is the only list in the set that blocks the Meta Pixel by path (`facebook.com/tr`,
+  `fbevents.js`), which DNS cannot do.
+- **Enabled** AdGuard/uBO URL Tracking Protection (`utm_` and similar link tags), Online
+  Malicious URL Blocklist (URLhaus, path-level malware URLs) and Peter Lowe's list. The last
+  two are uBO defaults that were also off.
+- **Removed** HaGeZi PRO and HaGeZi native.amazon. AdGuard Home already blocks those domains
+  before the browser sees them. Firefox DNS over HTTPS is off, so the browser does use AGH.
+- **`ublock-main.txt` no longer publishes the Trusted sites list.** It named banks, accounts
+  and home hostnames. Only uBlock's built-in `-scheme` defaults remain. Earlier commits still
+  hold the old list.
+
 ---
 
 ## 30 September 2026

@@ -275,9 +275,11 @@ day's audit applied (see [CHANGELOG.md](CHANGELOG.md)). No DNS allowlists are lo
 rules live in `filterlist.txt`, where they are documented.
 
 > **Note:** AdGuard Home and uBlock Origin are *separate* stacks and are no longer
-> documented as one. uBlock (desktop) runs a trimmed 19-list set that assumes AdGuard Home
-> handles DNS: uBO built-ins, EasyList, the EasyList annoyance lists, HaGeZi PRO + Amazon,
-> Netflix and two cosmetic lists. The master list is deliberately left out, because its
+> documented as one. uBlock (desktop) runs a 21-list set that assumes AdGuard Home handles
+> DNS: uBO built-ins, EasyList, EasyPrivacy (the only list with path rules for the Meta Pixel),
+> URL Tracking Protection, URLhaus, Peter Lowe, the EasyList cookie and annoyance lists,
+> Netflix and two cosmetic lists. No DNS lists: HaGeZi PRO was dropped 13 Oct 2026 as a
+> duplicate of AdGuard Home. The master list is deliberately left out, because its
 > `@@` allow rules override EasyList in uBO.
 
 #### 🛡️ Blocklists (34)
