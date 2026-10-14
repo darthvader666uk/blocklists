@@ -525,8 +525,9 @@
 ||a-cdn.anthropic.com^
 ||a-api.anthropic.com^
 ||a.claude.ai^
-||intercom.io^
-||intercomcdn.com^
+! 2026-10-14: ||intercom.io^ and ||intercomcdn.com^ removed. Intercom is the
+! live chat vendor, so blocking it broke support chat on every site using it
+! (Habito: api-iam.intercom.io). Do not re-add.
 ||api.segment.io^
 
 ! ========== WINDOWS TELEMETRY ==========

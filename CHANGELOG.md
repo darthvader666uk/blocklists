@@ -5,6 +5,15 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 14 October 2026
+
+### 💬 Intercom live chat unblocked
+
+Removed `||intercom.io^` and `||intercomcdn.com^` from `filterlist.txt`. They were filed under
+AI chatbot tracking, but Intercom is the live chat platform itself, so the rules broke support
+chat on every site that uses it. Found on Habito, where `api-iam.intercom.io` was blocked by
+the master list. `intercom.chatgpt.com` stays blocked.
+
 ## 13 October 2026
 
 ### 📺 ITVX pre-roll host allowed: `toots-a.akamaihd.net`
