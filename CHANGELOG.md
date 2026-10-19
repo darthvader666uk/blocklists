@@ -5,6 +5,15 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 19 October 2026
+
+### 🎞️ streamff video CDN allowed: `cdn.hostedhost.top`
+
+Added `@@||cdn.hostedhost.top^` to `filterlist.txt`. streamff.com loads every clip's poster and
+MP4 from this host, so with it blocked the videos never played. It was caught by Dandelion
+Sprout's Anti-Malware blanket `||*.top^` TLD rule, not a listing of the host itself. Only the
+`cdn.` host is allowed, the rest of `.top` stays blocked.
+
 ## 14 October 2026
 
 ### 💬 Intercom live chat unblocked

@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-10-13
+! Last Updated: 2026-10-19
 ! 
 ! 2026-09-28: the Meta/Instagram/WhatsApp $third-party rules were removed.
 ! AdGuard Home ignores any rule with an unsupported modifier, so they never ran.
@@ -138,6 +138,16 @@
 ! HaGeZi Pro blocks it, and a failed pre-roll also gives 06-01, so a fresh
 ! episode never starts (resuming skips the pre-roll and works).
 @@||toots-a.akamaihd.net^
+
+! ========== STREAMFF VIDEO CDN ==========
+! 2026-10-19: streamff.com (clip host, mostly sport clips linked from Reddit)
+! serves every poster and MP4 from cdn.hostedhost.top (<id>.jpg / <id>.mp4,
+! Cloudflare). Verified both return 200 for streamff.com/v/b8d938e6.
+! Blocked by: Dandelion Sprout's Anti-Malware, via its blanket ||*.top^ TLD
+! rule (line 9 of the AGH build), not a listing of this host.
+! Scoped to the cdn host only, the rest of .top stays blocked.
+! Risk: LOW, media only, the page's own ad hosts are blocked elsewhere.
+@@||cdn.hostedhost.top^
 
 ! ========== APPLE iCLOUD / iMESSAGE / CARPLAY ==========
 ! Source: Apple Support (https://support.apple.com/en-us/101555)
