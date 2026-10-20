@@ -645,6 +645,16 @@
 ! AdGuard DNS filter. The Instagram/Facebook apps do not use it. Breaks
 ! "Log in with Facebook", embedded FB posts and Messenger chat widgets on sites.
 ||connect.facebook.net^
+! 2026-10-20: connect.facebook.com is the SDK's .com twin. Sonar = Meta's network
+! probe beacons the apps fire at edge nodes to measure latency (7,000+ hosts in
+! HaGeZi Ultimate, none in Pro). AdGuard DNS filter already blocks the xy. ones.
+! Rest of Ultimate's Meta set (graph., b-graph., mqtt-mini., gateway.instagram.,
+! web.facebook.com) is app API and breaks Facebook/Instagram/WhatsApp, so NOT here.
+! Risk: low. Regional targeting: none.
+||connect.facebook.com^
+||sonar*.xx.fbcdn.net^
+||edge-sonar*.fbcdn.net^
+||snr.fbcdn.net^
 
 ! ========== SALESFORCE / EXACTTARGET ==========
 ||exacttarget.com^
