@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Sky Glass Ad Blocking Rules
-! Last Updated: 2026-09-28
+! Last Updated: 2026-10-20
 ! Description: Blocks Sky Glass / Comcast smart TV ads and tracking
 !
 ! ==========================================
@@ -43,3 +43,10 @@
 ! So blocking this may give blank ad breaks rather than no ads.
 ! Subdomains (dev/hbbtv/prod/sit-adload) are covered by the parent rule.
 ||skyadsmart.com^
+
+! ========== COMCAST XVP AD IDENTIFIER ==========
+! 2026-10-20: xifa = Comcast's cross-platform identifier for advertising (IFA)
+! service on the XVP platform. Seen 16x/day from the Glass, on no HaGeZi tier.
+! Risk: MEDIUM (unverified: if the home screen, recordings or app logins break,
+! remove this first). Regional targeting: UK (Sky Glass / Sky Stream, eu-1).
+||xifa.exp.xvp.eu-1.xcal.tv^

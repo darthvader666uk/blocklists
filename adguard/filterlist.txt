@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-10-19
+! Last Updated: 2026-10-20
 ! 
 ! 2026-09-28: the Meta/Instagram/WhatsApp $third-party rules were removed.
 ! AdGuard Home ignores any rule with an unsupported modifier, so they never ran.
@@ -340,7 +340,11 @@
 
 ! ========== GOOGLE SERVICES ==========
 @@||accounts.google.com^
-@@||analytics.google.com^
+! 2026-10-20: single | = the GA dashboard host only. The old || form also allowed
+! GA4 collection (region1.analytics.google.com, 70 lookups/day from 3 devices),
+! undoing HaGeZi Pro's ||analytics.google.com^ block. Risk: low (GA dashboard
+! still loads). Regional targeting: none.
+@@|analytics.google.com^
 @@||googletagmanager.com^
 @@||www.googletagmanager.com^
 
@@ -406,6 +410,12 @@
 
 ! ========== GAMING ==========
 @@||*.battle.net^
+! 2026-10-20: the wildcard above was overriding HaGeZi Pro's blocks on Blizzard's
+! telemetry (817 telemetry-in lookups in 25h from one PC got through). $important
+! lets these two win over the allow. Risk: low (telemetry/RUM only, HaGeZi Pro
+! already blocks them). Regional targeting: none.
+||telemetry-in.battle.net^$important
+||rum.battle.net^$important
 @@||gg.deals^
 
 ! ========== VPN / DNS ==========
@@ -496,6 +506,12 @@
 ! NEW — GA4 & Ads API endpoints
 ||analyticsdata.googleapis.com^
 ||analyticsadmin.googleapis.com^
+! 2026-10-20: the AdGuard DNS filter excepts these two (@@ rules, no $important),
+! which overrode HaGeZi Pro's ||crwdcntrl.net^ and ||taboola.com^. $important wins.
+! crwdcntrl = Lotame data broker, cdn.taboola = sponsored-content widgets.
+! Risk: low (some news sites lose their "recommended" strips). Regional targeting: none.
+||tags.crwdcntrl.net^$important
+||cdn.taboola.com^$important
 ||analyticshub.googleapis.com^
 ||searchads360.googleapis.com^
 ||doubleclickbidmanager.googleapis.com^
