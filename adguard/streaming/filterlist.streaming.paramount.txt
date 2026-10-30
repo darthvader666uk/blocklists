@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: Paramount+ Ad Blocking Rules
-! Last Updated: 2026-09-28
+! Last Updated: 2026-10-30
 ! Description: Paramount+ ad blocking - INEFFECTIVE (0%) since April 2026
 !
 ! ⚠️⚠️⚠️  DAI MAKES DNS BLOCKING 0% EFFECTIVE  ⚠️⚠️⚠️
@@ -33,6 +33,10 @@
 @@||thumbnails.cbsig.net^
 @@||bakery.pplus.paramount.tech^
 @@||cws.conviva.com^
+! cdn.privacy.paramount.com was blocked here as "low-risk analytics". It serves the
+! OneTrust consent script (optanon) the web player needs. Without it the player crashed
+! on "alloy is not defined" and showed a black screen. Moved to allow 2026-10-30.
+@@||cdn.privacy.paramount.com^
 ! NOTE: fwmrm.net (FreeWheel) was previously allowlisted here for Android app
 ! compatibility, but Paramount+ uses Google DAI making DNS blocking ineffective.
 ! The allowlist conflicted with HBO's ||fwmrm.net^ block — removed 2026-08-04.
@@ -42,7 +46,6 @@
 ! ==========================================
 ! Low-risk analytics/ad platforms
 ||enduser.adsrvr.org^
-||cdn.privacy.paramount.com^
 ||availability-fastly.syncbak-mediastore-cedexis.cbsaavideo.com^
 ||cbsi.demdex.net^
 ||vod-gcs-qwilt.cbsaavideo.com^

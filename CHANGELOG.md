@@ -5,6 +5,16 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 30 October 2026
+
+### 🎬 Paramount+ web player fixed: `cdn.privacy.paramount.com` allowed
+
+Moved `cdn.privacy.paramount.com` from a block to an `@@` allow in
+`filterlist.streaming.paramount.txt`. It was filed as low-risk analytics, but it serves the
+OneTrust consent script (`optanon`) the web player depends on. With it blocked, the player
+crashed on `alloy is not defined` and showed a black screen in Firefox. It is an allow rather
+than a plain delete because Hagezi likely blocks it too. Rule count unchanged at 23.
+
 ## 19 October 2026
 
 ### 🎞️ streamff video CDN allowed: `cdn.hostedhost.top`
