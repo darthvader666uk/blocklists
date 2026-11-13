@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Sky Glass Ad Blocking Rules
-! Last Updated: 2026-10-20
+! Last Updated: 2026-11-13
 ! Description: Blocks Sky Glass / Comcast smart TV ads and tracking
 !
 ! ==========================================
@@ -23,7 +23,7 @@
 ||display.ravm.tv^
 ||tvinteractive.tv^
 ! (mcp/control/control2/tvmeta-dynamic.tvinteractive.tv removed 2026-09-28, covered above)
-||tv.ads.spotx.tv^
+! (tv.ads.spotx.tv removed 2026-11-13: NXDOMAIN, SpotX is now Magnite)
 ||tvx.adgrx.com^
 ||smartclip.com^
 ||smartclip.net^

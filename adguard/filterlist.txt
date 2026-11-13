@@ -1,6 +1,6 @@
 [Adblock Plus]
 ! Title: My Own Filter List - Master (Non-Streaming)
-! Last Updated: 2026-10-20
+! Last Updated: 2026-11-13
 ! 
 ! 2026-09-28: the Meta/Instagram/WhatsApp $third-party rules were removed.
 ! AdGuard Home ignores any rule with an unsupported modifier, so they never ran.
@@ -122,7 +122,7 @@
 ! 2026-09-28: firebaseremoteconfig.googleapis.com serves feature flags to
 ! sites and apps built on Firebase. Costco UK (sip-web-prod-uk) fetches its
 ! config here and, with it blocked, login bounces to /maintenance/?err=1.
-! Blocked by: StreamNoAds (third-party list in AGH).
+! Blocked by: StreamNoAds (third-party list, dropped from AGH 2026-10-13).
 ! Risk: LOW, config only, no ad serving. Some streaming apps may use it to
 ! toggle ad features. DNS cannot scope it per site, so this is global.
 @@||firebaseremoteconfig.googleapis.com^
@@ -673,11 +673,11 @@
 ||smartredirect.de^
 
 ! ========== STREAMING ADS ==========
-! StreamNoAds (full streaming ad list) imported via AdGuard Home blocklist:
-! https://raw.githubusercontent.com/tammo2701/StreamNoAds/main/adblock-streaming-services
+! StreamNoAds was dropped from AdGuard Home on 2026-10-13 (AI-generated entries,
+! root-blocked yospace.com). See CHANGELOG.md.
 
 ! ========== MALWARE & SCAM ==========
-||urush1bar4.online^
+! (urush1bar4.online and webmine.cz removed 2026-11-13: both dead, NXDOMAIN/SERVFAIL)
 ||pesktop.com^
 ||kms-full.com^
 ||officialkmspico.com^
@@ -690,7 +690,6 @@
 ||browsermine.com^
 ||crypto-loot.com^
 ||coin-have.com^
-||webmine.cz^
 
 ! ==========================================
 ! SECTION 4: STREAMING SERVICES

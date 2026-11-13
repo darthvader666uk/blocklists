@@ -31,7 +31,7 @@ Also works in: AdGuard DNS (cloud), the AdGuard browser extension and app, NextD
 | Service | Raw URL | Rules | How well it works |
 |---|---|---|---|
 | Roku | [`filterlist.streaming.roku.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.roku.txt) | 32 (17 blocks, 15 allows, 2 regex) | 40%+ |
-| Sky Glass | [`filterlist.streaming.skyglass.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.skyglass.txt) | 21 (14 blocks, 7 allows) | around 40% |
+| Sky Glass | [`filterlist.streaming.skyglass.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.skyglass.txt) | 20 (13 blocks, 7 allows) | around 40% |
 | Disney+ | [`filterlist.streaming.disney.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.disney.txt) | 6 (3 blocks, 3 allows, 1 regex) | 30-40% |
 | HBO Max | [`filterlist.streaming.hbo.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.hbo.txt) | 21 (13 blocks, 8 allows) | 20-30% |
 | Peacock | [`filterlist.streaming.peacock.txt`](https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/streaming/filterlist.streaming.peacock.txt) | 23 (6 blocks, 17 allows) | 5-40% (app v7.4.21+ broke a lot of it) |
@@ -56,7 +56,7 @@ Netflix ads are the same. If you're getting ads on Netflix, check which plan you
 
 ## The master list
 
-[`adguard/filterlist.txt`](adguard/filterlist.txt) has 391 rules: 149 blocks and 242 allows.
+[`adguard/filterlist.txt`](adguard/filterlist.txt) has 389 rules: 147 blocks and 242 allows.
 
 Yes, it's mostly allows, and that's on purpose. The big third-party lists do the heavy lifting but, they also break things (iCloud, CarPlay, shopping sites on shared Cloudflare/Vercel IPs). This list un-breaks those and adds the trackers they miss: smart TV telemetry, Windows telemetry, analytics on AI chatbots, and so on.
 
