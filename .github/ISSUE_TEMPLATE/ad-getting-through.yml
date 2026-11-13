@@ -1,0 +1,37 @@
+name: Ad getting through
+description: You're seeing ads or tracking that a list should be blocking
+title: "Ads: "
+labels: ["missed ad"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Quick check first: Paramount+, Prime Video and Netflix stitch the ads into the video stream itself, so no DNS list can block them. If you're on Netflix, check you're not on the ad tier (the Sky bundle defaults to it).
+  - type: input
+    id: service
+    attributes:
+      label: Service
+      placeholder: HBO Max, Roku home screen, Channel 4...
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and app version
+      placeholder: Roku Ultra, OS 14.5 / Peacock app 7.4.21
+    validations:
+      required: true
+  - type: textarea
+    id: domains
+    attributes:
+      label: Domains from the Query Log
+      description: Anything that was allowed (not blocked) while the ad played. Even a guess helps.
+      placeholder: |
+        ads.example.com
+        tracking.example.net
+  - type: input
+    id: region
+    attributes:
+      label: Country
+      description: Ad hosts often differ by region.
+      placeholder: UK

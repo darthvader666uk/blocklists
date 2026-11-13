@@ -1,0 +1,40 @@
+name: Something broke
+description: A site, app or service stopped working and you think one of these lists is blocking it
+title: "Broken: "
+labels: ["false positive"]
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Blocked domain
+      description: From AdGuard Home → Query Log. Filter by the device and look for the red Blocked entries around the time it broke.
+      placeholder: cdn.example.com
+    validations:
+      required: true
+  - type: input
+    id: list
+    attributes:
+      label: Which list blocked it?
+      description: The Query Log shows this when you click the entry. If it's not one of mine, I can still allow it in the master list.
+      placeholder: My Own Filter List - Master
+    validations:
+      required: true
+  - type: input
+    id: service
+    attributes:
+      label: Site, app or service
+      placeholder: HBO Max, Costco, iCloud...
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      placeholder: Roku Ultra, Sky Glass, iPhone, Firefox on Windows...
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens?
+      description: Error message or code if there is one. Does allowing the domain fix it?
