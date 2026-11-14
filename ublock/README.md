@@ -49,7 +49,7 @@ You need full uBlock Origin (Firefox is what I use). uBlock Origin Lite cant loa
    ```
    thepoke.com##+js(user-tweet-video.js)
    ```
-4. In Filter lists, press Purge all caches then Update now (uBlock only fetches the scriptlet file when it updates its own resources)
+4. In Filter lists, click the clock icon next to any list (EasyList is fine) so it shows as out of date, then press Update now. uBlock only fetches the scriptlet file when a list updates, and newer versions dropped the Purge all caches button
 5. Reload the page. The video should be sitting under the tweet quote
 
 ### Adding more sites:
@@ -60,16 +60,22 @@ Put them in front of the same line, comma separated:
 thepoke.com,example.co.uk##+js(user-tweet-video.js)
 ```
 
+Or put a `*` in front to run it on every site. A line with nothing in front gets ignored by uBlock:
+
+```
+*##+js(user-tweet-video.js)
+```
+
 ### Good to know:
 
 - Videos only start downloading when you press play, so a page with 10 tweets doesnt pull 10 videos
-- X's file servers refuse requests that say they came from another site (a 403), so once a tweet is found the page stops sending its address to other sites (`no-referrer`). Pages with no tweets are left alone
+- X's file servers refuse requests that say they came from another site (a 403), so each video plays in its own small frame that doesn't send the page's address. The page itself is left alone, so logins and comment forms on it work as normal
 - FxTwitter sees the IDs of the tweets you load, and X's file servers see you download the file. That's the trade-off for not loading X itself
 - If the site's own Twitter embed DOES load (you accepted the pop-up), Twitter's script replaces the quote and this does nothing
 
 ### If it doesnt work:
 
-- Nothing at all → check `userResourcesLocation` saved, then purge caches and update again (step 4)
+- Nothing at all → check `userResourcesLocation` saved, then force an update again (step 4). GitHub can take about 5 minutes to serve a new version of the file
 - Quote shows but no video → open the uBlock logger on that tab and look for `api.fxtwitter.com`. If FxTwitter is down or has changed, nothing gets added
 - The site doesnt use the standard `twitter-tweet` quote → it wont be picked up, open an issue with the page link
 
