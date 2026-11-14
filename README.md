@@ -114,7 +114,8 @@ Tried and dropped: StreamNoAds, FTPrivacy Smart TV, HaGeZi spam-tlds (blocks eve
 
 ## What else is in here
 
-- [`ublock/`](ublock/) is my uBlock Origin settings backup (restore it from uBO's settings page, it's not a filter list), plus a scriptlet that shows tweet videos on sites where the Twitter embed never loads, without going near x.com
+- [`ublock/`](ublock/) is my uBlock Origin settings backup (restore it from uBO's settings page, it's not a filter list)
+- [Tweet videos without X](ublock/README.md#tweet-videos-without-x-user-tweet-videojs) is a uBlock Origin scriptlet (`user-tweet-video.js`) for sites where embedded tweets show up as plain quotes with no video. It adds the video or photos under the quote without loading anything from x.com. Handy if you run uBO's cookie lists, which stop some sites (The Poke, for one) ever loading Twitter's embeds
 - [`plugblock/`](plugblock/) is a plug-in-and-go blocking box I'm designing. No code yet
 - [`CHANGELOG.md`](CHANGELOG.md) has every dated change
 - [`MIGRATION.md`](MIGRATION.md) is for anyone still on the old gist

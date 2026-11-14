@@ -4,11 +4,11 @@
 // The media list comes from FxTwitter's API (api.fxtwitter.com), the files from X's own file servers
 // (video.twimg.com, pbs.twimg.com): plain files, no X scripts, cookies or login.
 // Use: thepoke.com##+js(user-tweet-video.js)
+// NO BLANK LINES inside a scriptlet: uBO's resource parser ends the resource at the first empty line.
 (function() {
 	'use strict';
 	const done = new WeakSet();
 	const style = 'display:block;max-width:100%;max-height:80vh;margin:.6em 0;border-radius:8px;background:#000';
-
 	// X's file servers answer 403 when the referrer is another site, so this page sends none.
 	// Only added once a tweet is actually found, so pages without tweets are untouched.
 	const noReferrer = function() {
@@ -20,7 +20,6 @@
 		meta.content = 'no-referrer';
 		(document.head || document.documentElement).appendChild(meta);
 	};
-
 	const convert = function(bq) {
 		if (done.has(bq)) {
 			return;
@@ -73,7 +72,6 @@
 			})
 			.catch(function() {});
 	};
-
 	const scan = function(root) {
 		if (root.matches && root.matches('blockquote.twitter-tweet')) {
 			convert(root);
@@ -81,7 +79,6 @@
 			root.querySelectorAll('blockquote.twitter-tweet').forEach(convert);
 		}
 	};
-
 	const start = function() {
 		scan(document);
 		// Sites that load more articles as you scroll add new quotes later.
@@ -91,7 +88,6 @@
 			}
 		}).observe(document.documentElement, { childList: true, subtree: true });
 	};
-
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', start, { once: true });
 	} else {
