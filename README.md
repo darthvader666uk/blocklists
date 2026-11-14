@@ -114,7 +114,7 @@ Tried and dropped: StreamNoAds, FTPrivacy Smart TV, HaGeZi spam-tlds (blocks eve
 
 ## What else is in here
 
-- [`ublock/`](ublock/) is my uBlock Origin settings backup (restore it from uBO's settings page, it's not a filter list)
+- [`ublock/`](ublock/) is my uBlock Origin settings backup (restore it from uBO's settings page, it's not a filter list), plus a scriptlet that shows tweet videos on sites where the Twitter embed never loads, without going near x.com
 - [`plugblock/`](plugblock/) is a plug-in-and-go blocking box I'm designing. No code yet
 - [`CHANGELOG.md`](CHANGELOG.md) has every dated change
 - [`MIGRATION.md`](MIGRATION.md) is for anyone still on the old gist
