@@ -5,6 +5,26 @@ instructions and the active list stack live in the [README](README.md).
 
 ---
 
+## 14 November 2026
+
+### 🐦 Tweet videos without X: `user-tweet-video.js` uBO scriptlet
+
+Added `ublock/user-scriptlets.js` with one user scriptlet, `user-tweet-video.js`. It shows the
+video or photos in Twitter/X embeds that never loaded, without loading anything from x.com.
+Found on The Poke (a DigitalBox site), where the `digitalbox-social-consent` plugin holds back
+`platform.x.com/widgets.js` until the cookie pop-up reports TCF consent. uBO's cookie lists mean
+that never happens, so every tweet stayed a plain quote. Our `syndication.twitter.com` block was
+NOT the cause.
+
+The scriptlet takes each tweet's ID, asks FxTwitter's API (`api.fxtwitter.com`) for its media,
+and adds it under the quote. Videos load only when you press play, each in its own sandboxed
+frame that sends no referrer (X's `video.twimg.com` returns 403 to another site's referrer).
+The first version set `no-referrer` on the whole page, which could break forms on other sites,
+so it was moved into the frames before switching it on everywhere with `*##+js(user-tweet-video.js)`.
+
+uBO's resource parser ends a scriptlet at the first blank line, so the file has none. Setup
+steps are in [ublock/README.md](ublock/README.md).
+
 ## 30 October 2026
 
 ### 🎬 Paramount+ web player fixed: `cdn.privacy.paramount.com` allowed
