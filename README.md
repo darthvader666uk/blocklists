@@ -12,7 +12,7 @@ If these lists save you some hassle, a coffee keeps them maintained :)
 
 ## Quick start (AdGuard Home)
 
-1. Open AdGuard Home and go to **Filters → DNS blocklists → Add blocklist → Add a custom list**
+1. Open AdGuard Home and go to **Filters → Blocklists → Add blocklist → Add a custom list**
 2. Paste the master list URL:
    ```
    https://raw.githubusercontent.com/darthvader666uk/blocklists/main/adguard/filterlist.txt

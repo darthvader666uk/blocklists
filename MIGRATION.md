@@ -37,7 +37,7 @@ in step 3 with the new name before pushing.
 
 ## Step 3 — Update AdGuard Home subscriptions
 
-AdGuard Home → **Filters → DNS blocklists**. Each list keeps its name; only the
+AdGuard Home → **Filters → Blocklists**. Each list keeps its name; only the
 URL changes. AGH will not error loudly on a dead URL — it keeps serving the last
 successful fetch and only logs a failure, so a missed entry goes stale silently.
 
